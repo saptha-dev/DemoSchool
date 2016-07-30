@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StudentMasterPage.master.cs" Inherits="PresentationLayer.Student.StudentMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../StudentStyles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../StudentStyles/style.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:Label ID="lblMasterStudentId" runat="server" Visible="false" ></asp:Label>
+    <asp:Label ID="lblMasterUserId" runat="server" Visible="false" ></asp:Label>
+      <asp:Label ID="Label3" runat="server" Visible="false" ></asp:Label>
+    <div>
+        <asp:ContentPlaceHolder ID="Menubar" runat="server">
+        <header class="headerbg">
+  <div class="container logocontainer" >
+    <div class=" col-xs-6 ">
+      <h1>Logo</h1>
+    </div>
+    <div class=" col-xs-6 "> </div>
+  </div>
+  <!-- container -->
+   <nav class="navbar navbar-default navbg navbarfont">
+    <div class="container">
+      <div class="navbar-header"> </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#" style="color:#C30;font-size:16PX;"><strong>STUDENT ACCOUNT *</strong></a></li>
+          <li><a href="../Student/StudentHome.aspx">HOME </a></li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MY STUDENT <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../Student/Student-category.aspx">MY-CATEGORIES </a></li>
+              <li><a href="../Student/StudentSubjects.aspx"> MY-SUBJECTS</a></li>
+              <li><a href="../Student/Student-certificates.aspx"> MY-CERTIFICATES </a></li>
+              <li><a href="../Student/Student-report.aspx">MY-REPORT</a></li>
+              <li><a href="../Student/student-profile.aspx"> MY-PROFILE </a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRAINING <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+              <li><a href="../Student/content.aspx">CONTENT </a></li>
+              <li><a href="../Student/StudentExercise.aspx">EXERCISE</a></li>
+              <li><a href="../Student/my-class.aspx">CLASSES</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ASSESSMENT <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../Student/Student-sample-test.aspx">SAMPLE TEST</a></li>
+              <li><a href="../Student/Student-real-test.aspx">REAL-TEST</a></li>
+              <li><a href="../Student/Student-results-grade.aspx">RESULTS-GRADE</a></li>
+             
+            </ul>
+          </li>
+          <li><a href="#" style="padding: 8px 0px 0px 0px;">
+            <button class="btn btn-danger btn-circle text-uppercase" type="button"> <a href="../LoginPage.aspx"><span class="glyphicon glyphicon-off"></span>LOGOUT</a> </button>
+            </a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+
+      
+      
+    </div>
+  </nav>
+</header>
+</asp:ContentPlaceHolder>
+<asp:ContentPlaceHolder ID="body" runat="server">
+ 
+ 
+ 
+ </asp:ContentPlaceHolder>
+ <asp:ContentPlaceHolder ID="Footer" runat="server">
+ <div class="container">
+  <div class="row">
+    <!-- Example row of columns -->
+  </div>
+</div>
+<footer>
+  <div class="content container">
+    <div class="row">
+      <div class="col-xs-12" style="color:#fff;text-align:center"><h4 style="margin:auto">Copyrights © 2015 All rights reserved.</h4> </div>
+    </div>
+  </div>
+</footer>
+ </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

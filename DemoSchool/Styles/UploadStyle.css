@@ -1,0 +1,46 @@
+﻿.file-upload {
+    color: rgb(40, 52, 70);
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    
+    }
+
+    .file-upload:hover {
+        color: blue;
+    }
+
+/* The button size */
+.file-upload {
+    height: 30px;
+    font-style: italic;
+}
+
+    .file-upload, .file-upload span {
+        
+    }
+
+        .file-upload input {
+            top: 0;
+            left: 0;
+            margin: 0;
+            font-size: 11px;
+            font-weight: bold;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .file-upload strong {
+            font: normal 12px Tahoma,sans-serif;
+            font-style: italic;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .file-upload span {
+            top: 0;
+            left: 0;
+            display: inline-block;
+            /* Adjust button text vertical alignment */
+            /*padding-top: 5px;*/
+        }

@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FacultyMasterPage.master.cs"
+    Inherits="PresentationLayer.Faculty.FacultyMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../StudentStyles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../StudentStyles/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="menu" runat="server">
+            <header class="headerbg">
+
+    <div class="container logocontainer" >
+     <div class=" col-xs-6 ">
+     <h1>Logo<span class="pagetitle"></span></h1>
+     </div>  
+     <div class=" col-xs-6 ">
+     
+     </div> 
+     
+    </div><!-- container -->
+
+  <nav class="navbar navbar-default navbg navbarfont">
+      <div class="container">
+        <div class="navbar-header">
+          
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           
+           <!--  <li><a href="#"><strong> FACULTY *   </strong>   </a></li>-->
+            <li><a href="#" style="color:#C30;font-size:16PX;"><strong>FACULTY*</strong></a></li>
+            <li><a href="../Faculty/FacultyHome.aspx">HOME </a></li>
+              <li><a href="../Faculty/FacultyClass-List.aspx"> CLASS-LIST </a></li>
+               
+                  <li><a href="../Faculty/Facutly-org-Class.aspx"> ORGANIZAING- CLASS   </a></li>
+                    <li><a href="../Faculty/FacultyReport.aspx" ">CLASS-REPORT </a></li>
+                      <li><a href="../Faculty/Faculty-TestManagement.aspx"> CLASS-TASKS</a></li>
+                       <li><a href="../Faculty/FacultyProfile.aspx">MY-PROFILE </a></li>
+              <li><a href="#" style="padding: 8px 0px 0px 0px;"> <button class="btn btn-danger btn-circle text-uppercase" type="button">
+                    <span class="glyphicon glyphicon-off"></span> LOGOUT                 
+                </button>          </a></li>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+      </header>
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="body" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+            <footer>
+  <div class="content container">
+   
+  <div class="row"><div class="col-xs-12" style="color:#fff;">
+Copyrights © 2015 All rights reserved.</div>
+	</div>
+    </div>
+</footer>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

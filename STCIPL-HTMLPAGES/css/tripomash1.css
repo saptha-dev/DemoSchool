@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300|Roboto+Condensed:300,400,700,400italic);
+body {
+	font-family: 'Roboto', sans-serif;
+	background:#fff;
+	color:#474747;
+	    font-size: 16px;
+    line-height: 26px;
+}
+.titles{font-family: 'Roboto Condensed', sans-serif; font-weight:300; font-size:30px; color:#202a5c !important;}
+.titles a, a:hover{ text-decoration:none;  color:#202a5c !important;cursor:pointer;}
+.titles a:hover{cursor:pointer;color:#e61f2b !important; }
+
+.home-icon{ position:relative;top:0px;right:-439px; }
+.program-icon{ position:relative;top:84px;right:-127px; }
+.organization-icon{ position:relative;top:173px;right:191px; }
+.consultancy-icon{ position:relative;top:295px;right:486px; }
+.registraton-icon{ position:relative;top:338px;right:322px; }
+.login-icon{ position:relative;top:441px;right:412px; }
+.navbar-inverse .navbar-nav>li>a {
+    color: #e6fbfe  !important; font-size:18px;
+}
+h1{ color:#e61f2b}
+h2,h3,h4,h5{ color:#202a5c !important;line-height:32px; }
+.footer{ margin-top:20px;margin-bottom:20px;color:#fff;font-size:12px;}
+.fa{
+	background-color:#202a5c;
+padding: 20px;
+border-radius: 57px;
+color:#e61f2b;
+font-size:20px !important;
+
+	}
+	
+.fa:hover{
+	background-color:#F00;
+color:#fff;
+cursor:pointer;
+	}
+
+.header{height:150px; }
+.navbar{margin-bottom:0px; }
+.navbar-inverse{     background-color: transparent  !important;     border-color: transparent  !important;}
+.header-aboutus{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a5e9f6+0,03c2e1+100 */
+background: #a5e9f6; /* Old browsers */
+background: -moz-linear-gradient(top,  #a5e9f6 0%, #03c2e1 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #a5e9f6 0%,#03c2e1 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #a5e9f6 0%,#03c2e1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5e9f6', endColorstr='#03c2e1',GradientType=0 ); /* IE6-9 */
+
+}
+
+.menu-aboutus{ background-color:#033c45;}
+.loginform {
+    background-color: #a41716;
+    border: 4px solid #dd5a59;
+    border-radius: 0px;
+    color: #fff;
+    margin-top: 20px;
+}
+.login-panel-body {
+    padding: 0px; 
+}
+label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    padding: 5px 0px;
+    font-weight: 300;
+}
+.input-group-addon {
+    
+    background-color: #d9534f;
+    border: 1px solid #d9534f;
+   
+}
+.glyphicon-user, .glyphicon-lock { color:#a41716;}
+.login-form{ padding:10px 25px; }
+.loginform a{ color:#F90;}
+.login-form h2{ color:#fff !important;padding:0px;margin:10px 0px;}
+.newuser-join{ padding:20px; background-color:#710807; }

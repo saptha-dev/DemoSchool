@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs"
+	Inherits="PresentationLayer.AdminMaster" %>
+
+	<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	<title>Online Learning System</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="icon" type="image/png" href="Images/IconLogo.png">
+	 <link href="Styles/bootstrap.css" rel="stylesheet" />
+	<script type="text/javascript">
+		(function ($) {
+			$(document).ready(function () {
+				$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+					event.preventDefault();
+					event.stopPropagation();
+					$(this).parent().siblings().removeClass('open');
+					$(this).parent().toggleClass('open');
+				});
+			});
+		})(jQuery);
+	</script>
+	<style type="text/css">
+		.marginBottom-0
+		{
+			margin-bottom: 0;
+		}
+		.dropdown-submenu
+		{
+			position: relative;
+		}
+		.dropdown-submenu > .dropdown-menu
+		{
+			top: 0;
+			left: 100%;
+			margin-top: -6px;
+			margin-left: -1px;
+			-webkit-border-radius: 0 6px 6px 6px;
+			-moz-border-radius: 0 6px 6px 6px;
+			border-radius: 0 6px 6px 6px;
+		}
+		.dropdown-submenu > a:after
+		{
+			display: block;
+			content: " ";
+			float: right;
+			width: 0;
+			height: 0;
+			border-color: transparent;
+			border-style: solid;
+			border-width: 5px 0 5px 5px;
+			border-left-color: #cccccc;
+			margin-top: 5px;
+			margin-right: -10px;
+		}
+		.dropdown-submenu:hover > a:after
+		{
+			border-left-color: #555;
+		}
+		.dropdown-submenu.pull-left
+		{
+			float: none;
+		}
+		.dropdown-submenu.pull-left > .dropdown-menu
+		{
+			left: -100%;
+			margin-left: 10px;
+			-webkit-border-radius: 6px 0 6px 6px;
+			-moz-border-radius: 6px 0 6px 6px;
+			border-radius: 6px 0 6px 6px;
+		}
+		
+		 body
+		  {
+	  background-image:url("../Images/PageBack.png");
+	 
+		  }
+  
+	</style>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div>
+		<table style="width: 100%;border-style: groove;border-width: 0.5px;box-shadow: 3px 24px 27px rgb(44, 34, 34); margin: auto;">
+			<tr>
+				<td colspan="2">
+					<asp:ContentPlaceHolder ID="menu" runat="server">
+						<div style="margin-top: 0px; width: 100%; float: right;">
+							<table style="width: 100%; float: right;">
+								<tr class="navbar-default" style="background-color: #234bcd;background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.11, rgb(16, 21, 26)), color-stop(0.55, rgb(74, 99, 137)), color-stop(0.87, rgb(58, 80, 95)) );background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95));background:-ms-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95))">
+									<td style="width: 100%;" colspan="2">
+										<table style="width: 100%;">
+											<tr>
+												<td align="left" style="background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.11, rgb(16, 21, 26)), color-stop(0.55, rgb(74, 99, 137)), color-stop(0.87, rgb(58, 80, 95)) );background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95));background:-ms-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95))">
+													<img src="../Images/stcipl_logo_small.png" class="img-responsive" style="margin-left: 165px;" />
+												</td>
+												<td align="right">
+												</td>
+												<%--<td align="right"><div  class="logindiv2" style="width:100px;text-align:center;"><a href="CommonRegistration.aspx">Registration</a></div></td>--%>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td style="background-color: #002290; border-top: solid 1px #FFFFFF; border-top: solid 1px #FFFFFF;background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95))">
+										<nav class="navbar navbar-inverse navbar-static-top marginBottom-0" role="navigation"
+											style="background-color: #002290;background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.11, rgb(16, 21, 26)), color-stop(0.55, rgb(74, 99, 137)), color-stop(0.87, rgb(58, 80, 95)) );background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95)); border-top-color: white; border-bottom-style: solid;">
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigationan class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			 <%-- <a class="navbar-brand" href="#" target="_blank">NewWindow</a>--%>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1" style="background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95));background:-ms-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95))">
+				<ul class="nav navbar-nav" style="font-weight: bold;margin-left:11.9%;">
+					<li class="dropdown"><a href="../Admin/Admin-Home.aspx" class="dropdown-toggle" data-toggle="dropdown">HOME<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+					   <%--  <li><a href="../Admin/Admin-Home.aspx">HOME</a></li>--%>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">OPERATIONS<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						 <li  class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">USERS</a>
+								<ul class="dropdown-menu">
+									<li><a href="../Admin/Admin-CompanyList.aspx">ACT-COMPANY</a></li>
+									<li><a href="../Admin/Admin-StudentsList.aspx">STUDENT</a></li>
+									<li><a href="../Admin/Admin-CounsellorList.aspx">COUNSELLOR</a></li>
+									<li><a href="../Admin/Admin-FacultyList.aspx">FACULTY</a></li>
+								</ul>
+							</li>
+
+						   
+						 <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">CORE</a>
+								<ul class="dropdown-menu">
+									 <li><a href="../Admin/Admin-Core.aspx">CREATION</a></li>
+						   <li><a href="../Admin/Admin-ManageCore.aspx">MANAGEMENT</a></li>
+							<li><a href="../Admin/Admin-PublishCore.aspx">DASHBOARD</a></li>
+								</ul>
+							</li>
+						   <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">PUBLIC</a>>
+							 <ul class="dropdown-menu">
+							  <li><a href="../Admin/addPublicPageData.aspx">CREATION</a></li>
+							  <li><a href="../Admin/managePublicPageData.aspx">MANAGEMENT</a></li>
+							 </ul>
+						   </li>
+						</ul>
+				   
+					</li>
+					
+
+					   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">TRAINING<b class="caret"></b></a>
+					 <ul class="dropdown-menu">
+						 <li><a href="../Admin/Admin-Training.aspx">CREATION</a></li>
+						 <li><a href="../Admin/Admin-ManageTraining.aspx">MANAGEMENT</a></li>
+						 <li><a href="../Admin/Admin-PublishTraining.aspx">DASHBOARD</a></li>
+					 </ul>
+					  </li>
+
+				   
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ASSESSMENT<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="../Admin/Admin-Assessment.aspx">CREATION</a></li>
+							<li><a href="../Admin/Admin-AssessmentManage.aspx">MANAGEMENT</a></li>
+							<li><a href="../Admin/Admin-PublishAssessment.aspx">DASHBOARD</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">REPORTS<b class="caret"></b></a>
+					   <ul class="dropdown-menu">
+						   <li><a href="../UnderConstruction.aspx">ACTE-CMP</a></li>
+						   <li><a href="../UnderConstruction.aspx">STUDENTS</a></li>
+						   <li><a href="../UnderConstruction.aspx">COUNSELLORS</a></li>
+						   <li><a href="../UnderConstruction.aspx">FACULTY</a></li>
+						   <li><a href="../UnderConstruction.aspx">CATEGORY</a></li>
+						   <li><a href="../UnderConstruction.aspx">SUBJECTS</a></li>
+						   <li><a href="../UnderConstruction.aspx">CONTENT</a></li>
+						   <li><a href="../UnderConstruction.aspx">CLASSES</a></li>
+						   <li><a href="../UnderConstruction.aspx">BOOKINGS</a></li>
+						   <li><a href="../UnderConstruction.aspx">REALTEST</a></li>
+						   <li><a href="../UnderConstruction.aspx">RESULTS</a></li>
+						   <li><a href="../UnderConstruction.aspx">GRADES</a></li>
+					   </ul>
+					</li>
+				   </ul>
+				<asp:LinkButton ID="LinkButton1" runat="server"  style="color:#FAF6F6;float:right;margin-right: 250px;"
+				onclick="LnkLogout_Click"><img src="../Images/exit.png" height="30px" />&nbsp;Logout</asp:LinkButton>
+			</div>
+		</nav>
+									</td>
+								</tr>
+								<tr>
+								</tr>
+							</table>
+
+						</div>
+					</asp:ContentPlaceHolder>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<asp:ContentPlaceHolder ID="content" runat="server">
+					<asp:ScriptManager ID="scr" runat="server"></asp:ScriptManager>
+					<asp:UpdatePanel ID="updnl" runat="server">
+					<ContentTemplate>
+					</ContentTemplate>
+					</asp:UpdatePanel>
+					</asp:ContentPlaceHolder>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<asp:ContentPlaceHolder ID="footer" runat="server">
+						<table style="width: 100%;">
+							<tr style="width: 100%; border: 1px solid silver; background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.11, rgb(16, 21, 26)), color-stop(0.55, rgb(74, 99, 137)), color-stop(0.87, rgb(58, 80, 95)) );background: -moz-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95));background:-ms-linear-gradient(rgb(16, 21, 26), rgb(74, 99, 137),rgb(58, 80, 95))" class="navbar-default">
+								<td align="center">
+									<div style="width: 100%; height: 50px; vertical-align: middle;">
+										<span style="">
+											<h6 style="color: White;margin-top: 35px; font-weight: bold">
+												<b>&#169;&nbsp;<%=DateTime.Now.Year%> STCIPL All rights reserved.</b>
+											</h6>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</asp:ContentPlaceHolder>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</body>
+</html>

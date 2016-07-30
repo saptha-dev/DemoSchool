@@ -1,0 +1,141 @@
+﻿
+.nav1 {
+position: relative;
+margin: 0;
+padding: 0;
+line-height: 22px;
+}
+
+.nav1>li {
+display: block;
+float: left; 
+margin: 0;
+padding: 0;
+}
+
+.nav1>li>a {
+
+display: block;
+position: relative;
+padding: 10px 20px;
+
+font-family:Arial;
+color: #FFFFFF;
+font-size: 0.8em;
+font-weight:bold;
+text-decoration: none;
+
+background: black; 
+background: #002290; 
+
+-webkit-transition: color .3s ease-in;
+-moz-transition: color .3s ease-in;
+-o-transition: color .3s ease-in;
+-ms-transition: color .3s ease-in;
+}
+
+.nav1>li>a:hover, .nav1>li:hover>a {
+color: #0fd0f9;
+}
+
+.nav1>.dropdown1>a {
+padding: 10px 30px 10px 20px;
+}
+
+.dropdown1>a::after {
+content: "";
+position: absolute;
+top: 15px;
+right: 10px;
+width: 7px;
+height: 7px;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+border-bottom: 1px solid #fff;
+border-right: 1px solid #fff;
+}
+
+
+.dropdown1>a:hover::after, .dropdown1:hover>a::after {
+border-color: #0fd0f9;
+}
+
+.nav1 ul {
+position: absolute;
+margin: 0;
+padding: 0;
+list-style: none;
+display: block;
+}
+
+.nav1 ul li {
+position: absolute;
+top: -9999px;
+height: 0px;
+display: block;
+margin: 0;
+padding: 0;
+
+-webkit-transition: height .2s ease-in;
+-moz-transition: height .2s ease-in;
+-o-transition: height .2s ease-in;
+-ms-transition: height .2s ease-in;
+}
+
+.dropdown1:hover>ul>li {
+height: 30px;
+position: relative;
+top: auto;
+}
+
+.nav1 ul li a {
+
+padding: 4px 20px;
+width: 120px;
+display: block;
+position: relative;
+
+font-family:Arial;
+color: #FFFFFF;
+text-decoration: none;
+font-size: 0.7em;
+
+background: black;
+
+-webkit-transition: color .3s ease-in, background .3s ease-in;
+-moz-transition: color .3s ease-in, background .3s ease-in;
+-o-transition: color .3s ease-in, background .3s ease-in;
+-ms-transition: color .3s ease-in, background .3s ease-in;
+}
+
+.nav1 ul li:hover>a, .nav1 ul li a:hover {
+color: black;
+
+background: white;
+font-weight:bold;
+
+
+}
+
+.nav1 ul .dropdown1:hover ul {
+left: 160px;
+top: 0px;
+}
+
+.nav1 ul .dropdown1 a::after {
+width: 6px;
+height: 6px;
+border-bottom: 0;
+border-right: 1px solid #fff;
+border-top: 1px solid #fff;
+top: 12px;
+}
+
+.nav1 ul .dropdown1:hover>a::after, .nav1 ul .dropdown1>a:hover::after {
+border-right: 1px solid #0fd0f9;
+border-top: 1px solid #0fd0f9;
+
+
+}

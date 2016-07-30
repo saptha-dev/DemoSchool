@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A354F974-7FBA-4317-B2D3-535CEAEFB97A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL</RootNamespace>
+    <AssemblyName>BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BE\AddCategories.cs" />
+    <Compile Include="BE\AddClass.cs" />
+    <Compile Include="BE\AddContent.cs" />
+    <Compile Include="BE\AddEmail.cs" />
+    <Compile Include="BE\AddGroupcs.cs" />
+    <Compile Include="BE\AddSubjects_Entities.cs" />
+    <Compile Include="BE\AddUnits_BE.cs" />
+    <Compile Include="BE\AddYear.cs" />
+    <Compile Include="BE\Booking.cs" />
+    <Compile Include="BE\CompanyBE.cs" />
+    <Compile Include="BE\LoginBE.cs" />
+    <Compile Include="BE\Program_Entities.cs" />
+    <Compile Include="BE\QstnAnsBE.cs" />
+    <Compile Include="BE\RegistrationBE.cs" />
+    <Compile Include="BE\responseDetails.cs" />
+    <Compile Include="BE\Schedules.cs" />
+    <Compile Include="BE\SendSMSBE.cs" />
+    <Compile Include="BE\Slot.cs" />
+    <Compile Include="BL\AddProgramsBL.cs" />
+    <Compile Include="BL\CmpBL.cs" />
+    <Compile Include="BL\CompanyBL.cs" />
+    <Compile Include="BL\ContentBL.cs" />
+    <Compile Include="BL\CounsellorBL.cs" />
+    <Compile Include="BL\EditProgram.cs" />
+    <Compile Include="BL\FacultyBL.cs" />
+    <Compile Include="BL\LoginBL.cs" />
+    <Compile Include="BL\publicPageContentData.cs" />
+    <Compile Include="BL\PublishBL.cs" />
+    <Compile Include="BL\RegistrationBL.cs" />
+    <Compile Include="BL\SendSMSBL.cs" />
+    <Compile Include="BL\StudentBL.cs" />
+    <Compile Include="BL\StudentContent.cs" />
+    <Compile Include="BL\Training.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{89194BD0-9E7A-47CB-A1C9-F431570E2C01}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
