@@ -202,7 +202,7 @@
             <WizardSteps>
                 <asp:WizardStep ID="WizardStep1" runat="server" Title="Management Personal Details">
                  <div>
-                     <hr>
+                     <br>
                         <h3><span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Management Personal Details</h3>
                      
                      
@@ -524,7 +524,7 @@
                 <asp:WizardStep ID="WizardStep2" runat="server" Title="Management Address Details">
                     
                     <div>
-                        <hr>
+                        <br>
 
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Management Address Details</h3>
                      

@@ -76,6 +76,7 @@ namespace DemoSchool
             newRegistration.LandMark_Name = txtLandMark.Text;
             newRegistration.Location = txtLocation.Text;
             newRegistration.PostalCode = 123456;
+            
 
             //newDetails.StreetNO
             RegistrationBL objBL = new RegistrationBL();

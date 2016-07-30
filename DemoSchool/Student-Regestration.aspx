@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Student-Regestration.aspx.cs" Inherits="DemoSchool.Student_Regestration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -8,7 +8,7 @@
     <%-- <script type="text/javascript">
         $.noConflict();
         $(document).ready(function () {
-            $("#<%=txtdob.ClientID%>").datepicker({ maxDate: '0', changeYear: true, yearRange: "1980:1996", dateFormat: 'yy-mm-dd', beforeShow: function () {
+            $("#<%=txtdob.ClientID %>").datepicker({ maxDate: '0', changeYear: true, yearRange: "1900:2000", dateFormat: 'yy-mm-dd', beforeShow: function () {
                 $(".ui-datepicker").css('font-size', 13.5)
             }
             });
@@ -16,16 +16,16 @@
                 $("#<%= txtdob.ClientID %>").datepicker('show');
             });
         });
-    </script>--%>
-    <%--<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
         function validate(source, args) {
             args.IsValid = true;
             if (args.Value == "--Select--") {
                 args.IsValid = false;
             }
         }
-    </script>--%>
-   <%-- <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
         function checkEmail() {
 
             var email = document.getElementById('<%= txtEmail.ClientID %>');
@@ -50,7 +50,12 @@
             border: 1px solid white;
             background-color: Silver;
         }
-        
+        body {
+	background-image:url(images/aboutbg.png);
+	background-attachment:fixed;
+	background-position:center;
+	background-position:top;
+}
         
         .textusername
         {
@@ -76,59 +81,151 @@
         {
             padding-top: 8px;
         }
-         #tblPadding1 td
+
+        #wizHeader li .prevStep
         {
-            padding-top: 8px;
+            background-color: #669966;
         }
-          #tblPadding2 td
+        #wizHeader li .prevStep:after
         {
-            padding-top: 8px;
+            border-left-color:#669966 !important;
         }
+        #wizHeader li .currentStep
+        {
+            background-color: #C36615;
+        }
+        #wizHeader li .currentStep:after
+        {
+            border-left-color: #C36615 !important;
+        }
+        #wizHeader li .nextStep
+        {
+            background-color:#C2C2C2;
+        }
+        #wizHeader li .nextStep:after
+        {
+            border-left-color:#C2C2C2 !important;
+        }
+        #wizHeader
+        {
+            list-style: none;
+            overflow: hidden;
+            font: 18px Helvetica, Arial, Sans-Serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        #wizHeader li
+        {
+            float: left;
+        }
+        #wizHeader li a
+        {
+            color: white;
+            text-decoration: none;
+            padding: 10px 0 10px 55px;
+            background: brown; /* fallback color */
+            background: hsla(34,85%,35%,1);
+            position: relative;
+            display: block;
+            float: left;
+        }
+        #wizHeader li a:after
+        {
+            content: " ";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+            border-bottom: 50px solid transparent;
+            border-left: 30px solid hsla(34,85%,35%,1);
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+            left: 100%;
+            z-index: 2;
+        }
+        #wizHeader li a:before
+        {
+            content: " ";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 30px solid white;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+            margin-left: 1px;
+            left: 100%;
+            z-index: 1;
+        }        
+        #wizHeader li:first-child a
+        {
+            padding-left: 10px;
+        }
+        #wizHeader li:last-child 
+        {
+            padding-right: 50px;
+        }
+        #wizHeader li a:hover
+        {
+            background: #FE9400;
+        }
+        #wizHeader li a:hover:after
+        {
+            border-left-color: #FE9400 !important;
+        }        
+        .content
+        {
+            height:auto;
+            width:auto;           
+            padding-top:75px;
+            text-align:center;
+            background-color:#F9F9F9;
+            font-size:48px;
+        }
+
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container shadow" style="margin-top:30px;background-color:#fff;">
+
+    <div class="container shadow" style="margin-top:30px;background-color:#fff;">
   <div class="row">
     <div class="col-lg-12 ">
-      <h1>STUDENT REGISTRATION  </h1>
+      <h1>STUDENT REGISTRATION    </h1>
       
       <div class="form-body registration">
-          <div class="container">
-  
-  <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#StudentPersonalDetails">Student Personal Details</a></li>
-    <li><a data-toggle="pill" href="#StudentAddressDetails">Student Address Details</a></li>
-    <li><a data-toggle="pill" href="#StudentProgramDetail">Student Program Detail</a></li>
-    
-  </ul>
-  
-  <div class="tab-content">
-    <div id="StudentPersonalDetails" class="tab-pane fade in active">
-      <h3>Student Personal Details</h3>
-       
-           <table id="tblPadding" style="margin: auto; width: 80%; color: Black;">
+    <div class="container">
+ <asp:Wizard ID="Wizardstudentreg" runat="server" DisplaySideBar="false"  StepNextButtonStyle-CssClass="btn btn-danger btn-lg"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" StartNextButtonStyle-CssClass="btn btn-danger btn-lg"  FinishCompleteButtonStyle-CssClass ="btn btn-danger btn-lg" FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg" >
+            <WizardSteps>
+                <asp:WizardStep ID="WizardStep1" runat="server" Title="Student Personal Details">
+                 <div>
+                     <br>
+                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span> Student Personal Details</h3>
+
+                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
               <tr>
                             <td>
-                                <asp:Label ID="lblFname" runat="server" Text="First Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblFname" runat="server" Text="First Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFirstName" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFirstName" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLastName" runat="server" Text="Last Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblLastName" runat="server" Text="Last Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLastName" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLastName" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -157,26 +254,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfathergurdianname" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtfathergurdianname" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtMothername" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMothername" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -205,14 +300,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
                               <%--  <asp:TextBox ID="txtdob" class="textusername" runat="server"></asp:TextBox>--%>
-                                 <input id="txtdob"  type="date" value="2011-01-13"/>
+                                 <input id="txtdob" runat="server" class="form-control" type="date" value="2011-01-13"/>
                                 <%--<img src="Images/calender.png" id="cdr" />--%>
                             </td>
                             <td>
@@ -220,13 +314,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblpob" runat="server" Text="Place of Birth" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblpob" runat="server" Text="Place of Birth" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpob" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpob" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -255,26 +348,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtmobile" class="textusername" runat="server" MaxLength="10"></asp:TextBox>
+                                <asp:TextBox ID="txtmobile" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFixedLandline" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFixedLandline" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -306,26 +397,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblemail" runat="server" Text="Email Id" Style="color: black; font-weight: bold;"></asp:Label><font
-                                    style="color: Red;"></font>
+                                <asp:Label ID="lblemail" runat="server" Text="Email Id" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmail" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtaltrEmail" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtaltrEmail" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -354,26 +443,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEducation" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEducation" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtTechnicalSkills" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTechnicalSkills" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -402,21 +489,19 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblDirAccessCode" runat="server" Text="Student-AccessCode" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblDirAccessCode" runat="server" Text="Student-AccessCode" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtStudentAccescode" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtStudentAccescode" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblphoto" runat="server" Text="Student Image" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblphoto" runat="server" Text="Student Image" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
@@ -454,20 +539,24 @@
                         </tr>
     
               </table>
-      
-    </div>
-    <div id="StudentAddressDetails" class="tab-pane fade">
-      <h3> Student Address Details</h3>
-      
-      <table id="tblPadding1" style="margin: auto; width: 80%; color: Black;">
+                  
+                 </div>
+                </asp:WizardStep>
+                <asp:WizardStep ID="WizardStep2" runat="server" Title="Student Address Details">
+                    
+                    <div>
+                        <br>
+                        <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
+
+                          <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
           <tr>
                             <td>
-                                <asp:Label ID="lblCountry" runat="server" Text="Country" Style="color: black; font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblCountry" runat="server" Text="Country" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlcountry" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlcountry" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="India" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="USA" Value="2"></asp:ListItem>
@@ -478,13 +567,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblstate" runat="server" Text="State" Style="color: black; font-weight: bold;"></asp:Label><font
-                                    style="color: Red;"></font>
+                                <asp:Label ID="lblstate" runat="server" Text="State" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlstate" runat="server" class="textusername" style="width:59%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlstate" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Telangana" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="AP" Value="2"></asp:ListItem>
@@ -515,13 +603,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lbldistrict" runat="server" Text="District" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lbldistrict" runat="server" Text="District" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlDistrict" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlDistrict" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Hyderabad" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="Rangareddy" Value="2"></asp:ListItem>
@@ -532,13 +619,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblarea" runat="server" Text="Mandal/Taluk/SubUrb" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblarea" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left"></asp:Label><
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtarea" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtarea" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -566,26 +652,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblvillage" runat="server" Text="Village/Town/City" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblvillage" runat="server" Text="Village/Town/City" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtcity" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtcity" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code" Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpincode" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpincode" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -614,26 +698,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblStreetno" runat="server" Text="Street No." Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblStreetno" runat="server" Text="Street No." class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetno" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetno" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetname" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetname" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -662,26 +744,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txthouseno" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txthouseno" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." Style="color: black;
-                                    font-weight: bold;"></asp:Label><font style="color: Red;"></font>
+                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFlatno" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFlatno" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -710,26 +790,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLandMark" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLandMark" class="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLoc" runat="server" Text="Student Location" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblLoc" runat="server" Text="Student Location" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLocation" class="textusername" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLocation" class="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -757,18 +835,25 @@
                             </td>--%>
                         </tr>
           </table>
-    </div>
-    <div id="StudentProgramDetail" class="tab-pane fade">
-      <h3>Student Program Detail</h3>
-  <table id="tblPadding1" style="margin: auto; width: 80%; color: Black;">
+
+                    </div>
+                </asp:WizardStep>
+               
+                <asp:WizardStep ID="WizardStep3" runat="server" Title="Student Program Detail">
+                    
+                    <div>
+                        <br>
+                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Program Details</h3>
+
+                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
           <tr>
                             <td>
-                                <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" Style="color: black; font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlSelectProgram" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlSelectProgram" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Program" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="GRADUTION" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="MBBS" Value="2"></asp:ListItem>
@@ -780,12 +865,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" Style="color: black; font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategory" runat="server" class="textusername" style="width:59%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectcategory" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Schedule" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="3"></asp:ListItem>
@@ -816,13 +901,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Category Schedule" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -833,13 +917,12 @@
                             <td>
                             </td>
                                   <td>
-                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectgroup" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectgroup" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -855,13 +938,12 @@
 
       <tr>
                             <td>
-                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyear" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectyear" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -872,13 +954,12 @@
                             <td>
                             </td>
                                   <td>
-                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -891,15 +972,14 @@
  
                       </tr>
 
-      <tr>
+      
                             <td>
-                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" Style="color: black;
-                                    font-weight: bold;"></asp:Label>
+                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectsubjects" runat="server" class="textusername" style="width:72%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectsubjects" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -908,25 +988,44 @@
              
                         
           </table>
- </div>
-  
-  </div>
+
+                    </div>
+                </asp:WizardStep>
+
+              
+           </WizardSteps>
+            <HeaderTemplate>
+                <ul id="wizHeader">
+                    <asp:Repeater ID="SideBarList" runat="server">
+                        <ItemTemplate>
+                            <li><a class="<%# GetClassForWizardStep(Container.DataItem) %>" title="<%#Eval("Name")%>">
+                                <%# Eval("Name")%></a> </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </HeaderTemplate>
+        </asp:Wizard>
+
+    </div>
+
+    <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
+      </div>
+    </div>
+   </div>
 </div>
 
     
-      <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Register</button> <button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
-      </div>
       
-        
-            </div>
+     
+    
     
     <div> </div>
-  </div>
-  
-  <div class="topbar"></div>
-</div>
-<div class="container footer">
-  <div class="scontainer"> © 2016 REDYSUNS INSTITUTE All rights reserved. </div>
-</div>
+   <div class="topbar"></div>
 
+  
+<div class="container footer">
+  <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>
+</div>
+    
+      
 </asp:Content>

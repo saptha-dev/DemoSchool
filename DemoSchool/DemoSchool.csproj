@@ -44,16 +44,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\..\24-06-2016\OLS_App\PresentationLayer\bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>G:\DemoSchool\DemoSchool\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\..\24-06-2016\OLS_App\PresentationLayer\bin\CKEditor.NET.dll</HintPath>
+      <HintPath>G:\DemoSchool\DemoSchool\bin\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="DropDownCheckBoxes">
-      <HintPath>..\..\..\24-06-2016\OLS_App\PresentationLayer\bin\DropDownCheckBoxes.dll</HintPath>
+      <HintPath>G:\DemoSchool\DemoSchool\bin\DropDownCheckBoxes.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\24-06-2016\OLS_App\PresentationLayer\bin\itextsharp.dll</HintPath>
+      <HintPath>G:\DemoSchool\DemoSchool\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
