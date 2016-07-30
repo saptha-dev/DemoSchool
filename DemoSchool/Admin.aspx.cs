@@ -11,7 +11,7 @@ namespace DemoSchool
 {
     public partial class Admin : System.Web.UI.Page
     {
-      
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Wizard1.PreRender += new EventHandler(Wizard1_PreRender);
@@ -64,7 +64,7 @@ namespace DemoSchool
             newRegistration.OptionalEmailID = txtaltrEmail.Text;
             newRegistration.AccessCode = txtAdminAccescode.Text;
             newRegistration.ImageName = "image 1";
-            newRegistration.CountryID= Convert.ToInt32(ddlcountry.SelectedItem.Value);
+            newRegistration.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
             newRegistration.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
             newRegistration.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
             newRegistration.SubUrban_Area = ddlMandal.SelectedItem.Value;
@@ -75,7 +75,7 @@ namespace DemoSchool
             newRegistration.Flat_UnitNo = txtFlatno.Text;
             newRegistration.LandMark_Name = txtLandMark.Text;
             newRegistration.Location = txtLocation.Text;
-            newRegistration.PostalCode = 123456; 
+            newRegistration.PostalCode = 123456;
 
             //newDetails.StreetNO
             RegistrationBL objBL = new RegistrationBL();
