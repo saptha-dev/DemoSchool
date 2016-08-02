@@ -348,7 +348,17 @@
                             </td>
 
                                </tr>
+                             <tr>
+                                 <td>
+                               <asp:Label ID="lblsdob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
+                            </td>
+                                     <td>
+                            </td>
+                            <td>
+                                <input id="sDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
 
+                            </td>
+                               </tr>
                          
                            </table>
 
@@ -1153,7 +1163,7 @@
 
 
                     </div>
-                            </div>
+                            
                 </asp:WizardStep>
 
               <asp:WizardStep ID="WizardSummary" runat="server" Title="Summary">
@@ -1162,105 +1172,145 @@
                         <br>
                       <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
 
-                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                        <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;">
               <tr>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email">First Name</label>
+                                  <label class="control-label col-sm-12 text-left"  for="email">First Name : </label>
                             </td>
                             <td>
+                                  <asp:label id="lblFirstNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
+                  <td>
+                    </td>
                             <td>
-                                  <label class="control-label col-sm-6 text-left" for="email2">Last Name</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Last Name:</label>
                               
                             </td>
                             <td>
                             </td>
                             <td>
+                                  <asp:label ID="lblLastNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email">Father/Guardian Name</label>
+                                  <label class="control-label col-sm-12 text-left" runat="server">Father/Guardian Name:</label>
                               
                             </td>
+                          
                             <td>
+                                  <asp:label ID="lblFatherNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
+                                <td>
+                    </td>
                                     
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email2">Mother Maiden Name</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Mother Maiden Name:</label>
                                
                                 
                             </td>
                             <td>
+                                  <asp:label ID="lblMotherMaidenNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             <td> 
                             </td>
                          </tr>
                         <tr>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email">Date of Birth</label>
+                                 <label class="control-label col-sm-12 text-left" for="email">Date of Birth:</label>
                      
                            </td>
                             <td>
+                                 <asp:label ID="lblDobValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
+                            </td>
+                                <td>
+                    </td>
+                            <td>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Place of Birth:</label>
                             </td>
                             <td>
-                                   <label class="control-label col-sm-6 text-left" for="email2">Place of Birth</label>
-                            </td>
-                            <td>
+                                  <asp:label ID="lblPobValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email">Mobile Number</label>
+                                  <label class="control-label col-sm-12 text-left" for="email">Mobile Number:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblMobileNumberValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
+                            </td>
+                                <td>
+                    </td>
+                            <td>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Fixed/Land Line Number:</label>
                             </td>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email2">Fixed/Land Line Number</label>
-                            </td>
-                            <td>
+                                  <asp:label ID="lblLandLineNumberValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             </tr>
                         <tr>
                             <td>
-                                     <label class="control-label col-sm-6 text-left" for="pwd">Email ID</label>
+                                  <label class="control-label col-sm-12 text-left" for="pwd">Email ID:</label>
                             </td>
                             <td>
-                                </td>
+                                  <asp:label ID="lblEmailIdValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
+                            </td>
+                                <td>
+                    </td>
                             <td>
-                                    <label class="control-label col-sm-6 text-left" for="pwd3">Alternate Email ID</label>
+                                  <label class="control-label col-sm-12 text-left" for="pwd3">Alternate Email ID:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblAlterEmailIdValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             <td>
                             </td>
                        </tr>
                         <tr>
                             <td>
-                                      <label class="control-label col-sm-6 text-left" for="pwd5">Education/Qualifications</label>
+                                  <label class="control-label col-sm-12 text-left" for="pwd5">Education/Qualifications:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblEductionValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
+                            </td>
+                                <td>
+                    </td>
+                            <td>
+                                  <label class="control-label col-sm-12 text-left" for="pwd6">Technical Skills:</label>
                             </td>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="pwd6">Technical Skills</label>
-                            </td>
-                            <td>
+                                  <asp:label ID="lblTechnicalSkillValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             <td>
                             </td>
                            </tr>
                         <tr>
                             <td>
-                               <label class="control-label col-sm-6 text-left" for="pwd2">Student-Access Code</label>
+                                  <label class="control-label col-sm-12 text-left" for="pwd2">Student-Access Code:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblStudentAccessCodeValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
+                            </td>
+                                <td>
+                    </td>
+                            <td>
+                                  <label class="control-label col-sm-12 text-left" for="pwd4">Student Image:</label>
                             </td>
                             <td>
-                              <label class="control-label col-sm-6 text-left" for="pwd4">Student Image</label>
-                            </td>
-                            <td>
+                                  <asp:label ID="lblStudentImageValue" class="control-label col-sm-12-left" runat="server"></asp:label>
+
                             </td>
                             <td>
                             </td>
@@ -1269,155 +1319,175 @@
               </table>
                         <br>
                         
-                          <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
+                          <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details:</h3>
 
-                                <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                                <table id="tblPadding2" style="margin: auto; width: 100%; color: Black;">
               <tr>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email">Country</label>
+                                  <label class="control-label col-sm-12 text-left" for="email">Country:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblCountryValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                  <label class="control-label col-sm-6 text-left" for="email2">State</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">State:</label>
                               
                             </td>
                             <td>
+                                  <asp:label ID="lblStateValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email">District</label>
+                                  <label class="control-label col-sm-12 text-left" for="email">District:</label>
                               
                             </td>
                             <td>
+                                  <asp:label ID="lblDistrictValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                                     
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email2">Mandal/Taluk/SubUrb</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Mandal/Taluk/SubUrb:</label>
                                
                                 
                             </td>
                             <td>
+                                  <asp:label ID="lblManadalTalukValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td> 
                             </td>
                          </tr>
                         <tr>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email">Village/Town/City</label>
+                                  <label class="control-label col-sm-12 text-left" for="email">Village/Town/City:</label>
                      
                            </td>
                             <td>
+                                  <asp:label ID="lblVillageTownValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                   <label class="control-label col-sm-6 text-left" for="email2">Pin Code</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Pin Code:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblPinCodeValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email">Street No</label>
+                                  <label class="control-label col-sm-12 text-left" for="email">Street No:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblStreetNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email2">Street Name</label>
+                                  <label class="control-label col-sm-12 text-left" for="email2">Street Name:</label>
                             </td>
                             <td>
+                                  <asp:label ID="lblStreetNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             </tr>
                         <tr>
                             <td>
-                                     <label class="control-label col-sm-6 text-left" for="pwd">House/Door/Plot No</label>
+                                   <label class="control-label col-sm-12 text-left" for="pwd">House/Door/Plot No:</label>
                             </td>
                             <td>
-                                </td>
-                            <td>
-                                    <label class="control-label col-sm-6 text-left" for="pwd3">Flat No/Unit NO</label>
+                                   <asp:label ID="lblHousePlotNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
+                                   <label class="control-label col-sm-12 text-left" for="pwd3">Flat No/Unit NO:</label>
+                            </td>
+                            <td>
+                                   <asp:label ID="lblFlatNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                        </tr>
                         <tr>
                             <td>
-                                      <label class="control-label col-sm-6 text-left" for="pwd5">Building/LandMark Name</label>
+                                   <label class="control-label col-sm-12 text-left" for="pwd5">Building/LandMark Name:</label>
                             </td>
                             <td>
+                                   <asp:label ID="BuildingLandMarkValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="pwd6">Student Location</label>
+                                  <label class="control-label col-sm-12 text-left" for="pwd6">Student Location:</label>
                             </td>
                             <td>
+                                   <asp:label ID="lblStudentLocationValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                            </tr>
                              </table>
                         <br>
-                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</h3>
+                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details:</h3>
 
-                               <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                               <table id="tblPadding3" style="margin: auto; width: 100%; color: Black;">
               <tr>
                             <td>
-                                <label class="control-label col-sm-6 text-left" for="email3">Select Program</label>
+                                    <label class="control-label col-sm-12 text-left" for="email3">Select Program:</label>
                             </td>
                             <td>
+                                    <asp:label ID="lblSelectProgramValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email5">Select Category Schedule</label>
+                                    <label class="control-label col-sm-12 text-left" for="email5">Select Category Schedule:</label>
                               
                             </td>
                             <td>
+                                    <asp:label ID="lblSelectCategeorySheduleValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                   <label class="control-label col-sm-6 text-left" for="email4">Select Year</label>
+                                    <label class="control-label col-sm-12 text-left" for="email4">Select Year:</label>
                               
                             </td>
                             <td>
+                                    <asp:label ID="lblSelectYearValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                                     
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email9">Select Subjects</label>
+                                    <label class="control-label col-sm-12 text-left" for="email9">Select Subjects:</label>
                                
                                 
                             </td>
                             <td>
+                                    <asp:label ID="lblSelectSubjectsValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td> 
                             </td>
                          </tr>
                         <tr>
                             <td>
-                                 <label class="control-label col-sm-6 text-left" for="email6">Select Category</label>
+                                    <label class="control-label col-sm-12 text-left" for="email6">Select Category:</label>
                      
                            </td>
                             <td>
+                                    <asp:label ID="lblSelectCategoryValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
-                                   <label class="control-label col-sm-6 text-left" for="email7">Select Group</label>
+                                    <label class="control-label col-sm-12 text-left" for="email7">Select Group:</label>
                             </td>
                             <td>
+                                     <asp:label ID="lblSelectGroupValue" class="control-label col-sm-12-left" runat="server"></asp:label>
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                               <label class="control-label col-sm-6 text-left" for="email8">Select Year-Sem Schedule</label>
+                                    <label class="control-label col-sm-12 text-left" for="email8">Select Year-Sem Schedule:</label>
                             </td>
-                           
+                           <td>
+                                    <asp:label ID="lblSelectYearSemSheduleValue" class="control-label col-sm-12  text-left" runat="server"></asp:label>
+                           </td>
                         </tr>
                              </table>
                   

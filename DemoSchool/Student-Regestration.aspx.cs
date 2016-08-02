@@ -125,6 +125,8 @@ namespace DemoSchool
             txtMobilenumber1.Visible = visible;
             lblEmail1.Visible = visible;
             txtEmail1.Visible = visible;
+            lblsdob.Visible = visible;
+            sDate.Visible = visible;
         }
 
         protected void Wizardstudentreg_NextButtonClick(object sender, WizardNavigationEventArgs e)
@@ -145,8 +147,8 @@ namespace DemoSchool
                     txtEmail.Text = dr["EmailID"].ToString();
                 
                    txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
-                  txtMothername.Text = dr["MotherMaidenName"].ToString();
-                    txtpob.Text = dr["PlaceOfBirth"].ToString();
+                   txtMothername.Text = dr["MotherMaidenName"].ToString();
+                   txtpob.Text = dr["PlaceOfBirth"].ToString();
 
                     txtFixedLandline.Text = dr["Fixed_LandlineNumber"].ToString();
                     txtEducation.Text = dr["Qualification"].ToString();
@@ -171,30 +173,55 @@ namespace DemoSchool
                     //ddlselectsubjects.Text = dr["Subjects"].ToString();
                     //ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
 
-
-
-
-
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }
+            }
+            else if (Wizardstudentreg.ActiveStepIndex == 3)
+            {
+                lblFirstNameValue.Text = txtFirstName.Text;
+                lblLastNameValue.Text = txtLastName.Text;
+                lblFatherNameValue.Text = txtfathergurdianname.Text;
+                lblMotherMaidenNameValue.Text = txtMothername.Text;
+                lblPobValue.Text = txtpob.Text;
+                lblMotherMaidenNameValue.Text = txtmobile.Text;
+                lblLandLineNumberValue.Text = txtFixedLandline.Text;
+                lblEmailIdValue.Text= txtEmail.Text;
+                lblAlterEmailIdValue.Text = txtaltrEmail.Text;
+                lblEductionValue.Text = txtEducation.Text;
+                lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
+                lblStudentAccessCodeValue.Text = txtStudentAccescode.Text;
+
+                lblCountryValue.Text = ddlcountry.Text;
+                lblStateValue.Text = ddlstate.Text;
+                lblDistrictValue.Text = ddlDistrict.Text;
+                lblManadalTalukValue.Text = txtarea.Text;
+                lblVillageTownValue.Text = txtcity.Text;
+                lblPinCodeValue.Text = txtpincode.Text;
+                lblStreetNoValue.Text = txtstreetno.Text;
+                lblStreetNameValue.Text = txtstreetname.Text;
+                lblHousePlotNoValue.Text = txthouseno.Text;
+                lblFlatNoValue.Text = txtFlatno.Text;
+                lblLandLineNumberValue.Text = txtLandMark.Text;
+                lblStudentLocationValue.Text = txtLocation.Text;
+
+                lblSelectProgramValue.Text = ddlSelectProgram.Text;
+                lblSelectGroupValue.Text = ddlselectgroup.Text;
+                lblSelectCategoryValue.Text = ddlselectcategory.Text;
+                lblSelectYearValue.Text = ddlselectyear.Text;
+                lblSelectSubjectsValue.Text = ddlselectsubjects.Text;
+                lblSelectYearSemSheduleValue.Text = ddlselectyearsemschedule.Text;
+                lblSelectCategorySchedule.Text = ddlselectcategoryschedule.Text;
+
+
+
+
+
+
+
+
+
+
+                
+
             }
 
         }

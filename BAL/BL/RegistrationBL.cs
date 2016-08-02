@@ -388,6 +388,7 @@ namespace BAL.BL
             else
                 return null;
         }
+       
 
         public SqlDataReader GetRegisteredUsers(RegistrationBE objRegistrationEntity)
         {

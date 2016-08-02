@@ -199,8 +199,162 @@
       <div class="form-body registration">
     <div class="container">
  <asp:Wizard ID="Wizardfaculty" runat="server" DisplaySideBar="false" OnFinishButtonClick="Wizardfaculty_FinishButtonClick"
-      StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" StepNextButtonStyle-CssClass="btn btn-danger btn-lg" StartNextButtonStyle-CssClass="btn btn-danger btn-lg" FinishCompleteButtonStyle-CssClass="btn btn-danger btn-lg" FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg" >
+OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" StepNextButtonStyle-CssClass="btn btn-danger btn-lg" StartNextButtonStyle-CssClass="btn btn-danger btn-lg" FinishCompleteButtonStyle-CssClass="btn btn-danger btn-lg" FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg" >
            <WizardSteps>
+
+                  <asp:WizardStep ID="WizardrdoFaculty" runat="server" Title="Options">
+                    <br>
+                   
+                 <div>
+
+                       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+             
+
+                           <tr>
+                               <td>
+                                      <asp:Label
+                 ID="lblrd"
+                 runat="server"
+                 Font-Bold="true"
+                 Font-Names="Comic Sans MS"
+                 ForeColor="Crimson"
+                 Font-Italic="true"
+                 Font-Size="X-Large">
+                </asp:Label>
+                                   </td>
+
+                               <td>
+                                   </td>
+                              
+                               <td>
+                                    </td>
+                               <td>
+                                   </td>
+                               <td>
+                                   <asp:RadioButton 
+                ID="rdonewUser" 
+                runat="server" 
+                Text="New User" 
+                checked="true"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+                Font-Bold="true"
+                Font-Names="Courier New"
+                Font-Size="XX-Large"
+                ForeColor="Navy"
+                ></asp:RadioButton>
+                                   </td>
+                                       <td>
+                                           </td>
+                                       <td>
+                                             <asp:RadioButton 
+                ID="rdoexisting" 
+                runat="server" 
+                Text="Existing User"
+                Checked="false"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+                Font-Bold="true"
+                Font-Names="Courier New"
+                Font-Size="XX-Large"
+                ForeColor="Navy"
+                ></asp:RadioButton>
+                                           <td>
+                               </td>
+                               </tr>
+                        
+                            <tr>
+                      
+                            <td>
+                                <asp:Label ID="lbfFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtfFname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:Label ID="lbfLname1" runat="server" Text="Last Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtfLname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           <%-- <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
+                                    ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                            </td>--%>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           <%-- <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
+                                    ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                            </td>--%>
+
+
+                        </tr>
+
+                           <tr>
+                                 <td>
+                                <asp:Label ID="lblfMobileNumber1" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtfMobilenumber1" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
+                            </td>
+                               <td>
+                                   </td>
+                               <td>
+                                </td>
+
+                                <td>
+                                <asp:Label ID="lblfEmail1" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtfEmail1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+
+                               </tr>
+                           <tr>
+                                 <td>
+                               <asp:Label ID="lblfdob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
+                            </td>
+                                     <td>
+                            </td>
+                            <td>
+                                <input id="fDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
+
+                            </td>
+                               </tr>
+                        </table>
+
+                     
+                    </div>
+                </asp:WizardStep>
                 <asp:WizardStep ID="WizardStep1" runat="server" Title="Personal Details">
                  <div>
                      <br>
@@ -307,7 +461,7 @@
                             </td>
                             <td>
                                <%-- <asp:TextBox ID="txtdob" class="textusername" runat="server"></asp:TextBox>--%>
-                                <input id="txtdob" runat="server" class="form-control" type="date" value="2011-01-13"/>
+                                <input id="txtdob" runat="server" class="form-control" type="date" value="yyyy-mm-dd"/>
                               <%--  <img src="Images/calender.png" id="cdr" />--%>
                             </td>
                             <td>
