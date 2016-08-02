@@ -213,7 +213,7 @@
             
                 <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
                     <br>
-                    <h3>Select Ur Options</h3>
+                   
                  <div>
 
                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
@@ -358,7 +358,7 @@
 
 
 
-                <asp:WizardStep ID="WizardStep1" runat="server" Title=" Personal Details">
+                <asp:WizardStep ID="WizardStep1" runat="server" Title=" Personal">
                  <div>
                      <br>
                       <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
@@ -703,7 +703,7 @@
                   
                  </div>
                 </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address Details">
+                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address">
                     
                     <div>
                         <br>
@@ -1000,7 +1000,8 @@
                     </div>
                 </asp:WizardStep>
                
-                <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program Detail">
+                <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program">
+                  
                     
                     <div>
                         <br>
@@ -1150,23 +1151,288 @@
                         
           </table>
 
+
                     </div>
+                            </div>
                 </asp:WizardStep>
 
               <asp:WizardStep ID="WizardSummary" runat="server" Title="Summary">
                     
                     <div>
-                       
+                        <br>
+                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
+
+                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+              <tr>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email">First Name</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                  <label class="control-label col-sm-6 text-left" for="email2">Last Name</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email">Father/Guardian Name</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                                    
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email2">Mother Maiden Name</label>
+                               
+                                
+                            </td>
+                            <td>
+                            </td>
+                            <td> 
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email">Date of Birth</label>
+                     
+                           </td>
+                            <td>
+                            </td>
+                            <td>
+                                   <label class="control-label col-sm-6 text-left" for="email2">Place of Birth</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email">Mobile Number</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email2">Fixed/Land Line Number</label>
+                            </td>
+                            <td>
+                            </td>
+                            </tr>
+                        <tr>
+                            <td>
+                                     <label class="control-label col-sm-6 text-left" for="pwd">Email ID</label>
+                            </td>
+                            <td>
+                                </td>
+                            <td>
+                                    <label class="control-label col-sm-6 text-left" for="pwd3">Alternate Email ID</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                       </tr>
+                        <tr>
+                            <td>
+                                      <label class="control-label col-sm-6 text-left" for="pwd5">Education/Qualifications</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="pwd6">Technical Skills</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           </tr>
+                        <tr>
+                            <td>
+                               <label class="control-label col-sm-6 text-left" for="pwd2">Student-Access Code</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                              <label class="control-label col-sm-6 text-left" for="pwd4">Student Image</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                  
+              </table>
+                        <br>
+                        
+                          <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
+
+                                <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+              <tr>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email">Country</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                  <label class="control-label col-sm-6 text-left" for="email2">State</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email">District</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                                    
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email2">Mandal/Taluk/SubUrb</label>
+                               
+                                
+                            </td>
+                            <td>
+                            </td>
+                            <td> 
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email">Village/Town/City</label>
+                     
+                           </td>
+                            <td>
+                            </td>
+                            <td>
+                                   <label class="control-label col-sm-6 text-left" for="email2">Pin Code</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email">Street No</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email2">Street Name</label>
+                            </td>
+                            <td>
+                            </td>
+                            </tr>
+                        <tr>
+                            <td>
+                                     <label class="control-label col-sm-6 text-left" for="pwd">House/Door/Plot No</label>
+                            </td>
+                            <td>
+                                </td>
+                            <td>
+                                    <label class="control-label col-sm-6 text-left" for="pwd3">Flat No/Unit NO</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                       </tr>
+                        <tr>
+                            <td>
+                                      <label class="control-label col-sm-6 text-left" for="pwd5">Building/LandMark Name</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="pwd6">Student Location</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           </tr>
+                             </table>
+                        <br>
+                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</h3>
+
+                               <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+              <tr>
+                            <td>
+                                <label class="control-label col-sm-6 text-left" for="email3">Select Program</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email5">Select Category Schedule</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                   <label class="control-label col-sm-6 text-left" for="email4">Select Year</label>
+                              
+                            </td>
+                            <td>
+                            </td>
+                                    
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email9">Select Subjects</label>
+                               
+                                
+                            </td>
+                            <td>
+                            </td>
+                            <td> 
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                 <label class="control-label col-sm-6 text-left" for="email6">Select Category</label>
+                     
+                           </td>
+                            <td>
+                            </td>
+                            <td>
+                                   <label class="control-label col-sm-6 text-left" for="email7">Select Group</label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <label class="control-label col-sm-6 text-left" for="email8">Select Year-Sem Schedule</label>
+                            </td>
+                           
+                        </tr>
+                             </table>
+                  
                         
                     </div>
+                 
                 </asp:WizardStep>
-
+           
 
            
        
 
               
            </WizardSteps>
+     
             <HeaderTemplate>
                 <ul id="wizHeader">
                     <asp:Repeater ID="SideBarList" runat="server">
@@ -1182,13 +1448,12 @@
     </div>
 
           
-       
+    
 
     <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>
     </div>
    </div>
-</div>
 
     
       
