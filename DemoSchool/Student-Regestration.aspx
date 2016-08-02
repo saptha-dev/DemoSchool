@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Student-Regestration.aspx.cs" Inherits="DemoSchool.Student_Regestration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Regestration.Master" AutoEventWireup="true" CodeBehind="Student-Regestration.aspx.cs" Inherits="DemoSchool.Student_Regestration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +41,8 @@
 
         }
     </script>--%>
+ 
+
     <style type="text/css">
         #rdbtnDiv
         {
@@ -198,12 +200,168 @@
       
       <div class="form-body registration">
     <div class="container">
- <asp:Wizard ID="Wizardstudentreg" runat="server" DisplaySideBar="false"  StepNextButtonStyle-CssClass="btn btn-danger btn-lg"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" StartNextButtonStyle-CssClass="btn btn-danger btn-lg"  FinishCompleteButtonStyle-CssClass ="btn btn-danger btn-lg" FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg" >
-            <WizardSteps>
-                <asp:WizardStep ID="WizardStep1" runat="server" Title="Student Personal Details">
+ <asp:Wizard ID="Wizardstudentreg" runat="server" DisplaySideBar="false" OnFinishButtonClick="Wizardstudentreg_FinishButtonClick" 
+      StepNextButtonStyle-CssClass="btn btn-danger btn-lg"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" 
+     StartNextButtonStyle-CssClass="btn btn-danger btn-lg"  FinishCompleteButtonStyle-CssClass ="btn btn-danger btn-lg"
+      FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg"  OnNextButtonClick="Wizardstudentreg_NextButtonClick" >
+         
+      
+
+     
+        <WizardSteps>
+
+            
+                <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
+                    <br>
+                    <h3>Select Ur Options</h3>
+                 <div>
+
+                       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+             
+
+                           <tr>
+                               <td>
+                                      <asp:Label
+                 ID="lblrd"
+                 runat="server"
+                 Font-Bold="true"
+                 Font-Names="Comic Sans MS"
+                 ForeColor="Crimson"
+                 Font-Italic="true"
+                 Font-Size="X-Large">
+                </asp:Label>
+                                   </td>
+
+                               <td>
+                                   </td>
+                              
+                               <td>
+                                    </td>
+                               <td>
+                                   </td>
+                               <td>
+                                   <asp:RadioButton 
+                ID="rdonewUser" 
+                runat="server" 
+                Text="New User" 
+                checked="true"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+                Font-Bold="true"
+                Font-Names="Courier New"
+                Font-Size="XX-Large"
+                ForeColor="Navy"
+                ></asp:RadioButton>
+                                   </td>
+                                       <td>
+                                           </td>
+                                       <td>
+                                             <asp:RadioButton 
+                ID="rdoexisting" 
+                runat="server" 
+                Text="Existing User"
+                Checked="false"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+                Font-Bold="true"
+                Font-Names="Courier New"
+                Font-Size="XX-Large"
+                ForeColor="Navy"
+                ></asp:RadioButton>
+                                           <td>
+                               </td>
+                               </tr>
+                        
+                            <tr>
+                      
+                            <td>
+                                <asp:Label ID="lbFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtFname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:Label ID="lbLname1" runat="server" Text="Last Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TxtLname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           <%-- <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
+                                    ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                            </td>--%>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                           <%-- <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
+                                    ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                            </td>--%>
+
+
+                        </tr>
+
+                           <tr>
+                                 <td>
+                                <asp:Label ID="lblMobileNumber1" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtMobilenumber1" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
+                            </td>
+                               <td>
+                                   </td>
+                               <td>
+                                </td>
+
+                                <td>
+                                <asp:Label ID="lblEmail1" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtEmail1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                            </td>
+
+                               </tr>
+
+                         
+                           </table>
+
+                     
+                    </div>
+                </asp:WizardStep>
+
+
+
+                <asp:WizardStep ID="WizardStep1" runat="server" Title=" Personal Details">
                  <div>
                      <br>
-                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span> Student Personal Details</h3>
+                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
 
                         <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
               <tr>
@@ -345,7 +503,10 @@
                                     ErrorMessage=" Enter Place of birth" ForeColor="Red" ControlToValidate="txtpob"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
+
+
                         </tr>
+
                         <tr>
                             <td>
                                 <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left"></asp:Label>
@@ -542,7 +703,7 @@
                   
                  </div>
                 </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep2" runat="server" Title="Student Address Details">
+                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address Details">
                     
                     <div>
                         <br>
@@ -619,7 +780,7 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblarea" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left"></asp:Label><
+                                <asp:Label ID="lblarea" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
@@ -839,7 +1000,7 @@
                     </div>
                 </asp:WizardStep>
                
-                <asp:WizardStep ID="WizardStep3" runat="server" Title="Student Program Detail">
+                <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program Detail">
                     
                     <div>
                         <br>
@@ -992,6 +1153,18 @@
                     </div>
                 </asp:WizardStep>
 
+              <asp:WizardStep ID="WizardSummary" runat="server" Title="Summary">
+                    
+                    <div>
+                       
+                        
+                    </div>
+                </asp:WizardStep>
+
+
+           
+       
+
               
            </WizardSteps>
             <HeaderTemplate>
@@ -1007,6 +1180,9 @@
         </asp:Wizard>
 
     </div>
+
+          
+       
 
     <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>

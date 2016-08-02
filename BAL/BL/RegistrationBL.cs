@@ -373,6 +373,22 @@ namespace BAL.BL
         #endregion CompanyRegistration
 
         #region GetRegisteredUsers
+        public DataTable GetExistingUser(string firstName, string lastName,  string email, string mobile)
+        {
+            SqlParameter[] p = new SqlParameter[4];
+            p[0] = new SqlParameter("@FirstName", firstName);
+            p[1] = new SqlParameter("@LastName", lastName);
+            p[2] = new SqlParameter("@Email", email);
+            p[3] = new SqlParameter("@Mobile", mobile);
+           
+            
+            var student = ConnectionFactory.ExecuteCommandDs("SP_GetUser", CommandType.StoredProcedure, p);
+            if (student != null && student.Tables.Count > 0)
+                return student.Tables[0];
+            else
+                return null;
+        }
+
         public SqlDataReader GetRegisteredUsers(RegistrationBE objRegistrationEntity)
         {
             SqlParameter[] p = new SqlParameter[1];

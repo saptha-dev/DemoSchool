@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="faculty.aspx.cs" Inherits="DemoSchool.faculty" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Regestration.Master" AutoEventWireup="true" CodeBehind="faculty.aspx.cs" Inherits="DemoSchool.faculty" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
