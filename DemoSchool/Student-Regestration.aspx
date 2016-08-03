@@ -41,6 +41,13 @@
 
         }
     </script>--%>
+
+    <script runat="server">
+
+    void Button1_Click(Object sender, EventArgs e) {
+       txtFirstName.Text = "Page is valid!";
+    }
+        </script>
  
 
     <style type="text/css">
@@ -259,6 +266,7 @@
                                 </td>
                                 <td>
                                 </td>
+
                                 <%-- <td>
                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
@@ -315,6 +323,8 @@
                                    <input id="sDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
 
                                  </td>
+
+
                      </tr>
                          
           </table>
@@ -358,12 +368,16 @@
                             </td>
                             <td>
                             </td>
-                            <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
+                             <td>
+                                
+
+                                  <asp:RequiredFieldValidator id="RequiredFieldValidator1" 
+    runat="server" ErrorMessage="You must enter your first name" 
+    ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+
+                               <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
-                            <td>
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>--%>
                             </td>
                             <td>
                             </td>
@@ -371,11 +385,14 @@
                             </td>
                             <td>
                             </td>
-                            <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
-                                    ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                            </td>
+
+                      
+
+                             <td>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" ErrorMessage="You must enter your last name" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                            </td>
                    </tr>
                    <tr>
                              <td>
@@ -549,11 +566,14 @@
                             </td>
                             <td>
                             </td>
+                     <td>
+                     <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
                            <%-- <td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter Email ID" ForeColor="Red" ControlToValidate="txtEmail"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
+                         </td>
                             <td>
                             </td>
                             <td>
@@ -1365,7 +1385,7 @@
     </div>
    </div>
 
-    
+    </div>
       
      
     

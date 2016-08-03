@@ -131,6 +131,11 @@ namespace DemoSchool
 
         protected void Wizardstudentreg_NextButtonClick(object sender, WizardNavigationEventArgs e)
         {
+            if(!IsValid)
+            {
+                Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.ActiveStepIndex - 1;
+            }
+
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
                
@@ -211,17 +216,6 @@ namespace DemoSchool
                 lblSelectSubjectsValue.Text = ddlselectsubjects.Text;
                 lblSelectYearSemSheduleValue.Text = ddlselectyearsemschedule.Text;
                 lblSelectCategorySchedule.Text = ddlselectcategoryschedule.Text;
-
-
-
-
-
-
-
-
-
-
-                
 
             }
 
