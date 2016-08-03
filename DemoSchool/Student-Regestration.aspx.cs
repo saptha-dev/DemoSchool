@@ -161,14 +161,14 @@ namespace DemoSchool
                     txtstreetname.Text = dr["StreetName"].ToString();
                     txthouseno.Text = dr["HouseNo"].ToString();
                     txtFlatno.Text = dr["Flat_UnitNo"].ToString();
-                    //txtLandMark.Text = dr["LandMark_Name"].ToString();
+                   // txtLandMark.Text = dr["LandMark_Name"].ToString();
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
                     txtcity.Text = dr["Village_Town_City"].ToString();
-                    //txtarea.Text = dr["SubUrban_Area"].ToString();
+                   txtarea.Text = dr["SubUrban_Area"].ToString();
                    // ddlselectcategory.Text = dr["CategoryID"].ToString();
-                    //ddlselectgroup.Text = dr["GroupId"].ToString();
+                   // ddlselectgroup.Text = dr["GroupId"].ToString();
                     //ddlselectyear.Text = dr["YearId"].ToString();
                     //ddlselectsubjects.Text = dr["Subjects"].ToString();
                     //ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
@@ -199,6 +199,7 @@ namespace DemoSchool
                 lblStreetNoValue.Text = txtstreetno.Text;
                 lblStreetNameValue.Text = txtstreetname.Text;
                 lblHousePlotNoValue.Text = txthouseno.Text;
+                lblBuildingLandMarkValue.Text = txtLandMark.Text;
                 lblFlatNoValue.Text = txtFlatno.Text;
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;

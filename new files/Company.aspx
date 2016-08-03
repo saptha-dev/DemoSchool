@@ -347,7 +347,7 @@
 
                 <StepPreviousButtonStyle CssClass="btn btn-danger margin5"></StepPreviousButtonStyle>
             <WizardSteps>
-                <asp:WizardStep ID="WizardStep1" runat="server" Title="ASSOC-COMPANY">
+                <asp:WizardStep ID="WizardStep1" runat="server" Title="ASSOC-COMPANY  Details">
                  <div>
                      <hr>
                         <h3><span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Management Personal Details</h3>                     
@@ -413,7 +413,7 @@
                        </table>
                  </div>
                 </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address">                    
+                <asp:WizardStep ID="WizardStep2" runat="server" Title="ASSOC-COMPANY Address Details">                    
                     <div>
                         <hr>
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>ASSOC-COMPANY Address Details</h3>
@@ -548,7 +548,7 @@
                             </table>
                     </div>
                 </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep3" runat="server" Title="Contact Person">                    
+                <asp:WizardStep ID="WizardStep3" runat="server" Title="COMPANY Contact Person Details">                    
                     <div>
                         <hr>
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>COMPANY Contact Person Details</h3>
@@ -647,7 +647,7 @@
                     </div>
                 </asp:WizardStep>
                
-                <asp:WizardStep ID="Summary" runat="server">
+                <asp:WizardStep ID="Preview" runat="server">
 
                     <div id="assocCmpSection" class="panel panel-primary">
                             <div class="panel-heading">Assoc Comp Details</div>
@@ -857,7 +857,7 @@
           <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
         <div class="formbuttons">
             <%--<button type="submit" class="btn btn-danger btn-lg">Register</button>--%> <%--<button type="submit" class="btn btn-danger btn-lg">Reset</button>--%> 
-            <button type="button" onclick="previewClick()" class="btn btn-primary btn-lg">Summary</button></div>
+            <button type="button" onclick="previewClick()" class="btn btn-primary btn-lg">Preview</button></div>
         </div>
       </div>
     

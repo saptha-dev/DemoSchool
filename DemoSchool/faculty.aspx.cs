@@ -51,13 +51,13 @@ namespace DemoSchool
         protected void Wizardfaculty_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
             RegistrationBE newReg = new RegistrationBE();
-           // newReg.ProgramID = 412;
+            newReg.ProgramID = 124;
             newReg.RoleName = "faculty";
             newReg.FirstName = txtFirstName.Text;
             newReg.LastName = txtLastName.Text;
             newReg.Father_GaurdainName = txtfathergurdianname.Text;
             newReg.MotherMaidenName = txtMothername.Text;
-           // newReg.DateOfBirth = Convert.ToDateTime(txtdob.Value);
+            newReg.DateOfBirth = Convert.ToDateTime(txtdob.Value);
             newReg.PlaceOfBirth = txtpob.Text;
             newReg.MobileNumber = txtmobile.Text;
             newReg.Fixed_LandlineNumber = txtFixedLandline.Text;
@@ -79,7 +79,8 @@ namespace DemoSchool
             newReg.Flat_UnitNo = txtFlatno.Text;
             newReg.LandMark_Name = txtLandMark.Text;
             newReg.Location = txtLocation.Text;
-            newReg.workExperience = Convert.ToInt32(txtworkExp.Text);
+            //newReg.workExperience = Convert.ToInt32(txtworkExp.Text);
+            newReg.workExperience = 1;
             newReg.Employer_Name = txtEmployerName.Text;
             newReg.Employer_Address = txtEMpAddress.Text;
             newReg.Employer_Phone = txtEmpPhone.Text;
@@ -164,13 +165,13 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                    ddlVillage.Text = dr["Village_Town_City"].ToString();
-                    ddlMandal.Text = dr["SubUrban_Area"].ToString();
-                    ddlselectcategory.Text = dr["CategoryID"].ToString();
-                    ddlselectgroup.Text = dr["GroupId"].ToString();
-                    ddlselectyear.Text = dr["YearId"].ToString();
-                    ddlselectsubjects.Text = dr["Subjects"].ToString();
-                   ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
+                   // ddlVillage.Text = dr["Village_Town_City"].ToString();
+                    //ddlMandal.Text = dr["SubUrban_Area"].ToString();
+                    //ddlselectcategory.Text = dr["CategoryID"].ToString();
+                    //ddlselectgroup.Text = dr["GroupId"].ToString();
+                    //ddlselectyear.Text = dr["YearId"].ToString();
+                    //ddlselectsubjects.Text = dr["Subjects"].ToString();
+                   //ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
                     txtworkExp.Text = dr["Employer_WorkExp"].ToString();
                     txtEmployerName.Text = dr["Employer_Name"].ToString();
                     txtEMpAddress.Text = dr["Employer_Address"].ToString();
@@ -179,6 +180,54 @@ namespace DemoSchool
                    
               }
          }
+            else if (Wizardfaculty.ActiveStepIndex == 4)
+            {
+                flblFirstNameValue.Text = txtFirstName.Text;
+                flblLastNameValue.Text = txtLastName.Text;
+                flblFirstNameValue.Text = txtfathergurdianname.Text;
+                flblmotherValue.Text = txtMothername.Text;
+                flblpobValue.Text = txtpob.Text;
+                flblMobileNoValue.Text = txtmobile.Text;
+                flbllandnoValue.Text = txtFixedLandline.Text;
+                flblEmailValue.Text = txtEmail.Text;
+                flblaltremailValue.Text = txtaltrEmail.Text;
+                flbleducationValue.Text = txtEducation.Text;
+                flbltechnicalValue.Text = txtTechnicalSkills.Text;
+                flblaccesscodeValue.Text = txtFacultyAccessCode.Text;
+
+                flblCountryValue.Text = ddlcountry.Text;
+                flblStateValue.Text = ddlstate.Text;
+                flblDistrictValue.Text = ddlDistrict.Text;
+                flblmandal.Text = ddlMandal.Text;
+                flblvillageValue.Text = ddlVillage.Text;
+                flblpinCodeValue.Text = txtpincode.Text;
+                flblStreetNoValue.Text = txtstreetno.Text;
+                flblStreetNameValue.Text = txtstreetname.Text;
+                flblhouseNoValue.Text = txthouseno.Text;
+                flblFlatNoValue.Text = txtFlatno.Text;
+                flblLandMarkValue.Text = txtLandMark.Text;
+                flblLocationValue.Text = txtLocation.Text;
+
+                //lblSelectProgramValue.Text = ddlSelectProgram.Text;
+                flblselgrValue.Text = ddlselectgroup.Text;
+                flblselcategValue.Text = ddlselectcategory.Text;
+                lblselyearValue.Text = ddlselectyear.Text;
+                flblselctsubValue.Text = ddlselectsubjects.Text;
+                flblyrsmsheduValue.Text = ddlselectyearsemschedule.Text;
+                flblcatescheduValue.Text = ddlselectcategoryschedule.Text;
+
+
+
+
+
+
+
+
+
+
+
+
+            }
 
         }
     }

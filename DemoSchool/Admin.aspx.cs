@@ -83,5 +83,35 @@ namespace DemoSchool
             objBL.AdminRegistration(newRegistration);
 
         }
+
+        protected void Wizard1_NextButtonClick(object sender, WizardNavigationEventArgs e)
+        {
+            if (Wizard1.ActiveStepIndex == 1)
+            {
+                mlblFirstNameValue.Text = txtFirstName.Text;
+                mlblLastNameValue.Text = txtLastName.Text;
+                mlblFatherNameValue.Text = txtfathergurdianname.Text;
+                mlblMotherMaidenNameValue.Text = txtMothername.Text;
+                mlblPobValue.Text = txtpob.Text;
+                mlblMobileNumberValue.Text = txtmobile.Text;
+                mlblLandLineNumberValue.Text = txtFixedLandline.Text;
+                mlblEmailIdValue.Text = txtEmail.Text;
+                mlblAlterEmailIdValue.Text = txtaltrEmail.Text;
+
+
+                mlblCountryValue.Text = ddlcountry.Text;
+                mlblStateValue.Text = ddlstate.Text;
+                mlblVillageTownValue.Text = ddlVillage.Text;
+                mlblManadalTalukValue.Text = ddlMandal.Text;
+                
+                mlblPinCodeValue.Text = txtpincode.Text;
+                mlblStreetNoValue.Text = txtstreetno.Text;
+                mlblStreetNameValue.Text = txtstreetname.Text;
+                mlblHousePlotNoValue.Text = txthouseno.Text;
+                mlblFlatNoValue.Text = txtFlatno.Text;
+                mlblBuildingLandMarkValue.Text = txtLandMark.Text;
+                mlbladminLocationValue.Text = txtLocation.Text;
+            }
+        }
     }
 }

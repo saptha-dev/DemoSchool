@@ -204,176 +204,133 @@
       StepNextButtonStyle-CssClass="btn btn-danger btn-lg"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" 
      StartNextButtonStyle-CssClass="btn btn-danger btn-lg"  FinishCompleteButtonStyle-CssClass ="btn btn-danger btn-lg"
       FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg"  OnNextButtonClick="Wizardstudentreg_NextButtonClick" >
-         
-      
 
-     
-        <WizardSteps>
-
-            
-                <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
-                    <br>
-                   
-                 <div>
-
-                       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
-             
-
-                           <tr>
-                               <td>
-                                      <asp:Label
-                 ID="lblrd"
-                 runat="server"
-                 Font-Bold="true"
-                 Font-Names="Comic Sans MS"
-                 ForeColor="Crimson"
-                 Font-Italic="true"
-                 Font-Size="X-Large">
-                </asp:Label>
-                                   </td>
-
-                               <td>
-                                   </td>
-                              
-                               <td>
+ <WizardSteps>
+   <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
+   <br>
+   <div>
+        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                         <tr>
+                                   <td>
+                                      <asp:Label ID="lblrd" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Italic="true" Font-Size="X-Large"></asp:Label>
                                     </td>
-                               <td>
-                                   </td>
-                               <td>
-                                   <asp:RadioButton 
-                ID="rdonewUser" 
-                runat="server" 
-                Text="New User" 
-                checked="true"
-                GroupName="Software" 
-                AutoPostBack="true" 
-                OnCheckedChanged="RadioButton_CheckedChanged"
-                Font-Bold="true"
-                Font-Names="Courier New"
-                Font-Size="XX-Large"
-                ForeColor="Navy"
-                ></asp:RadioButton>
-                                   </td>
-                                       <td>
-                                           </td>
-                                       <td>
-                                             <asp:RadioButton 
-                ID="rdoexisting" 
-                runat="server" 
-                Text="Existing User"
-                Checked="false"
-                GroupName="Software" 
-                AutoPostBack="true" 
-                OnCheckedChanged="RadioButton_CheckedChanged"
-                Font-Bold="true"
-                Font-Names="Courier New"
-                Font-Size="XX-Large"
-                ForeColor="Navy"
-                ></asp:RadioButton>
-                                           <td>
-                               </td>
-                               </tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                      <asp:RadioButton ID="rdonewUser" runat="server" Text="New User" checked="true" GroupName="Software" AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                      <asp:RadioButton ID="rdoexisting" runat="server" Text="Existing User" Checked="false" GroupName="Software"  AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
+                                    <td>
+                                    </td>
+                         </tr>
                         
-                            <tr>
+                         <tr>
                       
-                            <td>
-                                <asp:Label ID="lbFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtFname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:Label ID="lbLname1" runat="server" Text="Last Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="TxtLname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
-                            </td>
+                                <td>
+                                   <asp:Label ID="lbFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                   <asp:TextBox ID="txtFname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                   <asp:Label ID="lbLname1" runat="server" Text="Last Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                   <asp:TextBox ID="TxtLname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                </td>
                         </tr>
                         <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <%-- <td>
+                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
+                                </td>--%>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <%-- <td>
+                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                                </td>--%>
 
 
                         </tr>
 
-                           <tr>
+                        <tr>
                                  <td>
-                                <asp:Label ID="lblMobileNumber1" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtMobilenumber1" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
-                            </td>
-                               <td>
-                                   </td>
-                               <td>
-                                </td>
-
-                                <td>
-                                <asp:Label ID="lblEmail1" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtEmail1" class="form-control" runat="server" Visible="false"></asp:TextBox>
-                            </td>
-
-                               </tr>
-                             <tr>
+                                    <asp:Label ID="lblMobileNumber1" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                 </td>
                                  <td>
-                               <asp:Label ID="lblsdob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
-                            </td>
-                                     <td>
-                            </td>
-                            <td>
-                                <input id="sDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
+                                 </td>
+                                 <td>
+                                    <asp:TextBox ID="txtMobilenumber1" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                 </td>
+                                 <td>
+                                 </td>
 
-                            </td>
-                               </tr>
+                                 <td>
+                                    <asp:Label ID="lblEmail1" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                 </td>
+                                 <td>
+                                 </td>
+                                 <td>
+                                    <asp:TextBox ID="txtEmail1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                 </td>
+
+                     </tr>
+                     <tr>
+                                 <td>
+                                    <asp:Label ID="lblsdob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
+                                 </td>
+                                 <td>
+                                 </td>
+                                 <td>
+                                   <input id="sDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
+
+                                 </td>
+                     </tr>
                          
-                           </table>
+          </table>
 
                      
-                    </div>
-                </asp:WizardStep>
+          </div>
+          </asp:WizardStep>
 
 
 
-                <asp:WizardStep ID="WizardStep1" runat="server" Title=" Personal">
-                 <div>
-                     <br>
-                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
+   <asp:WizardStep ID="WizardStep1" runat="server" Title=" Personal">
+    <div>
+    <br>
+           <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
 
-                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
               <tr>
                             <td>
                                 <asp:Label ID="lblFname" runat="server" Text="First Name" class="control-label col-sm-12 text-left"></asp:Label>
@@ -395,13 +352,13 @@
                             <td>
                                 <asp:TextBox ID="txtLastName" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                  </tr>
+                   <tr>
                             <td>
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
+                            <%-- <td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
@@ -414,35 +371,35 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
+                            <%-- <td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
                                     ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
-                            <td>
+                   </tr>
+                   <tr>
+                             <td>
                                 <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name" class="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                             </td>
+                             <td>
+                             </td>
+                             <td>
                                 <asp:TextBox ID="txtfathergurdianname" class="form-control" runat="server"></asp:TextBox>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                             </td>
+                             <td>
+                             </td>
+                             <td>
+                             </td>
+                             <td>
                                 <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name" class="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                             </td>
+                             <td>
+                             </td>
+                             <td>
                                 <asp:TextBox ID="txtMothername" class="form-control" runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
+                             </td>
+                    </tr>
+                    <tr>
                             <td>
                             </td>
                             <td>
@@ -465,8 +422,8 @@
                                     ErrorMessage=" Enter Mother Maiden Name" ForeColor="Red" ControlToValidate="txtMothername"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+                  </tr>
+                  <tr>
                             <td>
                                 <asp:Label ID="lblDob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -489,8 +446,8 @@
                             <td>
                                 <asp:TextBox ID="txtpob" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                    </tr>
+                    <tr>
                             <td>
                             </td>
                             <td>
@@ -515,9 +472,8 @@
                             </td>--%>
 
 
-                        </tr>
-
-                        <tr>
+                   </tr>
+                   <tr>
                             <td>
                                 <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -538,8 +494,8 @@
                             <td>
                                 <asp:TextBox ID="txtFixedLandline" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -565,8 +521,8 @@
                                     ErrorMessage=" Enter LandLine Number" ForeColor="Red" ControlToValidate="txtFixedLandline"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+                  </tr>
+                  <tr>
                             <td>
                                 <asp:Label ID="lblemail" runat="server" Text="Email Id" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -587,8 +543,8 @@
                             <td>
                                 <asp:TextBox ID="txtaltrEmail" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -611,8 +567,8 @@
                                     ErrorMessage=" Enter Alternative Email ID" ForeColor="Red" ControlToValidate="txtaltrEmail"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                                 <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -633,8 +589,8 @@
                             <td>
                                 <asp:TextBox ID="txtTechnicalSkills" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -657,8 +613,8 @@
                                     ErrorMessage=" Enter TechnicalSkills" ForeColor="Red" ControlToValidate="txtTechnicalSkills"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+                  </tr>
+                  <tr>
                             <td>
                                 <asp:Label ID="lblDirAccessCode" runat="server" Text="Student-AccessCode" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -680,8 +636,8 @@
                                 <asp:FileUpload ID="FileUploadImage" runat="server" Style="color: rgb(26, 56, 211);"
                                     ValidationGroup="Required" />
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -707,19 +663,18 @@
                                     ErrorMessage=" Image Files Only (.jpg,.png)" ValidationGroup="Required" Display="Dynamic"
                                     Font-Size="11px" ForeColor="Red" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].))(.jpg|.JPG|.png|.PNG)$" />
                             </td>--%>
-                        </tr>
+                    </tr>
     
-              </table>
+         </table>
                   
-                 </div>
-                </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address">
-                    
-                    <div>
-                        <br>
-                        <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
+   </div>
+ </asp:WizardStep>
+ <asp:WizardStep ID="WizardStep2" runat="server" Title="Address">
+ <div>
+     <br>
+           <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
 
-                          <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
           <tr>
                             <td>
                                 <asp:Label ID="lblCountry" runat="server" Text="Country" class="control-label col-sm-12 text-left"></asp:Label>
@@ -749,8 +704,8 @@
                                     <asp:ListItem Text="AP" Value="2"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
-                        </tr>
-                        <tr>
+            </tr>
+            <tr>
                             <td>
                             </td>
                             <td>
@@ -771,8 +726,8 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="ddlstate"
                                   ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red" ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+            </tr>
+            <tr>
                             <td>
                                 <asp:Label ID="lbldistrict" runat="server" Text="District" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -797,8 +752,8 @@
                             <td>
                                 <asp:TextBox ID="txtarea" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+             </tr>
+             <tr>
                             <td>
                             </td>
                             <td>
@@ -820,8 +775,8 @@
                                     ErrorMessage="Enter Mandal/Taluka" ForeColor="Red" ControlToValidate="txtarea"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+              </tr>
+              <tr>
                             <td>
                                 <asp:Label ID="lblvillage" runat="server" Text="Village/Town/City" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -842,8 +797,8 @@
                             <td>
                                 <asp:TextBox ID="txtpincode" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+               </tr>
+                <tr>
                             <td>
                             </td>
                             <td>
@@ -866,8 +821,8 @@
                                     ErrorMessage="Enter Pincode" ForeColor="Red" ControlToValidate="txtpincode"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+               </tr>
+               <tr>
                             <td>
                                 <asp:Label ID="lblStreetno" runat="server" Text="Street No." class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -888,8 +843,8 @@
                             <td>
                                 <asp:TextBox ID="txtstreetname" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -912,8 +867,8 @@
                                     ErrorMessage="Enter StreetName" ForeColor="Red" ControlToValidate="txtstreetname"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+               </tr>
+                <tr>
                             <td>
                                 <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -934,8 +889,8 @@
                             <td>
                                 <asp:TextBox ID="txtFlatno" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+               </tr>
+               <tr>
                             <td>
                             </td>
                             <td>
@@ -958,8 +913,8 @@
                                     ErrorMessage="Enter Flat No" ForeColor="Red" ControlToValidate="txtFlatno" Display="Dynamic"
                                     Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+               </tr>
+               <tr>
                             <td>
                                 <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -980,8 +935,8 @@
                             <td>
                                 <asp:TextBox ID="txtLocation" class="form-control" runat="server"></asp:TextBox>
                             </td>
-                        </tr>
-                        <tr>
+              </tr>
+              <tr>
                             <td>
                             </td>
                             <td>
@@ -1004,23 +959,20 @@
                                     ErrorMessage="Enter Location" ForeColor="Red" ControlToValidate="txtLocation"
                                     Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-          </table>
+              </tr>
+      </table>
 
-                    </div>
-                </asp:WizardStep>
+  </div>
+</asp:WizardStep>
                
-                <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program">
-                  
-                    
-                    <div>
-                        <br>
-                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Program Details</h3>
-
-                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
-          <tr>
-                            <td>
-                                <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" class="control-label col-sm-12 text-left"></asp:Label>
+ <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program">
+  <div>
+      <br>
+        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Program Details</h3>
+        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                    <tr>
+                             <td>
+                               <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
@@ -1048,8 +1000,8 @@
                                     <asp:ListItem Text="" Value="3"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
-                        </tr>
-                        <tr>
+                 </tr>
+                 <tr>
                             <td>
                             </td>
                             <td>
@@ -1070,8 +1022,8 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="ddlselectcategory"
                                   ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red" ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
                             </td>--%>
-                        </tr>
-                        <tr>
+                </tr>
+                <tr>
                             <td>
                                 <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -1105,10 +1057,8 @@
                             <td>
                             </td>
  
-                      </tr>
-
-
-      <tr>
+                  </tr>
+                  <tr>
                             <td>
                                 <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" class="control-label col-sm-12 text-left"></asp:Label>
                             </td>
@@ -1142,8 +1092,8 @@
                             <td>
                             </td>
  
-                      </tr>
-
+                 </tr>
+                 <tr>
       
                             <td>
                                 <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" class="control-label col-sm-12 text-left"></asp:Label>
@@ -1156,344 +1106,234 @@
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
                                 </asp:DropDownList>
-                            </td>
-             
-                        
+                            </td>             
+                </tr>       
           </table>
+ </div>
+</asp:WizardStep>
+<asp:WizardStep ID="WizardSummary" runat="server" Title="Summary">
+    <br>
 
-
+ <div id="stdpersonaldetail" class="panel panel-primary">
+        <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</div>
+              <div class="panel-body">
+                  <div class="row">
+                        <div class="col-md-6 pull-left">
+                              <div class="row">
+                                    <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="assocCmpName">First Name : </label>
+                                                    <asp:label id="lblFirstNameValue" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
+                                      </div>
+                                       <div class="clearfix"></div>
+                                        <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="">Father/Guardain Name </label>
+                                                    <asp:label id="lblFatherNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                         </div>
+                                         <div class="clearfix"></div>
+                                         <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="cmpEmail">Date Of Bith : </label>
+                                                    <asp:label id="lblDobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                          </div>
+                                          <div class="clearfix"></div>
+                                           <div class="form-group">
+                                                      <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
+                                                      <asp:label id="lblMobileNumberValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                           </div>
+                                           <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                        <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
+                                                         <asp:label id="lblEmailIdValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                             <div class="form-group">
+                                                        <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification : </label>
+                                                         <asp:label id="lblEductionValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                             </div>
+                                             <div class="clearfix"></div>
+                                             <div class="form-group">
+                                                         <label class="control-label col-sm-5"  for="branchesNo">Student-Access Code : </label>
+                                                         <asp:label id="lblStudentAccessCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                               </div>
+                                               </div>
+                                                 <div class="col-md-6 pull-right">
+                                                <div class="row">
+                                                <div class="form-group">
+                                                          <label class="control-label col-sm-5"  for="regNumber">Last Name : </label>
+                                                        <asp:label id="lblLastNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                        <label class="control-label col-sm-5"  for="officePhone">Mother Maiden Name : </label>
+                                                        <asp:label id="lblMotherMaidenNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                               <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                      <label class="control-label col-sm-5"  for="assocCmpAccCode">Place Of Birth : </label>
+                                                       <asp:label id="lblPobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                               <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                      <label class="control-label col-sm-5"  for="assocCmpAccCode">Fixed/Land Line Number: </label>
+                                                        <asp:label id="lblLandLineNumberValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                        <label class="control-label col-sm-5"  for="assocCmpAccCode">AlterNate Email Id : </label>
+                                                         <asp:label id="lblAlterEmailIdValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                        <label class="control-label col-sm-5"  for="assocCmpAccCode">Technical Skills : </label>
+                                                        <asp:label id="lblTechnicalSkillValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                         <label class="control-label col-sm-5"  for="assocCmpAccCode">Faculty Image : </label>
+                                                         <asp:label id="lblStudentImageValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                                        
+                        </div>
+                    <div class="clearfix"></div>
+                    <div id="studentaddresssDetails" class="panel panel-primary">
+                        <div class="panel-heading"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
+                                                    <asp:label id="lblCountryValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCity">District : </label>
+                                                    <asp:label id="lblDistrictValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="village">Village/Toen/City : </label>
+                                                   <asp:label id="lblVillageTownValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
+                                                    <asp:label id="lblStreetNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
+                                                    <asp:label id="lblHousePlotNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark Name : </label>
+                                                   <asp:label id="lblBuildingLandMarkValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpState">State : </label>
+                                                    <asp:label id="lblStateValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
+                                                    <asp:label id="lblManadalTalukValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
+                                                   <asp:label id="lblPinCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
+                                                    <asp:label id="lblStreetNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
+                                                    <asp:label id="lblFlatNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="studentLocation">Student Location : </label>
+                                                   <asp:label id="lblStudentLocationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>                            
                     </div>
-                            
-                </asp:WizardStep>
-
-              <asp:WizardStep ID="WizardSummary" runat="server" Title="Summary">
-                    
-                    <div>
-                        <br>
-                      <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
-
-                        <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;">
-              <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left"  for="email">First Name : </label>
-                            </td>
-                            <td>
-                                  <asp:label id="lblFirstNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                  <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Last Name:</label>
-                              
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblLastNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" runat="server">Father/Guardian Name:</label>
-                              
-                            </td>
-                          
-                            <td>
-                                  <asp:label ID="lblFatherNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                                <td>
-                    </td>
-                                    
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Mother Maiden Name:</label>
-                               
-                                
-                            </td>
-                            <td>
-                                  <asp:label ID="lblMotherMaidenNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            <td> 
-                            </td>
-                         </tr>
-                        <tr>
-                            <td>
-                                 <label class="control-label col-sm-12 text-left" for="email">Date of Birth:</label>
-                     
-                           </td>
-                            <td>
-                                 <asp:label ID="lblDobValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                                <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Place of Birth:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblPobValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email">Mobile Number:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblMobileNumberValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                                <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Fixed/Land Line Number:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblLandLineNumberValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd">Email ID:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblEmailIdValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                                <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd3">Alternate Email ID:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblAlterEmailIdValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            <td>
-                            </td>
-                       </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd5">Education/Qualifications:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblEductionValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                                <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd6">Technical Skills:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblTechnicalSkillValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            <td>
-                            </td>
-                           </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd2">Student-Access Code:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblStudentAccessCodeValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                                <td>
-                    </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd4">Student Image:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblStudentImageValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                  
-              </table>
-                        <br>
-                        
-                          <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details:</h3>
-
-                                <table id="tblPadding2" style="margin: auto; width: 100%; color: Black;">
-              <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email">Country:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblCountryValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">State:</label>
-                              
-                            </td>
-                            <td>
-                                  <asp:label ID="lblStateValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email">District:</label>
-                              
-                            </td>
-                            <td>
-                                  <asp:label ID="lblDistrictValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                                    
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Mandal/Taluk/SubUrb:</label>
-                               
-                                
-                            </td>
-                            <td>
-                                  <asp:label ID="lblManadalTalukValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td> 
-                            </td>
-                         </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email">Village/Town/City:</label>
-                     
-                           </td>
-                            <td>
-                                  <asp:label ID="lblVillageTownValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Pin Code:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblPinCodeValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email">Street No:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblStreetNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="email2">Street Name:</label>
-                            </td>
-                            <td>
-                                  <asp:label ID="lblStreetNameValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            </tr>
-                        <tr>
-                            <td>
-                                   <label class="control-label col-sm-12 text-left" for="pwd">House/Door/Plot No:</label>
-                            </td>
-                            <td>
-                                   <asp:label ID="lblHousePlotNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                   <label class="control-label col-sm-12 text-left" for="pwd3">Flat No/Unit NO:</label>
-                            </td>
-                            <td>
-                                   <asp:label ID="lblFlatNoValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                       </tr>
-                        <tr>
-                            <td>
-                                   <label class="control-label col-sm-12 text-left" for="pwd5">Building/LandMark Name:</label>
-                            </td>
-                            <td>
-                                   <asp:label ID="BuildingLandMarkValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                  <label class="control-label col-sm-12 text-left" for="pwd6">Student Location:</label>
-                            </td>
-                            <td>
-                                   <asp:label ID="lblStudentLocationValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                           </tr>
-                             </table>
-                        <br>
-                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details:</h3>
-
-                               <table id="tblPadding3" style="margin: auto; width: 100%; color: Black;">
-              <tr>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email3">Select Program:</label>
-                            </td>
-                            <td>
-                                    <asp:label ID="lblSelectProgramValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email5">Select Category Schedule:</label>
-                              
-                            </td>
-                            <td>
-                                    <asp:label ID="lblSelectCategeorySheduleValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email4">Select Year:</label>
-                              
-                            </td>
-                            <td>
-                                    <asp:label ID="lblSelectYearValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                                    
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email9">Select Subjects:</label>
-                               
-                                
-                            </td>
-                            <td>
-                                    <asp:label ID="lblSelectSubjectsValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td> 
-                            </td>
-                         </tr>
-                        <tr>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email6">Select Category:</label>
-                     
-                           </td>
-                            <td>
-                                    <asp:label ID="lblSelectCategoryValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email7">Select Group:</label>
-                            </td>
-                            <td>
-                                     <asp:label ID="lblSelectGroupValue" class="control-label col-sm-12-left" runat="server"></asp:label>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                    <label class="control-label col-sm-12 text-left" for="email8">Select Year-Sem Schedule:</label>
-                            </td>
-                           <td>
-                                    <asp:label ID="lblSelectYearSemSheduleValue" class="control-label col-sm-12  text-left" runat="server"></asp:label>
-                           </td>
-                        </tr>
-                             </table>
-                  
-                        
+                   
+                    <div class="clearfix"></div>
+                    <div id="studentprogramdetail" class="panel panel-primary">
+                        <div class="panel-heading"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCountry">Select Program: </label>
+                                                    <asp:label id="lblSelectProgramValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCity">Select Categeory Schedule : </label>
+                                                    <asp:label id="lblSelectCategeorySheduleValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="village">Select Year : </label>
+                                                   <asp:label id="lblSelectYearValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Select Subjects : </label>
+                                                    <asp:label id="lblSelectSubjectsValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpState">Select Category : </label>
+                                                    <asp:label id="lblSelectCategoryValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="mandal">Select Group : </label>
+                                                    <asp:label id="lblSelectGroupValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="pinCode">Select Year-Sem Schedule : </label>
+                                                   <asp:label id="lblSelectYearSemSheduleValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            
+                                              
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>                            
                     </div>
-                 
+
+
+
+
+
+
+
+
+
+
                 </asp:WizardStep>
            
 

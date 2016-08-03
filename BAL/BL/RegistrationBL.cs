@@ -380,6 +380,7 @@ namespace BAL.BL
             p[1] = new SqlParameter("@LastName", lastName);
             p[2] = new SqlParameter("@Email", email);
             p[3] = new SqlParameter("@Mobile", mobile);
+            
            
             
             var student = ConnectionFactory.ExecuteCommandDs("SP_GetUser", CommandType.StoredProcedure, p);

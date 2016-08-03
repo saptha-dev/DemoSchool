@@ -787,15 +787,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblFirstNameValue;
         
         /// <summary>
-        /// lblLastNameValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastNameValue;
-        
-        /// <summary>
         /// lblFatherNameValue control.
         /// </summary>
         /// <remarks>
@@ -803,15 +794,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFatherNameValue;
-        
-        /// <summary>
-        /// lblMotherMaidenNameValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMotherMaidenNameValue;
         
         /// <summary>
         /// lblDobValue control.
@@ -823,15 +805,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblDobValue;
         
         /// <summary>
-        /// lblPobValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPobValue;
-        
-        /// <summary>
         /// lblMobileNumberValue control.
         /// </summary>
         /// <remarks>
@@ -839,15 +812,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMobileNumberValue;
-        
-        /// <summary>
-        /// lblLandLineNumberValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLandLineNumberValue;
         
         /// <summary>
         /// lblEmailIdValue control.
@@ -859,15 +823,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblEmailIdValue;
         
         /// <summary>
-        /// lblAlterEmailIdValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAlterEmailIdValue;
-        
-        /// <summary>
         /// lblEductionValue control.
         /// </summary>
         /// <remarks>
@@ -877,15 +832,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblEductionValue;
         
         /// <summary>
-        /// lblTechnicalSkillValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTechnicalSkillValue;
-        
-        /// <summary>
         /// lblStudentAccessCodeValue control.
         /// </summary>
         /// <remarks>
@@ -893,6 +839,60 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentAccessCodeValue;
+        
+        /// <summary>
+        /// lblLastNameValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLastNameValue;
+        
+        /// <summary>
+        /// lblMotherMaidenNameValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMotherMaidenNameValue;
+        
+        /// <summary>
+        /// lblPobValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPobValue;
+        
+        /// <summary>
+        /// lblLandLineNumberValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLandLineNumberValue;
+        
+        /// <summary>
+        /// lblAlterEmailIdValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlterEmailIdValue;
+        
+        /// <summary>
+        /// lblTechnicalSkillValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTechnicalSkillValue;
         
         /// <summary>
         /// lblStudentImageValue control.
@@ -913,15 +913,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblCountryValue;
         
         /// <summary>
-        /// lblStateValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStateValue;
-        
-        /// <summary>
         /// lblDistrictValue control.
         /// </summary>
         /// <remarks>
@@ -929,15 +920,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDistrictValue;
-        
-        /// <summary>
-        /// lblManadalTalukValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblManadalTalukValue;
         
         /// <summary>
         /// lblVillageTownValue control.
@@ -949,15 +931,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblVillageTownValue;
         
         /// <summary>
-        /// lblPinCodeValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPinCodeValue;
-        
-        /// <summary>
         /// lblStreetNoValue control.
         /// </summary>
         /// <remarks>
@@ -965,15 +938,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStreetNoValue;
-        
-        /// <summary>
-        /// lblStreetNameValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStreetNameValue;
         
         /// <summary>
         /// lblHousePlotNoValue control.
@@ -985,6 +949,51 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblHousePlotNoValue;
         
         /// <summary>
+        /// lblBuildingLandMarkValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBuildingLandMarkValue;
+        
+        /// <summary>
+        /// lblStateValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStateValue;
+        
+        /// <summary>
+        /// lblManadalTalukValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblManadalTalukValue;
+        
+        /// <summary>
+        /// lblPinCodeValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPinCodeValue;
+        
+        /// <summary>
+        /// lblStreetNameValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStreetNameValue;
+        
+        /// <summary>
         /// lblFlatNoValue control.
         /// </summary>
         /// <remarks>
@@ -992,15 +1001,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFlatNoValue;
-        
-        /// <summary>
-        /// BuildingLandMarkValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BuildingLandMarkValue;
         
         /// <summary>
         /// lblStudentLocationValue control.

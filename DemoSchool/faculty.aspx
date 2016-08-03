@@ -346,7 +346,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                      <td>
                             </td>
                             <td>
-                                <input id="fDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/>
+                                <input id="fDate" runat="server" class="form-control" type="date" value="03-08-2016" visible="false"/>
 
                             </td>
                                </tr>
@@ -358,7 +358,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                 <asp:WizardStep ID="WizardStep1" runat="server" Title="Personal Details">
                  <div>
                      <br>
-                     <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>  Personal Details</h3>
+                     <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Personal Details</h3>
                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                  <tr>
                             <td>
@@ -461,7 +461,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                                <%-- <asp:TextBox ID="txtdob" class="textusername" runat="server"></asp:TextBox>--%>
-                                <input id="txtdob" runat="server" class="form-control" type="date" value="yyyy-mm-dd"/>
+                                <input id="txtdob" runat="server" class="form-control" type="date" value="2016-08-03"/>
                               <%--  <img src="Images/calender.png" id="cdr" />--%>
                             </td>
                             <td>
@@ -702,7 +702,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                   
                  </div>
                 </asp:WizardStep>
-                <asp:WizardStep ID="WizardStep2" runat="server" Title="Faculty Address Details">
+                <asp:WizardStep ID="WizardStep2" runat="server" Title="Address">
                     
                     <div>
                         <br>
@@ -1018,11 +1018,11 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                     </div>
                 </asp:WizardStep>
                
-                <asp:WizardStep ID="WizardStep3" runat="server" Title="Faculty Employer Details">
+                <asp:WizardStep ID="WizardStep3" runat="server" Title="Employer">
                     
                     <div>
                         <br>
-                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Employer Details</h3>
+                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Employer </h3>
    
 
                               <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
@@ -1149,11 +1149,11 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                     </div>
                 </asp:WizardStep>
 
-                <asp:WizardStep ID="WizardStep4" runat="server" Title="Faculty Program Detail">
+                <asp:WizardStep ID="WizardStep4" runat="server" Title="Program">
                     
                     <div>
                         <br>
-                        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Program Details</h3>
+                        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Program</h3>
  
 
                            <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
@@ -1310,6 +1310,261 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
 
                     </div>
                 </asp:WizardStep>
+
+                 <asp:WizardStep ID="Summary" runat="server">
+                     <br>
+
+                    <div id="personaldetail" class="panel panel-primary">
+                            <div class="panel-heading">Faculty Personal Details</div>
+                                 <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6 pull-left">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="assocCmpName">First Name : </label>
+                                                    <asp:label id="flblFirstNameValue" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="">Father/Guardain Name </label>
+                                                    <asp:label id="fguardainValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="cmpEmail">Date Of Bith : </label>
+                                                    <asp:label id="fdobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
+                                                    <asp:label id="flblMobileNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
+                                                    <asp:label id="flblEmailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification : </label>
+                                                    <asp:label id="flbleducationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-5"  for="branchesNo">Faculty Access Code : </label>
+                                                    <asp:label id="flblaccesscodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 pull-right">
+                                            <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="regNumber">Last Name : </label>
+                                                    <asp:label id="flblLastNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="officePhone">Mother Maiden Name : </label>
+                                                    <asp:label id="flblmotherValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Place Of Birth : </label>
+                                                   <asp:label id="flblpobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                  <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Fixed/Land Line Number: </label>
+                                                   <asp:label id="flbllandnoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                  <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">AlterNate Email Id : </label>
+                                                   <asp:label id="flblaltremailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                  <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Technical Skills : </label>
+                                                   <asp:label id="flbltechnicalValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                  <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Faculty Image : </label>
+                                                   <asp:label id="fimgValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                                        
+                        </div>
+                    <div class="clearfix"></div>
+                    <div id="facultyaddresssDetails" class="panel panel-primary">
+                        <div class="panel-heading">Faculty Address Details</div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
+                                                    <asp:label id="flblCountryValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCity">District : </label>
+                                                    <asp:label id="flblDistrictValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="village">Village/Toen/City : </label>
+                                                   <asp:label id="flblvillageValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
+                                                    <asp:label id="flblStreetNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
+                                                    <asp:label id="flblhouseNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark Name : </label>
+                                                   <asp:label id="flblLandMarkValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpState">State : </label>
+                                                    <asp:label id="flblStateValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
+                                                    <asp:label id="flblmandal" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
+                                                   <asp:label id="flblpinCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
+                                                    <asp:label id="flblStreetNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
+                                                    <asp:label id="flblFlatNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="studentLocation">Faculty Location : </label>
+                                                   <asp:label id="flblLocationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>                            
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="facemployerDetail" class="panel panel-primary">
+                        <div class="panel-heading">Faculty Employer Details</div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                   <label class="control-label col-sm-5"  for="firstName">Work Experience(YRs) : </label>
+                                                    <asp:label id="fwexpValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                 <label class="control-label col-sm-5"  for="fatherName">Employer Address : </label>
+                                                    <asp:label id="flblempaddrValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                   <label class="control-label col-sm-5"  for="date">Employer Email : </label>
+                                                   <asp:label id="flblEmpemailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="lastName">Employer Name : </label>
+                                                    <asp:label id="flblemptNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                 <label class="control-label col-sm-5"  for="motherMaidenName">Employer Phone : </label>
+                                                    <asp:label id="flblempphValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                          </div>
+                                    </div>
+                                </div>                                
+                            </div>                            
+                    </div>
+                   <div class="clearfix"></div>
+                    <div id="facultyprogramdetail" class="panel panel-primary">
+                        <div class="panel-heading">Faculty Program Details</div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCountry">Select Year Sem : </label>
+                                                    <asp:label id="flblselyersemValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpCity">Select Categeory Schedule : </label>
+                                                    <asp:label id="flblcatescheduValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="village">Select Year : </label>
+                                                   <asp:label id="lblselyearValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpStreetNo">Select Subjects : </label>
+                                                    <asp:label id="flblselctsubValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <div class="row">
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="cmpState">Select Category : </label>
+                                                    <asp:label id="flblselcategValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="mandal">Select Group : </label>
+                                                    <asp:label id="flblselgrValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                                <div class="clearfix"></div>
+                                              <div class="form-group">
+                                                  <label class="control-label col-sm-5"  for="pinCode">Select Year-Sem Schedule : </label>
+                                                   <asp:label id="flblyrsmsheduValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                              </div>
+                                            
+                                              
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                    </div>
+
+                </asp:WizardStep>
+
            </WizardSteps>
             <HeaderTemplate>
                 <ul id="wizHeader">
@@ -1329,19 +1584,9 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
     </div>
    </div>
 </div>
-
-    
-      
-     
-    
-    
-    <div> </div>
+<div> </div>
    <div class="topbar"></div>
-
-  
 <div class="container footer">
   <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>
 </div>
-    
-      
 </asp:Content>
