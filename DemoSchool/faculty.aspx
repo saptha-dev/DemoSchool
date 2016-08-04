@@ -3,7 +3,7 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <%-- <script type="text/javascript">
         $.noConflict();
@@ -273,7 +273,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfFname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyFname" class="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
                             <td>
                             </td>
@@ -285,7 +285,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="TxtfLname1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyLname" class="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -322,7 +322,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfMobilenumber1" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyMobilenumber" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
                             </td>
                                <td>
                                    </td>
@@ -330,12 +330,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                 </td>
 
                                 <td>
-                                <asp:Label ID="lblfEmail1" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                <asp:Label ID="FacultyEmail" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfEmail1" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyEmailID" class="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
 
                                </tr>
@@ -346,7 +346,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                      <td>
                             </td>
                             <td>
-                                <input id="fDate" runat="server" class="form-control" type="date" value="03-08-2016" visible="false"/>
+                                <input id="FacultyDate" runat="server" class="form-control" type="date" value="03-08-2016" visible="false"/>
 
                             </td>
                                </tr>
@@ -387,11 +387,9 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                       <%--   <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                          <td>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatorffname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+                            </td>
                            <td>
                             </td>
                             <td>
@@ -400,11 +398,9 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                          <%--  <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorflname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                
                         <tr>
@@ -529,14 +525,10 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Mobile Number" ForeColor="Red" ControlToValidate="txtmobile"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="Required"
-                                    ControlToValidate="txtmobile" Font-Size="11px" ErrorMessage="* Please Enter Numbers "
-                                    ForeColor="Red" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-                            </td>--%>
+                            <td>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorfmob" runat="server" ForeColor="Red" ErrorMessage ="please Enter ur Mobile Number" ControlToValidate="txtmobile"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidatorfmob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -578,11 +570,11 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                          <%--  <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Email ID" ForeColor="Red" ControlToValidate="txtEmail"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                                  <asp:RegularExpressionValidator ID="fregexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="fRequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -888,12 +880,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetname" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetname" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -1322,37 +1314,37 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                             <div class="row">
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="assocCmpName">First Name : </label>
-                                                    <asp:label id="flblFirstNameValue" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
+                                                    <asp:label id="flblFirstNameValue" Font-Bold="true" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="">Father/Guardain Name </label>
-                                                    <asp:label id="fguardainValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fguardainValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="cmpEmail">Date Of Bith : </label>
-                                                    <asp:label id="fdobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fdobValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
-                                                    <asp:label id="flblMobileNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblMobileNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
-                                                    <asp:label id="flblEmailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblEmailValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification : </label>
-                                                    <asp:label id="flbleducationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flbleducationValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Faculty Access Code : </label>
-                                                    <asp:label id="flblaccesscodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblaccesscodeValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -1360,37 +1352,37 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                             <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="regNumber">Last Name : </label>
-                                                    <asp:label id="flblLastNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblLastNameValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="officePhone">Mother Maiden Name : </label>
-                                                    <asp:label id="flblmotherValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblmotherValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Place Of Birth : </label>
-                                                   <asp:label id="flblpobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblpobValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Fixed/Land Line Number: </label>
-                                                   <asp:label id="flbllandnoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flbllandnoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">AlterNate Email Id : </label>
-                                                   <asp:label id="flblaltremailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblaltremailValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Technical Skills : </label>
-                                                   <asp:label id="flbltechnicalValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flbltechnicalValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Faculty Image : </label>
-                                                   <asp:label id="fimgValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="fimgValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -1406,32 +1398,32 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
-                                                    <asp:label id="flblCountryValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblCountryValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">District : </label>
-                                                    <asp:label id="flblDistrictValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblDistrictValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Village/Toen/City : </label>
-                                                   <asp:label id="flblvillageValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblvillageValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
-                                                    <asp:label id="flblStreetNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblStreetNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
-                                                    <asp:label id="flblhouseNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblhouseNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark Name : </label>
-                                                   <asp:label id="flblLandMarkValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblLandMarkValue" font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -1439,32 +1431,32 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">State : </label>
-                                                    <asp:label id="flblStateValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="flblStateValue" Font-Bold="true" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
-                                                    <asp:label id="flblmandal" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblmandal" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
-                                                   <asp:label id="flblpinCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblpinCodeValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
-                                                    <asp:label id="flblStreetNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblStreetNameValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
-                                                    <asp:label id="flblFlatNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblFlatNoValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="studentLocation">Faculty Location : </label>
-                                                   <asp:label id="flblLocationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblLocationValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -1480,16 +1472,16 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                    <label class="control-label col-sm-5"  for="firstName">Work Experience(YRs) : </label>
-                                                    <asp:label id="fwexpValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fwexpValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                  <label class="control-label col-sm-5"  for="fatherName">Employer Address : </label>
-                                                    <asp:label id="flblempaddrValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>                                              </div>
+                                                    <asp:label id="flblempaddrValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>                                              </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                    <label class="control-label col-sm-5"  for="date">Employer Email : </label>
-                                                   <asp:label id="flblEmpemailValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblEmpemailValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             
                                         </div>
@@ -1498,12 +1490,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="lastName">Employer Name : </label>
-                                                    <asp:label id="flblemptNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblemptNameValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                  <label class="control-label col-sm-5"  for="motherMaidenName">Employer Phone : </label>
-                                                    <asp:label id="flblempphValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblempphValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                           </div>
                                     </div>
@@ -1519,22 +1511,22 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCountry">Select Year Sem : </label>
-                                                    <asp:label id="flblselyersemValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselyersemValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">Select Categeory Schedule : </label>
-                                                    <asp:label id="flblcatescheduValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblcatescheduValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Select Year : </label>
-                                                   <asp:label id="lblselyearValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="lblselyearValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Select Subjects : </label>
-                                                    <asp:label id="flblselctsubValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselctsubValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              
                                         </div>
@@ -1543,17 +1535,17 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">Select Category : </label>
-                                                    <asp:label id="flblselcategValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="flblselcategValue" Font-Bold="true"  ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Select Group : </label>
-                                                    <asp:label id="flblselgrValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselgrValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">Select Year-Sem Schedule : </label>
-                                                   <asp:label id="flblyrsmsheduValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblyrsmsheduValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             
                                               
@@ -1579,7 +1571,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
         </asp:Wizard>
 
     </div>
-    <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
+    <div class="formbuttons"><asp:Button ID="btn" type="submit" class="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/><button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>
     </div>
    </div>

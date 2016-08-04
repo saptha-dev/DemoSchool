@@ -67,13 +67,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lbfFname1;
         
         /// <summary>
-        /// txtfFname1 control.
+        /// FacultyFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfFname1;
+        protected global::System.Web.UI.WebControls.TextBox FacultyFname;
         
         /// <summary>
         /// lbfLname1 control.
@@ -85,13 +85,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lbfLname1;
         
         /// <summary>
-        /// TxtfLname1 control.
+        /// FacultyLname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtfLname1;
+        protected global::System.Web.UI.WebControls.TextBox FacultyLname;
         
         /// <summary>
         /// lblfMobileNumber1 control.
@@ -103,31 +103,31 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblfMobileNumber1;
         
         /// <summary>
-        /// txtfMobilenumber1 control.
+        /// FacultyMobilenumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfMobilenumber1;
+        protected global::System.Web.UI.WebControls.TextBox FacultyMobilenumber;
         
         /// <summary>
-        /// lblfEmail1 control.
+        /// FacultyEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblfEmail1;
+        protected global::System.Web.UI.WebControls.Label FacultyEmail;
         
         /// <summary>
-        /// txtfEmail1 control.
+        /// FacultyEmailID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfEmail1;
+        protected global::System.Web.UI.WebControls.TextBox FacultyEmailID;
         
         /// <summary>
         /// lblfdob control.
@@ -139,13 +139,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblfdob;
         
         /// <summary>
-        /// fDate control.
+        /// FacultyDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl FacultyDate;
         
         /// <summary>
         /// WizardStep1 control.
@@ -191,6 +191,24 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        
+        /// <summary>
+        /// RequiredFieldValidatorffname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorffname;
+        
+        /// <summary>
+        /// RequiredFieldValidatorflname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorflname;
         
         /// <summary>
         /// lblfatherguardian control.
@@ -301,6 +319,24 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.TextBox txtFixedLandline;
         
         /// <summary>
+        /// RequiredFieldValidatorfmob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorfmob;
+        
+        /// <summary>
+        /// RegularExpressionValidatorfmob1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorfmob1;
+        
+        /// <summary>
         /// lblemail control.
         /// </summary>
         /// <remarks>
@@ -335,6 +371,24 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtaltrEmail;
+        
+        /// <summary>
+        /// fregexEmailValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator fregexEmailValid;
+        
+        /// <summary>
+        /// fRequiredFieldValidatorEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fRequiredFieldValidatorEmail;
         
         /// <summary>
         /// lblEducation control.
@@ -1217,5 +1271,14 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label flblyrsmsheduValue;
+        
+        /// <summary>
+        /// btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn;
     }
 }

@@ -352,7 +352,7 @@
                      <hr>
                         <h3><span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Management Personal Details</h3>                     
                             
-                           <table id="tblPadding" style="margin: auto; width: 80%; color: Black;">
+                           <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                                 <tr>
                                     <td><asp:Label ID="Label1" runat="server" Text="ASSOC-COMPANY Name" class="control-label col-sm-12 text-left"></asp:Label><font style="color: Red;">*</font></td>
                                     <td><asp:TextBox ID="txtAssocCmpName" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox></td>
@@ -379,6 +379,7 @@
                                     <td>
                                         <asp:Label ID="Label4" runat="server" class="control-label col-sm-12 text-left" Text="Office Phone"></asp:Label>
                                         <font style="color: Red;"></font></td>
+                                  
                                     <td>
                                         <asp:TextBox ID="txtOfficePhone" runat="server" class="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </td>
@@ -417,11 +418,11 @@
                     <div>
                         <hr>
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>ASSOC-COMPANY Address Details</h3>
-                            <table id="tblPadding1" style="margin: auto; width: 80%; color: Black;">
+                            <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;">
                                 <tr>
                                     <td><asp:Label ID="Label8" runat="server" Text="Country" class="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td>
-                                        <asp:DropDownList ClientIDMode="Static" ID="txtCmpCountry" runat="server" class="form-control" style="width:64%;" AppendDataBoundItems="true">
+                                        <asp:DropDownList ClientIDMode="Static" ID="txtCmpCountry" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                             <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                             <asp:ListItem Text="India" Value="1"></asp:ListItem>
                                             <asp:ListItem Text="USA" Value="2"></asp:ListItem>
@@ -429,7 +430,7 @@
                                     </td>
                                     <td><asp:Label ID="Label9" runat="server" Text="State" class="control-label col-sm-12 text-left"></asp:Label><font style="color: Red;"></font></td>
                                     <td>
-                                        <asp:DropDownList ID="txtCmpState" ClientIDMode="Static" runat="server" class="form-control" style="width:88%;" AppendDataBoundItems="true">
+                                        <asp:DropDownList ID="txtCmpState" ClientIDMode="Static" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                             <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                             <asp:ListItem Text="Telangana" Value="1"></asp:ListItem>
                                             <asp:ListItem Text="AP" Value="2"></asp:ListItem>
@@ -449,7 +450,7 @@
                                 <tr>
                                     <td><asp:Label ID="Label10" ClientIDMode="Static" runat="server" Text="District" class="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td>
-                                        <asp:DropDownList ClientIDMode="Static" ID="txtCmpCity" runat="server" class="form-control" style="width:64%;" AppendDataBoundItems="true">
+                                        <asp:DropDownList ClientIDMode="Static" ID="txtCmpCity" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
                                             <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                             <asp:ListItem Text="Hyderabad" Value="1"></asp:ListItem>
                                             <asp:ListItem Text="Rangareddy" Value="2"></asp:ListItem>

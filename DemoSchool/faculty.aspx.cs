@@ -12,6 +12,7 @@ namespace DemoSchool
 {
     public partial class faculty : System.Web.UI.Page
     {
+        string rolename = "faculty";
         protected void Page_Load(object sender, EventArgs e)
         {
             Wizardfaculty.PreRender += new EventHandler(Wizardfaculty_PreRender);
@@ -52,7 +53,7 @@ namespace DemoSchool
         {
             RegistrationBE newReg = new RegistrationBE();
             newReg.ProgramID = 124;
-            newReg.RoleName = "faculty";
+            newReg.RoleName = rolename;
             newReg.FirstName = txtFirstName.Text;
             newReg.LastName = txtLastName.Text;
             newReg.Father_GaurdainName = txtfathergurdianname.Text;
@@ -118,15 +119,15 @@ namespace DemoSchool
         private void ShowExistingUserControls(bool visible)
         {
             lbfFname1.Visible = visible;
-            txtfFname1.Visible = visible;
+            FacultyFname.Visible = visible;
             lbfLname1.Visible = visible;
-            TxtfLname1.Visible = visible;
+            FacultyLname.Visible = visible;
             lblfMobileNumber1.Visible = visible;
-            txtfMobilenumber1.Visible = visible;
-            lblfEmail1.Visible = visible;
-            txtfEmail1.Visible = visible;
+            FacultyMobilenumber.Visible = visible;
+            FacultyEmail.Visible = visible;
+            FacultyEmailID.Visible = visible;
             lblfdob.Visible = visible;
-            fDate.Visible = visible;
+            FacultyDate.Visible = visible;
         }
 
         protected void Wizardfaculty_NextButtonClick(object sender, WizardNavigationEventArgs e)
@@ -137,12 +138,12 @@ namespace DemoSchool
                 RegistrationBL objebl1 = new RegistrationBL();
 
 
-                var user = objebl1.GetExistingUser("", "", "", "");
+                var user = objebl1.GetExistingUser(FacultyFname.Text, FacultyLname.Text, FacultyMobilenumber.Text, FacultyEmailID.Text, FacultyDate.Value,rolename);
                 if (user != null && user.Rows.Count > 0)
                 {
                     DataRow dr = user.Rows[0];
                     txtFirstName.Text = dr["FirstName"].ToString();
-                    txtFirstName.Text = dr["LastName"].ToString();
+                    txtLastName.Text = dr["LastName"].ToString();
                     txtmobile.Text = dr["MobileNumber"].ToString();
                     txtEmail.Text = dr["EmailID"].ToString();
 
@@ -165,13 +166,13 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                   // ddlVillage.Text = dr["Village_Town_City"].ToString();
-                    //ddlMandal.Text = dr["SubUrban_Area"].ToString();
-                    //ddlselectcategory.Text = dr["CategoryID"].ToString();
-                    //ddlselectgroup.Text = dr["GroupId"].ToString();
-                    //ddlselectyear.Text = dr["YearId"].ToString();
-                    //ddlselectsubjects.Text = dr["Subjects"].ToString();
-                   //ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
+                    ddlVillage.DataTextField = dr["Village_Town_City"].ToString();
+                    ddlMandal.DataTextField = dr["SubUrban_Area"].ToString();
+                    ddlselectcategory.DataTextField = dr["CategoryID"].ToString();
+                   // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
+                   // ddlselectyear.DataTextField = dr["YearId"].ToString();
+                 //   ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
+                 //  ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
                     txtworkExp.Text = dr["Employer_WorkExp"].ToString();
                     txtEmployerName.Text = dr["Employer_Name"].ToString();
                     txtEMpAddress.Text = dr["Employer_Address"].ToString();

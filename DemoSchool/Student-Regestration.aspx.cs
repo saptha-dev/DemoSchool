@@ -12,6 +12,7 @@ namespace DemoSchool
 {
     public partial class Student_Regestration : System.Web.UI.Page
     {
+        string rolename = "Student";
         protected void Page_Load(object sender, EventArgs e)
         {
             Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
@@ -53,8 +54,8 @@ namespace DemoSchool
         protected void Wizardstudentreg_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
             RegistrationBE newReg1 = new RegistrationBE();
-          
-            newReg1.RoleName = "student";
+         
+           newReg1.RoleName =rolename;
             newReg1.FirstName = txtFirstName.Text;
             newReg1.LastName = txtLastName.Text;
             newReg1.Father_GaurdainName = txtfathergurdianname.Text;
@@ -84,7 +85,7 @@ namespace DemoSchool
             newReg1.ProgramID = 8686;
             newReg1.BranchID = 8686;
             newReg1.LocationID = 88;
-          
+        
             newReg1.CategoryID = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
             newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
             newReg1.YearId = ddlselectyear.SelectedItem.Value;
@@ -118,15 +119,15 @@ namespace DemoSchool
         private void ShowExistingUserControls(bool visible)
         {
             lbFname1.Visible = visible;
-            txtFname1.Visible = visible;
+            studentFname.Visible = visible;
             lbLname1.Visible = visible;
-            TxtLname1.Visible = visible;
+            studentLname.Visible = visible;
             lblMobileNumber1.Visible = visible;
-            txtMobilenumber1.Visible = visible;
+            studentMobilenumber.Visible = visible;
             lblEmail1.Visible = visible;
-            txtEmail1.Visible = visible;
+            studentEmail.Visible = visible;
             lblsdob.Visible = visible;
-            sDate.Visible = visible;
+            studentDate.Visible = visible;
         }
 
         protected void Wizardstudentreg_NextButtonClick(object sender, WizardNavigationEventArgs e)
@@ -140,20 +141,21 @@ namespace DemoSchool
             {
                
                 RegistrationBL objebl1 = new RegistrationBL();
-               
 
-                var user = objebl1.GetExistingUser("","","","");
+
+                var user = objebl1.GetExistingUser(studentFname.Text, studentLname.Text, studentMobilenumber.Text, studentEmail.Text, studentDate.Value, rolename);
                 if (user != null && user.Rows.Count > 0)
                 {
                     DataRow dr = user.Rows[0];
                     txtFirstName.Text = dr["FirstName"].ToString();
-                    txtFirstName.Text = dr["LastName"].ToString();
+                    txtLastName.Text = dr["LastName"].ToString();
                     txtmobile.Text = dr["MobileNumber"].ToString();
                     txtEmail.Text = dr["EmailID"].ToString();
+                    
                 
-                   txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
-                   txtMothername.Text = dr["MotherMaidenName"].ToString();
-                   txtpob.Text = dr["PlaceOfBirth"].ToString();
+                    txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
+                    txtMothername.Text = dr["MotherMaidenName"].ToString();
+                    txtpob.Text = dr["PlaceOfBirth"].ToString();
 
                     txtFixedLandline.Text = dr["Fixed_LandlineNumber"].ToString();
                     txtEducation.Text = dr["Qualification"].ToString();
@@ -166,17 +168,17 @@ namespace DemoSchool
                     txtstreetname.Text = dr["StreetName"].ToString();
                     txthouseno.Text = dr["HouseNo"].ToString();
                     txtFlatno.Text = dr["Flat_UnitNo"].ToString();
-                   // txtLandMark.Text = dr["LandMark_Name"].ToString();
+                    txtLandMark.Text = dr["LandMarkName"].ToString();
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
                     txtcity.Text = dr["Village_Town_City"].ToString();
-                   txtarea.Text = dr["SubUrban_Area"].ToString();
-                   // ddlselectcategory.Text = dr["CategoryID"].ToString();
-                   // ddlselectgroup.Text = dr["GroupId"].ToString();
-                    //ddlselectyear.Text = dr["YearId"].ToString();
-                    //ddlselectsubjects.Text = dr["Subjects"].ToString();
-                    //ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
+                    txtarea.Text = dr["SubUrban_Area"].ToString();
+                    ddlselectcategory.DataTextField = dr["CategoryID"].ToString();
+                 // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
+                  //ddlselectyear.DataTextField = dr["YearId"].ToString();
+                 // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
+                 // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
 
                 }
             }

@@ -206,7 +206,7 @@
                         <h3><span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Management Personal Details</h3>
                      
                      
-           <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+           <table id="tblPadding" style="margin: auto; width: 100%; color: Black;" class="table-responsive">
 
                 <tr>
                             <td>
@@ -235,12 +235,8 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
-                                    ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
                             <td>
+                                <asp:RequiredFieldValidator id="RequiredFieldValidatorfname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                             </td>
@@ -248,11 +244,11 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
-                                    ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                            </td>
+                            <td>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatorlname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -376,14 +372,10 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ValidationGroup="Required"
-                                    ErrorMessage=" Enter Mobile Number" ForeColor="Red" ControlToValidate="txtmobile"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="Required"
-                                    ControlToValidate="txtmobile" ErrorMessage="Please Enter Numbers " ForeColor="Red"
-                                    ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-                            </td>--%>
+                            <td>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter ur Mobile Number" ControlToValidate="txtmobile"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -425,11 +417,10 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="Required"
-                                    ErrorMessage=" Enter Email ID" ForeColor="Red" ControlToValidate="txtEmail"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -529,7 +520,7 @@
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Management Address Details</h3>
                      
     
-       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;" class="table-responsive">
             <tr>
                             <td>
                                 <asp:Label ID="lblCountry" runat="server" Text="Country"  class="control-label col-sm-12 text-left"></asp:Label>
@@ -846,33 +837,33 @@
                               <div class="row">
                                     <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="assocCmpName">First Name : </label>
-                                                    <asp:label id="mlblFirstNameValue" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
+                                                    <asp:label id="mlblFirstNameValue" Font-Bold="true" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
                                       </div>
                                        <div class="clearfix"></div>
                                         <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="">Father/Guardain Name </label>
-                                                    <asp:label id="mlblFatherNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblFatherNameValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                          </div>
                                          <div class="clearfix"></div>
                                          <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="cmpEmail">Date Of Bith : </label>
-                                                    <asp:label id="mlblDobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblDobValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                           </div>
                                           <div class="clearfix"></div>
                                            <div class="form-group">
                                                       <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
-                                                      <asp:label id="mlblMobileNumberValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                      <asp:label id="mlblMobileNumberValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                            </div>
                                            <div class="clearfix"></div>
                                             <div class="form-group">
                                                         <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
-                                                         <asp:label id="mlblEmailIdValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                         <asp:label id="mlblEmailIdValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                             </div>
                                        
                                              <div class="clearfix"></div>
                                              <div class="form-group">
                                                          <label class="control-label col-sm-5"  for="branchesNo">Management-Access Code : </label>
-                                                         <asp:label id="mlblmngAccessCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                         <asp:label id="mlblmngAccessCodeValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                </div>
                                                </div>
@@ -880,33 +871,33 @@
                                                 <div class="row">
                                                 <div class="form-group">
                                                           <label class="control-label col-sm-5"  for="regNumber">Last Name : </label>
-                                                        <asp:label id="mlblLastNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                        <asp:label id="mlblLastNameValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                               <div class="clearfix"></div>
                                               <div class="form-group">
-                                                        <label class="control-label col-sm-5"  for="officePhone">Mother Maiden Name : </label>
-                                                        <asp:label id="mlblMotherMaidenNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                        <label class="control-label col-sm-5" for="officePhone">Mother Maiden Name : </label>
+                                                        <asp:label id="mlblMotherMaidenNameValue" font-bold="true" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                <div class="clearfix"></div>
                                                 <div class="form-group">
                                                       <label class="control-label col-sm-5"  for="assocCmpAccCode">Place Of Birth : </label>
-                                                       <asp:label id="mlblPobValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                       <asp:label id="mlblPobValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                <div class="clearfix"></div>
                                                 <div class="form-group">
                                                       <label class="control-label col-sm-5"  for="assocCmpAccCode">Fixed/Land Line Number: </label>
-                                                        <asp:label id="mlblLandLineNumberValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                        <asp:label id="mlblLandLineNumberValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                               <div class="clearfix"></div>
                                               <div class="form-group">
                                                         <label class="control-label col-sm-5"  for="assocCmpAccCode">AlterNate Email Id : </label>
-                                                         <asp:label id="mlblAlterEmailIdValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                         <asp:label id="mlblAlterEmailIdValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                               
                                               <div class="clearfix"></div>
                                               <div class="form-group">
                                                          <label class="control-label col-sm-5"  for="assocCmpAccCode">Management Image : </label>
-                                                         <asp:label id="mlblStudentImageValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                         <asp:label id="mlblStudentImageValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -922,32 +913,32 @@
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
-                                                    <asp:label id="mlblCountryValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblCountryValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">District : </label>
-                                                    <asp:label id="mlblDistrictValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblDistrictValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Village/Toen/City : </label>
-                                                   <asp:label id="mlblVillageTownValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="mlblVillageTownValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
-                                                    <asp:label id="mlblStreetNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblStreetNoValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
-                                                    <asp:label id="mlblHousePlotNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblHousePlotNoValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark Name : </label>
-                                                   <asp:label id="mlblBuildingLandMarkValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="mlblBuildingLandMarkValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -955,32 +946,32 @@
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">State : </label>
-                                                    <asp:label id="mlblStateValue" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="mlblStateValue" font-bold="true" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
-                                                    <asp:label id="mlblManadalTalukValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblManadalTalukValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
-                                                   <asp:label id="mlblPinCodeValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="mlblPinCodeValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
-                                                    <asp:label id="mlblStreetNameValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblStreetNameValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
-                                                    <asp:label id="mlblFlatNoValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mlblFlatNoValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="studentLocation"> Admin Location : </label>
-                                                   <asp:label id="mlbladminLocationValue" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="mlbladminLocationValue" font-bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -1005,7 +996,7 @@
         </asp:Wizard>
 
     </div>
-    <div class="formbuttons"><button type="submit" class="btn btn-danger btn-lg">Reset</button> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
+    <div class="formbuttons"><asp:Button ID="btn" type="submit" class="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>
     </div>
    </div>
