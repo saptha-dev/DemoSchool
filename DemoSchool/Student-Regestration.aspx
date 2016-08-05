@@ -196,6 +196,239 @@
         }
 
     </style>
+
+    <!--side menu css-->
+    <style type="text/css">
+        .side-menu {
+              position: fixed;
+              width: 290px;
+              height: 150px;
+              background-color: #f8f8f8;
+              border-right: 1px solid #e7e7e7;
+              margin-top:20px;
+              margin-left:20px;
+            }
+            .side-menu .navbar {
+              border: none;
+            }
+            .side-menu .navbar-header {
+              width: 100%;
+              border-bottom: 1px solid #e7e7e7;
+            }
+            .side-menu .navbar-nav .active a {
+              background-color: transparent;
+              margin-right: -1px;
+              border-right: 5px solid #e7e7e7;
+            }
+            .side-menu .navbar-nav li {
+              display: block;
+              width: 100%;
+              border-bottom: 1px solid #e7e7e7;
+            }
+            .side-menu .navbar-nav li a {
+              padding: 15px;
+            }
+            .side-menu .navbar-nav li a .glyphicon {
+              padding-right: 10px;
+            }
+
+            /* Main body section */
+.side-body {
+  margin-left: 310px;
+}
+/* small screen */
+@media (max-width: 768px) {
+  .side-menu {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-right: 0;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .side-menu .brand-name-wrapper .navbar-brand {
+    display: inline-block;
+  }
+  /* Slide in animation */
+  @-moz-keyframes slidein {
+    0% {
+      left: -300px;
+    }
+    100% {
+      left: 10px;
+    }
+  }
+  @-webkit-keyframes slidein {
+    0% {
+      left: -300px;
+    }
+    100% {
+      left: 10px;
+    }
+  }
+  @keyframes slidein {
+    0% {
+      left: -300px;
+    }
+    100% {
+      left: 10px;
+    }
+  }
+  @-moz-keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+  @-webkit-keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+  @keyframes slideout {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -300px;
+    }
+  }
+  /* Slide side menu*/
+  /* Add .absolute-wrapper.slide-in for scrollable menu -> see top comment */
+  .side-menu-container > .navbar-nav.slide-in {
+    -moz-animation: slidein 300ms forwards;
+    -o-animation: slidein 300ms forwards;
+    -webkit-animation: slidein 300ms forwards;
+    animation: slidein 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .side-menu-container > .navbar-nav {
+    /* Add position:absolute for scrollable menu -> see top comment */
+    position: fixed;
+    left: -300px;
+    width: 300px;
+    top: 43px;
+    height: 100%;
+    border-right: 1px solid #e7e7e7;
+    background-color: #f8f8f8;
+    -moz-animation: slideout 300ms forwards;
+    -o-animation: slideout 300ms forwards;
+    -webkit-animation: slideout 300ms forwards;
+    animation: slideout 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  /* Uncomment for scrollable menu -> see top comment */
+  /*.absolute-wrapper{
+        width:285px;
+        -moz-animation: slideout 300ms forwards;
+        -o-animation: slideout 300ms forwards;
+        -webkit-animation: slideout 300ms forwards;
+        animation: slideout 300ms forwards;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }*/
+  @-moz-keyframes bodyslidein {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 300px;
+    }
+  }
+  @-webkit-keyframes bodyslidein {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 300px;
+    }
+  }
+  @keyframes bodyslidein {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 300px;
+    }
+  }
+  @-moz-keyframes bodyslideout {
+    0% {
+      left: 300px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @-webkit-keyframes bodyslideout {
+    0% {
+      left: 300px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @keyframes bodyslideout {
+    0% {
+      left: 300px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  /* Slide side body*/
+  .side-body {
+    margin-left: 5px;
+    margin-top: 70px;
+    position: relative;
+    -moz-animation: bodyslideout 300ms forwards;
+    -o-animation: bodyslideout 300ms forwards;
+    -webkit-animation: bodyslideout 300ms forwards;
+    animation: bodyslideout 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .body-slide-in {
+    -moz-animation: bodyslidein 300ms forwards;
+    -o-animation: bodyslidein 300ms forwards;
+    -webkit-animation: bodyslidein 300ms forwards;
+    animation: bodyslidein 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  /* Hamburger */
+  .navbar-toggle {
+    border: 0;
+    float: left;
+    padding: 18px;
+    margin: 0;
+    border-radius: 0;
+    background-color: #f3f3f3;
+  }
+  /* Search */
+  #search .panel-body .navbar-form {
+    border-bottom: 0;
+  }
+  #search .panel-body .navbar-form .form-group {
+    margin: 0;
+  }
+  .navbar-header {
+    /* this is probably redundant */
+    position: fixed;
+    z-index: 3;
+    background-color: #f8f8f8;
+  }
+  /* Dropdown tweek */
+  #dropdown .panel-body .navbar-nav {
+    margin: 0;
+  }
+}
+    </style>
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -1007,12 +1240,9 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlSelectProgram" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Program" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="GRADUTION" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="MBBS" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="DEPLOMA" Value=""></asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddladdProgram" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
+                                                        OnSelectedIndexChanged="ddladdProgram_SelectedIndexChanged">
+                                                    </asp:DropDownList>
                             </td>
                             <td>
                             </td>
@@ -1024,11 +1254,9 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategory" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Schedule" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="3"></asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" class="form-control" style="width:100%;"
+                                            OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
+                                        </asp:DropDownList>
                             </td>
                  </tr>
                  <tr>
@@ -1076,11 +1304,9 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectgroup" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
+                                                        OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
+                                                    </asp:DropDownList>
                             </td>
                             <td>
                             </td>
@@ -1095,11 +1321,9 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyear" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
+                               <asp:DropDownList ID="DDlYear" class="form-control" runat="server" AutoPostBack="true" style="width:100%;"
+                                                        OnSelectedIndexChanged="DDlYear_SelectedIndexChanged">
+                                                    </asp:DropDownList>
                             </td>
                             <td>
                             </td>
@@ -1111,11 +1335,8 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
+                               <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
+                                        </asp:DropDownList>
                             </td>
                             <td>
                             </td>
@@ -1131,11 +1352,9 @@
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectsubjects" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
+                               <asp:DropDownList ID="ddlSubjects" runat="server" AutoPostBack="true" CssClass="form-control"
+                                                        OnSelectedIndexChanged="ddlSubjects_SelectedIndexChanged">
+                                                    </asp:DropDownList>
                             </td>             
                 </tr>       
           </table>
@@ -1351,6 +1570,184 @@
                             </div>                            
                     </div>
 </asp:WizardStep>
+     <asp:WizardStep ID="WIzardPayment" runat="server" Title="Payment">
+         <div class="row" style="min-height:400px;">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+    <div class="side-menu">
+    
+    <nav class="navbar navbar-default" role="navigation">
+
+        <!-- Main Menu -->
+        <div class="side-menu-container">
+            <ul class="nav navbar-nav">
+                <li class="active" onclick="showPayment('payment1')"><a href="#payment1"><span class="glyphicon glyphicon-send"></span>Credit Card</a></li>
+                <li><a href="#payment2" onclick="showPayment('payment2')"><span class="glyphicon glyphicon-plane"></span> netbanking</a></li>
+                <li><a href="#payment3" onclick="showPayment('payment3')"><span class="glyphicon glyphicon-cloud"></span> Direct</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="side-body">
+           <div id="payment1"><h1>Credit Card Content here</h1>
+
+
+
+           </div>
+           <div id="payment2" style="display:none;"><h1>Net Banking Content here</h1>
+               <div class="row">
+                        <div class="col-md-6 pull-left">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="ddlFromBank">Select Bank Name : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlFromBank" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:label id="Label1" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="fromBankCountry">Select Country Of Bank : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankCountry" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="fromBankState">Select State of bank : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankState" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="fromBankBranch">Select Branch location : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankBranch" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                
+                                Account Number:
+                                Amount:
+                                PRN:
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtFromIfsc">BSB/IFSC code : </label>
+                                    <asp:TextBox id="txtFromIfsc" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtFromAccountName">Account Person-Name : </label>
+                                    <asp:TextBox id="txtFromAccountName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="fromAccountType">Select Account Type : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="fromAccountType" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="fromAccountNumber">Account Number : </label>
+                                    <asp:TextBox id="fromAccountNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtFromAmount">Amount : </label>
+                                    <asp:TextBox id="txtFromAmount" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtFromPRN">PRN : </label>
+                                    <asp:TextBox id="txtFromPRN" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 pull-right">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="assocCmpName">Select Bank Name : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBank" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:label id="Label2" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="">Select Country Of Bank : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankCountry" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="cmpEmail">Select State of bank : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankState" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="branchesNo">Select Branch location : </label>
+                                    <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankBranch" CssClass="control-label col-sm-7-left">
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                        <asp:ListItem></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtToIfsc">BSB/IFSC code : </label>
+                                    <asp:TextBox id="txtToIfsc" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="toAccountNumber">Account Number : </label>
+                                    <asp:TextBox id="toAccountNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="toAccountName">Account Name : </label>
+                                    <asp:TextBox id="toAccountName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-5"  for="txtToPRN">PRN : </label>
+                                    <asp:TextBox id="txtToPRN" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>           
+                        </div>
+
+           </div>
+           <div id="payment3" style="display:none;"><h1>Direct Content here</h1></div>
+        </div>
+    </div>
+</div>
+     </asp:WizardStep>
 
 </WizardSteps>
                 <HeaderTemplate>
@@ -1376,5 +1773,25 @@
                 <div class="container footer">
                     <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>
               </div>
+
+    <script type="text/javascript">
+        function showPayment(paymentId) {
+            if (paymentId == "payment1") {
+                $('#' + paymentId).show();
+                $('#payment2').hide();
+                $('#payment3').hide();
+            }
+            if (paymentId == "payment2") {
+                $('#' + paymentId).show();
+                $('#payment1').hide();
+                $('#payment3').hide();
+            }
+            if (paymentId == "payment3") {
+                $('#' + paymentId).show();
+                $('#payment1').hide();
+                $('#payment2').hide();
+            }
+        }
+    </script>
     
 </asp:Content>

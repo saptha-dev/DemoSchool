@@ -706,13 +706,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblSelectProgram;
         
         /// <summary>
-        /// ddlSelectProgram control.
+        /// ddladdProgram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSelectProgram;
+        protected global::System.Web.UI.WebControls.DropDownList ddladdProgram;
         
         /// <summary>
         /// lblSelectCategory control.
@@ -724,13 +724,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblSelectCategory;
         
         /// <summary>
-        /// ddlselectcategory control.
+        /// ddladdCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlselectcategory;
+        protected global::System.Web.UI.WebControls.DropDownList ddladdCategory;
         
         /// <summary>
         /// lblSelectCategorySchedule control.
@@ -760,13 +760,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblSelectGroup;
         
         /// <summary>
-        /// ddlselectgroup control.
+        /// ddlGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlselectgroup;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGroup;
         
         /// <summary>
         /// lblSelectYear control.
@@ -778,13 +778,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblSelectYear;
         
         /// <summary>
-        /// ddlselectyear control.
+        /// DDlYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlselectyear;
+        protected global::System.Web.UI.WebControls.DropDownList DDlYear;
         
         /// <summary>
         /// lblselectyearsem control.
@@ -796,13 +796,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblselectyearsem;
         
         /// <summary>
-        /// ddlselectyearsemschedule control.
+        /// ddladdsemister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlselectyearsemschedule;
+        protected global::System.Web.UI.WebControls.DropDownList ddladdsemister;
         
         /// <summary>
         /// lblSelectSubjects control.
@@ -814,13 +814,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblSelectSubjects;
         
         /// <summary>
-        /// ddlselectsubjects control.
+        /// ddlSubjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlselectsubjects;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubjects;
         
         /// <summary>
         /// WizardSummary control.
@@ -1127,6 +1127,195 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSelectYearSemSheduleValue;
+        
+        /// <summary>
+        /// WIzardPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.WizardStep WIzardPayment;
+        
+        /// <summary>
+        /// ddlFromBank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFromBank;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// fromBankCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList fromBankCountry;
+        
+        /// <summary>
+        /// fromBankState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList fromBankState;
+        
+        /// <summary>
+        /// fromBankBranch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList fromBankBranch;
+        
+        /// <summary>
+        /// txtFromIfsc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFromIfsc;
+        
+        /// <summary>
+        /// txtFromAccountName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFromAccountName;
+        
+        /// <summary>
+        /// fromAccountType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList fromAccountType;
+        
+        /// <summary>
+        /// fromAccountNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fromAccountNumber;
+        
+        /// <summary>
+        /// txtFromAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFromAmount;
+        
+        /// <summary>
+        /// txtFromPRN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFromPRN;
+        
+        /// <summary>
+        /// ddlToBank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlToBank;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// ddlToBankCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlToBankCountry;
+        
+        /// <summary>
+        /// ddlToBankState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlToBankState;
+        
+        /// <summary>
+        /// ddlToBankBranch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlToBankBranch;
+        
+        /// <summary>
+        /// txtToIfsc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtToIfsc;
+        
+        /// <summary>
+        /// toAccountNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox toAccountNumber;
+        
+        /// <summary>
+        /// toAccountName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox toAccountName;
+        
+        /// <summary>
+        /// txtToPRN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtToPRN;
         
         /// <summary>
         /// btn control.

@@ -3,6 +3,7 @@ using BAL.BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,11 +14,136 @@ namespace DemoSchool
     public partial class Student_Regestration : System.Web.UI.Page
     {
         string rolename = "Student";
+        RegistrationBL objReg = new RegistrationBL();
+        StudentBL objStudentBL = new StudentBL();
+        AddProgramsBL objBL = new AddProgramsBL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
+            if (!IsPostBack)
+            {
+                Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
+                addNewPogram();
+
+            }
            
         }
+
+        public void addNewPogram()
+        {
+            SqlDataReader dr = objReg.GetProgram();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            ddladdProgram.DataSource = dt;
+            ddladdProgram.DataTextField = "Program_name";
+            ddladdProgram.DataValueField = "Program_id";
+            ddladdProgram.DataBind();
+            // ddlProgram.Items.Insert(0, "--Select--");
+            ddladdProgram.Items.Insert(0, new ListItem("--Select--", "0"));
+
+        }
+
+        private void GetGroupNameForStudent()
+        {
+            SqlDataReader dr = objStudentBL.GetGroupNameForStudent(Session["UserID"].ToString());
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+
+                ddlGroup.DataSource = dt;
+                ddlGroup.DataValueField = "Branch_Id";
+                ddlGroup.DataTextField = "Branch_Name";
+                ddlGroup.DataBind();
+                ddlGroup.Items.Insert(0, new ListItem("--Select--", "0"));
+
+            }
+        }
+
+        public void ddladdProgram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int programId = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+            if (programId != 0)
+            {
+                SqlDataReader dr = objBL.GetCategoriesBasedOnProgramsDrpdwn(programId);
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    ddladdCategory.DataSource = dt;
+                    ddladdCategory.DataValueField = "Category_Id";
+                    ddladdCategory.DataTextField = "Category_Name";
+                    ddladdCategory.DataBind();
+                    ddladdCategory.Items.Insert(0, new ListItem("--Select--", "0"));
+                }
+            }
+            else
+            {
+                ddladdCategory.Items.Clear();
+                ddlGroup.Items.Clear();
+                ddladdsemister.Items.Clear();
+            }
+        }
+
+        public void ddladdCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (ddladdCategory.SelectedValue != "0")
+            {
+                SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddladdCategory.SelectedValue));
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlGroup.DataSource = dt;
+                    ddlGroup.DataValueField = "Branch_Id";
+                    ddlGroup.DataTextField = "Branch_Name";
+                    ddlGroup.DataBind();
+                    ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
+                }
+            }
+            else
+            {
+                ddlGroup.Items.Clear();
+                //ddladdsemister.Items.Clear();
+            }
+        }
+
+        
+        protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlGroup.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                DDlYear.DataSource = dt;
+                DDlYear.DataValueField = "Year_Id";
+                DDlYear.DataTextField = "Branch_Year_No";
+                DDlYear.DataBind();
+                DDlYear.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        protected void DDlYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataReader dr = objStudentBL.GetSubjectsForStudent("123", Convert.ToInt32(DDlYear.SelectedItem.Value));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubjects.DataSource = dt;
+                ddlSubjects.DataValueField = "Subject_Id";
+                ddlSubjects.DataTextField = "Subject_Name";
+                ddlSubjects.DataBind();
+                ddlSubjects.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        protected void ddlSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         protected void Wizardstudentreg_PreRender(object sender, EventArgs e)
         {
             Repeater SideBarList = Wizardstudentreg.FindControl("HeaderContainer").FindControl("SideBarList") as Repeater;
@@ -82,20 +208,17 @@ namespace DemoSchool
             newReg1.Flat_UnitNo = txtFlatno.Text;
             newReg1.LandMark_Name = txtLandMark.Text;
             newReg1.Location = txtLocation.Text;
-            newReg1.ProgramID = 8686;
+            newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value); 
             newReg1.BranchID = 8686;
             newReg1.LocationID = 88;
-        
-            newReg1.CategoryID = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
+
+            newReg1.CategoryID = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
             newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
-            newReg1.YearId = ddlselectyear.SelectedItem.Value;
-            newReg1.Schedule_ID = ddlselectyearsemschedule.SelectedItem.Value;
-            newReg1.Subjects = ddlselectsubjects.SelectedItem.Value;
-            newReg1.GroupId = Convert.ToInt32(ddlselectgroup.SelectedItem.Value);
-            RegistrationBL objebl1 = new RegistrationBL();
-            objebl1.StudentRegistration(newReg1);
-
-
+            newReg1.YearId = DDlYear.SelectedItem.Value;
+            newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
+            newReg1.Subjects = ddlSubjects.SelectedItem.Value;
+            newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            objReg.StudentRegistration(newReg1);
         }
      protected void RadioButton_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -174,7 +297,7 @@ namespace DemoSchool
                     ddlDistrict.Text = dr["DistrictID"].ToString();
                     txtcity.Text = dr["Village_Town_City"].ToString();
                     txtarea.Text = dr["SubUrban_Area"].ToString();
-                    ddlselectcategory.DataTextField = dr["CategoryID"].ToString();
+                    ddladdCategory.DataTextField = dr["CategoryID"].ToString();
                  // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
                   //ddlselectyear.DataTextField = dr["YearId"].ToString();
                  // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
@@ -211,12 +334,12 @@ namespace DemoSchool
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
 
-                lblSelectProgramValue.Text = ddlSelectProgram.Text;
-                lblSelectGroupValue.Text = ddlselectgroup.Text;
-                lblSelectCategoryValue.Text = ddlselectcategory.Text;
-                lblSelectYearValue.Text = ddlselectyear.Text;
-                lblSelectSubjectsValue.Text = ddlselectsubjects.Text;
-                lblSelectYearSemSheduleValue.Text = ddlselectyearsemschedule.Text;
+                lblSelectProgramValue.Text = ddladdProgram.SelectedItem.Value;
+                lblSelectGroupValue.Text = ddlGroup.Text;
+                lblSelectCategoryValue.Text = ddladdCategory.Text;
+                lblSelectYearValue.Text = DDlYear.Text;
+                lblSelectSubjectsValue.Text = ddlSubjects.Text;
+                lblSelectYearSemSheduleValue.Text = ddladdsemister.Text;
                 lblSelectCategorySchedule.Text = ddlselectcategoryschedule.Text;
 
             }
