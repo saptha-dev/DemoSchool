@@ -520,7 +520,7 @@
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Management Address Details</h3>
                      
     
-       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;" class="table-responsive">
+       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;" class="table-responsive" runat="server">
             <tr>
                             <td>
                                 <asp:Label ID="lblCountry" runat="server" Text="Country"  class="control-label col-sm-12 text-left"></asp:Label>
