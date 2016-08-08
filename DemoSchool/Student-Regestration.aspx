@@ -1493,22 +1493,22 @@
                                                     <div class="col-md-6 pull-left">
                                                         <div class="row">
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5"  for="cmpCountry">Select Program: </label>
+                                                                  <label class="control-label col-sm-5"  for="cmpCountry">Program: </label>
                                                                     <asp:label id="lblSelectProgramValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5"  for="cmpCity">Select Categeory Schedule : </label>
+                                                                  <label class="control-label col-sm-5"  for="cmpCity">Categeory Schedule : </label>
                                                                     <asp:label id="lblSelectedCategeorySheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="village">Select Year : </label>
+                                                                  <label class="control-label col-sm-5" for="village">Year : </label>
                                                                    <asp:label id="lblSelectYearValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                              <div class="clearfix"></div>
                                                             <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="cmpStreetNo">Select Subjects : </label>
+                                                                  <label class="control-label col-sm-5" for="cmpStreetNo">Subjects : </label>
                                                                     <asp:label id="lblSelectSubjectsValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                           </div>
@@ -1516,17 +1516,17 @@
                                                     <div class="col-md-6 pull-right">
                                                         <div class="row">
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="cmpState">Select Category : </label>
+                                                                  <label class="control-label col-sm-5" for="cmpState">Category : </label>
                                                                     <asp:label id="lblSelectCategoryValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="mandal">Select Group : </label>
+                                                                  <label class="control-label col-sm-5" for="mandal">Group : </label>
                                                                     <asp:label id="lblSelectGroupValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5"  for="pinCode">Select Year-Sem Schedule : </label>
+                                                                  <label class="control-label col-sm-5"  for="pinCode">Year-Sem Schedule : </label>
                                                                    <asp:label id="lblSelectYearSemSheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                          </div>

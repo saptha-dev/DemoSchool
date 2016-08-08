@@ -22,12 +22,12 @@ namespace DemoSchool
             Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
             if (!IsPostBack)
             {
-            addNewPogram();
+                LoadPograms();
             }
-           
+
         }
 
-        public void addNewPogram()
+        public void LoadPograms()
         {
             SqlDataReader dr = objReg.GetProgram();
             DataTable dt = new DataTable();
@@ -38,24 +38,6 @@ namespace DemoSchool
             ddladdProgram.DataBind();
             // ddlProgram.Items.Insert(0, "--Select--");
             ddladdProgram.Items.Insert(0, new ListItem("--Select--", ""));
-
-        }
-
-        private void GetGroupNameForStudent()
-        {
-            SqlDataReader dr = objStudentBL.GetGroupNameForStudent(Session["UserID"].ToString());
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            if (dt.Rows.Count > 0)
-            {
-
-                ddlGroup.DataSource = dt;
-                ddlGroup.DataValueField = "Branch_Id";
-                ddlGroup.DataTextField = "Branch_Name";
-                ddlGroup.DataBind();
-                ddlGroup.Items.Insert(0, new ListItem("--Select--", "0"));
-
-            }
         }
 
         public void ddladdProgram_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,26 +70,66 @@ namespace DemoSchool
 
             if (ddladdCategory.SelectedValue != "0")
             {
-                SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddladdCategory.SelectedValue));
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                if (dt.Rows.Count > 0)
-                {
-                    ddlGroup.DataSource = dt;
-                    ddlGroup.DataValueField = "Branch_Id";
-                    ddlGroup.DataTextField = "Branch_Name";
-                    ddlGroup.DataBind();
-                    ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
-                }
+                LoadGroups();
+                LoadCategorySchdule();
+                LoadYearOrSemSchdule();
             }
             else
             {
                 ddlGroup.Items.Clear();
-                //ddladdsemister.Items.Clear();
+                ddlselectcategoryschedule.Items.Clear();
+                ddladdsemister.Items.Clear();
             }
         }
 
-        
+        private void LoadGroups()
+        {
+            SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddladdCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlGroup.Items.Clear();
+                ddlGroup.DataSource = dt;
+                ddlGroup.DataValueField = "Branch_Id";
+                ddlGroup.DataTextField = "Branch_Name";
+                ddlGroup.DataBind();
+                ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadCategorySchdule()
+        {
+            SqlDataReader dr = objBL.LoadCategorySchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlselectcategoryschedule.Items.Clear();
+                ddlselectcategoryschedule.DataSource = dt;
+                ddlselectcategoryschedule.DataValueField = "Schedule_Id";
+                ddlselectcategoryschedule.DataTextField = "Schedule_Id";
+                ddlselectcategoryschedule.DataBind();
+                ddlselectcategoryschedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadYearOrSemSchdule()
+        {
+            SqlDataReader dr = objBL.LoadYearOrSemSchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddladdsemister.Items.Clear();
+                ddladdsemister.DataSource = dt;
+                ddladdsemister.DataValueField = "Branch_T_Years";
+                ddladdsemister.DataTextField = "Branch_T_Years";
+                ddladdsemister.DataBind();
+                ddladdsemister.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
         protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlGroup.SelectedValue));
@@ -125,7 +147,11 @@ namespace DemoSchool
 
         protected void DDlYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlDataReader dr = objStudentBL.GetSubjectsForStudent("123", Convert.ToInt32(DDlYear.SelectedItem.Value));
+            int programId = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
+
+            SqlDataReader dr = objStudentBL.GetSubjects(25, 13, 27);
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
@@ -140,7 +166,7 @@ namespace DemoSchool
 
         protected void ddlSubjects_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Wizardstudentreg_PreRender(object sender, EventArgs e)
@@ -179,8 +205,8 @@ namespace DemoSchool
         protected void Wizardstudentreg_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
             RegistrationBE newReg1 = new RegistrationBE();
-         
-           newReg1.RoleName =rolename;
+
+            newReg1.RoleName = rolename;
             newReg1.FirstName = txtFirstName.Text;
             newReg1.LastName = txtLastName.Text;
             newReg1.Father_GaurdainName = txtfathergurdianname.Text;
@@ -193,7 +219,7 @@ namespace DemoSchool
             newReg1.OptionalEmailID = txtaltrEmail.Text;
             newReg1.Qualification = txtEducation.Text;
             newReg1.TechnicalSkills = txtTechnicalSkills.Text;
-            newReg1.AccessCode =txtStudentAccescode.Text;
+            newReg1.AccessCode = txtStudentAccescode.Text;
             newReg1.ImageName = "image";
             newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
             newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
@@ -207,7 +233,7 @@ namespace DemoSchool
             newReg1.Flat_UnitNo = txtFlatno.Text;
             newReg1.LandMark_Name = txtLandMark.Text;
             newReg1.Location = txtLocation.Text;
-            newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value); 
+            newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
             newReg1.BranchID = 8686;
             newReg1.LocationID = 88;
 
@@ -277,14 +303,14 @@ namespace DemoSchool
 
         protected void Wizardstudentreg_NextButtonClick(object sender, WizardNavigationEventArgs e)
         {
-            if(!IsValid)
+            if (!IsValid)
             {
                 Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.ActiveStepIndex - 1;
             }
             GetClassForWizardStep(sender);
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
-               
+
                 RegistrationBL objebl1 = new RegistrationBL();
 
 
@@ -296,8 +322,8 @@ namespace DemoSchool
                     txtLastName.Text = dr["LastName"].ToString();
                     txtmobile.Text = dr["MobileNumber"].ToString();
                     txtEmail.Text = dr["EmailID"].ToString();
-                    
-                
+
+
                     txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
                     txtMothername.Text = dr["MotherMaidenName"].ToString();
                     txtpob.Text = dr["PlaceOfBirth"].ToString();
@@ -320,11 +346,10 @@ namespace DemoSchool
                     txtcity.Text = dr["Village_Town_City"].ToString();
                     txtarea.Text = dr["SubUrban_Area"].ToString();
                     ddladdCategory.DataTextField = dr["CategoryID"].ToString();
-                   // ddlGroup.SelectedValue = dr["GroupID"].ToString();
-                 // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
-                  //ddlselectyear.DataTextField = dr["YearId"].ToString();
-                 // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
-                 // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
+                    // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
+                    //ddlselectyear.DataTextField = dr["YearId"].ToString();
+                    // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
+                    // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
 
                 }
             }
@@ -337,7 +362,7 @@ namespace DemoSchool
                 lblPobValue.Text = txtpob.Text;
                 lblMotherMaidenNameValue.Text = txtmobile.Text;
                 lblLandLineNumberValue.Text = txtFixedLandline.Text;
-                lblEmailIdValue.Text= txtEmail.Text;
+                lblEmailIdValue.Text = txtEmail.Text;
                 lblAlterEmailIdValue.Text = txtaltrEmail.Text;
                 lblEductionValue.Text = txtEducation.Text;
                 lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
@@ -357,47 +382,25 @@ namespace DemoSchool
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
 
-                //lblSelectProgramValue.Text = ddladdProgram.SelectedItem.Value;
-               // lblSelectGroupValue.Text = ddlGroup.SelectedItem.Text;
-                //lblSelectGroupValue.Text = ddlGroup.Text;
-                lblSelectCategoryValue.Text = ddladdCategory.Text;
-                lblSelectYearValue.Text = DDlYear.Text;
-                lblSelectSubjectsValue.Text = ddlSubjects.Text;
-                lblSelectYearSemSheduleValue.Text = ddladdsemister.Text;
-                lblSelectCategorySchedule.Text = ddlselectcategoryschedule.Text;
 
+                lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
+                lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
+                lblSelectCategoryValue.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
+                lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
+                lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
+                lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
+                lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
             }
 
             if (Wizardstudentreg.ActiveStepIndex == 4)
             {
-                if (ddladdProgram.SelectedItem != null)
-                {
-                    paymentProgram.Text = string.IsNullOrEmpty(ddladdProgram.SelectedItem.Value) ? "" : ddladdProgram.SelectedItem.Text;
-                }
-                if (ddlGroup.SelectedItem != null)
-                {
-                    paymentGroup.Text = string.IsNullOrEmpty(ddlGroup.SelectedItem.Value) ? "" : ddlGroup.SelectedItem.Text;
-                }
-                if (ddladdCategory.SelectedItem != null)
-                {
-                    paymentCategory.Text = string.IsNullOrEmpty(ddladdCategory.SelectedItem.Value) ? "" : ddladdCategory.SelectedItem.Text;
-                }
-                if (DDlYear.SelectedItem != null)
-                {
-                    paymentYear.Text = string.IsNullOrEmpty(DDlYear.SelectedItem.Value) ? "" : DDlYear.SelectedItem.Text;
-                }
-                if (ddlSubjects.SelectedItem != null)
-                {
-                    paymentSubject.Text = string.IsNullOrEmpty(ddlSubjects.SelectedItem.Value) ? "" : ddlSubjects.SelectedItem.Text;
-                }
-                if (ddladdsemister.SelectedItem != null)
-                {
-                    paymentYearSem.Text = string.IsNullOrEmpty(ddladdsemister.SelectedItem.Value) ? "" : ddladdsemister.SelectedItem.Text;
-                }
-                if (ddlselectcategoryschedule.SelectedItem != null)
-                {
-                    paymentCategorySchedule.Text = string.IsNullOrEmpty(ddlselectcategoryschedule.SelectedItem.Value) ? "" : ddlselectcategoryschedule.SelectedItem.Text;
-                }
+                paymentProgram.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
+                paymentGroup.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
+                paymentCategory.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
+                paymentYear.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
+                paymentSubject.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
+                paymentYearSem.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
+                paymentCategorySchedule.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
 
             }
         }

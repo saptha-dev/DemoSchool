@@ -178,5 +178,11 @@ namespace BAL.BL
        {
            return ConnectionFactory.ExecuteCommand("insert into tbl_StudentBookings(Student_Id,UserID,Subject_Id,Slot_ID,BookingTime,CompanyID,Status,StatusDate)values(" + Student_Id + ",'" + UserID + "'," + Subject_Id + "," + SlotID + ",Getdate(),'" + CompanyID + "','New',getdate())", CommandType.Text);
        }
+
+       public SqlDataReader GetSubjects(int programId, int branchId, int categoryId)
+       {
+           string sqlQuery = string.Format("select Subject_Id, Subject_Name from tbl_Subject where Program_Id = {0} AND Branch_Id = {1} AND Category_Id = {2}", programId, branchId, categoryId);
+           return ConnectionFactory.ExecuteCommand(sqlQuery, CommandType.Text);
+       }
     }
 }

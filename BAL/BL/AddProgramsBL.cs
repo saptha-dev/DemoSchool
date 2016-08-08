@@ -705,5 +705,15 @@ namespace BAL.BL
         {
             return ConnectionFactory.ExecuteCommand("select * from dbo.tbl_Units where Subject_Id=" + subId, CommandType.Text);
         }
+
+        public SqlDataReader LoadCategorySchdule(int CategorieId)
+        {
+            return ConnectionFactory.ExecuteCommand("select distinct Schedule_Id from tbl_Schedule where Category_Id=" + CategorieId, CommandType.Text);
+        }
+
+        public SqlDataReader LoadYearOrSemSchdule(int CategorieId)
+        {
+            return ConnectionFactory.ExecuteCommand("select distinct Branch_T_Years from tbl_Branch where Category_Id=" + CategorieId, CommandType.Text);
+        }
     }
 }
