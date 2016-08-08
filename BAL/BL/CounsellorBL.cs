@@ -6,7 +6,6 @@ using BAL.BE;
 using DAL;
 using System.Data.SqlClient;
 using System.Data;
-using BAL.BE;
 namespace BAL.BL
 {
     public class CounsellorBL

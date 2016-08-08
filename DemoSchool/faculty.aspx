@@ -81,6 +81,22 @@
         {
             padding-top: 8px;
         }
+          #tblPadding1 td
+        {
+            padding-top: 8px;
+        }
+            #tblPadding2 td
+        {
+            padding-top: 8px;
+        }
+              #tblPadding3 td
+        {
+            padding-top: 8px;
+        }
+                   #tblPadding4 td
+        {
+            padding-top: 8px;
+        }
 
         #wizHeader li .prevStep
         {
@@ -207,7 +223,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                    
                  <div>
 
-                       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                       <table id="tblPadding4" style="margin: auto; width: 100%; color: Black;">
              
 
                            <tr>
@@ -268,24 +284,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <tr>
                       
                             <td>
-                                <asp:Label ID="lbfFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                <asp:Label ID="lbfFname1" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="FacultyFname" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyFname" CssClass="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lbfLname1" runat="server" Text="Last Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                <asp:Label ID="lbfLname1" runat="server" Text="Last Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="FacultyLname" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyLname" CssClass="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -317,12 +333,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
 
                            <tr>
                                  <td>
-                                <asp:Label ID="lblfMobileNumber1" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                <asp:Label ID="lblfMobileNumber1" runat="server" Text="Mobile Number" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="FacultyMobilenumber" class="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyMobilenumber" CssClass="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox>
                             </td>
                                <td>
                                    </td>
@@ -330,18 +346,18 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                 </td>
 
                                 <td>
-                                <asp:Label ID="FacultyEmail" runat="server" Text="Email Id" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>
+                                <asp:Label ID="FacultyEmail" runat="server" Text="Email Id" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="FacultyEmailID" class="form-control" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="FacultyEmailID" CssClass="form-control" runat="server" Visible="false"></asp:TextBox>
                             </td>
 
                                </tr>
                            <tr>
                                  <td>
-                               <asp:Label ID="lblfdob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
+                               <asp:Label ID="lblfdob" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label>                           
                             </td>
                                      <td>
                             </td>
@@ -362,24 +378,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                        <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                  <tr>
                             <td>
-                                <asp:Label ID="lblFname" runat="server" Text="First Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblFname" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFirstName" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFirstName" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLastName" runat="server" Text="Last Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblLastName" runat="server" Text="Last Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLastName" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -388,7 +404,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                           <td>
-                               <asp:RequiredFieldValidator id="RequiredFieldValidatorffname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatorffname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                            <td>
                             </td>
@@ -399,30 +415,30 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorflname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorflname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                
                         <tr>
                             <td>
-                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfathergurdianname" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtfathergurdianname" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtMothername" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMothername" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -451,7 +467,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
@@ -465,12 +481,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblpob" runat="server" Text="Place of Birth" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblpob" runat="server" Text="Place of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpob" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpob" CssClass="form-control" runat="server"></asp:TextBox>
                                 &nbsp;
                             </td>
                         </tr>
@@ -500,24 +516,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtmobile" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtmobile" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFixedLandline" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFixedLandline" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -526,8 +542,8 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorfmob" runat="server" ForeColor="Red" ErrorMessage ="please Enter ur Mobile Number" ControlToValidate="txtmobile"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidatorfmob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorfmob" runat="server" ForeColor="Red" ErrorMessage ="please Enter ur Mobile Number" ControlToValidate="txtmobile" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidatorfmob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}" Display="Dynamic"></asp:RegularExpressionValidator>
                             </td>
                             <td>
                             </td>
@@ -545,24 +561,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblemail" runat="server" Text="Email Id" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblemail" runat="server" Text="Email Id" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmail" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtaltrEmail" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtaltrEmail" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -571,8 +587,8 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                  <asp:RegularExpressionValidator ID="fregexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-                                 <asp:RequiredFieldValidator id="fRequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                                  <asp:RegularExpressionValidator ID="fregexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format" Display="Dynamic"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="fRequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail" Display="Dynamic"></asp:RequiredFieldValidator>
 
                             </td>
                             <td>
@@ -591,24 +607,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEducation" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEducation" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtTechnicalSkills" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTechnicalSkills" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -637,12 +653,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                        <tr>
                             <td>
-                                <asp:Label ID="lblAccessCode" runat="server" Text="Faculty Access Code" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblAccessCode" runat="server" Text="Faculty Access Code" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFacultyAccessCode" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFacultyAccessCode" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                            <td>
                                 </td>
@@ -651,13 +667,13 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                       
                             <td>
                                 
-                                <asp:Label ID="lblphoto" runat="server" Text="Faculty Image" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblphoto" runat="server" Text="Faculty Image" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
                                 <asp:FileUpload ID="FileUploadImage" runat="server" Style="color: rgb(26, 56, 211);"
-                                    ValidationGroup="Required" />
+                                    />
                             </td>
 
                         </tr>
@@ -701,16 +717,16 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Faculty Address Details</h3>
  
 
-                         <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                         <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;">
                   
                         <tr>
                             <td>
-                                <asp:Label ID="lblCountry" runat="server" Text="Country" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblCountry" runat="server" Text="Country" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlcountry" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlcountry" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="India" Value="1"></asp:ListItem>
@@ -722,12 +738,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblstate" runat="server" Text="State" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblstate" runat="server" Text="State" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlstate" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlstate" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Telangana" Value="1"></asp:ListItem>
@@ -761,12 +777,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lbldistrict" runat="server" Text="District" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lbldistrict" runat="server" Text="District" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlDistrict" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Hyderabad" Value="1"></asp:ListItem>
@@ -778,12 +794,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                               <td>
-                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlMandal" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
@@ -817,12 +833,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                              <td>
-                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlVillage" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
@@ -834,12 +850,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpincode" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpincode" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -868,12 +884,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblStreetno" runat="server" Text="Street No." class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblStreetno" runat="server" Text="Street No." CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
@@ -914,24 +930,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txthouseno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txthouseno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFlatno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFlatno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -960,24 +976,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLandMark" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLandMark" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLoc" runat="server" Text="Faculty Location" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblLoc" runat="server" Text="Faculty Location" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLocation" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLocation" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -1017,27 +1033,27 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                          <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Employer </h3>
    
 
-                              <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                              <table id="tblPadding2" style="margin: auto; width: 100%; color: Black;">
              <tr>
                             <td>
-                                <asp:Label ID="lblWorkExp" runat="server" Text="Work Experience(YRs)" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblWorkExp" runat="server" Text="Work Experience(YRs)" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtworkExp" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtworkExp" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblEmployerName" runat="server" Text="Employer Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEmployerName" runat="server" Text="Employer Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmployerName" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmployerName" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
 
@@ -1068,24 +1084,24 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEmployerAddress" runat="server" Text="Employer Address" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEmployerAddress" runat="server" Text="Employer Address" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEMpAddress" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEMpAddress" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblempPhone" runat="server" Text="Employer Phone" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblempPhone" runat="server" Text="Employer Phone" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmpPhone" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmpPhone" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -1115,12 +1131,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEmpEmail" runat="server" Text="Employer Email" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEmpEmail" runat="server" Text="Employer Email" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmpEmail" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmpEmail" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -1148,15 +1164,15 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Program</h3>
  
 
-                           <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                           <table id="tblPadding3" style="margin: auto; width: 100%; color: Black;">
           <tr>
                             <td>
-                                <asp:Label ID="lblYearsem" runat="server" Text="Select Year-Sem" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblYearsem" runat="server" Text="Select Year-Sem" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlyearsem" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlyearsem" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Year-Sem" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="--" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="--" Value="2"></asp:ListItem>
@@ -1168,12 +1184,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategory" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectcategory" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Schedule" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="3"></asp:ListItem>
@@ -1207,12 +1223,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Category Schedule" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -1223,12 +1239,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                                   <td>
-                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectgroup" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectgroup" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -1244,12 +1260,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
 
                             <tr>
                             <td>
-                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyear" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectyear" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -1260,12 +1276,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                                   <td>
-                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Year-Sem Schedule" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -1280,12 +1296,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
 
       <tr>
                             <td>
-                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectsubjects" runat="server" class="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectsubjects" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                     <asp:ListItem Text="Select Subjects" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="" Value="1"></asp:ListItem>
                                     <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -1314,37 +1330,37 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                             <div class="row">
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="assocCmpName">First Name : </label>
-                                                    <asp:label id="flblFirstNameValue" Font-Bold="true" ClientIDMode="Static" class="control-label col-sm-7-left" runat="server"></asp:label>
+                                                    <asp:label id="flblFirstNameValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="">Father/Guardain Name </label>
-                                                    <asp:label id="fguardainValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fguardainValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="cmpEmail">Date Of Bith : </label>
-                                                    <asp:label id="fdobValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fdobValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
-                                                    <asp:label id="flblMobileNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblMobileNoValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
-                                                    <asp:label id="flblEmailValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblEmailValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification : </label>
-                                                    <asp:label id="flbleducationValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flbleducationValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Faculty Access Code : </label>
-                                                    <asp:label id="flblaccesscodeValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblaccesscodeValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -1352,37 +1368,37 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                             <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="regNumber">Last Name : </label>
-                                                    <asp:label id="flblLastNameValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblLastNameValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="officePhone">Mother Maiden Name : </label>
-                                                    <asp:label id="flblmotherValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblmotherValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Place Of Birth : </label>
-                                                   <asp:label id="flblpobValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblpobValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Fixed/Land Line Number: </label>
-                                                   <asp:label id="flbllandnoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flbllandnoValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">AlterNate Email Id : </label>
-                                                   <asp:label id="flblaltremailValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblaltremailValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Technical Skills : </label>
-                                                   <asp:label id="flbltechnicalValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flbltechnicalValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                   <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Faculty Image : </label>
-                                                   <asp:label id="fimgValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="fimgValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -1398,32 +1414,32 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
-                                                    <asp:label id="flblCountryValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblCountryValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">District : </label>
-                                                    <asp:label id="flblDistrictValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblDistrictValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Village/Toen/City : </label>
-                                                   <asp:label id="flblvillageValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblvillageValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
-                                                    <asp:label id="flblStreetNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblStreetNoValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
-                                                    <asp:label id="flblhouseNoValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblhouseNoValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark Name : </label>
-                                                   <asp:label id="flblLandMarkValue" font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblLandMarkValue" font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -1431,32 +1447,32 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">State : </label>
-                                                    <asp:label id="flblStateValue" Font-Bold="true" ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="flblStateValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
-                                                    <asp:label id="flblmandal" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblmandal" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
-                                                   <asp:label id="flblpinCodeValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblpinCodeValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
-                                                    <asp:label id="flblStreetNameValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblStreetNameValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
-                                                    <asp:label id="flblFlatNoValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblFlatNoValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="studentLocation">Faculty Location : </label>
-                                                   <asp:label id="flblLocationValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblLocationValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -1472,16 +1488,16 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                    <label class="control-label col-sm-5"  for="firstName">Work Experience(YRs) : </label>
-                                                    <asp:label id="fwexpValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fwexpValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                  <label class="control-label col-sm-5"  for="fatherName">Employer Address : </label>
-                                                    <asp:label id="flblempaddrValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>                                              </div>
+                                                    <asp:label id="flblempaddrValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>                                              </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                    <label class="control-label col-sm-5"  for="date">Employer Email : </label>
-                                                   <asp:label id="flblEmpemailValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblEmpemailValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             
                                         </div>
@@ -1490,12 +1506,12 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="lastName">Employer Name : </label>
-                                                    <asp:label id="flblemptNameValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblemptNameValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                  <label class="control-label col-sm-5"  for="motherMaidenName">Employer Phone : </label>
-                                                    <asp:label id="flblempphValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblempphValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                           </div>
                                     </div>
@@ -1511,22 +1527,22 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCountry">Select Year Sem : </label>
-                                                    <asp:label id="flblselyersemValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselyersemValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">Select Categeory Schedule : </label>
-                                                    <asp:label id="flblcatescheduValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblcatescheduValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Select Year : </label>
-                                                   <asp:label id="lblselyearValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="lblselyearValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Select Subjects : </label>
-                                                    <asp:label id="flblselctsubValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselctsubValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              
                                         </div>
@@ -1535,17 +1551,17 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">Select Category : </label>
-                                                    <asp:label id="flblselcategValue" Font-Bold="true"  ClientIDMode="Static" class="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="flblselcategValue" Font-Bold="true"  ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Select Group : </label>
-                                                    <asp:label id="flblselgrValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="flblselgrValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">Select Year-Sem Schedule : </label>
-                                                   <asp:label id="flblyrsmsheduValue" Font-Bold="true"  ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="flblyrsmsheduValue" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             
                                               
@@ -1571,7 +1587,7 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
         </asp:Wizard>
 
     </div>
-    <div class="formbuttons"><asp:Button ID="btn" type="submit" class="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/><button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
+    <div class="formbuttons"><asp:Button ID="btn"  class="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/><button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>
     </div>
    </div>

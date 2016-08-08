@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using BAL.BE;
 using DAL;
-using System.Data;
+
 
 namespace BAL.BL
 {

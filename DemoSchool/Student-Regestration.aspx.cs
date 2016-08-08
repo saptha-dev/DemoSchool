@@ -320,6 +320,7 @@ namespace DemoSchool
                     txtcity.Text = dr["Village_Town_City"].ToString();
                     txtarea.Text = dr["SubUrban_Area"].ToString();
                     ddladdCategory.DataTextField = dr["CategoryID"].ToString();
+                   // ddlGroup.SelectedValue = dr["GroupID"].ToString();
                  // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
                   //ddlselectyear.DataTextField = dr["YearId"].ToString();
                  // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
@@ -357,7 +358,8 @@ namespace DemoSchool
                 lblStudentLocationValue.Text = txtLocation.Text;
 
                 //lblSelectProgramValue.Text = ddladdProgram.SelectedItem.Value;
-                lblSelectGroupValue.Text = ddlGroup.Text;
+               // lblSelectGroupValue.Text = ddlGroup.SelectedItem.Text;
+                //lblSelectGroupValue.Text = ddlGroup.Text;
                 lblSelectCategoryValue.Text = ddladdCategory.Text;
                 lblSelectYearValue.Text = DDlYear.Text;
                 lblSelectSubjectsValue.Text = ddlSubjects.Text;

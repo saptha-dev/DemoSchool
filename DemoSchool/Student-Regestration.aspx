@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
     
     <%-- <script type="text/javascript">
         $.noConflict();
@@ -87,6 +88,18 @@
             border-radius: 0;
         }
         #tblPadding td
+        {
+            padding-top: 8px;
+        }
+ #tblPadding1 td
+        {
+            padding-top: 8px;
+        }
+ #tblPadding2 td
+        {
+            padding-top: 8px;
+        }
+ #tblPadding3 td
         {
             padding-top: 8px;
         }
@@ -458,7 +471,7 @@
                     <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
                         <br>
                             <div>
-                                <table id="tblPadding" class="table-responsive" style="margin: auto; width: 100%; color: Black;">
+                                <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                                          <tr>
                                             <td><asp:Label ID="lblrd" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Italic="true" Font-Size="X-Large"></asp:Label></td>
                                             <td></td>
@@ -470,7 +483,7 @@
                                             <td></td>
                                          </tr>
                                          <tr>
-                                            <td><asp:Label ID="lbFname1" runat="server" Text="First Name" class="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lbFname1" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
                                             <td></td>
                                             <td><asp:TextBox ID="studentFname" CssClass="form-control" runat="server" Visible="false"></asp:TextBox></td>
                                             <td></td>
@@ -520,7 +533,7 @@
                                          <tr>
                                             <td><asp:Label ID="lblsdob" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
                                             <td></td>
-                                            <td><input id="studentDate" runat="server" CssClass="form-control" type="date" value="yyyy-mm-dd" visible="false"/></td>
+                                            <td><input id="studentDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/></td>
                                         </tr> 
                                 </table>
                           </div>
@@ -531,7 +544,7 @@
                     <br>
                            <h3> <span class="glyphicon glyphicon-user" aria-hidden="true" style="color:#202a5c;"></span>Student Personal Details</h3>
 
-                        <table id="tblPadding" class= "table-responsive" >
+                        <table id="tblPadding1" class="Resopnsive">
                               <tr>
                                             <td>
                                                 <asp:Label ID="lblFname" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -560,7 +573,7 @@
                                             <td>
                                             </td>
                                             <td>
-                                                  <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+                                                  <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </td>
                                             <td>
                                             </td>
@@ -570,11 +583,8 @@
                                             </td>
                                             <td>
                                             </td>
-
-                      
-
                                              <td>
-                                               <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                                               <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName" Display="Dynamic"></asp:RequiredFieldValidator>
                                             </td>
                                    </tr>
                                    <tr>
@@ -702,8 +712,8 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter  Mobile Number" ControlToValidate="txtmobile"></asp:RequiredFieldValidator>
-                                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                                                <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter  Mobile Number" ControlToValidate="txtmobile" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}" Display="Dynamic"></asp:RegularExpressionValidator>
                                             </td>
                                             <td>
                                             </td>
@@ -747,8 +757,8 @@
                                             <td>
                                             </td>
                                             <td>
-                                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-                                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format" Display="Dynamic"></asp:RegularExpressionValidator>
+                                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                             </td>
                                             <td>
@@ -831,7 +841,7 @@
                                             </td>
                                             <td>
                                                 <asp:FileUpload ID="FileUploadImage" runat="server" Style="color: rgb(26, 56, 211);"
-                                                    ValidationGroup="Required" />
+                                                     />
                                             </td>
                                  </tr>
                                  <tr>
@@ -872,7 +882,7 @@
                      <br>
                            <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Student Address Details</h3>
 
-                                <table id="tblPadding" class="table-responsive" >
+                                <table id="tblPadding2"  class="table-responsive">
                           <tr>
                                             <td>
                                                 <asp:Label ID="lblCountry" runat="server" Text="Country" CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -1068,24 +1078,24 @@
                                </tr>
                                 <tr>
                                             <td>
-                                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." class="control-label col-sm-12 text-left"></asp:Label>
+                                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No." CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txthouseno" class="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txthouseno" CssClass="form-control" runat="server"></asp:TextBox>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." class="control-label col-sm-12 text-left"></asp:Label>
+                                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No." CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txtFlatno" class="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtFlatno" CssClass="form-control" runat="server"></asp:TextBox>
                                             </td>
                                </tr>
                                <tr>
@@ -1114,12 +1124,12 @@
                                </tr>
                                <tr>
                                             <td>
-                                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" class="control-label col-sm-12 text-left"></asp:Label>
+                                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txtLandMark" class="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtLandMark" CssClass="form-control" runat="server"></asp:TextBox>
                                             </td>
                                             <td>
                                             </td>
@@ -1166,8 +1176,8 @@
                     <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program">
                   <div>
                       <br>
-                        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Faculty Program Details</h3>
-                        <table id="tblPadding" class="table-responsive" style="margin: auto; width: 100%; color: Black;">
+                        <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</h3>
+                        <table id="tblPadding3" class="table-responsive" style="margin: auto; width: 100%; color: Black;">
                                     <tr>
                                              <td>
                                                <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -1177,6 +1187,9 @@
                                             <td>
                                                 <asp:DropDownList ID="ddladdProgram" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                                         OnSelectedIndexChanged="ddladdProgram_SelectedIndexChanged">
+                                                      <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
                                                                     </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1189,8 +1202,11 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" class="form-control" style="width:100%;"
+                                                <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                             OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
+                                                       <asp:ListItem Text="--Select Category--" Value=""></asp:ListItem>
+                                                    <asp:ListItem Text="-------" Value="--"></asp:ListItem>
+                                                   
                                                         </asp:DropDownList>
                                             </td>
                                  </tr>
@@ -1241,6 +1257,10 @@
                                             <td>
                                                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                                         OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
+                                                     <asp:ListItem Text="--Select Group--" Value=""></asp:ListItem>
+                                                    <asp:ListItem Text="---" Value="--"></asp:ListItem>
+                                       
+                                                                <asp:ListItem></asp:ListItem>
                                                                     </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1256,8 +1276,11 @@
                                             <td>
                                             </td>
                                             <td>
-                                               <asp:DropDownList ID="DDlYear" class="form-control" runat="server" AutoPostBack="true" style="width:100%;"
+                                               <asp:DropDownList ID="DDlYear" CssClass="form-control" runat="server" AutoPostBack="true" style="width:100%;"
                                                                         OnSelectedIndexChanged="DDlYear_SelectedIndexChanged">
+                                                     <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
                                                                     </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1271,7 +1294,10 @@
                                             </td>
                                             <td>
                                                <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
-                                                        </asp:DropDownList>
+                                                     <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>   
+                                                     </asp:DropDownList>
                                             </td>
                                             <td>
                                             </td>
@@ -1289,7 +1315,10 @@
                                             <td>
                                                <asp:DropDownList ID="ddlSubjects" runat="server" AutoPostBack="true" CssClass="form-control"
                                                                         OnSelectedIndexChanged="ddlSubjects_SelectedIndexChanged">
-                                                                    </asp:DropDownList>
+                                                     <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>
+                                                                <asp:ListItem></asp:ListItem>                
+                                                    </asp:DropDownList>
                                             </td>             
                                 </tr>       
                           </table>
@@ -1391,7 +1420,7 @@
                                                         <div class="row">
                                                               <div class="form-group">
                                                                   <label class="control-label col-sm-5"  for="cmpCountry">Country : </label>
-                                                                    <asp:label id="lblCountryValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                    <asp:label id="lblCountryValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
@@ -1465,7 +1494,7 @@
                                                         <div class="row">
                                                               <div class="form-group">
                                                                   <label class="control-label col-sm-5"  for="cmpCountry">Select Program: </label>
-                                                                    <asp:label id="lblSelectProgramValue" Font-Bold="true" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                    <asp:label id="lblSelectProgramValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
@@ -1517,37 +1546,37 @@
                                         <div class="col-md-12 pull-left">
                                               <div class="row">
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-5"  for="paymentProgram">Selected Program:</label>
+                                                        <label class="control-label col-md-5"  for="paymentProgram">Program:</label>
                                                         <asp:label id="paymentProgram" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                       </div>
                                                       <div class="clearfix"></div>
                                                         <div class="form-group">
-                                                        <label class="control-label col-md-5"  for="paymentCategorySchedule">Select Categeory Schedule: </label>
+                                                        <label class="control-label col-md-5"  for="paymentCategorySchedule"> Categeory Schedule: </label>
                                                         <asp:label id="paymentCategorySchedule"  Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                       </div>
                                                       <div class="clearfix"></div>
                                                       <div class="form-group">
-                                                        <label class="control-label col-md-5"  for="paymentYear">Selected Year :</label>
+                                                        <label class="control-label col-md-5"  for="paymentYear"> Year :</label>
                                                         <asp:label id="paymentYear" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                       </div>
                                                       <div class="clearfix"></div>
                                                            <div class="form-group">
-                                                            <label class="control-label col-md-5"  for="paymentSubject">Selected Subjects :</label>
+                                                            <label class="control-label col-md-5"  for="paymentSubject"> Subjects :</label>
                                                             <asp:label id="paymentSubject" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                            </div>
                                                            <div class="clearfix"></div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentCategory">Selected Category : </label>
+                                                                <label class="control-label col-md-5"  for="paymentCategory"> Category : </label>
                                                                 <asp:label id="paymentCategory" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                              <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentGroup">Selected Group : </label>
+                                                                <label class="control-label col-md-5"  for="paymentGroup"> Group : </label>
                                                                 <asp:label id="paymentGroup" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                              </div>
                                                              <div class="clearfix"></div>
                                                              <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentYearSem">Selected Year-Sem Schedule : </label>
+                                                                <label class="control-label col-md-5"  for="paymentYearSem"> Year-Sem Schedule : </label>
                                                                 <asp:label id="paymentYearSem" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                               </div>
                                                                </div>
@@ -1743,7 +1772,7 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-5"  for="bankName">Bank Name: </label>
                                                             <div class="col-sm-6">
-                                                                <asp:TextBox id="bankName" Font-Bold="true" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox>
+                                                                <asp:TextBox id="bankName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                                             </div>
                                                         </div>
                                                         <div class="clearfix"></div>
@@ -1795,7 +1824,7 @@
             </HeaderTemplate>
         </asp:Wizard>
         </div>
-        <div class="formbuttons"><asp:Button ID="btn" type="submit" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/><button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
+        <div class="formbuttons"><asp:Button ID="btn"   CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/><button type="submit" class="btn btn-danger btn-lg">Cancel</button></div>
       </div>
     </div>
    </div>
