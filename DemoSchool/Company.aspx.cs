@@ -128,9 +128,9 @@ namespace DemoSchool
                 alternateEmail.Text = txtAlternateEmail.Text;
 
 
-                cmpCountry.Text = txtCmpCountry.Text;
-                cmpState.Text = txtCmpState.Text;
-                cmpCity.Text = txtCmpCity.Text;
+                cmpCountry.Text = txtCmpCountry.SelectedItem.Text;
+                cmpState.Text = txtCmpState.SelectedItem.Text;
+                cmpCity.Text = txtCmpCity.SelectedItem.Text;
                 mandal.Text = txtMandal.Text;
                 village.Text = txtVillage.Text;
                 pinCode.Text = txtPinCode.Text;
@@ -158,9 +158,9 @@ namespace DemoSchool
             newRegistration.OptionalEmailID = txtAlternateEmail.Text;
             newRegistration.DateOfBirth = Convert.ToDateTime(date.Text);
 
-            newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.Text);
-            newRegistration.StateID = Convert.ToInt16(txtCmpState.Text);
-            newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.Text);
+            newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.SelectedItem.Value);
+            newRegistration.StateID = Convert.ToInt16(txtCmpState.SelectedItem.Value);
+            newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.SelectedItem.Value);
             newRegistration.SubUrban_Area = txtMandal.Text;
             newRegistration.Village_Town_City = txtVillage.Text;
             newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);

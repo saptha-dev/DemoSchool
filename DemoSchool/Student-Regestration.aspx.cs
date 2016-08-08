@@ -19,11 +19,10 @@ namespace DemoSchool
         AddProgramsBL objBL = new AddProgramsBL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
             if (!IsPostBack)
             {
-                Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
-                addNewPogram();
-
+            addNewPogram();
             }
            
         }
@@ -38,7 +37,7 @@ namespace DemoSchool
             ddladdProgram.DataValueField = "Program_id";
             ddladdProgram.DataBind();
             // ddlProgram.Items.Insert(0, "--Select--");
-            ddladdProgram.Items.Insert(0, new ListItem("--Select--", "0"));
+            ddladdProgram.Items.Insert(0, new ListItem("--Select--", ""));
 
         }
 
@@ -220,7 +219,30 @@ namespace DemoSchool
             newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             objReg.StudentRegistration(newReg1);
         }
-     protected void RadioButton_CheckedChanged(object sender, System.EventArgs e)
+
+        protected void PaymentOption_Changed(object sender, System.EventArgs e)
+        {
+            if (netBanking.Checked)
+            {
+                payment2.Visible = true;
+                payment1.Visible = false;
+                payment3.Visible = false;
+            }
+            if (creditCard.Checked)
+            {
+                payment2.Visible = false;
+                payment1.Visible = true;
+                payment3.Visible = false;
+            }
+            if (accountTransfer.Checked)
+            {
+                payment1.Visible = false;
+                payment2.Visible = false;
+                payment3.Visible = true;
+            }
+        }
+
+        protected void RadioButton_CheckedChanged(object sender, System.EventArgs e)
         {
             if (rdonewUser.Checked == true)
             {
@@ -259,7 +281,7 @@ namespace DemoSchool
             {
                 Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.ActiveStepIndex - 1;
             }
-
+            GetClassForWizardStep(sender);
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
                
@@ -334,7 +356,7 @@ namespace DemoSchool
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
 
-                lblSelectProgramValue.Text = ddladdProgram.SelectedItem.Value;
+                //lblSelectProgramValue.Text = ddladdProgram.SelectedItem.Value;
                 lblSelectGroupValue.Text = ddlGroup.Text;
                 lblSelectCategoryValue.Text = ddladdCategory.Text;
                 lblSelectYearValue.Text = DDlYear.Text;
@@ -344,6 +366,38 @@ namespace DemoSchool
 
             }
 
+            if (Wizardstudentreg.ActiveStepIndex == 4)
+            {
+                if (ddladdProgram.SelectedItem != null)
+                {
+                    paymentProgram.Text = string.IsNullOrEmpty(ddladdProgram.SelectedItem.Value) ? "" : ddladdProgram.SelectedItem.Text;
+                }
+                if (ddlGroup.SelectedItem != null)
+                {
+                    paymentGroup.Text = string.IsNullOrEmpty(ddlGroup.SelectedItem.Value) ? "" : ddlGroup.SelectedItem.Text;
+                }
+                if (ddladdCategory.SelectedItem != null)
+                {
+                    paymentCategory.Text = string.IsNullOrEmpty(ddladdCategory.SelectedItem.Value) ? "" : ddladdCategory.SelectedItem.Text;
+                }
+                if (DDlYear.SelectedItem != null)
+                {
+                    paymentYear.Text = string.IsNullOrEmpty(DDlYear.SelectedItem.Value) ? "" : DDlYear.SelectedItem.Text;
+                }
+                if (ddlSubjects.SelectedItem != null)
+                {
+                    paymentSubject.Text = string.IsNullOrEmpty(ddlSubjects.SelectedItem.Value) ? "" : ddlSubjects.SelectedItem.Text;
+                }
+                if (ddladdsemister.SelectedItem != null)
+                {
+                    paymentYearSem.Text = string.IsNullOrEmpty(ddladdsemister.SelectedItem.Value) ? "" : ddladdsemister.SelectedItem.Text;
+                }
+                if (ddlselectcategoryschedule.SelectedItem != null)
+                {
+                    paymentCategorySchedule.Text = string.IsNullOrEmpty(ddlselectcategoryschedule.SelectedItem.Value) ? "" : ddlselectcategoryschedule.SelectedItem.Text;
+                }
+
+            }
         }
     }
 }
