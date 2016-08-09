@@ -918,10 +918,10 @@
                                             </td>
                                             <td>
                                             </td>
-                                           <%-- <td>
-                                                <asp:RequiredFieldValidator ID="rfvLocation" runat="server" ControlToValidate="ddlcountry"
-                                                  ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red"  ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
-                                            </td>--%>
+                                       <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidator" ControlToValidate="ddlcountry" InitialValue="0" runat="server" ErrorMessage="Please select Country "></asp:RequiredFieldValidator>
+ 
+                                          </td> 
                                             <td>
                                             </td>
                                             <td>
@@ -1205,7 +1205,7 @@
                                                 <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                             OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
                                                        <asp:ListItem Text="--Select Category--" Value=""></asp:ListItem>
-                                                    <asp:ListItem Text="-------" Value="--"></asp:ListItem>
+                                                    
                                                    
                                                         </asp:DropDownList>
                                             </td>
@@ -1215,11 +1215,10 @@
                                             </td>
                                             <td>
                                             </td>
-                                           <%-- <td>
-                                                <asp:RequiredFieldValidator ID="rfvLocation" runat="server" ControlToValidate="ddlSelectProgram"
-                                                  ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red"  ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
-                                            </td>--%>
                                             <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectprogram" ControlToValidate="ddladdProgram" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Program"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
                                             </td>
                                             <td>
                                             </td>
@@ -1227,10 +1226,12 @@
                                             </td>
                                             <td>
                                             </td>
-                                           <%-- <td>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="ddlselectcategory"
-                                                  ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red" ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
-                                            </td>--%>
+                                            <td>
+                                            </td>
+                                            <td>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldSelectCategeory" ControlToValidate="ddladdCategory" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
                                 </tr>
                                 <tr>
                                             <td>
@@ -1241,8 +1242,8 @@
                                             <td>
                                                 <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
                                                     <asp:ListItem Text="Select Category Schedule" Value=""></asp:ListItem>
-                                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                                   <%-- <asp:ListItem Text="" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="" Value="2"></asp:ListItem>--%>
                                                 </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1269,6 +1270,29 @@
                                             </td>
  
                                   </tr>
+                                       <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategerySchedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlGroup" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Group"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
+                                </tr>
                                   <tr>
                                             <td>
                                                 <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -1305,6 +1329,30 @@
                                             </td>
  
                                  </tr>
+
+                              <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyear" ControlToValidate="DDlYear" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsem" ControlToValidate="ddladdsemister" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem Schedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
+                                </tr>
                                  <tr>
       
                                             <td>
@@ -1320,7 +1368,20 @@
                                                                 <asp:ListItem></asp:ListItem>                
                                                     </asp:DropDownList>
                                             </td>             
-                                </tr>       
+                                </tr>   
+                                <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectsubjects" ControlToValidate="ddlSubjects" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Subjects"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>
+                                            </td>
+                                </tr>    
                           </table>
                  </div>
                 </asp:WizardStep>
@@ -1529,6 +1590,12 @@
                                                                   <label class="control-label col-sm-5"  for="pinCode">Year-Sem Schedule : </label>
                                                                    <asp:label id="lblSelectYearSemSheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
+                                                               <div class="clearfix"></div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-5"  for="lblprogAmount"> Amount: </label>
+                                                                <asp:label id="lblprogramAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                              </div>
+                                                               </div>
                                                          </div>
                                                     </div>
                                                 </div>
@@ -1580,10 +1647,17 @@
                                                                 <asp:label id="paymentYearSem" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                               </div>
                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-5"  for="lblprogAmount"> Amount: </label>
+                                                                <asp:label id="lblprogAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                              </div>
+                                                           
+                                    
                                         </div>
                                    </div>
                                 </div>                                                        
-                         </div>
+                      
                          
                          <div class="row">
              
@@ -1603,6 +1677,7 @@
                             </nav>
     
                             </div>--%>
+                             
 
                             <!-- Main Content -->
                             <div class="container-fluid">
@@ -1620,151 +1695,38 @@
                                    <div id="payment1" Visible="true" runat="server" ClientIDMode="static">
                                        <h1>Credit Card Content here</h1>
                                    </div>
-                                   <div id="payment2" runat="server" ClientIDMode="static" Visible="false"><h1>Net Banking Content here</h1>
+                                   <div id="payment2" runat="server" ClientIDMode="static" Visible="false"><h1>Account Detail</h1>
                                        <div class="row">
                                                 <div class="col-md-6 pull-left">
                                                     <div class="row">
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="ddlFromBank">Select Bank Name : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlFromBank" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
+                                                            <label id="lblAccno" class="control-label col-sm-5"  for="FromAccountNo">Account No : </label>
+                                                             <label id="lblAccvalue" class="control-label col-sm-5"  for="FromAccountNo">123456789 </label>
+                                                        
                                                             <asp:label id="Label1" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="fromBankCountry">Select Country Of Bank : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankCountry" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
+                                                            <label id="lblAccountName" class="control-label col-sm-5"  for="fromAccountName">Account Name : </label>
+                                                            <label id="lblAccnamevalue" class="control-label col-sm-5"  for="fromAccountName">Sapthashri </label>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="fromBankState">Select State of bank : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankState" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
+                                                            <label id="lblifscCode" class="control-label col-sm-5"  for="fromifsccode">IFSC Code : </label>
+                                                              <label id="lblifscvalue" class="control-label col-sm-5"  for="fromifsccode">8686 : </label>
+                                                         
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="fromBankBranch">Select Branch location : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="fromBankBranch" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
+                                                            <label id="ablbranch" class="control-label col-sm-5"  for="fromBankBranch">Branch Name : </label>
+                                                              <label id="lblbranch" class="control-label col-sm-5"  for="fromBankBranch">Branch Name </label>
+                                                          
                                                         </div>
-                                
-                                                        Account Number:
-                                                        Amount:
-                                                        PRN:
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtFromIfsc">BSB/IFSC code : </label>
-                                                            <asp:TextBox id="txtFromIfsc" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtFromAccountName">Account Person-Name : </label>
-                                                            <asp:TextBox id="txtFromAccountName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="fromAccountType">Select Account Type : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="fromAccountType" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="fromAccountNumber">Account Number : </label>
-                                                            <asp:TextBox id="fromAccountNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtFromAmount">Amount : </label>
-                                                            <asp:TextBox id="txtFromAmount" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtFromPRN">PRN : </label>
-                                                            <asp:TextBox id="txtFromPRN" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-
+                                                     </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6 pull-right">
-                                                    <div class="row">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="assocCmpName">Select Bank Name : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBank" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <asp:label id="Label2" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="">Select Country Of Bank : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankCountry" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="cmpEmail">Select State of bank : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankState" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="branchesNo">Select Branch location : </label>
-                                                            <asp:DropDownList runat="server" ClientIDMode="static" ID="ddlToBankBranch" CssClass="control-label col-sm-7-left">
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtToIfsc">BSB/IFSC code : </label>
-                                                            <asp:TextBox id="txtToIfsc" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="toAccountNumber">Account Number : </label>
-                                                            <asp:TextBox id="toAccountNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="toAccountName">Account Name : </label>
-                                                            <asp:TextBox id="toAccountName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-5"  for="txtToPRN">PRN : </label>
-                                                            <asp:TextBox id="txtToPRN" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                </div>           
-                                                </div>
-
-                                   </div>
-                                   <div id="payment3" runat="server" ClientIDMode="static" Visible="false">
+                                           </div>
+                                       </div>
+                                                        <div id="payment3" runat="server" ClientIDMode="static" Visible="false">
                                        <h1>Account Transfer</h1>
                                         <div class="row">
                                             <div class="col-md-6 pull-left">
@@ -1804,12 +1766,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  </div>
                     </asp:WizardStep>
                </WizardSteps>
                 <HeaderTemplate>
@@ -1831,11 +1793,12 @@
  </div>    
     <div>
      </div>
+    <
           <div class="topbar"></div>
                 <div class="container footer">
                     <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>
               </div>
-
+  
     <script type="text/javascript">
         function showPayment(paymentId) {
             if (paymentId == "payment1") {

@@ -82,6 +82,14 @@
         {
             padding-top: 8px;
         }
+           #tblPadding1 td
+        {
+            padding-top: 8px;
+        }
+              #tblPadding2 td
+        {
+            padding-top: 8px;
+        }
 
         #wizHeader li .prevStep
         {
@@ -207,25 +215,25 @@
                      <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                  <tr>
                             <td>
-                                <asp:Label ID="lblFname" runat="server" Text="First Name"  class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblFname" runat="server" Text="First Name"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFirstName" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFirstName" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLastName" runat="server" Text="Last Name"  class="control-label col-sm-12 text-left"
+                                <asp:Label ID="lblLastName" runat="server" Text="Last Name"  CssClass="control-label col-sm-12 text-left"
                                     ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLastName" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -255,12 +263,12 @@
                <br>
                         <tr>
                             <td>
-                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name"  class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtfathergurdianname" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtfathergurdianname" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
@@ -268,12 +276,12 @@
                             </td>
                             <td>
                                 <asp:Label ID="lblMothermaaidenname" runat="server" Text="Mother Maiden Name"
-                                     class="control-label col-sm-12 text-left"></asp:Label>
+                                     CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtMothername" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtMothername" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -302,7 +310,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth"  class="control-label col-sm-12 text-left"
+                                <asp:Label ID="lblDob" runat="server" Text="Date of Birth"  CssClass="control-label col-sm-12 text-left"
                                     ></asp:Label></>
                             </td>
                             <td>
@@ -318,12 +326,12 @@
                             </td>
                             <td>
                                 <asp:Label ID="lblpob" runat="server" Text="Place of Birth" 
-                                     class="control-label col-sm-12 text-left"></asp:Label>
+                                     CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpob" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpob" CssClass="form-control" runat="server"></asp:TextBox>
                                 &nbsp;
                             </td>
                         </tr>
@@ -353,26 +361,26 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number"  class="control-label col-sm-12 text-left"
-                                    ></asp:Label>
+                                <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number"  CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                    
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtmobile" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtmobile" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number"  class="control-label col-sm-12 text-left" 
-                                  ></asp:Label>
+                                <asp:Label ID="lblphone" runat="server" Text="Fixed/Land Line Number"  CssClass="control-label col-sm-12 text-left" ></asp:Label> 
+                                 
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFixedLandline" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFixedLandline" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -404,25 +412,25 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblemail" runat="server" Text="Email Id"  class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblemail" runat="server" Text="Email Id"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmail" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id"  class="control-label col-sm-12 text-left" 
-                                    ></asp:Label>
+                                <asp:Label ID="lblAlternateEmail" runat="server" Text="Alternate Email Id"  CssClass="control-label col-sm-12 text-left"></asp:Label> 
+                                  
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtaltrEmail" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtaltrEmail" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -451,25 +459,25 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification"  class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEducation" runat="server" Text="Education/Qualification"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEducation" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEducation" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills"  class="control-label col-sm-12 text-left">
+                                <asp:Label ID="lblTechnicalSkills" runat="server" Text="Technical Skills"  CssClass="control-label col-sm-12 text-left">
                                     </asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtTechnicalSkills" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTechnicalSkills" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -498,27 +506,27 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblAccessCode" runat="server" Text="Counsellor Access Code"  class="control-label col-sm-12 text-left"
-                             ></asp:Label>
+                                <asp:Label ID="lblAccessCode" runat="server" Text="Counsellor Access Code"  CssClass="control-label col-sm-12 text-left" ></asp:Label>
+                            
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtAccessCode" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtAccessCode" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblphoto" runat="server" Text="Counsellor Image"  class="control-label col-sm-12 text-left" 
-                               ></asp:Label>
+                                <asp:Label ID="lblphoto" runat="server" Text="Counsellor Image"  CssClass="control-label col-sm-12 text-left" ></asp:Label> 
+                              
                             </td>
                             <td>
                             </td>
                             <td>
                                 <asp:FileUpload ID="FileUploadImage" runat="server" Style="color: rgb(26, 56, 211);"
-                                    ValidationGroup="Required" />
+                                    />
                             </td>
                         </tr>
                         <tr>
@@ -568,16 +576,16 @@
                         <br>
                           <h3> <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Counsellor Address Details</h3>
 
-                         <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                         <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;">
                   
                         <tr>
                             <td>
-                                <asp:Label ID="lblCountry" runat="server" Text="Country"   class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblCountry" runat="server" Text="Country"   CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlcountry" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlcountry" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="India" Value="1"></asp:ListItem>
@@ -589,13 +597,13 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblstate" runat="server" Text="State"   class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblstate" runat="server" Text="State"   CssClass="control-label col-sm-12 text-left" ></asp:Label>
                                    
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlstate" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlstate" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Telangana" Value="1"></asp:ListItem>
@@ -629,12 +637,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lbldistrict" runat="server" Text="District" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lbldistrict" runat="server" Text="District" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlDistrict" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlDistrict" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="Hyderabad" Value="1"></asp:ListItem>
@@ -646,12 +654,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlMandal" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
@@ -685,12 +693,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlVillage" runat="server" class="form-control" AppendDataBoundItems="true"
+                                <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
                                     Style="width: 100%;">
                                     <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
                                     <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
@@ -702,12 +710,12 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code"   class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblpincode" runat="server" Text="Pin Code"   CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtpincode" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtpincode" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -736,24 +744,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblStreetno" runat="server" Text="Street No."   class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblStreetno" runat="server" Text="Street No."   CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblStreetname" runat="server" Text="Street Name" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtstreetname" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtstreetname" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -782,23 +790,23 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No."  class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblhouseno" runat="server" Text="House No./Door No/Plot No."  CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txthouseno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txthouseno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No."   class="control-label col-sm-12 text-left" ></asp:Label>                            </td>
+                                <asp:Label ID="lblFlatno" runat="server" Text="Flat No./Unit No."   CssClass="control-label col-sm-12 text-left" ></asp:Label>                            </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtFlatno" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFlatno" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -827,24 +835,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblLandmark" runat="server" Text="Building/LandMark Name" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLandMark" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLandMark" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLoc" runat="server" Text="Counseller Location" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblLoc" runat="server" Text="Counseller Location" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtLocation" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtLocation" CssClass="form-control" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -885,73 +893,27 @@
                           <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Counsellor Employer Details</h3>
       
 
-                           <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
+                           <table id="tblPadding2" style="margin: auto; width: 100%; color: Black;">
              <tr>
                             <td>
-                                <asp:Label ID="lblWorkExp" runat="server" Text="Work Experience(YRs)" class="control-label col-sm-12 text-left" ></asp:Label>
+                                <asp:Label ID="lblWorkExp" runat="server" Text="Work Experience(YRs)" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtworkExp"  class="form-control"  runat="server"></asp:TextBox>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:Label ID="lblEmployerName" runat="server" Text="Employer Name" class="control-label col-sm-12 text-left" ></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtEmployerName"  class="form-control"  runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Reg.code" ForeColor="Red" ControlToValidate="txtDirectorregcode"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>--%>
+                                <asp:TextBox ID="txtworkExp"  CssClass="form-control"  runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
+                                <asp:Label ID="lblEmployerName" runat="server" Text="Employer Name" CssClass="control-label col-sm-12 text-left" ></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <%--   <asp:CustomValidator ID="directorddl" runat="server" ClientValidationFunction="validate" ControlToValidate="ddlProgramme"
-                                ErrorMessage="* Select a Programe" ForeColor="Red" ValidationGroup="Required" Display="Dynamic" Font-Size="11px" SetFocusOnError="True"
-                                CssClass="Validator">
-                            </asp:CustomValidator>--%>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="lblEmployerAddress" runat="server" Text="Employer Address" class="control-label col-sm-12 text-left"></asp:Label>                           </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtEMpAddress"  class="form-control"  runat="server"></asp:TextBox>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:Label ID="lblempPhone" runat="server" Text="Employer Phone" class="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtEmpPhone"  class="form-control"  runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmployerName"  CssClass="form-control"  runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -981,12 +943,58 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEmpEmail" runat="server" Text="Employer Email" class="control-label col-sm-12 text-left"></asp:Label>
+                                <asp:Label ID="lblEmployerAddress" runat="server" Text="Employer Address" CssClass="control-label col-sm-12 text-left"></asp:Label>                           </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtEMpAddress"  CssClass="form-control"  runat="server"></asp:TextBox>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmpEmail"  class="form-control"  runat="server"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblempPhone" runat="server" Text="Employer Phone" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtEmpPhone"  CssClass="form-control"  runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="Required"
+                                    ErrorMessage="* Enter Reg.code" ForeColor="Red" ControlToValidate="txtDirectorregcode"
+                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>--%>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <%--   <asp:CustomValidator ID="directorddl" runat="server" ClientValidationFunction="validate" ControlToValidate="ddlProgramme"
+                                ErrorMessage="* Select a Programe" ForeColor="Red" ValidationGroup="Required" Display="Dynamic" Font-Size="11px" SetFocusOnError="True"
+                                CssClass="Validator">
+                            </asp:CustomValidator>--%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblEmpEmail" runat="server" Text="Employer Email" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtEmpEmail"  CssClass="form-control"  runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -1210,7 +1218,8 @@
                                     </div>
                                 </div>                                
                                                      
-                    
+                    </div>
+                        </div>
                    
                 </asp:WizardStep>
 
@@ -1229,12 +1238,11 @@
         </asp:Wizard>
 
     </div>
-    <div class="formbuttons"><asp:Button ID="btn" type="submit" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" class="btn btn-danger btn-lg"">Cancel</button></div>
+    <div class="formbuttons"><asp:Button ID="btn"  CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" class="btn btn-danger btn-lg"">Cancel</button></div>
       </div>
     </div>
    </div>
-</div>
-    </div>
+
     
       
      

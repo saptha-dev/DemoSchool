@@ -832,6 +832,24 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddlselectcategory;
         
         /// <summary>
+        /// RequiredFieldValidatorselectyearsem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectyearsem;
+        
+        /// <summary>
+        /// RequiredFieldValidatorselectcategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectcategory;
+        
+        /// <summary>
         /// lblSelectCategorySchedule control.
         /// </summary>
         /// <remarks>
@@ -866,6 +884,24 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlselectgroup;
+        
+        /// <summary>
+        /// RequiredFieldValidatorselectcategoryschedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectcategoryschedule;
+        
+        /// <summary>
+        /// RequiredFieldValidatorselectgroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectgroup;
         
         /// <summary>
         /// lblSelectYear control.
@@ -904,6 +940,24 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddlselectyearsemschedule;
         
         /// <summary>
+        /// RequiredFieldValidatorselectyear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectyear;
+        
+        /// <summary>
+        /// RequiredFieldValidatoryearsemschedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoryearsemschedule;
+        
+        /// <summary>
         /// lblSelectSubjects control.
         /// </summary>
         /// <remarks>
@@ -920,6 +974,15 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlselectsubjects;
+        
+        /// <summary>
+        /// RequiredFieldValidatorselectsubjects control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectsubjects;
         
         /// <summary>
         /// Summary control.

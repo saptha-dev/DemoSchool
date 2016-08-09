@@ -1204,11 +1204,10 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="rfvLocation" runat="server" ControlToValidate="ddlSelectCategery"
-                                  ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red"  ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
-                            </td>--%>
                             <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyearsem" ControlToValidate="ddlyearsem" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                             </td>
@@ -1216,10 +1215,13 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="ddlselectcategory"
-                                  ValidationGroup="Required" Font-Size="11px" Display="Dynamic" ForeColor="Red" ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                            </td>
+                            <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategory" ControlToValidate="ddlselectcategory" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -1256,6 +1258,30 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
  
                       </tr>
+                                 <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategoryschedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlselectgroup" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Group"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
 
 
                             <tr>
@@ -1292,7 +1318,32 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
  
+
                       </tr>
+                                    <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyear" ControlToValidate="ddlselectyear" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please selectYear"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsemschedule" ControlToValidate="ddlselectyearsemschedule" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem Schedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
 
       <tr>
                             <td>
@@ -1312,7 +1363,20 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
           <td>
               </td>
           </tr>
-             
+                   <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectsubjects" ControlToValidate="ddlselectsubjects" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Subjects"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                            
+                        </tr>
+
                         
           </table>
 

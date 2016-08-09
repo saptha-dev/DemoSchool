@@ -37,7 +37,7 @@ namespace DemoSchool
             ddladdProgram.DataValueField = "Program_id";
             ddladdProgram.DataBind();
             // ddlProgram.Items.Insert(0, "--Select--");
-            ddladdProgram.Items.Insert(0, new ListItem("--Select--", ""));
+            ddladdProgram.Items.Insert(0, new ListItem("--Select--", "0"));
         }
 
         public void ddladdProgram_SelectedIndexChanged(object sender, EventArgs e)
@@ -222,7 +222,7 @@ namespace DemoSchool
             newReg1.AccessCode = txtStudentAccescode.Text;
             newReg1.ImageName = "image";
             newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-            newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
+           newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
             newReg1.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
             newReg1.Village_Town_City = txtcity.Text;
             newReg1.SubUrban_Area = txtarea.Text;
@@ -233,16 +233,17 @@ namespace DemoSchool
             newReg1.Flat_UnitNo = txtFlatno.Text;
             newReg1.LandMark_Name = txtLandMark.Text;
             newReg1.Location = txtLocation.Text;
-            newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+            // newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+            newReg1.ProgramID = 111;
             newReg1.BranchID = 8686;
             newReg1.LocationID = 88;
 
-            newReg1.CategoryID = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
+           // newReg1.CategoryID = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
             newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
             newReg1.YearId = DDlYear.SelectedItem.Value;
             newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
             newReg1.Subjects = ddlSubjects.SelectedItem.Value;
-            newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             objReg.StudentRegistration(newReg1);
         }
 
@@ -381,7 +382,7 @@ namespace DemoSchool
                 lblFlatNoValue.Text = txtFlatno.Text;
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
-
+               
 
                 lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
                 lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
@@ -390,6 +391,23 @@ namespace DemoSchool
                 lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
                 lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
                 lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
+
+                int programId = 0;
+                int categoryId = 0;
+                int catscheduleId = 0;
+                int groupId = 0;
+
+                int yearId = 0;
+                int subjectId = 0;
+                int semScheduleId = 0;
+               
+                var payment= objStudentBL.GetProgramAmount(programId,categoryId,catscheduleId,groupId,yearId,semScheduleId,subjectId);
+                if (payment != null && payment.Rows.Count > 0)
+                {
+                    DataRow dr = payment.Rows[0];
+                    lblprogramAmount.Text = dr["Amount"].ToString();
+                    lblprogAmount.Text = dr["Amount"].ToString();
+                }
             }
 
             if (Wizardstudentreg.ActiveStepIndex == 4)
