@@ -100,7 +100,7 @@ namespace DemoSchool
 
         private void LoadCategorySchdule()
         {
-            SqlDataReader dr = objBL.LoadCategorySchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
+            SqlDataReader dr = objBL.GetCategorySchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
@@ -116,7 +116,7 @@ namespace DemoSchool
 
         private void LoadYearOrSemSchdule()
         {
-            SqlDataReader dr = objBL.LoadYearOrSemSchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
+            SqlDataReader dr = objBL.GetYearOrSemSchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
