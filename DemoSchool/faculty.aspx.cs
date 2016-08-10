@@ -3,6 +3,7 @@ using BAL.BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,9 +14,19 @@ namespace DemoSchool
     public partial class faculty : System.Web.UI.Page
     {
         string rolename = "faculty";
+        RegistrationBL objReg1 = new RegistrationBL();
+        FacultyBL fblobj = new FacultyBL();
+        AddProgramsBL prog = new AddProgramsBL();
+        private object objReg;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Wizardfaculty.PreRender += new EventHandler(Wizardfaculty_PreRender);
+            if (!IsPostBack)
+            {
+                LoadCategory();
+            }
+           
         }
         protected void Wizardfaculty_PreRender(object sender, EventArgs e)
         {
@@ -24,6 +35,139 @@ namespace DemoSchool
             SideBarList.DataBind();
 
         }
+        public void LoadCategory()
+        {
+            SqlDataReader dr = objReg1.GetCategories();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            ddlselectcategory.Items.Clear();
+            ddlselectcategory.DataSource = dt;
+            ddlselectcategory.DataTextField = "Category_Name";
+            ddlselectcategory.DataValueField = "Category_Id";
+            ddlselectcategory.DataBind();
+           
+            ddlselectcategory.Items.Insert(0, new ListItem("--Select--", "0"));
+        }
+        public void ddlselectcategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Category_Id = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
+
+            if (Category_Id != 0)
+            {
+                LoadGroups();
+                LoadCategorySchdule();
+                LoadYearOrSemSchdule();
+            }
+            else
+            {
+                ddlyearsem.Items.Clear();
+                ddlselectgroup.Items.Clear();
+                ddlselectsubjects.Items.Clear();
+            }
+
+        }
+        public void ddlselectcategoryschedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //if (ddlselectcategoryschedule.SelectedValue != "0")
+            //{
+            //    LoadGroups();
+            //    LoadCategorySchdule();
+            //    LoadYearOrSemSchdule();
+            //}
+            //else
+            //{
+            //    ddlyearsem.Items.Clear();
+            //    ddlselectgroup.Items.Clear();
+            //    ddlselectsubjects.Items.Clear();
+            //}
+        }
+        private void LoadGroups()
+        {
+            SqlDataReader dr = prog.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddlselectcategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlselectgroup.Items.Clear();
+                ddlselectgroup.DataSource = dt;
+                ddlselectgroup.DataValueField = "Branch_Id";
+                ddlselectgroup.DataTextField = "Branch_Name";
+                ddlselectgroup.DataBind();
+               ddlselectgroup.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+        private void LoadCategorySchdule()
+        {
+            SqlDataReader dr = prog.LoadCategorySchdule(Convert.ToInt32(ddlselectcategoryschedule.SelectedValue));
+            
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlselectcategoryschedule.Items.Clear();
+                ddlselectcategoryschedule.DataSource = dt;
+                ddlselectcategoryschedule.DataValueField = "S_NO";
+                ddlselectcategoryschedule.DataTextField = "Schedule_Id";
+                ddlselectcategoryschedule.DataBind();
+                ddlselectcategoryschedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+        private void LoadYearOrSemSchdule()
+        {
+            SqlDataReader dr = prog.LoadYearOrSemSchdule(Convert.ToInt32(ddlselectyearsemschedule.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlselectyearsemschedule.Items.Clear();
+                ddlselectyearsemschedule.DataSource = dt;
+                ddlselectyearsemschedule.DataValueField = "Branch_T_Years";
+                ddlselectyearsemschedule.DataTextField = "Branch_T_Years";
+                ddlselectyearsemschedule.DataBind();
+                ddlselectyearsemschedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+        protected void ddlselectgroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataReader dr = prog.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlselectgroup.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlyearsem.DataSource = dt;
+                ddlyearsem.DataValueField = "Year_Id";
+                ddlyearsem.DataTextField = "Branch_Year_No";
+                ddlyearsem.DataBind();
+                ddlyearsem.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+        protected void ddlyearsem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Category_Id = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlselectgroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddlselectcategoryschedule. SelectedItem.Value);
+
+            SqlDataReader dr = fblobj.GetSubjectDDlbyCategory(10,20);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlselectsubjects.DataSource = dt;
+                ddlselectsubjects.DataValueField = "Subject_Id";
+                ddlselectsubjects.DataTextField = "Subject_Name";
+                ddlselectsubjects.DataBind();
+                ddlselectsubjects.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+        protected void   ddlselectsubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
         protected string GetClassForWizardStep(object wizardStep)
         {
@@ -89,7 +233,7 @@ namespace DemoSchool
             newReg.YearId =ddlyearsem.SelectedItem.Value;
             newReg.CategoryID = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
             newReg.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
-            newReg.YearId = ddlselectyear.SelectedItem.Value;
+            //newReg.YearId = ddlselectyear.SelectedItem.Value;
             newReg.Schedule_ID = ddlselectyearsemschedule.SelectedItem.Value;
             newReg.Subjects = ddlselectsubjects.SelectedItem.Value;
             newReg.GroupId = Convert.ToInt32(ddlselectgroup.SelectedItem.Value);
@@ -212,7 +356,7 @@ namespace DemoSchool
                 //lblSelectProgramValue.Text = ddlSelectProgram.Text;
                 flblselgrValue.Text = ddlselectgroup.Text;
                 flblselcategValue.Text = ddlselectcategory.Text;
-                lblselyearValue.Text = ddlselectyear.Text;
+                //lblselyearValue.Text = ddlselectyear.Text;
                 flblselctsubValue.Text = ddlselectsubjects.Text;
                 flblyrsmsheduValue.Text = ddlselectyearsemschedule.Text;
                 flblcatescheduValue.Text = ddlselectcategoryschedule.Text;

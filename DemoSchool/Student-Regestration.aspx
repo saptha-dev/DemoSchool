@@ -1251,7 +1251,7 @@
                                             <td>
                                             </td>
                                                   <td>
-                                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                                <asp:Label ID="lblSelectGroup"  runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>

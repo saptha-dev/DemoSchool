@@ -1165,91 +1165,86 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
  
 
                            <table id="tblPadding3" style="margin: auto; width: 100%; color: Black;">
-          <tr>
-                            <td>
-                                <asp:Label ID="lblYearsem" runat="server" Text="Select Year-Sem" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlyearsem" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Year-Sem" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="--" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="--" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="--" Value=""></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+        <tr>
+                                <td>
                                 <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategory" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Schedule" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="3"></asp:ListItem>
+                                <asp:DropDownList ID="ddlselectcategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
+                                      OnSelectedIndexChanged="ddlselectcategory_SelectedIndexChanged">
+                                                                     
                                 </asp:DropDownList>
                             </td>
-              <td>
-                  </td>
-
-                        </tr>
-                        <tr>
                             <td>
                             </td>
                             <td>
                             </td>
-                            <td>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyearsem" ControlToValidate="ddlyearsem" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategory" ControlToValidate="ddlselectcategory" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
                             <td>
                                 <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                <asp:DropDownList ID="ddlselectcategoryschedule" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" OnSelectedIndexChanged="ddlselectcategoryschedule_SelectedIndexChanged">
                                     <asp:ListItem Text="Select Category Schedule" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                   
+                                </asp:DropDownList>
+                            </td>
+              <td>
+                  </td>
+
+                        </tr>
+                                <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                         <td>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategory" ControlToValidate="ddlselectcategory" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                       <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategoryschedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                                <tr>
+                            <td>
+                                <asp:Label ID="lblSelectGroup"  runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlselectgroup"  runat="server" CssClass="form-control" style="width:100%;" AutoPostBack="true" OnSelectedIndexChanged="ddlselectgroup_SelectedIndexChanged">
+                                    <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
+                                  
                                 </asp:DropDownList>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
-                                  <td>
-                                <asp:Label ID="lblSelectGroup" runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                              <td>
+                                <asp:Label ID="lblYearsem" runat="server" Text="Select Year-Sem" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectgroup" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Group" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                <asp:DropDownList ID="ddlyearsem" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" OnSelectedIndexChanged="ddlyearsem_SelectedIndexChanged">
+                                    <asp:ListItem Text="Select Year-Sem" Value="0"></asp:ListItem>
+                                 
                                 </asp:DropDownList>
                             </td>
                             <td>
@@ -1263,54 +1258,50 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             </td>
                             <td>
                             </td>
-                            <td>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectcategoryschedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                          <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlselectgroup" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Group"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                          <td>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyearsem" ControlToValidate="ddlyearsem" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
-
-
-                            <tr>
-                            <td>
-                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                        <tr>
+                                <td>
+                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyear" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Year" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                <asp:DropDownList ID="ddlselectyearsemschedule" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                    <asp:ListItem Text="Select Year-Sem Schedule" Value="0"></asp:ListItem>
+                                  
                                 </asp:DropDownList>
                             </td>
                             <td>
                             </td>
                             <td>
                             </td>
-                                  <td>
-                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            <td>
+                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectyearsemschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Year-Sem Schedule" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                <asp:DropDownList ID="ddlselectsubjects" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true" OnSelectedIndexChanged="ddlselectsubjects_SelectedIndexChanged">
+                                    <asp:ListItem Text="Select Subjects" Value="0"></asp:ListItem>
+                                   
                                 </asp:DropDownList>
                             </td>
                             <td>
@@ -1318,67 +1309,33 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
  
-
                       </tr>
-                                    <tr>
+                                 <tr>
                             <td>
                             </td>
                             <td>
                             </td>
-                            <td>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyear" ControlToValidate="ddlselectyear" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please selectYear"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
+                          <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsemschedule" ControlToValidate="ddlselectyearsemschedule" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem Schedule"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
-                        </tr>
-
-      <tr>
-                            <td>
-                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlselectsubjects" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                    <asp:ListItem Text="Select Subjects" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-          <td>
-              </td>
-          <td>
-              </td>
-          </tr>
-                   <tr>
                             <td>
                             </td>
                             <td>
                             </td>
                             <td>
+                            </td>
+                            <td>
+                            </td>
+                         <td>
                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectsubjects" ControlToValidate="ddlselectsubjects" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Subjects"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
-                            <td>
-                            
                         </tr>
 
-                        
-          </table>
+                           </table>
 
                     </div>
                 </asp:WizardStep>

@@ -35,5 +35,9 @@ namespace BAL.BL
             return ConnectionFactory.ExecuteCommand("select CompanyId,CompanyName from CompanyDetails where CompanyId in(select distinct(CompanyID) from tbl_StudentRegPrograms where ScheduleID='"+ScheduleID+"' )", CommandType.Text);
         }
 
+        public SqlDataReader GetSubjectDDlbyCategory(int v1, int v2, int v3)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

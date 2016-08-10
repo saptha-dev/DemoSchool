@@ -53,6 +53,11 @@ namespace BAL.BL
 
             return ConnectionFactory.ExecuteUpdate("SP_UpdateCompanyProfile", CommandType.StoredProcedure, p);
         }
+
+        public SqlDataReader GetCategories()
+        {
+            return ConnectionFactory.ExecuteCommand("select distinct s.Category_Id,c.Category_Name from tbl_Categories c inner join tbl_schedule s on c.Category_Id = s.Category_Id;", CommandType.Text);
+        }
         #endregion UpdateCompanyRegistration
 
         #region UpdateAdminRegistration
