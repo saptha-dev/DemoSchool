@@ -17,8 +17,8 @@ namespace PresentationLayer.Admin
 {
     public partial class Admin_FacultyList : System.Web.UI.Page
     {
-
         #region Declarations
+        AddProgramsBL objBL = new AddProgramsBL();
         RegistrationBE objRegistrationEntity = new RegistrationBE();
         RegistrationBL objRegistrationBL = new RegistrationBL();
         DataTable dtGetRegisteredUsers = new DataTable();
@@ -36,14 +36,218 @@ namespace PresentationLayer.Admin
                     //}
                     //else
                     //{
-                        GetRegisteredUsers();
-                   // }
+                    //GetRegisteredUsers();
+                    LoadProgams();
+                    LoadUserStatusList();
+                    // }
 
                 }
-
-                
             }
         }
+
+        protected void UserType_Changed(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        public void LoadProgams()
+        {
+            SqlDataReader dr = objBL.GetDataForNewProgramsDrpdwn();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            ddlProgram.DataSource = dt;
+            ddlProgram.DataValueField = "Program_id";
+            ddlProgram.DataTextField = "Program_name";
+            ddlProgram.DataBind();
+            ddlProgram.Items.Insert(0, new System.Web.UI.WebControls.ListItem("---Select---", "0"));
+
+        }
+
+        public void LoadUserStatusList()
+        {
+            SqlDataReader dr = objBL.GetStatusList();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlStatus.Items.Clear();
+                ddlStatus.DataSource = dt;
+                ddlStatus.DataValueField = "Status_Id";
+                ddlStatus.DataTextField = "Status_Text";
+                ddlStatus.DataBind();
+                ddlStatus.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+
+        }
+
+        protected void ddlPrograms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NodataPanel.Visible = false;
+            ddlCategory.Items.Clear();
+            //ddlType.SelectedIndex = -1;
+
+            int CategorieID = Convert.ToInt32(ddlProgram.SelectedItem.Value);
+            SqlDataReader dr = objBL.GetCategoriesBasedOnProgramsDrpdwn(CategorieID);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlCategory.DataSource = dt;
+                ddlCategory.DataValueField = "Category_Id";
+                ddlCategory.DataTextField = "Category_Id_Name";
+                ddlCategory.DataBind();
+                ddlCategory.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Select--", "0"));
+            }
+
+        }
+
+        protected void ddlCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlCategory.SelectedValue != "0")
+            {
+                LoadGroups();
+                LoadCategorySchdule();
+                LoadYearOrSemSchdule();
+            }
+            else
+            {
+                ddlGroup.Items.Clear();
+                ddlCategorySchedule.Items.Clear();
+                ddlYearSemSchedule.Items.Clear();
+            }
+        }
+
+        private void LoadGroups()
+        {
+            SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddlCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlGroup.Items.Clear();
+                ddlGroup.DataSource = dt;
+                ddlGroup.DataValueField = "Branch_Id";
+                ddlGroup.DataTextField = "Branch_Name";
+                ddlGroup.DataBind();
+                ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadCategorySchdule()
+        {
+            SqlDataReader dr = objBL.GetCategorySchdule(Convert.ToInt32(ddlCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlCategorySchedule.Items.Clear();
+                ddlCategorySchedule.DataSource = dt;
+                ddlCategorySchedule.DataValueField = "Schedule_Id";
+                ddlCategorySchedule.DataTextField = "Schedule_Id_Date";
+                ddlCategorySchedule.DataBind();
+                ddlCategorySchedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadYearOrSemSchdule()
+        {
+            SqlDataReader dr = objBL.GetYearOrSemSchdule(Convert.ToInt32(ddlCategory.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlYearSemSchedule.Items.Clear();
+                ddlYearSemSchedule.DataSource = dt;
+                ddlYearSemSchedule.DataValueField = "Branch_T_Years";
+                ddlYearSemSchedule.DataTextField = "Year_Sem_Date";
+                ddlYearSemSchedule.DataBind();
+                ddlYearSemSchedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+
+        
+
+        
+
+        protected void ddlCategorySchedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlGroup.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlYearSem.DataSource = dt;
+                ddlYearSem.DataValueField = "Year_Id";
+                ddlYearSem.DataTextField = "Branch_Year_No";
+                ddlYearSem.DataBind();
+                ddlYearSem.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+
+        }
+        protected void ddlYearSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSubjects();
+            LoadSubjectsSchedule();
+        }
+
+        private void LoadSubjects()
+        {
+            int programId = Convert.ToInt32(ddlProgram.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddlCategory.SelectedItem.Value);
+
+            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubject.DataSource = dt;
+                ddlSubject.DataValueField = "Subject_Id";
+                ddlSubject.DataTextField = "Subject_Id_Name";
+                ddlSubject.DataBind();
+                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        private void LoadSubjectsSchedule()
+        {
+            int programId = Convert.ToInt32(ddlProgram.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddlCategory.SelectedItem.Value);
+
+            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubject.DataSource = dt;
+                ddlSubject.DataValueField = "Subject_Id";
+                ddlSubject.DataTextField = "Subject_Id_Name";
+                ddlSubject.DataBind();
+                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        protected void ddlYearSemSchedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void ddlSubjectId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void ddlSubSchdIdDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         //public void GetAllUsers()
         //{
@@ -79,19 +283,90 @@ namespace PresentationLayer.Admin
             }
             else
             {
-               // GetAllUsers();
-                dtGetRegisteredUsers.Rows.Add(dtGetRegisteredUsers.NewRow());
+                dtGetRegisteredUsers = new DataTable();
                 GvNodata.DataSource = dtGetRegisteredUsers;
                 GvNodata.DataBind();
-                int columncount = GvNodata.Rows[0].Cells.Count;
-                GvNodata.Rows[0].Cells.Clear();
-                GvNodata.Rows[0].Cells.Add(new TableCell());
-                GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
-                GvNodata.Rows[0].Cells[0].Text = "No Records Found";
+                //// GetAllUsers();
+                // dtGetRegisteredUsers.Rows.Add(dtGetRegisteredUsers.NewRow());
+                // GvNodata.DataSource = dtGetRegisteredUsers;
+                // GvNodata.DataBind();
+                // int columncount = GvNodata.Rows[0].Cells.Count;
+                // GvNodata.Rows[0].Cells.Clear();
+                // GvNodata.Rows[0].Cells.Add(new TableCell());
+                // GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
+                // GvNodata.Rows[0].Cells[0].Text = "No Records Found";
+                lblNoDataHeading.Text = "Faculty Registered List";
                 NodataPanel.Visible = true;
                 DataPanel.Visible = false;
             }
         }
+
+        private void GetConfirmusers()
+        {
+            SqlDataReader dr = objRegistrationBL.GetStudentConfirmUsers(Convert.ToInt32(ddlCategory.SelectedItem.Value));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                DataPanel.Visible = false;
+                NodataPanel.Visible = false;
+                Session["dt"] = dt;
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+            else
+            {
+                //Empty DataTable to execute the “else-condition”  
+                dt = new DataTable();
+                GvNodata.DataSource = dt;
+                GvNodata.DataBind();
+
+                //dt.Rows.Add(dt.NewRow());
+                //GvNodata.DataSource = dt;
+                //GvNodata.DataBind();
+                //int columncount = GvNodata.Rows[0].Cells.Count;
+                //GvNodata.Rows[0].Cells.Clear();
+                //GvNodata.Rows[0].Cells.Add(new TableCell());
+                //GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
+                //GvNodata.Rows[0].Cells[0].Text = "No Records Found";
+                NodataPanel.Visible = true;
+                pnlActivatedUsers.Visible = false;
+                lblNoDataHeading.Text = "Facult Activated List";
+            }
+        }
+
+        private void GetCancelusers()
+        {
+            SqlDataReader dr = objRegistrationBL.GetStudentCancelUsers(Convert.ToInt32(ddlCategory.SelectedItem.Value));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                DataPanel.Visible = false;
+                NodataPanel.Visible = false;
+                pnlCancelUsers.Visible = true;
+                gvCancel.DataSource = dt;
+                gvCancel.DataBind();
+            }
+            else
+            {
+                dt = new DataTable();
+                GvNodata.DataSource = dt;
+                GvNodata.DataBind();
+                //dt.Rows.Add(dt.NewRow());
+                //GvNodata.DataSource = dt;
+                //GvNodata.DataBind();
+                //int columncount = GvNodata.Rows[0].Cells.Count;
+                //GvNodata.Rows[0].Cells.Clear();
+                //GvNodata.Rows[0].Cells.Add(new TableCell());
+                //GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
+                //GvNodata.Rows[0].Cells[0].Text = "No Records Found";
+                NodataPanel.Visible = true;
+                pnlCancelUsers.Visible = false;
+                lblNoDataHeading.Text = "Faculty Deactivated List";
+            }
+        }
+
 
         protected void btnActivate_Click(object sender, EventArgs e)
         {
@@ -435,6 +710,44 @@ namespace PresentationLayer.Admin
 
         protected void btnCancelView_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedStatus = ddlStatus.SelectedItem.Text.ToUpper();
+            switch (selectedStatus)
+            {
+                case "COMPLETED":
+                    GetRegisteredUsers();
+                    DataPanel.Visible = true;
+                    NodataPanel.Visible = false;
+                    lblActivatedusers.Visible = false;
+                    btnActivateGV.Visible = false;
+                    pnlActivatedUsers.Visible = false;
+                    pnlCancelUsers.Visible = false;
+                    break;
+                case "ACTIVATED":
+                    DataPanel.Visible = false;
+                    NodataPanel.Visible = false;
+                    lblActivatedusers.Visible = true;
+                    btnActivateGV.Visible = true;
+                    pnlCancelUsers.Visible = false;
+                    GetConfirmusers();
+                    break;
+                case "CANCELLED":
+                    DataPanel.Visible = false;
+                    NodataPanel.Visible = false;
+                    lblActivatedusers.Visible = false;
+                    btnActivateGV.Visible = false;
+                    pnlActivatedUsers.Visible = false;
+                    GetCancelusers();
+                    pnlCancelUsers.Visible = true;
+                    break;
+                case "DEACTIVATED": break;
+                case "REACTIVATED": break;
+
+            }
 
         }
     }

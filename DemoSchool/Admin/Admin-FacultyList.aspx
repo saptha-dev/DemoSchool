@@ -49,7 +49,7 @@
             margin-top: 10px;
             font-size: 19px;
             font-weight: bold;
-            margin-left: 13%;
+            margin-left: 0%;
         }
           #map td
         {
@@ -63,6 +63,15 @@
             color: White;
             text-transform: uppercase;
         }
+
+        .paymentButton{
+        font-weight:bold; 
+        font-family:"Courier New"; 
+        font-size:16px; 
+        color:Navy;
+        margin-right:30px;
+        }
+
     </style>
     <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -176,15 +185,112 @@
             </td>
         </tr>
     </table>
-    <table style="width: 72%; margin: auto; margin-top: -30px;">
+
+
+    <table style="width: 40%; margin: auto; margin-top: 20px; vertical-align:central"  >
+        <tr style="width: 100%">
+            <td  class="style" align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlProgram" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged="ddlPrograms_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="style" align="left"><asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label></td>
+            <td>
+                <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="true"
+                    Width="200" class="textusername" OnSelectedIndexChanged="ddlCategories_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblCategorySchedule" runat="server" Text="Select Category Schedule"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlCategorySchedule" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" onselectedindexchanged="ddlCategorySchedule_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblGroup" runat="server" Text="Select Group"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="style" align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
+            <td>
+                <asp:DropDownList ID="ddlYearSem" runat="server" AutoPostBack="true"
+                    Width="200" class="textusername" OnSelectedIndexChanged="ddlYearSem_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlYearSemSchedule" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" onselectedindexchanged="ddlYearSemSchedule_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlSubject" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged ="ddlSubSchdIdDate_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td align="left"><asp:Label ID="lblStatus" runat="server" Text="Select Status"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true" class="textusername" Width="200"  OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+    <table style="width: 72%; margin: auto; margin-top: 10px;">
         <tr>
             <td>
-  <div style="  margin-bottom: 200px;">
+            <div style="margin-bottom: 200px;">
+        <%--<table>
+            <tr>
+                    <td><asp:RadioButton ID="registerFaculty" runat="server" Text="Registered Faculty" checked="true" OnCheckedChanged="UserType_Changed" GroupName="paymentType" AutoPostBack="true" cssClass="paymentButton"></asp:RadioButton></td>
+                    <td></td>
+                    <td><asp:RadioButton ID="confirmedFaculty" runat="server" Text="Confirmed Faculty" checked="false" OnCheckedChanged="UserType_Changed" GroupName="paymentType" AutoPostBack="true" cssClass="paymentButton"></asp:RadioButton></td>
+                    <td></td>
+                    <td><asp:RadioButton ID="cancelFaculty" runat="server" Text="Cancel Faculty" Checked="false" OnCheckedChanged="UserType_Changed" GroupName="paymentType"  AutoPostBack="true" cssClass="paymentButton"></asp:RadioButton></td>
+                    <td></td>
+            </tr>
+        </table>--%>
+
+        <br />
         <asp:Panel ID="NodataPanel" runat="server" Visible="false">
+            
             <div id="headingConfirmed">
-                Faculty Registered List
+                <asp:Label runat="server" ID="lblNoDataHeading" Text="Faculty Registered List"></asp:Label>
             </div>
-            <asp:GridView ID="GvNodata" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+            <asp:GridView ID="GvNodata" CssClass="GridviewConfirm" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
                 HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true" style="width:100%;"
                 PageSize="8">
                 <Columns>
@@ -207,16 +313,17 @@
                     <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
                 </Columns>
+                <EmptyDataTemplate>No Record Found</EmptyDataTemplate>
             </asp:GridView>
         </asp:Panel>
         <br />
-        <br />
+        
         <asp:Panel ID="DataPanel" runat="server" Visible="false">
             <div id="heading">
                 <asp:Label ID="lblRegStnds" runat="server" Text=" Faculty Registered List"></asp:Label>
             </div>
-            <asp:Label ID="lblRegisteredusers" Text="Registered Users" runat="server" Visible="false"
-                Style="font-weight: bold; font-size: 18px;"></asp:Label>
+            <asp:Label ID="lblRegisteredusers" Text="Faculty Registered List" runat="server" Visible="false" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+            
             <asp:GridView ID="gvcheckbox" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
                 HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true" style="width:100%"
                 PageSize="8" >
@@ -235,20 +342,39 @@
                         ItemStyle-CssClass="style" />
                     <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
+                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
                     <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
                     <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Address" DataField="AddressId" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Location" DataField="Location" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Date" DataField="DateOfRegistration" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
                     <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
                         ItemStyle-CssClass="style" />
                     <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
                         DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="CTGY-GROUP-SEM" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />                    
+                    <asp:BoundField HeaderText="SUBJECT" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REMARKS" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    
+                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    
+
                 </Columns>
             </asp:GridView>
             <div style="margin-left: 40%; margin-top: 36px;">
@@ -262,7 +388,7 @@
            
         </asp:Panel>
         <asp:Panel ID="pnlActivatedUsers" runat="server" Visible="false">
-            <asp:Label ID="lblActivatedusers" Text="Activated Users" runat="server" Visible="false"
+            <asp:Label ID="lblActivatedusers" Text="Faculty Activated List" runat="server" Visible="false"
                 Style="font-weight: bold; font-size: 18px;"></asp:Label>
             <asp:GridView ID="GridView1" CssClass="Gridview" runat="server" AutoGenerateColumns="False"
                 HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true"
@@ -304,6 +430,76 @@
                 <asp:Button ID="btnCancelView" CssClass="btn btn-danger" runat="server" Text="Cancel"
                     OnClick="btnCancelView_Click" />
             </div>
+        </asp:Panel>
+
+        <asp:Panel ID="pnlCancelUsers" runat="server" Visible="false">
+            <div id="heading">
+                <asp:Label ID="Label1" runat="server" Text=" Faculty Deactivated List"></asp:Label>
+            </div>
+            <asp:Label ID="Label2" Text="Registered Users" runat="server" Visible="false" Style="font-weight: bold; font-size: 18px;"></asp:Label>
+            
+            <asp:GridView ID="gvCancel" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+                HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true" style="width:100%"
+                PageSize="8" >
+                <Columns>
+                    <asp:TemplateField>
+                        <HeaderTemplate>
+                            <asp:CheckBox ID="chkheader" runat="server" onclick="checkAll(this);" />
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chkchild" runat="server" onclick="Check_Click(this)" />
+                        </ItemTemplate>
+                        <HeaderStyle HorizontalAlign="Left" />
+                        <ItemStyle HorizontalAlign="Left" />
+                    </asp:TemplateField>
+                    <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Address" DataField="AddressId" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Location" DataField="Location" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Date" DataField="DateOfRegistration" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
+                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="CTGY-GROUP-SEM" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />                    
+                    <asp:BoundField HeaderText="SUBJECT" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REMARKS" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    
+                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
+                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    
+
+                </Columns>
+            </asp:GridView>
+            <div style="margin-left: 40%; margin-top: 36px;">
+                <%-- <asp:Button ID="btnActivate" CssClass="btn btn-success" runat="server" Text="Activate"
+                OnClick="btnActivate_Click" />&nbsp;&nbsp;&nbsp;--%>
+                <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="Activate"
+                    OnClick="btnActivate_Click" />
+                <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Cancel"
+                    OnClick="btnCancel_Click" />
+            </div>
+           
         </asp:Panel>
     </div>
     </td>

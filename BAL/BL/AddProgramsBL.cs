@@ -108,8 +108,6 @@ namespace BAL.BL
             return ConnectionFactory.ExecuteCommand("SP_FacultyRegisterToSubject", CommandType.StoredProcedure, p);
         }
 
-
-
         public SqlDataReader GetDataForCategoriesDrpdwn()
         {
             return ConnectionFactory.ExecuteCommand("select Category_Id,Category_Name from tbl_Categories where status=0", CommandType.Text);
@@ -124,11 +122,11 @@ namespace BAL.BL
         }
         public SqlDataReader GetCategoriesBasedOnProgramsDrpdwn(int ProgramId)
         {
-            return ConnectionFactory.ExecuteCommand("select Category_Id,Category_Name from tbl_Categories where Program_id="+ProgramId, CommandType.Text);
+            return ConnectionFactory.ExecuteCommand("select Category_Id,Category_Name, Convert(nvarchar(20),Category_Id) + ':' + Category_Name as Category_Id_Name from tbl_Categories where Program_id=" + ProgramId, CommandType.Text);
         }
         public SqlDataReader GetSubjectBasedOnCategoriesDrpdwn(int CategorieID)
         {
-            return ConnectionFactory.ExecuteCommand("select Subject_Id,Subject_Name from tbl_Subject where Category_Id=" + CategorieID, CommandType.Text);
+            return ConnectionFactory.ExecuteCommand("Select Subject_Id, Subject_Name, Convert(nvarchar(20),Subject_Id) + ':' + Convert(nvarchar(20),Subject_Name) as Subject_Id_Name from tbl_Subject where Category_Id=" + CategorieID, CommandType.Text);
         }
         public SqlDataReader Getcategoryschedule(int CategorieID)
         {
@@ -706,14 +704,19 @@ namespace BAL.BL
             return ConnectionFactory.ExecuteCommand("select * from dbo.tbl_Units where Subject_Id=" + subId, CommandType.Text);
         }
 
-        public SqlDataReader LoadCategorySchdule(int CategorieId)
+        public SqlDataReader GetCategorySchdule(int CategorieId)
         {
-            return ConnectionFactory.ExecuteCommand("select distinct Schedule_Id from tbl_Schedule where Category_Id=" + CategorieId, CommandType.Text);
+            return ConnectionFactory.ExecuteCommand("select distinct Schedule_Id, Ctgy_Sch_startDate , Convert(nvarchar(20),Schedule_Id) + ':' + Convert(nvarchar(20),Ctgy_Sch_startDate) as Schedule_Id_Date from tbl_Schedule where Ctgy_Sch_startDate is NOT NULL AND Category_Id=" + CategorieId, CommandType.Text);
         }
 
-        public SqlDataReader LoadYearOrSemSchdule(int CategorieId)
+        public SqlDataReader GetYearOrSemSchdule(int CategorieId)
         {
-            return ConnectionFactory.ExecuteCommand("select distinct Branch_T_Years from tbl_Branch where Category_Id=" + CategorieId, CommandType.Text);
+            return ConnectionFactory.ExecuteCommand("select distinct Branch_T_Years, Branch_Srt_Date, Convert(nvarchar(20),Branch_T_Years) + ':' + Convert(nvarchar(20),Branch_Srt_Date) as Year_Sem_Date from tbl_Branch where Branch_Srt_Date is NOT NULL AND Category_Id=" + CategorieId, CommandType.Text);
         }
+
+        public SqlDataReader GetStatusList()
+        {
+            return ConnectionFactory.ExecuteCommand("select Id as Status_Id, [Status] as Status_Text from [UserStatus]" , CommandType.Text);
+        } 
     }
 }
