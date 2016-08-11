@@ -131,8 +131,8 @@ namespace DemoSchool
                 cmpCountry.Text = txtCmpCountry.SelectedItem.Text;
                 cmpState.Text = txtCmpState.SelectedItem.Text;
                 cmpCity.Text = txtCmpCity.SelectedItem.Text;
-                mandal.Text = txtMandal.Text;
-                village.Text = txtVillage.Text;
+                mandal.Text = ddlMandal.SelectedItem.Text;
+                village.Text = ddlVillage.SelectedItem.Text;
                 pinCode.Text = txtPinCode.Text;
                 cmpStreetNo.Text = txtCmpStreetNo.Text;
                 cmpStreetName.Text = txtCmpStreetName.Text;
@@ -161,8 +161,8 @@ namespace DemoSchool
             newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.SelectedItem.Value);
             newRegistration.StateID = Convert.ToInt16(txtCmpState.SelectedItem.Value);
             newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.SelectedItem.Value);
-            newRegistration.SubUrban_Area = txtMandal.Text;
-            newRegistration.Village_Town_City = txtVillage.Text;
+            newRegistration.SubUrban_Area = ddlMandal.Text;
+            newRegistration.Village_Town_City = ddlVillage.Text;
             newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);
             newRegistration.StreetNO = txtCmpStreetNo.Text;
             newRegistration.StreetName = txtCmpStreetName.Text;

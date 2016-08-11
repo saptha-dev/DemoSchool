@@ -458,8 +458,17 @@
                                             <asp:ListItem Text="Rangareddy" Value="2"></asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
-                                    <td><asp:Label ID="Label11" runat="server" Text="Mandal/Taluk/SubUrb" class="control-label col-sm-12 text-left"></asp:Label><font style="color: Red;"></font></td>
-                                    <td><asp:TextBox ClientIDMode="Static" ID="txtMandal" class="form-control" runat="server"></asp:TextBox></td>
+                                     <td>
+                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left" ></asp:Label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                    Style="width: 100%;">
+                                    <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
                                 </tr>
                                 <tr>
                                     <%-- <td>
@@ -474,8 +483,17 @@
                                     </td>--%>
                                 </tr>
                                 <tr>
-                                    <td><asp:Label ID="Label12" runat="server" Text="Village/Town/City" class="control-label col-sm-12 text-left"></asp:Label><font style="color: Red;"></font></td>
-                                    <td><asp:TextBox ID="txtVillage" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox></td>
+                                        <td>
+                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left" ></asp:Label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                    Style="width: 100%;">
+                                    <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
                                     <td><asp:Label ID="Label13" runat="server" Text="Pin Code" class="control-label col-sm-12 text-left"></asp:Label><font style="color: Red;"></font></td>
                                     <td><asp:TextBox ID="txtPinCode" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox></td>
                                 </tr>
@@ -651,6 +669,7 @@
                 </asp:WizardStep>
                
                 <asp:WizardStep ID="Summary" runat="server">
+                    <br>
 
                     <div id="assocCmpSection" class="panel panel-primary">
                             <div class="panel-heading">Assoc Comp Details</div>
@@ -796,6 +815,7 @@
                                                   <label class="control-label col-sm-5"  for="date">Date : </label>
                                                    <asp:label id="date" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
+                                             <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mobileNumber">MobileNumber : </label>
                                                     <asp:label id="mobileNumber" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
@@ -823,6 +843,7 @@
                                                   <label class="control-label col-sm-5"  for="placeOfBirth">PlaceOfBirth : </label>
                                                    <asp:label id="placeOfBirth" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
+                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="fixedLineNumber">Fixed Line Number : </label>
                                                     <asp:label id="fixedLineNumber" ClientIDMode="Static" class="form-control-static col-sm-7" runat="server"></asp:label>
@@ -858,9 +879,10 @@
           </div>
 
           <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>
-        <div class="formbuttons">
+       <%-- <div class="formbuttons">--%>
             <%--<button type="submit" class="btn btn-danger btn-lg">Register</button>--%> <%--<button type="submit" class="btn btn-danger btn-lg">Reset</button>--%> 
-            <button type="button" onclick="previewClick()" class="btn btn-primary btn-lg">Summary</button></div>
+           
+            <div class="formbuttons"><asp:Button ID="btn" type="submit" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <asp:Button id="btncan" runat="server" CssClass="btn btn-danger btn-lg" Text="Cancel"/> <button type="button" onclick="previewClick()" class="btn btn-primary btn-lg">Summary</button></div>
         </div>
       </div>
     
@@ -1033,13 +1055,13 @@
                     <%=txtCmpCountry.UniqueID %>:{  required:true  },
                     <%=txtCmpState.UniqueID %>:{  required:true  },
                     <%=txtCmpCity.UniqueID %>:{  required:true  },
-                    <%=txtMandal.UniqueID %>:{  required:true  },
-                    <%=txtVillage.UniqueID %>:{  required:true  },
+                    <%=ddlMandal.UniqueID %>:{  required:true  },
+                    <%=ddlVillage.UniqueID %>:{  required:true  },
                     <%=txtPinCode.UniqueID %>:{  required:true  },
                     <%=txtCmpStreetName.UniqueID %>:{  required:true  },
                     <%=txtCmpStreetNo.UniqueID %>:{  required:true  },
-                    <%=txtMandal.UniqueID %>:{  required:true  },
-                    <%=txtVillage.UniqueID %>:{  required:true  },
+                    <%=ddlMandal.UniqueID %>:{  required:true  },
+                    <%=ddlVillage.UniqueID %>:{  required:true  },
                     <%=txtPinCode.UniqueID %>:{  required:true  },
                     <%=txtCmpStreetName.UniqueID %>:{  required:true  },
                     <%=txtCmpStreetNo.UniqueID %>:{  required:true  },
@@ -1063,8 +1085,8 @@
                     <%=txtCmpCountry.UniqueID %>:{  required:"CmpCountry is required."  },
                     <%=txtCmpState.UniqueID %>:{  required:"CmpState is required."  },
                     <%=txtCmpCity.UniqueID %>:{  required:"CmpCity is required."  },
-                    <%=txtMandal.UniqueID %>:{  required:"Mandal is required."  },
-                    <%=txtVillage.UniqueID %>:{  required:"Village is required."  },
+                    <%=ddlMandal.UniqueID %>:{  required:"Mandal is required."  },
+                    <%=ddlVillage.UniqueID %>:{  required:"Village is required."  },
                     <%=txtPinCode.UniqueID %>:{  required:"PinCode is required."  },
                     <%=txtCmpStreetName.UniqueID %>:{  required:"CmpStreetName is required."  },
                     <%=txtCmpStreetNo.UniqueID %>:{  required:"CmpStreetNo is required."  },

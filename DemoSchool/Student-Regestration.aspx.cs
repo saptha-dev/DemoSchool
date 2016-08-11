@@ -224,8 +224,8 @@ namespace DemoSchool
             newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
            newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
             newReg1.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
-            newReg1.Village_Town_City = txtcity.Text;
-            newReg1.SubUrban_Area = txtarea.Text;
+            newReg1.Village_Town_City = ddlVillage.SelectedItem.Value;
+            newReg1.SubUrban_Area = ddlMandal.SelectedItem.Value;
             newReg1.PostalCode = 8686;
             newReg1.StreetNO = txtstreetno.Text;
             newReg1.StreetName = txtstreetname.Text;
@@ -344,8 +344,8 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                    txtcity.Text = dr["Village_Town_City"].ToString();
-                    txtarea.Text = dr["SubUrban_Area"].ToString();
+                    ddlVillage.Text = dr["Village_Town_City"].ToString();
+                    ddlMandal.Text = dr["SubUrban_Area"].ToString();
                     ddladdCategory.DataTextField = dr["CategoryID"].ToString();
                     // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
                     //ddlselectyear.DataTextField = dr["YearId"].ToString();
@@ -361,7 +361,7 @@ namespace DemoSchool
                 lblFatherNameValue.Text = txtfathergurdianname.Text;
                 lblMotherMaidenNameValue.Text = txtMothername.Text;
                 lblPobValue.Text = txtpob.Text;
-                lblMotherMaidenNameValue.Text = txtmobile.Text;
+                lblMobileNumberValue.Text = txtmobile.Text;
                 lblLandLineNumberValue.Text = txtFixedLandline.Text;
                 lblEmailIdValue.Text = txtEmail.Text;
                 lblAlterEmailIdValue.Text = txtaltrEmail.Text;
@@ -372,8 +372,8 @@ namespace DemoSchool
                 lblCountryValue.Text = ddlcountry.Text;
                 lblStateValue.Text = ddlstate.Text;
                 lblDistrictValue.Text = ddlDistrict.Text;
-                lblManadalTalukValue.Text = txtarea.Text;
-                lblVillageTownValue.Text = txtcity.Text;
+                lblManadalTalukValue.Text = ddlMandal.Text;
+                lblVillageTownValue.Text = ddlVillage.Text;
                 lblPinCodeValue.Text = txtpincode.Text;
                 lblStreetNoValue.Text = txtstreetno.Text;
                 lblStreetNameValue.Text = txtstreetname.Text;

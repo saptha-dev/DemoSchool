@@ -76,6 +76,7 @@ namespace DemoSchool
             connewRegistration.Location = txtLocation.Text;
             connewRegistration.PostalCode = 123456;
             connewRegistration.Employer_Name = txtEmployerName.Text;
+            connewRegistration.workExperience = Convert.ToInt32(txtworkExp.Text);
                      connewRegistration.Employer_Address = txtEMpAddress.Text;
             connewRegistration.Employer_Mail = txtEmpEmail.Text;
             connewRegistration.Employer_Phone = txtEmpPhone.Text;
@@ -107,6 +108,7 @@ namespace DemoSchool
 
                 conslblCountryValue.Text = ddlcountry.Text;
                 conslblStateValue.Text = ddlstate.Text;
+                conslblDistrictValue.Text = ddlDistrict.Text;
                 conslblVillageTownValue.Text = ddlVillage.Text;
                 conslblManadalTalukValue.Text = ddlMandal.Text;
 
@@ -118,8 +120,9 @@ namespace DemoSchool
                 conslblBuildingLandMarkValue.Text = txtLandMark.Text;
                 conslblcounsellorLocationValue.Text = txtLocation.Text;
 
+                consworkexpvalue.Text = txtworkExp.Text;
                 consempphonevalue.Text = txtEmpPhone.Text;
-                //consempaddress.Text = txtEMpAddress.Text;
+              consempaddressvalue.Text = txtEMpAddress.Text;
                 consempemailvalue.Text = txtEmpEmail.Text;
                 consempnamevalue.Text = txtEmployerName.Text;
             }

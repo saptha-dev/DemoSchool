@@ -535,40 +535,40 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddlDistrict;
         
         /// <summary>
-        /// lblarea control.
+        /// lblMandalTalukSubUrb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblarea;
+        protected global::System.Web.UI.WebControls.Label lblMandalTalukSubUrb;
         
         /// <summary>
-        /// txtarea control.
+        /// ddlMandal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtarea;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMandal;
         
         /// <summary>
-        /// lblvillage control.
+        /// lblVillageTownCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblvillage;
+        protected global::System.Web.UI.WebControls.Label lblVillageTownCity;
         
         /// <summary>
-        /// txtcity control.
+        /// ddlVillage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcity;
+        protected global::System.Web.UI.WebControls.DropDownList ddlVillage;
         
         /// <summary>
         /// lblpincode control.

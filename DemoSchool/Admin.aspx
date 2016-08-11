@@ -81,6 +81,11 @@
         {
             padding-top: 8px;
         }
+          #tblPadding1 td
+        {
+            padding-top: 8px;
+        }
+
 
         #wizHeader li .prevStep
         {
@@ -520,7 +525,7 @@
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Management Address Details</h3>
                      
     
-       <table id="tblPadding" style="margin: auto; width: 100%; color: Black;" class="table-responsive" runat="server">
+       <table id="tblPadding1" style="margin: auto; width: 100%; color: Black;" class="table-responsive" runat="server">
             <tr>
                             <td>
                                 <asp:Label ID="lblCountry" runat="server" Text="Country"  class="control-label col-sm-12 text-left"></asp:Label>
@@ -577,6 +582,7 @@
                                     ErrorMessage=" Select an Option" InitialValue="0"></asp:RequiredFieldValidator>
                             </td>--%>
                         </tr>
+          
                         <tr>
                             <td>
                                 <asp:Label ID="lbldistrict" runat="server" Text="District" CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -789,14 +795,14 @@
                             </td>
                             <td>
                             </td>
-                            <td>
+                          <%--  <td>
                                 <asp:Label ID="lblLoc" runat="server" Text="Admin Location"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtLocation" CssClass="form-control" runat="server"></asp:TextBox>
-                            </td>
+                            </td>--%>
                         </tr>
                         <tr>
                             <td>
@@ -968,11 +974,11 @@
                                                   <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No/Unit No : </label>
                                                     <asp:label id="mlblFlatNoValue" font-bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
-                                                <div class="clearfix"></div>
+                                            <%--    <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="studentLocation"> Admin Location : </label>
                                                    <asp:label id="mlbladminLocationValue" font-bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
-                                              </div>
+                                              </div>--%>
                                         </div>
                                     </div>
                                 </div>                                
@@ -996,7 +1002,7 @@
         </asp:Wizard>
 
     </div>
-    <div class="formbuttons"><asp:Button ID="btn" type="submit" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" CssClass="btn btn-danger btn-lg">Cancel</button></div>
+    <div class="formbuttons"><asp:Button ID="btn" type="submit" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <asp:Button id="btncan" runat="server" CssClass="btn btn-danger btn-lg" Text="Cancel"/></div>
       </div>
     </div>
    </div>

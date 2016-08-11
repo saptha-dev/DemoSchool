@@ -1237,11 +1237,14 @@
             </HeaderTemplate>
         </asp:Wizard>
 
-    </div>
+ 
+      
     <div class="formbuttons"><asp:Button ID="btn"  CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" class="btn btn-danger btn-lg"">Cancel</button></div>
       </div>
     </div>
-   </div>
+  </div>
+    </div>
+   
 
     
       

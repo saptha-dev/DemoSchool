@@ -310,13 +310,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.WizardStep WizardStep2;
         
         /// <summary>
-        /// tblPadding control.
+        /// tblPadding1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tblPadding;
+        protected global::System.Web.UI.HtmlControls.HtmlTable tblPadding1;
         
         /// <summary>
         /// lblCountry control.
@@ -515,24 +515,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLandMark;
-        
-        /// <summary>
-        /// lblLoc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLoc;
-        
-        /// <summary>
-        /// txtLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocation;
         
         /// <summary>
         /// WizardStep3 control.
@@ -751,15 +733,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label mlblFlatNoValue;
         
         /// <summary>
-        /// mlbladminLocationValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mlbladminLocationValue;
-        
-        /// <summary>
         /// btn control.
         /// </summary>
         /// <remarks>
@@ -767,5 +740,14 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn;
+        
+        /// <summary>
+        /// btncan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btncan;
     }
 }

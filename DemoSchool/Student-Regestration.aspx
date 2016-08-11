@@ -953,13 +953,18 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:Label ID="lblarea" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="txtarea" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </td>
+                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                    Style="width: 100%;">
+                                    <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
                              </tr>
                              <tr>
                                             <td>
@@ -985,14 +990,19 @@
                                             </td>--%>
                               </tr>
                               <tr>
-                                            <td>
-                                                <asp:Label ID="lblvillage" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="txtcity" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </td>
+                                          <td>
+                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                    Style="width: 100%;">
+                                    <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
                                             <td>
                                             </td>
                                             <td>
@@ -1600,7 +1610,7 @@
                                                     </div>
                                                 </div>
                                             </div>                            
-                                    </div>
+                                
                 </asp:WizardStep>
                     
                      <asp:WizardStep ID="WizardPayment" runat="server" Title="Payment">
@@ -1653,7 +1663,7 @@
                                                                 <asp:label id="lblprogAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                               </div>
                                                            
-                                    
+                                    </div>
                                         </div>
                                    </div>
                                 </div>                                                        
@@ -1790,7 +1800,7 @@
       </div>
     </div>
    </div>
- </div>    
+  
     <div>
      </div>
     <

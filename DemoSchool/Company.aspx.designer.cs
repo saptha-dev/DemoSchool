@@ -211,40 +211,40 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList txtCmpCity;
         
         /// <summary>
-        /// Label11 control.
+        /// lblMandalTalukSubUrb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label lblMandalTalukSubUrb;
         
         /// <summary>
-        /// txtMandal control.
+        /// ddlMandal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMandal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMandal;
         
         /// <summary>
-        /// Label12 control.
+        /// lblVillageTownCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label lblVillageTownCity;
         
         /// <summary>
-        /// txtVillage control.
+        /// ddlVillage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVillage;
+        protected global::System.Web.UI.WebControls.DropDownList ddlVillage;
         
         /// <summary>
         /// Label13 control.
@@ -839,5 +839,23 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label alternateEmail;
+        
+        /// <summary>
+        /// btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn;
+        
+        /// <summary>
+        /// btncan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btncan;
     }
 }

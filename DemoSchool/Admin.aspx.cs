@@ -74,7 +74,7 @@ namespace DemoSchool
             newRegistration.HouseNO = txthouseno.Text;
             newRegistration.Flat_UnitNo = txtFlatno.Text;
             newRegistration.LandMark_Name = txtLandMark.Text;
-            newRegistration.Location = txtLocation.Text;
+           // newRegistration.Location = txtLocation.Text;
             newRegistration.PostalCode = 123456;
             
 
@@ -100,6 +100,7 @@ namespace DemoSchool
 
 
                 mlblCountryValue.Text = ddlcountry.Text;
+                mlblDistrictValue.Text = ddlDistrict.Text;
                 mlblStateValue.Text = ddlstate.Text;
                 mlblVillageTownValue.Text = ddlVillage.Text;
                 mlblManadalTalukValue.Text = ddlMandal.Text;
@@ -110,7 +111,7 @@ namespace DemoSchool
                 mlblHousePlotNoValue.Text = txthouseno.Text;
                 mlblFlatNoValue.Text = txtFlatno.Text;
                 mlblBuildingLandMarkValue.Text = txtLandMark.Text;
-                mlbladminLocationValue.Text = txtLocation.Text;
+               // mlbladminLocationValue.Text = txtLocation.Text;
             }
         }
     }
