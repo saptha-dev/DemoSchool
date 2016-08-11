@@ -344,8 +344,8 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                    ddlVillage.Text = dr["Village_Town_City"].ToString();
-                    ddlMandal.Text = dr["SubUrban_Area"].ToString();
+                  //  ddlVillage.Text = dr["Village_Town_City"].ToString();
+                    //ddlMandal.Text = dr["SubUrban_Area"].ToString();
                     ddladdCategory.DataTextField = dr["CategoryID"].ToString();
                     // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
                     //ddlselectyear.DataTextField = dr["YearId"].ToString();

@@ -1251,10 +1251,7 @@
                                             </td>
                                             <td>
                                                 <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                                    <asp:ListItem Text="Select Category Schedule" Value=""></asp:ListItem>
-                                                   <%-- <asp:ListItem Text="" Value="1"></asp:ListItem>
-                                                    <asp:ListItem Text="" Value="2"></asp:ListItem>--%>
-                                                </asp:DropDownList>
+                                                  </asp:DropDownList>
                                             </td>
                                             <td>
                                             </td>
@@ -1267,11 +1264,10 @@
                                             </td>
                                             <td>
                                                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
-                                                                        OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
-                                                     <asp:ListItem Text="--Select Group--" Value=""></asp:ListItem>
-                                                    <asp:ListItem Text="---" Value="--"></asp:ListItem>
+                                                                        OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged" >
+                                                   
                                        
-                                                                <asp:ListItem></asp:ListItem>
+                                                            
                                                                     </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1312,9 +1308,7 @@
                                             <td>
                                                <asp:DropDownList ID="DDlYear" CssClass="form-control" runat="server" AutoPostBack="true" style="width:100%;"
                                                                         OnSelectedIndexChanged="DDlYear_SelectedIndexChanged">
-                                                     <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
+                                                    
                                                                     </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1328,9 +1322,7 @@
                                             </td>
                                             <td>
                                                <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
-                                                     <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>   
+                                                    
                                                      </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1373,9 +1365,7 @@
                                             <td>
                                                <asp:DropDownList ID="ddlSubjects" runat="server" AutoPostBack="true" CssClass="form-control"
                                                                         OnSelectedIndexChanged="ddlSubjects_SelectedIndexChanged">
-                                                     <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>                
+                                                                 
                                                     </asp:DropDownList>
                                             </td>             
                                 </tr>   
