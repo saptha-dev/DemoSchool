@@ -54,7 +54,7 @@ body {
           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ORGANIZATION<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="AboutUs.aspx">ABOUT US</a></li>
-        <li><a href="VisionIbms.aspx">IBMS Vision</a></li>
+      
         <li><a href="careers.aspx">CAREERS</a></li>
         <li><a href="contactus.aspx">CONTACT US</a></li>
            <li><a href="Education System">EDUCATION SYSTEM</a></li>

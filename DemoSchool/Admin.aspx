@@ -241,7 +241,7 @@
                             <td>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator id="RequiredFieldValidatorfname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator id="RequiredFieldValidatorfname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                             </td>
@@ -252,7 +252,7 @@
                             <td>
                             </td>
                             <td>
-                               <asp:RequiredFieldValidator id="RequiredFieldValidatorlname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatorlname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -378,8 +378,8 @@
                             <td>
                             </td>
                             <td>
-                               <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter ur Mobile Number" ControlToValidate="txtmobile"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                               <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter  Mobile Number" ControlToValidate="txtmobile" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}" Display="Dynamic"></asp:RegularExpressionValidator>
                             </td>
                             <td>
                             </td>
@@ -423,8 +423,8 @@
                             <td>
                             </td>
                             <td>
-                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter ur Email Id" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format" Display="Dynamic"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter Email Id" ControlToValidate="txtEmail" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                             </td>

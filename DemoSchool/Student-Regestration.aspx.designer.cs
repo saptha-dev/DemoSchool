@@ -886,6 +886,24 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddlSubjects;
         
         /// <summary>
+        /// lblSubSchdDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubSchdDate;
+        
+        /// <summary>
+        /// ddlSubSchdDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubSchdDate;
+        
+        /// <summary>
         /// RequiredFieldValidatorselectsubjects control.
         /// </summary>
         /// <remarks>
@@ -1136,6 +1154,15 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentLocationValue;
+        
+        /// <summary>
+        /// lblSubSchdDateValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubSchdDateValue;
         
         /// <summary>
         /// lblSelectProgramValue control.

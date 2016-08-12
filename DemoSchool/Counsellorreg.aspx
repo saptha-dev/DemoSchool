@@ -227,8 +227,7 @@
                             <td>
                             </td>
                             <td>
-                                <asp:Label ID="lblLastName" runat="server" Text="Last Name"  CssClass="control-label col-sm-12 text-left"
-                                    ></asp:Label>
+                                <asp:Label ID="lblLastName" runat="server" Text="Last Name"  CssClass="control-label col-sm-12 text-left"></asp:Label>
                             </td>
                             <td>
                             </td>
@@ -241,11 +240,9 @@
                             </td>
                             <td>
                             </td>
-                       <%--   <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                          <td>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorfname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                            <td>
                             </td>
                             <td>
@@ -254,13 +251,11 @@
                             </td>
                             <td>
                             </td>
-                          <%--  <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                                  <asp:RequiredFieldValidator id="RequiredFieldValidatorLname" runat="server" ErrorMessage="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
-               <br>
+               
                         <tr>
                             <td>
                                 <asp:Label ID="lblfatherguardian" runat="server" Text="Father/Guardian Name"  CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -317,7 +312,7 @@
                             </td>
                             <td>
                                <%-- <asp:TextBox ID="txtdob" class="form-control" runat="server"></asp:TextBox>--%>
-                                <input id="txtdob"  type="date" value="2016-08-08" runat="server" class="control-label col-sm-12 text-left"/>
+                                <input id="txtdob"  type="date" class="form-control" value="2016-08-08" runat="server" />
                               <%--  <img src="Images/calender.png" id="cdr" />--%>
                             </td>
                             <td>
@@ -335,30 +330,7 @@
                                 &nbsp;
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                          <%--  <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Date of birth" ForeColor="Red" ControlToValidate="txtdob"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <%--<td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Place of birth" ForeColor="Red" ControlToValidate="txtpob"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
-                        </tr>
+                       
                         <tr>
                             <td>
                                 <asp:Label ID="lblmobileNumber" runat="server" Text="Mobile Number"  CssClass="control-label col-sm-12 text-left"></asp:Label>
@@ -388,14 +360,10 @@
                             </td>
                             <td>
                             </td>
-                           <%-- <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Mobile Number" ForeColor="Red" ControlToValidate="txtmobile"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="Required"
-                                    ControlToValidate="txtmobile" Font-Size="11px" ErrorMessage="* Please Enter Numbers "
-                                    ForeColor="Red" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-                            </td>--%>
+                            <td>
+                             <asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter Mobile Number" ControlToValidate="txtmobile" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtmobile" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}" Display="Dynamic"></asp:RegularExpressionValidator>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -438,11 +406,10 @@
                             </td>
                             <td>
                             </td>
-                          <%--  <td>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="Required"
-                                    ErrorMessage="* Enter Email ID" ForeColor="Red" ControlToValidate="txtEmail"
-                                    Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                            </td>--%>
+                            <td>
+                                 <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format" Display="Dynamic"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter Email Id" ControlToValidate="txtEmail" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                             <td>
                             </td>
                             <td>
@@ -525,7 +492,7 @@
                             <td>
                             </td>
                             <td>
-                                <asp:FileUpload ID="FileUploadImage" runat="server" Style="color: rgb(26, 56, 211);"
+                                <asp:FileUpload ID="FileUploadImage" runat="server"  Style="color: rgb(26, 56, 211);"
                                     />
                             </td>
                         </tr>

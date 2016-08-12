@@ -372,6 +372,8 @@
                                             ErrorMessage=" Enter Registration Number" ForeColor="Red" ControlToValidate="txtRegNumber"
                                             Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </td>--%>
+                                    </tr>
+                               <tr>
                                     <td>
                                         <asp:Label ID="Label3" runat="server" CssClass="control-label col-sm-12 text-left" Text="ROC Registration Date"></asp:Label>
                                         </td>
@@ -574,7 +576,7 @@
                         <hr>
                           <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>COMPANY Contact Person Details</h3>
 
-                            <table id="tblPadding2" style="margin: auto; width: 80%; color: Black;">
+                            <table id="tblPadding2" style="margin: auto; width: 100%; color: Black;">
                                 <tr>
                                     <td><asp:Label ID="Label20" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td><asp:TextBox ID="txtFirstName" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox></td>
@@ -582,88 +584,56 @@
                                     <td><asp:TextBox ID="txtLastName" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox></td>
                                 </tr>
                                 <tr>
-                                    <%--<td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <%-- <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <td>
-                                        <asp:Label ID="Label22" runat="server" CssClass="control-label col-sm-12 text-left" Text="Father/Guardian Name"></asp:Label>
-                                       </td>
-                                    <td>
-                                        <asp:TextBox ID="txtFatherName" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label23" runat="server" CssClass="control-label col-sm-12 text-left" Text="Mother Maiden Name"></asp:Label>
-                                        </td>
-                                    <td>
-                                        <asp:TextBox ID="txtMotherMaidenName" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
-                                    </td>
+                                    <td></td>
+                                     <td><asp:RequiredFieldValidator id="RequiredFieldValidatorfname" runat="server" ErrorMessage="please Enter First Name" ForeColor="Red" ControlToValidate="txtFirstName" Display="Dynamic"></asp:RequiredFieldValidator></td>
+                                     <td></td>
+                                     <td><asp:RequiredFieldValidator id="RequiredFieldValidatorlname" runat="server" ErrorMessage ="please Enter Last Name" ForeColor="Red" ControlToValidate="txtLastName" Display="Dynamic"></asp:RequiredFieldValidator></td>
                                 </tr>
                                 <tr>
+                                    <td><asp:Label ID="Label22" runat="server" CssClass="control-label col-sm-12 text-left" Text="Father/Guardian Name"></asp:Label></td>
+                                    <td><asp:TextBox ID="txtFatherName" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox></td>
+                                    <td><asp:Label ID="Label23" runat="server" CssClass="control-label col-sm-12 text-left" Text="Mother Maiden Name"></asp:Label></td>
+                                    <td><asp:TextBox ID="txtMotherMaidenName" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox></td>
+                                </tr>
+                            
+                                <tr>
                                     <td><asp:Label ID="Label24" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
-                                    <td>
-                                        <input id="txtDob" class="form-control"  type="date" value="2016-07-23"/>
-                                    </td>
+                                    <td><input id="txtDob" class="form-control"  type="date" value="2016-07-23"/></td>
                                     <td><asp:Label ID="Label25" runat="server" Text="Place of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td><asp:TextBox ID="txtPlaceOfBirth" CssClass="form-control" runat="server"></asp:TextBox></td>
                                 </tr>
+                           
                                 <tr>
-                                    <%--<td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Father/Guardian name" ForeColor="Red" ControlToValidate="txtfathergurdianname"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <%-- <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Mother Maiden Name" ForeColor="Red" ControlToValidate="txtMothername"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <td>
-                                        <asp:Label ID="Label26" runat="server" CssClass="control-label col-sm-12 text-left" Text="Mobile Number"></asp:Label>
-                                        </td>
-                                    <td>
-                                        <asp:TextBox ID="txtMobileNumber" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label27" runat="server" CssClass="control-label col-sm-12 text-left" Text="Fixed/Land Line Number"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtFixedLineNumber" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                    <td><asp:Label ID="Label26" runat="server" CssClass="control-label col-sm-12 text-left" Text="Mobile Number"></asp:Label></td>
+                                    <td><asp:TextBox ID="txtMobileNumber" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox></td>
+                                    <td><asp:Label ID="Label27" runat="server" CssClass="control-label col-sm-12 text-left" Text="Fixed/Land Line Number"></asp:Label></td>
+                                    <td><asp:TextBox ID="txtFixedLineNumber" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox></td>
+                               
+                               </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><asp:RequiredFieldValidator id="RequiredFieldValidatormob" runat="server" ForeColor="Red" ErrorMessage ="please Enter  Mobile Number" ControlToValidate="txtMobileNumber" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidatormob1" runat="server" ControlToValidate="txtMobileNumber" ForeColor="Red" ErrorMessage="Invalid Mobile Number" ValidationExpression="[0-9]{10}" Display="Dynamic"></asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
-                                <tr>
+                            
+                               <tr>
                                     <td><asp:Label ID="Label28" runat="server" Text="Email Id" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
-                                    <td><%--asp:TextBox ID="txtdob" class="textusername" runat="server"></asp:TextBox>--%>
-                                        <%--<img src="Images/calender.png" id="cdr" />--%>
-                                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
-                                    </td>
+                                    <td><asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox></td>
                                     <td><asp:Label ID="Label29" runat="server" Text="Alternate Email Id" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td><asp:TextBox ID="txtAlternateEmail" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox></td>
                                 </tr>
                                 <tr>
-                                    <%-- <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Date of birth" ForeColor="Red" ControlToValidate="txtdob"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <%-- <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Place of birth" ForeColor="Red" ControlToValidate="txtpob"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
+                                    <td></td>
                                     <td>
-                                        <asp:Label ID="Label30" runat="server" CssClass="control-label col-sm-12 text-left" Text="Student Image"></asp:Label>
-                                        </td>
-                                    <td>
-                                        <asp:FileUpload ID="txtFileUpload1" runat="server" ClientIDMode="Static" Style="color: rgb(26, 56, 211);" ValidationGroup="Required" />
+                                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid Email Format" Display="Dynamic"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidatorEmail" runat="server" ForeColor="Red" ErrorMessage="Please Enter Email Id" ControlToValidate="txtEmail" Display="Dynamic"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
+                             <tr>
+                                    <td><asp:Label ID="Label30" runat="server" CssClass="control-label col-sm-12 text-left" Text="Student Image"></asp:Label></td>
+                                    <td><asp:FileUpload ID="txtFileUpload1" runat="server" ClientIDMode="Static" Style="color: rgb(26, 56, 211);" ValidationGroup="Required" /></td>
+                            </tr>
                             </table>
                     </div>
                 </asp:WizardStep>
@@ -679,22 +649,22 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="assocCmpName">Assoc CompanyName : </label>
-                                                    <asp:label id="assocCmpName" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
+                                                    <asp:label id="assocCmpName" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="regDate">Reg Date : </label>
-                                                    <asp:label id="regDate" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="regDate" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="cmpEmail">AssocEmail : </label>
-                                                    <asp:label id="cmpEmail" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmpEmail" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-5"  for="branchesNo">Branches No : </label>
-                                                    <asp:label id="branchesNo" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="branchesNo" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -702,17 +672,17 @@
                                             <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="regNumber">Reg Number : </label>
-                                                    <asp:label id="regNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="regNumber" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="officePhone">OfficePhone : </label>
-                                                    <asp:label id="officePhone" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="officePhone" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="assocCmpAccCode">Assoc CompanyCode : </label>
-                                                   <asp:label id="assocCmpAccCode" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="assocCmpAccCode" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                         </div>
@@ -733,27 +703,27 @@
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpCity">City : </label>
-                                                    <asp:label id="cmpCity" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmpCity" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="village">Village : </label>
-                                                   <asp:label id="village" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="village" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street No : </label>
-                                                    <asp:label id="cmpStreetNo" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmpStreetNo" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmphouseNo">House No : </label>
-                                                    <asp:label id="cmphouseNo" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmphouseNo" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpLandMark">Building/LandMark : </label>
-                                                   <asp:label id="cmpLandMark" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="cmpLandMark" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -761,32 +731,32 @@
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpState">State : </label>
-                                                    <asp:label id="cmpState" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
+                                                    <asp:label id="cmpState" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mandal">Mandal : </label>
-                                                    <asp:label id="mandal" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mandal" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="pinCode">PinCOde : </label>
-                                                   <asp:label id="pinCode" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="pinCode" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpStreetNo">Street Name : </label>
-                                                    <asp:label id="cmpStreetName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmpStreetName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="cmpFlatNo">Flat No : </label>
-                                                    <asp:label id="cmpFlatNo" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="cmpFlatNo" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="studentLocation">Student Location : </label>
-                                                   <asp:label id="studentLocation" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="studentLocation" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                         </div>
                                     </div>
@@ -803,27 +773,27 @@
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="firstName">FirstName : </label>
-                                                    <asp:label id="firstName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="firstName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="fatherName">FatherName : </label>
-                                                    <asp:label id="fatherName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fatherName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="date">Date : </label>
-                                                   <asp:label id="date" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="date" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="mobileNumber">MobileNumber : </label>
-                                                    <asp:label id="mobileNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="mobileNumber" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="emailId">EmailId : </label>
-                                                    <asp:label id="emailId" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="emailId" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                     </div>
@@ -831,27 +801,27 @@
                                         <div class="row">
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="lastName">LastName : </label>
-                                                    <asp:label id="lastName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="lastName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="motherMaidenName">Mother MaidenName : </label>
-                                                    <asp:label id="motherMaidenName" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="motherMaidenName" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="placeOfBirth">PlaceOfBirth : </label>
-                                                   <asp:label id="placeOfBirth" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                   <asp:label id="placeOfBirth" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                               <div class="clearfix"></div>
                                             <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="fixedLineNumber">Fixed Line Number : </label>
-                                                    <asp:label id="fixedLineNumber" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="fixedLineNumber" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
                                                   <label class="control-label col-sm-5"  for="emailId">Alternate Email : </label>
-                                                    <asp:label id="alternateEmail" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                    <asp:label id="alternateEmail" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
                                     </div>

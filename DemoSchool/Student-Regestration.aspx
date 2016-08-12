@@ -1367,6 +1367,21 @@
                                                                         OnSelectedIndexChanged="ddlSubjects_SelectedIndexChanged">
                                                                  
                                                     </asp:DropDownList>
+
+                                            </td>
+                                            <td>
+                                            </td>
+                                     <td></td>
+                                            <td>
+                                                     <asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                    <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="form-control">
+                                                                      
+                                                               
+                                                     </asp:DropDownList>
                                             </td>             
                                 </tr>   
                                 <tr>
@@ -1541,6 +1556,12 @@
                                                                   <label class="control-label col-sm-5" for="studentLocation">Student Location : </label>
                                                                    <asp:label id="lblStudentLocationValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
+                                                              <div class="clearfix"></div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-5"  for="lblprogAmount"> SUB-SCHID-DATE: </label>
+                                                                <asp:label id="lblSubSchdDateValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                              </div>
+                                                               
                                                         </div>
                                                     </div>
                                                 </div>                                
@@ -1596,6 +1617,7 @@
                                                                 <asp:label id="lblprogramAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                               </div>
                                                                </div>
+                                                       
                                                          </div>
                                                     </div>
                                                 </div>

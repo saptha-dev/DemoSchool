@@ -238,7 +238,7 @@ namespace DemoSchool
              newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
             //newReg1.ProgramID = 111;
             newReg1.BranchID = 8686;
-           //s newReg1.LocationID = 88;
+            newReg1.LocationID = 88; //TODO need to remove the column or hard coded values
 
             newReg1.CategoryID = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
            // newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
@@ -346,13 +346,13 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                    ddlVillage.Text = dr["Village_Town_City"].ToString();
-                    ddlMandal.Text = dr["SubUrban_Area"].ToString();
-                    //ddladdCategory.DataTextField = dr["CategoryID"].ToString();
-                  //  ddlGroup.SelectedItem.Text= dr["GroupId"].ToString();
+                   ddlVillage.Text = dr["Village_Town_City"].ToString();
+                   ddlMandal.Text = dr["SubUrban_Area"].ToString();
+                    ddladdCategory.DataTextField = dr["CategoryID"].ToString();
+                  // ddlGroup.Text= dr["GroupId"].ToString();
                     //DDlYear.Text = dr["YearId"].ToString();
                     //ddlSubjects.Text = dr["Subjects"].ToString();
-                    //ddladdsemister.Text = dr["Schedule_ID"].ToString();
+                   // ddladdsemister.Text = dr["Schedule_ID"].ToString();
 
                 }
             }
@@ -384,9 +384,9 @@ namespace DemoSchool
                 lblFlatNoValue.Text = txtFlatno.Text;
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
-               
 
-                lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
+                lblSubSchdDate.Text = ddlSubSchdDate.SelectedItem.Text;
+                lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty; 
                 lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
                 lblSelectCategoryValue.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
                 lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
