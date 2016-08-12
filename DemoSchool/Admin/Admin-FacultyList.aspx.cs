@@ -106,6 +106,7 @@ namespace PresentationLayer.Admin
         {
             if (ddlCategory.SelectedValue != "0")
             {
+                selectedCategoryId.Text = ddlCategory.SelectedItem.Text;
                 LoadGroups();
                 LoadCategorySchdule();
                 LoadYearOrSemSchdule();
@@ -166,23 +167,20 @@ namespace PresentationLayer.Admin
             }
         }
 
-
-        
-
-        
-
         protected void ddlCategorySchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            selectedCategorySchedId.Text = ddlCategorySchedule.SelectedItem.Text;
         }
 
         protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedGroupId.Text = ddlGroup.SelectedItem.Text;
             SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlGroup.SelectedValue));
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
             {
+                selectedGroupId.Text = ddlGroup.SelectedItem.Text;
                 ddlYearSem.DataSource = dt;
                 ddlYearSem.DataValueField = "Year_Id";
                 ddlYearSem.DataTextField = "Branch_Year_No";
@@ -193,6 +191,7 @@ namespace PresentationLayer.Admin
         }
         protected void ddlYearSem_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedYearSem.Text = ddlYearSem.SelectedItem.Text;
             LoadSubjects();
             LoadSubjectsSchedule();
         }
@@ -222,30 +221,30 @@ namespace PresentationLayer.Admin
             int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             int categoryId = Convert.ToInt32(ddlCategory.SelectedItem.Value);
 
-            SqlDataReader dr = objBL.GetSubjectsSchedule(categoryId);
+            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
             {
-                ddlSubSchdDate.DataSource = dt;
-                ddlSubSchdDate.DataValueField = "Subject_ScheduleID";
-                ddlSubSchdDate.DataTextField = "Subject_ScheduleID_Date";
-                ddlSubSchdDate.DataBind();
-                ddlSubSchdDate.Items.Insert(0, new ListItem("--Select--", "0"));
+                ddlSubject.DataSource = dt;
+                ddlSubject.DataValueField = "Subject_Id";
+                ddlSubject.DataTextField = "Subject_Id_Name";
+                ddlSubject.DataBind();
+                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
             }
         }
 
         protected void ddlYearSemSchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            selectedYearSchedId.Text = ddlYearSemSchedule.SelectedItem.Text;
         }
         protected void ddlSubjectId_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            selectedSubjectId.Text = ddlSubject.SelectedItem.Text;
         }
         protected void ddlSubSchdIdDate_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            selectedSubSchedId.Text = ddlSubSchdDate.SelectedItem.Text;
         }
 
 
@@ -710,13 +709,19 @@ namespace PresentationLayer.Admin
 
         protected void btnCancelView_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void search_Click(object sender, EventArgs e)
+        {
+            string searchtext = searchText.Text;
         }
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedStatus = ddlStatus.SelectedItem.Text.ToUpper();
-            switch (selectedStatus)
+            selectedStatus.Text = ddlStatus.SelectedItem.Text;
+            var status = ddlStatus.SelectedItem.Text.ToUpper();
+            switch (status)
             {
                 case "COMPLETED":
                     GetRegisteredUsers();
@@ -733,6 +738,7 @@ namespace PresentationLayer.Admin
                     lblActivatedusers.Visible = true;
                     btnActivateGV.Visible = true;
                     pnlCancelUsers.Visible = false;
+                    pnlActivatedUsers.Visible = true;
                     GetConfirmusers();
                     break;
                 case "CANCELLED":

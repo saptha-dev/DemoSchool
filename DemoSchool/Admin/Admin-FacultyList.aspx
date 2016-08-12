@@ -35,7 +35,7 @@
         }
         .style
         {
-            text-align: center;
+            text-align: left;
             padding: 6px;
         }
         #heading
@@ -187,9 +187,9 @@
     </table>
 
 
-    <table style="width: 30%; margin: auto; margin-top: 20px; vertical-align:central"  >
+    <table style="width: 40%; margin: auto; margin-top: 20px; vertical-align:central"  >
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>
+            <td  class="style" align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlProgram" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged="ddlPrograms_SelectedIndexChanged">
@@ -197,7 +197,7 @@
             </td>
         </tr>
         <tr>
-            <td align="left"><asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label></td>
             <td>
                 <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="true"
                     Width="200" class="textusername" OnSelectedIndexChanged="ddlCategories_SelectedIndexChanged">
@@ -205,7 +205,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblCategorySchedule" runat="server" Text="Select Category Schedule"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblCategorySchedule" runat="server" Text="Select Category Schedule"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlCategorySchedule" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" onselectedindexchanged="ddlCategorySchedule_SelectedIndexChanged" >
@@ -214,7 +214,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblGroup" runat="server" Text="Select Group"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblGroup" runat="server" Text="Select Group"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
@@ -222,7 +222,7 @@
             </td>
         </tr>
         <tr>
-            <td align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
+            <td class="style" align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
             <td>
                 <asp:DropDownList ID="ddlYearSem" runat="server" AutoPostBack="true"
                     Width="200" class="textusername" OnSelectedIndexChanged="ddlYearSem_SelectedIndexChanged">
@@ -230,7 +230,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlYearSemSchedule" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" onselectedindexchanged="ddlYearSemSchedule_SelectedIndexChanged" >
@@ -239,16 +239,16 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlSubject" runat="server" AutoPostBack="true" class="textusername"
-                    Width="200" >
+                    Width="200" OnSelectedIndexChanged ="ddlSubjectId_SelectedIndexChanged" >
                      <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
+            <td class="style" align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged ="ddlSubSchdIdDate_SelectedIndexChanged" >
@@ -257,7 +257,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td align="left"><asp:Label ID="lblStatus" runat="server" Text="Select Status"></asp:Label></td>
+            <td class="style"><asp:Label ID="lblStatus" runat="server" Text="Select Status"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true" class="textusername" Width="200"  OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged" >
                      <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
@@ -266,6 +266,25 @@
         </tr>
 
 
+    </table>
+
+    <br />
+    <table style="width: 72%; margin: auto; margin-top: 10px;" class="table">
+        
+        <tr>
+            <td>CTGY-ID:NAME</td><td>CTGY-SCH ID;DATES</td><td>GROUPD</td><td>YEAR-SEM</td>
+            <td>YEAR-SCH ID:DATE</td><td>SUB-ID:NAME</td><td>SUB-SCH ID:DATES</td><td>Status</td>
+        </tr>
+        <tr>
+            <td><asp:Label runat="server" ID="selectedCategoryId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedCategorySchedId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedGroupId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedYearSem" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedYearSchedId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedSubjectId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedSubSchedId" ClientIDMode="static" Text=""></asp:Label></td>
+            <td><asp:Label runat="server" ID="selectedStatus" ClientIDMode="static" Text=""></asp:Label></td>
+        </tr>
     </table>
 
 
@@ -285,11 +304,21 @@
         </table>--%>
 
         <br />
+            <div class="row">
+                
+                <asp:Button runat="server" Text="Search" OnClick="search_Click" CssClass="btn btn-primary" />
+                <div class="col-md-4 pull-left">
+                    <asp:TextBox runat="server" cssClass="form-control" ID="searchText" ClientIDMode="Static"></asp:TextBox>
+                </div>
+            </div>
+                <div class="clearfix"></div>
+            
         <asp:Panel ID="NodataPanel" runat="server" Visible="false">
             
             <div id="headingConfirmed">
                 <asp:Label runat="server" ID="lblNoDataHeading" Text="Faculty Registered List"></asp:Label>
             </div>
+            
             <asp:GridView ID="GvNodata" CssClass="GridviewConfirm" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"
                 HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true" style="width:100%;"
                 PageSize="8">
@@ -338,43 +367,23 @@
                         <HeaderStyle HorizontalAlign="Left" />
                         <ItemStyle HorizontalAlign="Left" />
                     </asp:TemplateField>
-                    <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Address" DataField="AddressId" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Reg Location" DataField="Location" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Reg Date" DataField="DateOfRegistration" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="CTGY-GROUP-SEM" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />                    
-                    <asp:BoundField HeaderText="SUBJECT" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="SUBJECT Status" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="SUBJECT Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="REMARKS" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    
-                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    
-
+                    <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass ="style" />
+                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Address" DataField="AddressId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Location" DataField="Location" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Reg Date" DataField="DateOfRegistration" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="CTGY-GROUP-SEM" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />                    
+                    <asp:BoundField HeaderText="SUBJECT" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJECT Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REMARKS" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
                 </Columns>
             </asp:GridView>
             <div style="margin-left: 40%; margin-top: 36px;">
@@ -393,6 +402,7 @@
             <asp:GridView ID="GridView1" CssClass="Gridview" runat="server" AutoGenerateColumns="False"
                 HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true"
                 Width="100%" PageSize="8" style="margin-left:0px;" >
+
                 <Columns>
                     <asp:TemplateField>
                         <HeaderTemplate>
@@ -404,22 +414,23 @@
                         <HeaderStyle HorizontalAlign="Left" />
                         <ItemStyle HorizontalAlign="Left" />
                     </asp:TemplateField>
-                    <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="FCLTY-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="LOGIN-ID" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass ="style" />
+                    <asp:BoundField HeaderText="LOGIN-CODE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Address" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REG-LOC" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REG-DATE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="CTGY:GRP:YEARSEM" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJ-STATUS:STS-DATE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REMARKS" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    
                 </Columns>
             </asp:GridView>
             <div id="btnActivateGV" runat="server" visible="false" style="margin-left: 28%; margin-top: 36px;">
@@ -452,41 +463,22 @@
                         <HeaderStyle HorizontalAlign="Left" />
                         <ItemStyle HorizontalAlign="Left" />
                     </asp:TemplateField>
-                    <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Address" DataField="AddressId" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Reg Location" DataField="Location" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Reg Date" DataField="DateOfRegistration" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
-                        ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="CTGY-GROUP-SEM" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />                    
-                    <asp:BoundField HeaderText="SUBJECT" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="SUBJECT Status" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="SUBJECT Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    <asp:BoundField HeaderText="REMARKS" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                    
-                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                        DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="FCLTY-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="LOGIN-ID" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass ="style" />
+                    <asp:BoundField HeaderText="LOGIN-CODE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Address" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REG-LOC" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REG-DATE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="CTGY:GRP:YEARSEM" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="SUBJ-STATUS:STS-DATE" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="REMARKS" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                    <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center" DataFormatString="{0:d}" ItemStyle-CssClass="style" />
                     
 
                 </Columns>
