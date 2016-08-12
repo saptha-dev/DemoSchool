@@ -106,11 +106,11 @@ namespace DemoSchool
                 conslblAlterEmailIdValue.Text = txtaltrEmail.Text;
 
 
-                conslblCountryValue.Text = ddlcountry.Text;
-                conslblStateValue.Text = ddlstate.Text;
-                conslblDistrictValue.Text = ddlDistrict.Text;
-                conslblVillageTownValue.Text = ddlVillage.Text;
-                conslblManadalTalukValue.Text = ddlMandal.Text;
+                conslblCountryValue.Text = ddlcountry.SelectedItem.Text;
+                conslblStateValue.Text = ddlstate.SelectedItem.Text;
+                conslblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
+                conslblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
+                conslblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
 
                 conslblPinCodeValue.Text = txtpincode.Text;
                 conslblStreetNoValue.Text = txtstreetno.Text;

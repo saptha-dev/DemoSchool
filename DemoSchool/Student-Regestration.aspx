@@ -1411,17 +1411,17 @@
                                                           </div>
                                                           <div class="clearfix"></div>
                                                            <div class="form-group">
-                                                                      <label class="control-label col-sm-5"  for="branchesNo">Mobile No : </label>
+                                                                      <label class="control-label col-sm-5"  for="branchesNo">Mobile No:</label>
                                                                       <asp:label id="lblMobileNumberValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                            </div>
                                                            <div class="clearfix"></div>
                                                             <div class="form-group">
-                                                                        <label class="control-label col-sm-5"  for="branchesNo">Email Id : </label>
+                                                                        <label class="control-label col-sm-5"  for="branchesNo">Email Id:</label>
                                                                          <asp:label id="lblEmailIdValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                              <div class="form-group">
-                                                                        <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification : </label>
+                                                                        <label class="control-label col-sm-5"  for="branchesNo">Education/Qualification:</label>
                                                                          <asp:label id="lblEductionValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                              </div>
                                                              <div class="clearfix"></div>
@@ -1518,7 +1518,7 @@
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="mandal">Mandal/Taluk/SubUrb : </label>
+                                                                  <label class="control-label col-sm-5" for="mandal">Mandal/Taluk/SubUrb:</label>
                                                                     <asp:label id="lblManadalTalukValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
@@ -1793,7 +1793,7 @@
   
     <div>
      </div>
-    <
+    </div>
           <div class="topbar"></div>
                 <div class="container footer">
                     <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>

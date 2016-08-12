@@ -1131,7 +1131,7 @@
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
-                                                  <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No : </label>
+                                                  <label class="control-label col-sm-5"  for="cmphouseNo">House No/Door No:</label>
                                                     <asp:label id="conslblHousePlotNoValue" font-bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
@@ -1149,7 +1149,7 @@
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
-                                                  <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb : </label>
+                                                  <label class="control-label col-sm-5"  for="mandal">Mandal/Taluk/SubUrb:</label>
                                                     <asp:label id="conslblManadalTalukValue" font-bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>

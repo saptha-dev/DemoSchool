@@ -17,7 +17,7 @@ namespace DemoSchool
         RegistrationBL objReg1 = new RegistrationBL();
         FacultyBL fblobj = new FacultyBL();
         AddProgramsBL prog = new AddProgramsBL();
-        private object objReg;
+        //private object objReg;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -340,11 +340,11 @@ namespace DemoSchool
                 flbltechnicalValue.Text = txtTechnicalSkills.Text;
                 flblaccesscodeValue.Text = txtFacultyAccessCode.Text;
 
-                flblCountryValue.Text = ddlcountry.Text;
-                flblStateValue.Text = ddlstate.Text;
-                flblDistrictValue.Text = ddlDistrict.Text;
-                flblmandal.Text = ddlMandal.Text;
-                flblvillageValue.Text = ddlVillage.Text;
+                flblCountryValue.Text = ddlcountry.SelectedItem.Text;
+                flblStateValue.Text = ddlstate.SelectedItem.Text;
+                flblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
+                flblmandal.Text = ddlMandal.SelectedItem.Text;
+                flblvillageValue.Text = ddlVillage.SelectedItem.Text;
                 flblpinCodeValue.Text = txtpincode.Text;
                 flblStreetNoValue.Text = txtstreetno.Text;
                 flblStreetNameValue.Text = txtstreetname.Text;

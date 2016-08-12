@@ -92,6 +92,7 @@ namespace DemoSchool
                 mlblLastNameValue.Text = txtLastName.Text;
                 mlblFatherNameValue.Text = txtfathergurdianname.Text;
                 mlblMotherMaidenNameValue.Text = txtMothername.Text;
+
                 mlblPobValue.Text = txtpob.Text;
                 mlblMobileNumberValue.Text = txtmobile.Text;
                 mlblLandLineNumberValue.Text = txtFixedLandline.Text;
@@ -99,11 +100,11 @@ namespace DemoSchool
                 mlblAlterEmailIdValue.Text = txtaltrEmail.Text;
 
 
-                mlblCountryValue.Text = ddlcountry.Text;
-                mlblDistrictValue.Text = ddlDistrict.Text;
-                mlblStateValue.Text = ddlstate.Text;
-                mlblVillageTownValue.Text = ddlVillage.Text;
-                mlblManadalTalukValue.Text = ddlMandal.Text;
+                mlblCountryValue.Text = ddlcountry.SelectedItem.Text;
+                mlblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
+                mlblStateValue.Text = ddlstate.SelectedItem.Text;
+                mlblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
+                mlblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
                 
                 mlblPinCodeValue.Text = txtpincode.Text;
                 mlblStreetNoValue.Text = txtstreetno.Text;
