@@ -222,16 +222,16 @@ namespace PresentationLayer.Admin
             int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             int categoryId = Convert.ToInt32(ddlCategory.SelectedItem.Value);
 
-            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
+            SqlDataReader dr = objBL.GetSubjectsSchedule(categoryId);
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
             {
-                ddlSubject.DataSource = dt;
-                ddlSubject.DataValueField = "Subject_Id";
-                ddlSubject.DataTextField = "Subject_Id_Name";
-                ddlSubject.DataBind();
-                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
+                ddlSubSchdDate.DataSource = dt;
+                ddlSubSchdDate.DataValueField = "Subject_ScheduleID";
+                ddlSubSchdDate.DataTextField = "Subject_ScheduleID_Date";
+                ddlSubSchdDate.DataBind();
+                ddlSubSchdDate.Items.Insert(0, new ListItem("--Select--", "0"));
             }
         }
 

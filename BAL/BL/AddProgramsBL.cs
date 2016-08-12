@@ -717,6 +717,13 @@ namespace BAL.BL
         public SqlDataReader GetStatusList()
         {
             return ConnectionFactory.ExecuteCommand("select Id as Status_Id, [Status] as Status_Text from [UserStatus]" , CommandType.Text);
-        } 
+        }
+
+        public SqlDataReader GetSubjectsSchedule(int CategorieId)
+        {
+            string query = @"Select DISTINCT Subject_ScheduleID, Sbj_Sch_strt_Date, Subject_ScheduleID + ':' + Sbj_Sch_strt_Date as Subject_ScheduleID_Date 
+                            from tbl_Schedule where Subject_ScheduleID IS NOT NULL AND Category_Id=" + CategorieId;
+            return ConnectionFactory.ExecuteCommand(query, CommandType.Text);
+        }
     }
 }

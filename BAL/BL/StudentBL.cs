@@ -184,7 +184,7 @@ namespace BAL.BL
            string sqlQuery = string.Format("select Subject_Id, Subject_Name from tbl_Subject where Program_Id = {0} AND Branch_Id = {1} AND Category_Id = {2}", programId, branchId, categoryId);
            return ConnectionFactory.ExecuteCommand(sqlQuery, CommandType.Text);
        }
-        public DataTable GetProgramAmount(int programId, int categoryId,int catScheduleId,int groupId,int yearId,int semscheduleId,int subjectId)
+        public DataTable GetProgramAmount(int programId, int categoryId,string catScheduleId,int groupId,int yearId,int semscheduleId,int subjectId)
         {
             SqlParameter[] p = new SqlParameter[7];
             p[0] = new SqlParameter("@ProgramId", programId);
@@ -194,12 +194,20 @@ namespace BAL.BL
             p[4] = new SqlParameter("@YearId", yearId);
             p[5] = new SqlParameter("@SemScheduleId", semscheduleId);
             p[6] = new SqlParameter("@SubjectId", subjectId);
-
-            var payment = ConnectionFactory.ExecuteCommandDs("SP_GetProgramAmount", CommandType.StoredProcedure, p);
-            if (payment != null && payment.Tables.Count > 0)
-                return payment.Tables[0];
-            else
-                return null;
+            DataSet payment = null;
+            try
+            {
+                payment = ConnectionFactory.ExecuteCommandDs("SP_GetProgramAmount", CommandType.StoredProcedure, p);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
+                if (payment != null && payment.Tables.Count > 0)
+                    return payment.Tables[0];
+                else
+                    return null;
+           
         }
     }
 }

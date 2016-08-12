@@ -187,9 +187,9 @@
     </table>
 
 
-    <table style="width: 40%; margin: auto; margin-top: 20px; vertical-align:central"  >
+    <table style="width: 30%; margin: auto; margin-top: 20px; vertical-align:central"  >
         <tr style="width: 100%">
-            <td  class="style" align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlProgram" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged="ddlPrograms_SelectedIndexChanged">
@@ -197,7 +197,7 @@
             </td>
         </tr>
         <tr>
-            <td class="style" align="left"><asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label></td>
             <td>
                 <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="true"
                     Width="200" class="textusername" OnSelectedIndexChanged="ddlCategories_SelectedIndexChanged">
@@ -205,7 +205,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td class="style" align="left"><asp:Label ID="lblCategorySchedule" runat="server" Text="Select Category Schedule"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblCategorySchedule" runat="server" Text="Select Category Schedule"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlCategorySchedule" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" onselectedindexchanged="ddlCategorySchedule_SelectedIndexChanged" >
@@ -214,7 +214,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td class="style" align="left"><asp:Label ID="lblGroup" runat="server" Text="Select Group"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblGroup" runat="server" Text="Select Group"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
@@ -222,7 +222,7 @@
             </td>
         </tr>
         <tr>
-            <td class="style" align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
+            <td align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
             <td>
                 <asp:DropDownList ID="ddlYearSem" runat="server" AutoPostBack="true"
                     Width="200" class="textusername" OnSelectedIndexChanged="ddlYearSem_SelectedIndexChanged">
@@ -230,7 +230,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td class="style" align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlYearSemSchedule" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" onselectedindexchanged="ddlYearSemSchedule_SelectedIndexChanged" >
@@ -239,7 +239,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td class="style" align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlSubject" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" >
@@ -248,7 +248,7 @@
             </td>
         </tr>
         <tr style="width: 100%">
-            <td class="style" align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
+            <td align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
             <td align="left">
                 <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="textusername"
                     Width="200" OnSelectedIndexChanged ="ddlSubSchdIdDate_SelectedIndexChanged" >

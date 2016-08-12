@@ -6,7 +6,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -27,7 +26,6 @@ namespace DemoSchool
             }
 
         }
-       
 
         public void LoadPograms()
         {
@@ -224,7 +222,7 @@ namespace DemoSchool
             newReg1.AccessCode = txtStudentAccescode.Text;
             newReg1.ImageName = "image";
             newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-           newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
+            newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
             newReg1.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
             newReg1.Village_Town_City = ddlVillage.SelectedItem.Value;
             newReg1.SubUrban_Area = ddlMandal.SelectedItem.Value;
@@ -235,17 +233,17 @@ namespace DemoSchool
             newReg1.Flat_UnitNo = txtFlatno.Text;
             newReg1.LandMark_Name = txtLandMark.Text;
             newReg1.Location = txtLocation.Text;
-             newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
-            //newReg1.ProgramID = 111;
+            // newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+            newReg1.ProgramID = 111;
             newReg1.BranchID = 8686;
-            newReg1.LocationID = 88; //TODO need to remove the column or hard coded values
+            newReg1.LocationID = 88;
 
-            newReg1.CategoryID = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
-           // newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
+            newReg1.CategoryID = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+            newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
             newReg1.YearId = DDlYear.SelectedItem.Value;
             newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
             newReg1.Subjects = ddlSubjects.SelectedItem.Value;
-            newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             objReg.StudentRegistration(newReg1);
         }
 
@@ -346,13 +344,13 @@ namespace DemoSchool
                     ddlcountry.Text = dr["CountryID"].ToString();
                     ddlstate.Text = dr["StateID"].ToString();
                     ddlDistrict.Text = dr["DistrictID"].ToString();
-                   ddlVillage.Text = dr["Village_Town_City"].ToString();
-                   ddlMandal.Text = dr["SubUrban_Area"].ToString();
+                    //  ddlVillage.Text = dr["Village_Town_City"].ToString();
+                    //ddlMandal.Text = dr["SubUrban_Area"].ToString();
                     ddladdCategory.DataTextField = dr["CategoryID"].ToString();
-                  // ddlGroup.Text= dr["GroupId"].ToString();
-                    //DDlYear.Text = dr["YearId"].ToString();
-                    //ddlSubjects.Text = dr["Subjects"].ToString();
-                   // ddladdsemister.Text = dr["Schedule_ID"].ToString();
+                    // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
+                    //ddlselectyear.DataTextField = dr["YearId"].ToString();
+                    // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
+                    // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
 
                 }
             }
@@ -371,11 +369,11 @@ namespace DemoSchool
                 lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
                 lblStudentAccessCodeValue.Text = txtStudentAccescode.Text;
 
-                lblCountryValue.Text = ddlcountry.SelectedItem.Text;
-                lblStateValue.Text = ddlstate.SelectedItem.Text;
-                lblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
-                lblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
-                lblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
+                lblCountryValue.Text = ddlcountry.Text;
+                lblStateValue.Text = ddlstate.Text;
+                lblDistrictValue.Text = ddlDistrict.Text;
+                lblManadalTalukValue.Text = ddlMandal.Text;
+                lblVillageTownValue.Text = ddlVillage.Text;
                 lblPinCodeValue.Text = txtpincode.Text;
                 lblStreetNoValue.Text = txtstreetno.Text;
                 lblStreetNameValue.Text = txtstreetname.Text;
@@ -385,25 +383,25 @@ namespace DemoSchool
                 lblLandLineNumberValue.Text = txtLandMark.Text;
                 lblStudentLocationValue.Text = txtLocation.Text;
 
-                lblSubSchdDate.Text = ddlSubSchdDate.SelectedItem.Text;
-                lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty; 
-                lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
+
+                lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
                 lblSelectCategoryValue.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
+                lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
+                lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
                 lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
                 lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
                 lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
-                lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
 
-                int programId = 0;
-                int categoryId = 0;
-                int catscheduleId = 0;
-                int groupId = 0;
 
-                int yearId = 0;
-                int subjectId = 0;
-                int semScheduleId = 0;
-               
-                var payment= objStudentBL.GetProgramAmount(programId,categoryId,catscheduleId,groupId,yearId,semScheduleId,subjectId);
+                int programId = Utils.ToInt(ddladdProgram.SelectedItem.Value);
+                int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+                string catscheduleId = ddlselectcategoryschedule.SelectedItem.Text;
+                int groupId = Utils.ToInt(ddlGroup.SelectedItem.Value);
+                int yearId = Utils.ToInt(DDlYear.SelectedItem.Value);
+                int subjectId = Utils.ToInt(ddlSubjects.SelectedItem.Value);
+                int semScheduleId = Utils.ToInt(ddladdsemister.SelectedItem.Value);
+
+                var payment = objStudentBL.GetProgramAmount(programId, categoryId, catscheduleId, groupId, yearId, semScheduleId, subjectId);
                 if (payment != null && payment.Rows.Count > 0)
                 {
                     DataRow dr = payment.Rows[0];
