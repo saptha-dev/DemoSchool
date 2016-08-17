@@ -162,13 +162,32 @@ namespace DemoSchool
                 ddlSubjects.DataBind();
                 ddlSubjects.Items.Insert(0, new ListItem("--Select--", "0"));
             }
+
+            LoadSubjectsSchedule();
         }
 
         protected void ddlSubjects_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        private void LoadSubjectsSchedule()
+        {
+            //int programId = Convert.ToInt32(ddlProgram.SelectedItem.Value);
+            //int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
 
+            SqlDataReader dr = objBL.GetSubjectsSchedule(categoryId);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubSchdDate.DataSource = dt;
+                ddlSubSchdDate.DataValueField = "Subject_ScheduleID";
+                ddlSubSchdDate.DataTextField = "Subject_ScheduleID_Date";
+                ddlSubSchdDate.DataBind();
+                ddlSubSchdDate.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
         protected void Wizardstudentreg_PreRender(object sender, EventArgs e)
         {
             Repeater SideBarList = Wizardstudentreg.FindControl("HeaderContainer").FindControl("SideBarList") as Repeater;

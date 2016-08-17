@@ -953,18 +953,18 @@
                                             <td>
                                             </td>
                                             <td>
-                                <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
-                                    Style="width: 100%;">
-                                    <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
+                                                     <asp:Label ID="lblMandalTalukSubUrb" runat="server" Text="Mandal/Taluk/SubUrb" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                    <asp:DropDownList ID="ddlMandal" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                                    Style="width: 100%;">
+                                                    <asp:ListItem Text="Mandal/Taluk/SubUrb" Value="0"></asp:ListItem>
+                                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                            </td>
                              </tr>
                              <tr>
                                             <td>
@@ -990,24 +990,24 @@
                                             </td>--%>
                               </tr>
                               <tr>
-                                          <td>
-                                <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
-                                    Style="width: 100%;">
-                                    <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="AP" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
+                                             <td>
+                                             <asp:Label ID="lblVillageTownCity" runat="server" Text="Village/Town/City" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                             </td>
+                                             <td>
+                                             </td>
+                                             <td>
+                                             <asp:DropDownList ID="ddlVillage" runat="server" CssClass="form-control" AppendDataBoundItems="true"
+                                              Style="width: 100%;">
+                                             <asp:ListItem Text="Village/Town/City" Value="0"></asp:ListItem>
+                                             <asp:ListItem Text="TELANGANA" Value="1"></asp:ListItem>
+                                             <asp:ListItem Text="AP" Value="2"></asp:ListItem>
+                                             </asp:DropDownList>
+                                             </td>
+                                             <td>
+                                             </td>
+                                             <td>
+                                             </td>
+                                             <td>
                                                 <asp:Label ID="lblpincode" runat="server" Text="Pin Code" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
@@ -1276,7 +1276,7 @@
                                             </td>
  
                                   </tr>
-                                       <tr>
+                                  <tr>
                                             <td>
                                             </td>
                                             <td>
@@ -1299,7 +1299,7 @@
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Group"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
                                 </tr>
-                                  <tr>
+                                <tr>
                                             <td>
                                                 <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
@@ -1330,7 +1330,7 @@
                                             <td>
                                             </td>
  
-                                 </tr>
+                              </tr>
 
                               <tr>
                                             <td>
@@ -1378,7 +1378,7 @@
                                             <td>
                                             </td>
                                             <td>
-                                                    <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="form-control">
+                                                    <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" CssClass="form-control">
                                                                       
                                                                
                                                      </asp:DropDownList>
@@ -1674,8 +1674,8 @@
                                                                 <label class="control-label col-md-5"  for="lblprogAmount"> Amount: </label>
                                                                 <asp:label id="lblprogAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
                                                               </div>
-                                                           
-                                    </div>
+
+                                        </div>
                                         </div>
                                    </div>
                                 </div>                                                        
