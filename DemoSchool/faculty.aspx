@@ -8,7 +8,7 @@
     <%-- <script type="text/javascript">
         $.noConflict();
         $(document).ready(function () {
-            $("#<%=txtdob.ClientID %>").datepicker({ maxDate: '0', changeYear: true, yearRange: "1900:2000", dateFormat: 'yy-mm-dd', beforeShow: function () {
+            $("#<%=txtdob.ClientID %>").datepicker({ maxDate: '0', changeYear: true,s yearRange: "1900:2000", dateFormat: 'yy-mm-dd', beforeShow: function () {
                 $(".ui-datepicker").css('font-size', 13.5)
             }
             });
@@ -1299,8 +1299,8 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                             <td>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlselectsubjects" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true" OnSelectedIndexChanged="ddlselectsubjects_SelectedIndexChanged">
-                                    <asp:ListItem Text="Select Subjects" Value="0"></asp:ListItem>
+                                <asp:DropDownList ID="ddlselectsubjects" AutoPostBack="true" runat="server" CssClass="form-control" style="width:100%;" OnSelectedIndexChanged="ddlselectsubjects_SelectedIndexChanged">
+                                 
                                    
                                 </asp:DropDownList>
                             </td>
@@ -1333,7 +1333,33 @@ OnNextButtonClick="Wizardfaculty_NextButtonClick"  StepPreviousButtonStyle-CssCl
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Subjects"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
+                                     </tr>
+                                     <tr>
+                                      <td>
+                                                     <asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                    <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" CssClass="form-control">
+                                                                      
+                                                               
+                                                     </asp:DropDownList>
+                                            </td>             
                         </tr>
+                                  <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorsheduledate" ControlToValidate="ddlSubSchdDate" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select the SubjectSchidDate"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>
+                                            </td>
+                                </tr>    
 
                            </table>
 

@@ -19,7 +19,11 @@ namespace BAL.BL
         {
             return ConnectionFactory.ExecuteCommand("select X.*,Y.* from Details X join Address Y on X.DetailsID=Y.DetailsID where X.DetailsID=" + FacultyID, CommandType.Text);
         }
-
+        public SqlDataReader GetSubjects(int programId, int branchId, int categoryId)
+        {
+            string sqlQuery = string.Format("select Subject_Id, Subject_Name from tbl_Subject where Program_Id = {0} AND Branch_Id = {1} AND Category_Id = {2}", programId, branchId, categoryId);
+            return ConnectionFactory.ExecuteCommand(sqlQuery, CommandType.Text);
+        }
         public SqlDataReader GetSubjectDDlbyCategory(int FacultyID,int CategoryID)
         {
             return ConnectionFactory.ExecuteCommand("select Subject_Id,Subject_Name from tbl_Subject where Subject_Id in(select Subject_Id from tbl_FacultySubjects_Publish where FacultyID=" + FacultyID + " and Status='Publish') and Category_Id=" + CategoryID, CommandType.Text);

@@ -648,7 +648,7 @@
                                         <div class="col-md-6 pull-left">
                                             <div class="row">
                                                 <div class="form-group">
-                                                    <label class="control-label col-sm-5"  for="assocCmpName">Assoc CompanyName : </label>
+                                                    <label class="control-label col-sm-5"  for="assocCmpName">Company Name : </label>
                                                     <asp:label id="assocCmpName" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-7-left" runat="server"></asp:label>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -658,7 +658,7 @@
                                               </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
-                                                    <label class="control-label col-sm-5"  for="cmpEmail">AssocEmail : </label>
+                                                    <label class="control-label col-sm-5"  for="cmpEmail">Email : </label>
                                                     <asp:label id="cmpEmail" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
@@ -676,12 +676,12 @@
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
-                                                  <label class="control-label col-sm-5"  for="officePhone">OfficePhone : </label>
+                                                  <label class="control-label col-sm-5"  for="officePhone">Office Phone : </label>
                                                     <asp:label id="officePhone" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>
                                               <div class="form-group">
-                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Assoc CompanyCode : </label>
+                                                  <label class="control-label col-sm-5"  for="assocCmpAccCode">Company Code : </label>
                                                    <asp:label id="assocCmpAccCode" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                             </div>
@@ -787,7 +787,7 @@
                                               </div>
                                              <div class="clearfix"></div>
                                             <div class="form-group">
-                                                  <label class="control-label col-sm-5"  for="mobileNumber">MobileNumber : </label>
+                                                  <label class="control-label col-sm-5"  for="mobileNumber">Mobile Number : </label>
                                                     <asp:label id="mobileNumber" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                               </div>
                                                 <div class="clearfix"></div>

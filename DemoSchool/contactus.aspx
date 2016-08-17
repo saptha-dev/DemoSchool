@@ -7,17 +7,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
+<meta name="description" content=""/>
+<meta name="author" content=""/>
+<link rel="icon" href="../../favicon.ico"/>
 <title></title>
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/redysun.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/redysun.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -78,11 +78,11 @@ body {
           </li>
          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REGISTRATION<span class="caret"></span></a>
             <ul class="dropdown-menu">
-             <li><a href="admin_registration.html">Admin/Director</a></li>
-            <li><a href="company_registration.html">Counsellor </a></li>
-            <li><a href="counsellor_registration.html">Company</a></li>
-            <li><a href="counsellor_registration.html">Faculty</a></li>
-           <li><a href="counsellor_registration.html">Student</a></li>
+             <li><a href="Admin.aspx">Management</a></li>
+            <li><a href="Counsellorreg.aspx">Counsellor </a></li>
+            <li><a href="Company.aspx">Company</a></li>
+            <li><a href="faculty.aspx">Faculty</a></li>
+           <li><a href="Student-Regestration.aspx">Student</a></li>
   
             </ul>
           </li>

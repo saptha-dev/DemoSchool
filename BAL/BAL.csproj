@@ -31,6 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>G:\DemoSchool\DemoSchool\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET">
+      <HintPath>G:\DemoSchool\DemoSchool\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownCheckBoxes">
+      <HintPath>G:\DemoSchool\DemoSchool\bin\DropDownCheckBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>G:\DemoSchool\DemoSchool\bin\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
