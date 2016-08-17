@@ -211,6 +211,7 @@
                     <asp:ListItem Text="Registered Users" Value="1"></asp:ListItem>
                      <asp:ListItem Text="Confirmed Users" Value="2"></asp:ListItem>
                       <asp:ListItem Text="Cancel Users" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="Student Payments" Value="4"></asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -232,8 +233,9 @@
             <td><asp:Label runat="server" ID="selectedSubSchedId" ClientIDMode="static" Text=""></asp:Label></td>
             <td><asp:Label runat="server" ID="selectedStatus" ClientIDMode="static" Text=""></asp:Label></td>
         </tr>
+        
     </table>
-    <table style="width: 72%; margin: auto;">
+    <table style="width: 72%; margin: 0 auto;" class="table">
         <tr>
             <td>
                 <div style="margin-top: 14px; margin-bottom: 200px;">
@@ -282,7 +284,6 @@
                                     <HeaderStyle HorizontalAlign="Left" />
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
-                                SNO, NAME, MOBILE, EMAIL, ADDRESS, LOCNS, REG-DATE, STUD-STATUS:STSDATE, CTGY-ID:NAME:SCHDTE:GRP:YR/SEM, SUBJECTS, SUBJSTATUS:STATUSDATE, PMT-MODE, AMT:PAID;BAL, PMT-STS:PMTSTSDATE , PMTRCPT, REMARKS
                                 <asp:BoundField HeaderText="SNO" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
@@ -302,10 +303,75 @@
                                 <asp:BoundField HeaderText="REMARKS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                             </Columns>
                         </asp:GridView>
-                        <div style="margin-left: 40%; margin-top: 36px;">
-                            <asp:Button ID="btnActivate" CssClass="btn btn-success" runat="server" Text="Activate"
+
+                        <div  class="row" style="margin-top:5%">
+                            <div class="col-md-6">
+                            <asp:Button ID="Payments" CssClass="btn btn-success" runat="server" Text="Payments"
+                                OnClick="btnActivate_Click" /></div>
+                            <div class="col-md-6">
+                            <asp:Button ID="btnActivate" CssClass="btn btn-success" runat="server" Text="Profile"
                                 OnClick="btnActivate_Click" />
                             <asp:Button ID="btnCancel" CssClass="btn btn-danger" runat="server" Text="Cancel"
+                                OnClick="btnCancel_Click" /></div>
+                        </div>
+                        <br />
+                        <br />
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlPaymentsList" runat="server" Visible="false">
+                        <div id="heading">
+                            <asp:Label ID="Label1" runat="server" Text="Students Payments"></asp:Label>
+                        </div>
+                        <asp:Label ID="paymentsListHeader" Text="Registered Users" runat="server" Visible="false"
+                            Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                        <asp:GridView ID="gvPayments" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+                            Style="width: 100%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" ShowHeaderWhenEmpty="True"
+                            AllowPaging="true" PageSize="8" OnPageIndexChanging="gvcheckbox_PageIndexChanging">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="chkheader" runat="server" onclick="checkAll(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkchild" runat="server" onclick="Check_Click(this)" />
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:TemplateField>
+                                <asp:BoundField HeaderText="STUDID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOGIN-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Email-Id" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Address" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOCNS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="REG-DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="STUD-STATUS:STSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="CTGY-ID:NAME:SCHDTE:GRP:YR/SEM" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJECTS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJSTATUS:STATUSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-MODE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="AMT:PAID" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="BAL" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-STS:PMTSTSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCDSTATUS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="RCDRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="ACTION" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                
+                                <asp:BoundField HeaderText="REMARKS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                            </Columns>
+                            <EmptyDataTemplate>No Record Found</EmptyDataTemplate>
+                        </asp:GridView>
+                        <div style="margin-left: 40%; margin-top: 36px;">
+                            <asp:Button ID="updatepmnt" CssClass="btn btn-success" runat="server" Text="Updatepayment"
+                                OnClick="btnActivate_Click" />
+                            <asp:Button ID="profile" CssClass="btn btn-success" runat="server" Text="profile"
+                                OnClick="btnActivate_Click" />
+                            <asp:Button ID="Button4" CssClass="btn btn-success" runat="server" Text="Activate"
+                                OnClick="btnActivate_Click" />
+                            <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Cancel"
                                 OnClick="btnCancel_Click" />
                         </div>
                         <br />
@@ -316,46 +382,55 @@
                         <div id="heading">
                             <asp:Label ID="lblHCancelStudents" runat="server" Text="Canceled Students"></asp:Label>
                         </div>
-                        <asp:GridView ID="gvCancel" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
-                            Style="width: 100%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white"
-                            AllowPaging="true" PageSize="8" 
-                            onpageindexchanging="gvCancel_PageIndexChanging" >
-                            <Columns>
-                                <asp:TemplateField>
-                                    <HeaderTemplate>
-                                        <asp:CheckBox ID="chkheader" runat="server" onclick="checkAll(this);" />
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <asp:CheckBox ID="chkchild" runat="server" onclick="Check_Click(this)" />
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Left" />
-                                    <ItemStyle HorizontalAlign="Left" />
-                                </asp:TemplateField>
-                                <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Login Id" DataField="UserId" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                                    DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Category" DataField="Category_Name" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                                    DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                            </Columns>
-                        </asp:GridView>
+                        
+                            <asp:GridView ID="gvCancel" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+                                Style="" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white"
+                                AllowPaging="true" PageSize="8" ShowHeaderWhenEmpty="True"
+                                onpageindexchanging="gvCancel_PageIndexChanging" >
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
+                                            <asp:CheckBox ID="chkheader" runat="server" onclick="checkAll(this);" />
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="chkchild" runat="server" onclick="Check_Click(this)" />
+                                        </ItemTemplate>
+                                        <HeaderStyle HorizontalAlign="Left" />
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:TemplateField>
+                                    <asp:BoundField HeaderText="STUDID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="LOGIN-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="Email-Id" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="Address" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="LOCNS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="REG-DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="STUD-STATUS:STSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="CTGY-ID:NAME:SCHDTE:GRP:YR/SEM" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="SUBJECTS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="SUBJSTATUS:STATUSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="PMT-MODE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="AMT:PAID" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="BAL" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="PMT-STS:PMTSTSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="PMTRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="PMTRCDSTATUS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="RCDRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                    <asp:BoundField HeaderText="ACTION" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                
+                                    <asp:BoundField HeaderText="REMARKS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                </Columns>
+                                <EmptyDataTemplate>No Record Found</EmptyDataTemplate>
+                            </asp:GridView>
                         <div style="margin-left: 40%; margin-top: 36px;">
                             <asp:Button ID="btnCancelActivate" CssClass="btn btn-success" runat="server" 
-                                Text="Activate" onclick="btnCancelActivate_Click" /> 
+                                Text="Reactivate" onclick="btnCancelActivate_Click" />
+                            <asp:Button ID="btnCnclprofile" CssClass="btn btn-success" runat="server" 
+                                Text="Profile" onclick="btnCancelActivate_Click" />
+                            <asp:Button ID="btnCnclCncl" CssClass="btn btn-success" runat="server" 
+                                Text="Cancel" onclick="btnCancelActivate_Click" /> 
                         </div>
                         <br />
                         <br />
@@ -364,9 +439,9 @@
                     <asp:Panel ID="pnlActivatedUsers" runat="server" Visible="false">
                         <asp:Label ID="lblActivatedusers" Text="Confirmed Students List" runat="server" Visible="false"
                             Style="font-weight: bold; font-size: 18px;"></asp:Label>
-                        <asp:GridView ID="GridView1" CssClass="Gridview" runat="server" AutoGenerateColumns="False"
+                        <asp:GridView ID="gvActivatedUsers" CssClass="Gridview" runat="server" AutoGenerateColumns="False"
                             HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true"
-                            Width="95%" PageSize="8">
+                            Width="95%" PageSize="8" ShowHeaderWhenEmpty="True">
                             <Columns>
                                 <asp:TemplateField>
                                     <HeaderTemplate>
@@ -378,31 +453,84 @@
                                     <HeaderStyle HorizontalAlign="Left" />
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" HeaderStyle-HorizontalAlign="Center"
-                                    DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Category" DataField="Category_Name" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Email" DataField="EmailID" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Status" DataField="Status" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Status Date" DataField="DateofRegistration" HeaderStyle-HorizontalAlign="Center"
-                                    DataFormatString="{0:d}" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="AccessCode" DataField="AccessCode" HeaderStyle-HorizontalAlign="Center"
-                                    ItemStyle-CssClass="style" />
+                                              <asp:BoundField HeaderText="STUDID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOGIN-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Email-Id" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Address" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOCNS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="REG-DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="STUD-STATUS:STSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="CTGY-ID:NAME:SCHDTE:GRP:YR/SEM" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJECTS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJSTATUS:STATUSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-MODE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="AMT:PAID" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="BAL" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-STS:PMTSTSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCDSTATUS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="RCDRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="ACTION" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                
+                                <asp:BoundField HeaderText="REMARKS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                             </Columns>
+                            <EmptyDataTemplate>No Records Found</EmptyDataTemplate>
                         </asp:GridView>
                         <div id="btnActivateGV" runat="server" visible="false" style="margin-left: 28%; margin-top: 36px;">
                             <asp:Button ID="btnView" CssClass="btn btn-success" runat="server" Text="View Profile"
                                 OnClick="btnView_Click" OnClientClick="return GetCount()" />&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnADeActivate" CssClass="btn btn-warning" runat="server" Text="De-Activate"
                                 OnClick="btnADeActivate_Click" />
+                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlCompletedUsers" runat="server" Visible="false">
+                        <asp:Label ID="lblCompletedusers" Text="completed Students List" runat="server" Visible="false"
+                            Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                        <asp:GridView ID="GridView1" CssClass="Gridview" runat="server" AutoGenerateColumns="False"
+                            HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" AllowPaging="true"
+                            Width="95%" PageSize="8">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="chkheadercmplt" runat="server" onclick="checkAll(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkchildcmplt" runat="server" onclick="Check_Click(this)" />
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:TemplateField>
+                                <asp:BoundField HeaderText="STUDID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Name" DataField="Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOGIN-ID" DataField="DetailsID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Mobile Number" DataField="MobileNumber" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Email-Id" DataField="EmailID" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Address" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="LOCNS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="REG-DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="STUD-STATUS:STSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="CTGY-ID:NAME:SCHDTE:GRP:YR/SEM" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJECTS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="SUBJSTATUS:STATUSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-MODE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="AMT:PAID" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="BAL" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMT-STS:PMTSTSDATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="PMTRCDSTATUS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="DATE" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="RCDRCPT" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="ACTION" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                
+                                <asp:BoundField HeaderText="REMARKS" DataField="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                            </Columns>
+                        </asp:GridView>
+                        <div id="Div1" runat="server" visible="false" style="margin-left: 28%; margin-top: 36px;">
+                            <asp:Button ID="completeprofile" CssClass="btn btn-success" runat="server" Text=" Profile"
+                                OnClick="btnView_Click" OnClientClick="return GetCount()" />&nbsp;&nbsp;&nbsp;
                         </div>
                     </asp:Panel>
                 </div>
