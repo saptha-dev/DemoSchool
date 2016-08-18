@@ -1190,44 +1190,41 @@
                         <table id="tblPadding3" class="table-responsive" style="margin: auto; width: 100%; color: Black;">
                                     <tr>
                                              <td>
-                                               <asp:Label ID="lblSelectProgram" runat="server" Text="Select Program" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                                  <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:DropDownList ID="ddladdProgram" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
-                                                                        OnSelectedIndexChanged="ddladdProgram_SelectedIndexChanged">
-                                                      <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                <asp:ListItem></asp:ListItem>
-                                                                    </asp:DropDownList>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
+                                              <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                             OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
                                                        <asp:ListItem Text="--Select Category--" Value=""></asp:ListItem>
                                                     
                                                    
                                                         </asp:DropDownList>
                                             </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                             <td>
+                                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                 <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
+                                                  </asp:DropDownList>
+                                            </td>
+                                          
                                  </tr>
                                  <tr>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectprogram" ControlToValidate="ddladdProgram" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Program"
+                                         <td>
+                                         </td>
+                                          <td>
+                                          </td>          
+                                          <td>
+                                            <asp:RequiredFieldValidator  ID="RequiredFieldSelectCategeory"  ControlToValidate="ddladdCategory" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                                             </td>
                                             <td>
@@ -1238,84 +1235,30 @@
                                             </td>
                                             <td>
                                             </td>
+                                          
                                             <td>
-                                               <asp:RequiredFieldValidator ID="RequiredFieldSelectCategeory" ControlToValidate="ddladdCategory" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Category"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
+                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategerySchedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                             </td>                                              
                                 </tr>
                                 <tr>
+                                          
                                             <td>
-                                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                                  </asp:DropDownList>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                                  <td>
                                                 <asp:Label ID="lblSelectGroup"  runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
                                                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
-                                                                        OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged" >
-                                                   
-                                       
-                                                            
-                                                                    </asp:DropDownList>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
- 
-                                  </tr>
-                                  <tr>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategerySchedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                        >
+                                                </asp:DropDownList>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlGroup" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Group"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
-                                </tr>
-                                <tr>
-                                            <td>
-                                                <asp:Label ID="lblSelectYear" runat="server" Text="Select Year" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                               <asp:DropDownList ID="DDlYear" CssClass="form-control" runat="server" AutoPostBack="true" style="width:100%;"
-                                                                        OnSelectedIndexChanged="DDlYear_SelectedIndexChanged">
-                                                    
-                                                                    </asp:DropDownList>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                                  <td>
                                                 <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
@@ -1325,78 +1268,37 @@
                                                     
                                                      </asp:DropDownList>
                                             </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
+                                            
  
-                              </tr>
+                                  </tr>
+                                  <tr>
 
-                              <tr>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectyear" ControlToValidate="DDlYear" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </td>
-                                            <td>
-                                            </td>
+                                           <td>
+                                           </td>
+                                           <td>
+                                           </td>     
+                                           <td>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlGroup" InitialValue="0"
+                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Group"
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>   </td>
+                                          
                                             <td>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
                                             </td>
+                                             <td>
+                                            </td> 
                                             <td>
-                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsem" ControlToValidate="ddladdsemister" InitialValue="0"
+                                                
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsem" ControlToValidate="ddladdsemister" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem Schedule"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>                                            </td>
-                                </tr>
-                                 <tr>
-      
-                                            <td>
-                                                <asp:Label ID="lblSelectSubjects" runat="server" Text="Select Subjects" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                               <asp:DropDownList ID="ddlSubjects" runat="server" AutoPostBack="true" CssClass="form-control"
-                                                                        OnSelectedIndexChanged="ddlSubjects_SelectedIndexChanged">
-                                                                 
-                                                    </asp:DropDownList>
+                                                   Display="Dynamic"></asp:RequiredFieldValidator>
 
                                             </td>
-                                            <td>
-                                            </td>
-                                     <td></td>
-                                            <td>
-                                                     <asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                    <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" CssClass="form-control">
-                                                                      
-                                                               
-                                                     </asp:DropDownList>
-                                            </td>             
-                                </tr>   
-                                <tr>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectsubjects" ControlToValidate="ddlSubjects" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Subjects"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-                                            </td>
-                                            <td>
-                                            </td>
-                                </tr>    
+                                </tr>
+                             
                           </table>
                  </div>
                 </asp:WizardStep>
@@ -1575,52 +1477,27 @@
                                                     <div class="col-md-6 pull-left">
                                                         <div class="row">
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5"  for="cmpCountry">Program: </label>
-                                                                    <asp:label id="lblSelectProgramValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                <label class="control-label col-sm-5" for="cmpState">Category : </label>
+                                                                <asp:label id="lblSelectCategoryValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
                                                                   <label class="control-label col-sm-5"  for="cmpCity">Categeory Schedule : </label>
-                                                                    <asp:label id="lblSelectedCategeorySheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
-                                                              </div>
-                                                                <div class="clearfix"></div>
-                                                              <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="village">Year : </label>
-                                                                   <asp:label id="lblSelectYearValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
-                                                              </div>
-                                                             <div class="clearfix"></div>
-                                                            <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="cmpStreetNo">Subjects : </label>
-                                                                    <asp:label id="lblSelectSubjectsValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
-                                                              </div>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-md-6 pull-right">
-                                                        <div class="row">
-                                                              <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="cmpState">Category : </label>
-                                                                    <asp:label id="lblSelectCategoryValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
+                                                                   <asp:label id="lblSelectedCategeorySheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
                                                                   <label class="control-label col-sm-5" for="mandal">Group : </label>
-                                                                    <asp:label id="lblSelectGroupValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                    <asp:label id="lblSelectGroupValue"  Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
-                                                                <div class="clearfix"></div>
-                                                              <div class="form-group">
+                                                             <div class="clearfix"></div>
+                                                            <div class="form-group">
                                                                   <label class="control-label col-sm-5"  for="pinCode">Year-Sem Schedule : </label>
                                                                    <asp:label id="lblSelectYearSemSheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
                                                               </div>
-                                                               <div class="clearfix"></div>
-                                                             <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="lblprogAmount"> Amount: </label>
-                                                                <asp:label id="lblprogramAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                              </div>
-                                                               </div>
-                                                       
-                                                         </div>
+                                                          </div>
                                                     </div>
-                                                </div>
+                                                   
                                             </div>                            
                                 
                 </asp:WizardStep>
@@ -1635,9 +1512,9 @@
                                         <div class="col-md-12 pull-left">
                                               <div class="row">
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-5"  for="paymentProgram">Program:</label>
-                                                        <asp:label id="paymentProgram" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                      </div>
+                                                        <label class="control-label col-md-5"  for="paymentCategory"> Category : </label>
+                                                         <asp:label id="paymentCategory" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                    </div>
                                                       <div class="clearfix"></div>
                                                         <div class="form-group">
                                                         <label class="control-label col-md-5"  for="paymentCategorySchedule"> Categeory Schedule: </label>
@@ -1645,35 +1522,18 @@
                                                       </div>
                                                       <div class="clearfix"></div>
                                                       <div class="form-group">
-                                                        <label class="control-label col-md-5"  for="paymentYear"> Year :</label>
-                                                        <asp:label id="paymentYear" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                      </div>
+                                                        <label class="control-label col-md-5"  for="paymentGroup"> Group : </label>
+                                                        <asp:label  id="paymentGroup" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                        </div>
                                                       <div class="clearfix"></div>
                                                            <div class="form-group">
-                                                            <label class="control-label col-md-5"  for="paymentSubject"> Subjects :</label>
-                                                            <asp:label id="paymentSubject" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                           </div>
-                                                           <div class="clearfix"></div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentCategory"> Category : </label>
-                                                                <asp:label id="paymentCategory" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                             <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentGroup"> Group : </label>
-                                                                <asp:label id="paymentGroup" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                             </div>
-                                                             <div class="clearfix"></div>
-                                                             <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="paymentYearSem"> Year-Sem Schedule : </label>
-                                                                <asp:label id="paymentYearSem" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                              </div>
+                                                          <label class="control-label col-md-5"  for="paymentYearSem"> Year-Sem Schedule : </label>
+                                                            <asp:label id="paymentYearSem" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
+                                                        </div>
+                                                          
+                                                            
                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                             <div class="form-group">
-                                                                <label class="control-label col-md-5"  for="lblprogAmount"> Amount: </label>
-                                                                <asp:label id="lblprogAmount" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-md-7" runat="server"></asp:label>
-                                                              </div>
+                                                                
 
                                         </div>
                                         </div>

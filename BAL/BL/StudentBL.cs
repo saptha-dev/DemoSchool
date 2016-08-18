@@ -184,10 +184,10 @@ namespace BAL.BL
            string sqlQuery = string.Format("select Subject_Id, Subject_Name from tbl_Subject where Program_Id = {0} AND Branch_Id = {1} AND Category_Id = {2}", programId, branchId, categoryId);
            return ConnectionFactory.ExecuteCommand(sqlQuery, CommandType.Text);
        }
-        public DataTable GetProgramAmount(int programId, int categoryId,string catScheduleId,int groupId,int yearId,int semscheduleId,int subjectId)
+        public DataTable GetProgramAmount(int categoryId,string catScheduleId,int groupId,int yearId,int semscheduleId,int subjectId)
         {
             SqlParameter[] p = new SqlParameter[7];
-            p[0] = new SqlParameter("@ProgramId", programId);
+            //p[0] = new SqlParameter("@ProgramId", programId);
             p[1] = new SqlParameter("@CategoryId", categoryId);
             p[2] = new SqlParameter("@CatScheduleId",catScheduleId);
             p[3] = new SqlParameter("@GroupId", groupId);
