@@ -586,33 +586,38 @@ namespace PresentationLayer.Admin
 
         protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DataPanel.Visible = false;
+            NodataPanel.Visible = false;
+            pnlActivatedUsers.Visible = false;
+            pnlCancelUsers.Visible = false;
+            pnlPaymentsList.Visible = false;
             if (ddlType.SelectedValue == "1")
             {
                 GetRegisteredUsers();
                 DataPanel.Visible = true;
-                NodataPanel.Visible = false;
                 lblActivatedusers.Visible = false;
                 btnActivateGV.Visible = false;
-                pnlActivatedUsers.Visible = false;
-                pnlCancelUsers.Visible = false;
             }
             else if (ddlType.SelectedValue == "2")
             {
-          
+
                 lblActivatedusers.Visible = true;
                 GetConfirmusers();
                 btnActivateGV.Visible = true;
                 pnlActivatedUsers.Visible = true;
-                pnlCancelUsers.Visible = false;
             }
             else if (ddlType.SelectedValue == "3")
             {
-                DataPanel.Visible = false;
-                NodataPanel.Visible = false;
                 lblActivatedusers.Visible = false;
                 btnActivateGV.Visible = false;
-                pnlActivatedUsers.Visible = false;
-                GetCancelusers();   
+                GetCancelusers();
+            }
+            else if (ddlType.SelectedValue == "4")
+            {
+                lblActivatedusers.Visible = false;
+                btnActivateGV.Visible = false;
+                GetPaymentusers();
+
             }
         }
 
@@ -626,19 +631,14 @@ namespace PresentationLayer.Admin
                 DataPanel.Visible = false;
                 NodataPanel.Visible = false;
                 Session["dt"] = dt;
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                gvActivatedUsers.DataSource = dt;
+                gvActivatedUsers.DataBind();
             }
             else
             {
-                dt.Rows.Add(dt.NewRow());
-                GvNodata.DataSource = dt;
-                GvNodata.DataBind();
-                int columncount = GvNodata.Rows[0].Cells.Count;
-                GvNodata.Rows[0].Cells.Clear();
-                GvNodata.Rows[0].Cells.Add(new TableCell());
-                GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
-                GvNodata.Rows[0].Cells[0].Text = "No Records Found";
+                dt = new DataTable();
+                gvActivatedUsers.DataSource = dt;
+                gvActivatedUsers.DataBind();
                 lblNoDataHeading.Text = "Confirmed Students";
             }
         }
@@ -658,16 +658,33 @@ namespace PresentationLayer.Admin
             }
             else
             {
-                dt.Rows.Add(dt.NewRow());
-                GvNodata.DataSource = dt;
-                GvNodata.DataBind();
-                int columncount = GvNodata.Rows[0].Cells.Count;
-                GvNodata.Rows[0].Cells.Clear();
-                GvNodata.Rows[0].Cells.Add(new TableCell());
-                GvNodata.Rows[0].Cells[0].ColumnSpan = columncount;
-                GvNodata.Rows[0].Cells[0].Text = "No Records Found";
-                NodataPanel.Visible = true;
-                pnlCancelUsers.Visible = false;
+                dt = new DataTable();
+                gvCancel.DataSource = dt;
+                gvCancel.DataBind();
+                pnlCancelUsers.Visible = true;
+                lblNoDataHeading.Text = "Student Deactivated List";
+            }
+        }
+
+        private void GetPaymentusers()
+        {
+            SqlDataReader dr = objRegistrationBL.GetStudentCancelUsers(Convert.ToInt32("3"));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                DataPanel.Visible = false;
+                NodataPanel.Visible = false;
+                pnlPaymentsList.Visible = true;
+                gvPayments.DataSource = dt;
+                gvPayments.DataBind();
+            }
+            else
+            {
+                dt = new DataTable();
+                gvPayments.DataSource = dt;
+                gvPayments.DataBind();
+                pnlPaymentsList.Visible = true;
                 lblNoDataHeading.Text = "Canceled Students";
             }
         }
