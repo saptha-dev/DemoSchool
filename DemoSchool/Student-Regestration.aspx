@@ -1250,8 +1250,7 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
-                                                                        >
+                                                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
                                                 </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1259,12 +1258,12 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left" Visible="false" ></asp:Label>
                                             </td>
                                             <td>
                                             </td>
                                             <td>
-                                               <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
+                                               <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;" Visible="false">
                                                     
                                                      </asp:DropDownList>
                                             </td>

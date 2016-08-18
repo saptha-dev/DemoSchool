@@ -140,7 +140,10 @@ namespace BAL.BL
 
         public SqlDataReader GetGroupBasedOnCategoriesDrpdwn(int CategorieID)
         {
-            return ConnectionFactory.ExecuteCommand("select Branch_Id,Branch_Name from tbl_Branch where Category_Id=" + CategorieID, CommandType.Text);
+            string query = @"select distinct Branch_Id,Branch_Name, Branch_T_Years, Branch_Srt_Date, CONCAT(Branch_Name,':Year',Branch_T_Years, ':' , Branch_Srt_Date,'-',Branch_End_Date)
+                             as Group_Year_Sem_Schedule 
+                             from tbl_Branch where Branch_Srt_Date is NOT NULL AND Category_Id=" + CategorieID;
+            return ConnectionFactory.ExecuteCommand(query, CommandType.Text);
         }
         public SqlDataReader LoadScheduleForSubject(int BranchID)
         {
@@ -706,12 +709,16 @@ namespace BAL.BL
 
         public SqlDataReader GetCategorySchdule(int CategorieId)
         {
-            return ConnectionFactory.ExecuteCommand("select distinct Schedule_Id, Ctgy_Sch_startDate , Convert(nvarchar(20),Schedule_Id) + ':' + Convert(nvarchar(20),Ctgy_Sch_startDate) as Schedule_Id_Date from tbl_Schedule where Ctgy_Sch_startDate is NOT NULL AND Category_Id=" + CategorieId, CommandType.Text);
+            string query = @"select distinct Schedule_Id, Ctgy_Sch_startDate ,  CONCAT(Schedule_Id , ':' , Ctgy_Sch_startDate, ':' , Ctgy_Sch_endDate) as Schedule_Id_Date
+                             from tbl_Schedule where Ctgy_Sch_startDate is NOT NULL AND Category_Id=" + CategorieId;
+            return ConnectionFactory.ExecuteCommand(query, CommandType.Text);
         }
 
         public SqlDataReader GetYearOrSemSchdule(int CategorieId)
         {
-            return ConnectionFactory.ExecuteCommand("select distinct Branch_T_Years, Branch_Srt_Date, Convert(nvarchar(20),Branch_T_Years) + ':' + Convert(nvarchar(20),Branch_Srt_Date) as Year_Sem_Date from tbl_Branch where Branch_Srt_Date is NOT NULL AND Category_Id=" + CategorieId, CommandType.Text);
+            string query = @"select distinct Branch_T_Years, Branch_Srt_Date, Convert(nvarchar(20),Branch_T_Years) + ':' + Convert(nvarchar(20),Branch_Srt_Date) as Year_Sem_Date 
+                            from tbl_Branch where Branch_Srt_Date is NOT NULL AND Category_Id=" + CategorieId;
+            return ConnectionFactory.ExecuteCommand(query, CommandType.Text);
         }
 
         public SqlDataReader GetStatusList()

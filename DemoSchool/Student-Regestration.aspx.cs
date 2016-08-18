@@ -86,7 +86,7 @@ namespace DemoSchool
             {
                 LoadGroups();
                 LoadCategorySchdule();
-                LoadYearOrSemSchdule();
+                //LoadYearOrSemSchdule();
             }
             else
             {
@@ -106,7 +106,7 @@ namespace DemoSchool
                 ddlGroup.Items.Clear();
                 ddlGroup.DataSource = dt;
                 ddlGroup.DataValueField = "Branch_Id";
-                ddlGroup.DataTextField = "Branch_Name";
+                ddlGroup.DataTextField = "Group_Year_Sem_Schedule";
                 ddlGroup.DataBind();
                 ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
             }
@@ -122,7 +122,7 @@ namespace DemoSchool
                 ddlselectcategoryschedule.Items.Clear();
                 ddlselectcategoryschedule.DataSource = dt;
                 ddlselectcategoryschedule.DataValueField = "Schedule_Id";
-                ddlselectcategoryschedule.DataTextField = "Schedule_Id";
+                ddlselectcategoryschedule.DataTextField = "Schedule_Id_Date";
                 ddlselectcategoryschedule.DataBind();
                 ddlselectcategoryschedule.Items.Insert(0, new ListItem("---Select---", "0"));
             }
