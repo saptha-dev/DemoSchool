@@ -144,26 +144,27 @@ namespace DemoSchool
             }
         }
 
-        //protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlGroup.SelectedValue));
-        //    DataTable dt = new DataTable();
-        //    dt.Load(dr);
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        DDlYear.DataSource = dt;
-        //        DDlYear.DataValueField = "Year_Id";
-        //        DDlYear.DataTextField = "Branch_Year_No";
-        //        DDlYear.DataBind();
-        //        DDlYear.Items.Insert(0, new ListItem("--Select--", "0"));
-        //    }
-        //}
+        protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string categoryScheduleId = ddlselectcategoryschedule.SelectedItem.Value;
+            int categoryId = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
+            var dt = objBL.GetCategorySubjectDetails(categoryId, categoryScheduleId);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                DataPanel.Visible = true;
+                gvSubjectsSchedule.DataSource = dt.DefaultView;
+                gvSubjectsSchedule.DataBind();
+            }
+            else
+                DataPanel.Visible = false;
+
+            
+        }
 
         ////protected void DDlYear_SelectedIndexChanged(object sender, EventArgs e)
         ////{
         ////    int programId = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
         ////    int branchId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
-        ////    int categoryId = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
 
         ////    SqlDataReader dr = objStudentBL.GetSubjects(25, 13, 27);
         ////    DataTable dt = new DataTable();
@@ -389,6 +390,20 @@ namespace DemoSchool
             }
             else if (Wizardstudentreg.ActiveStepIndex == 3)
             {
+
+                foreach (GridViewRow row in gvSubjectsSchedule.Rows)
+                {
+                    if (row.RowType == DataControlRowType.DataRow)
+                    {
+
+                        CheckBox chkRow = (row.Cells[0].FindControl("chkSubjectId") as CheckBox);
+                        if (chkRow.Checked)
+                        {
+                            int subjectId = Utils.ToInt(row.Cells[0].Text);
+
+                        }
+                    }
+                }
                 lblFirstNameValue.Text = txtFirstName.Text;
                 lblLastNameValue.Text = txtLastName.Text;
                 lblFatherNameValue.Text = txtfathergurdianname.Text;

@@ -814,6 +814,42 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoryearsem;
         
         /// <summary>
+        /// DataPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel DataPanel;
+        
+        /// <summary>
+        /// lblRegStnds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegStnds;
+        
+        /// <summary>
+        /// lblRegisteredusers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegisteredusers;
+        
+        /// <summary>
+        /// gvSubjectsSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvSubjectsSchedule;
+        
+        /// <summary>
         /// WizardSummary control.
         /// </summary>
         /// <remarks>

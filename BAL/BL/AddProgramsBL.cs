@@ -732,5 +732,14 @@ namespace BAL.BL
                             from tbl_Schedule where Subject_ScheduleID IS NOT NULL AND Category_Id=" + CategorieId;
             return ConnectionFactory.ExecuteCommand(query, CommandType.Text);
         }
+
+        public DataTable GetCategorySubjectDetails(int categoryId, string categoryScheduleId)
+        {
+            string query = string.Format("Select * from SubjectsView where Category_Id = {0} AND ScheduleId = \'{1}\'  ", categoryId, categoryScheduleId);
+            SqlDataReader dr = ConnectionFactory.ExecuteCommand(query, CommandType.Text);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            return dt;
+        }
     }
 }

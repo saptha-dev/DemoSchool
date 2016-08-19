@@ -1198,8 +1198,6 @@
                                               <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                             OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
                                                        <asp:ListItem Text="--Select Category--" Value=""></asp:ListItem>
-                                                    
-                                                   
                                                         </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1250,7 +1248,7 @@
                                             <td>
                                             </td>
                                             <td>
-                                                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;">
+                                                <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
                                                 </asp:DropDownList>
                                             </td>
                                             <td>
@@ -1299,6 +1297,42 @@
                                 </tr>
                              
                           </table>
+                      <table style="width: 100%; margin: 0 auto;" class="table">
+                          <tr>
+                            <td>
+                                <asp:Panel ID="DataPanel" runat="server" Visible="false">
+                                <div id="heading">
+                            <asp:Label ID="lblRegStnds" runat="server" Text="Registered Students"></asp:Label>
+                        </div>
+                        <asp:Label ID="lblRegisteredusers" Text="Subjects Schedule" runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                        <asp:GridView ID="gvSubjectsSchedule" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+                            Style="width: 98%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white"
+                            AllowPaging="true" PageSize="20" >
+                            <Columns>
+                                <asp:TemplateField>
+                                    <HeaderTemplate>
+                                       <%-- <asp:CheckBox ID="chkheader" runat="server"  />--%>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkSubjectId" runat="server"  />
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    <ItemStyle HorizontalAlign="Left" />
+                                </asp:TemplateField>
+                                <asp:BoundField HeaderText="Subject" DataField="SubjectIdName" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Schedule" DataField="ScheduleId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" Visible="false" />
+                                <asp:BoundField HeaderText="Subject Schedule" DataField="CatSchedule" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="ClassType" DataField="ClassType" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Org Location" DataField="OrgLoc" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Class Date" DataField="ClassDate" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Hours" DataField="Hours" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Class Time" DataField="ClassTime" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                            </Columns>
+                        </asp:GridView>
+                    </asp:Panel>
+                            </td>
+                          </tr>
+                      </table>
                  </div>
                 </asp:WizardStep>
                 
@@ -1680,6 +1714,49 @@
                     <div class="container"> © <%=DateTime.Now.Year%> STCIPL INSTITUTE All rights reserved. </div>
               </div>
   
+    <script type="text/javascript">
+        function Check_Click(objRef) {          //Remove MultiCheckBox wn uncheck of any item
+            //Get the Row based on checkbox
+            var row = objRef.parentNode.parentNode;
+            if (objRef.checked) {
+                //If checked change color to Aqua
+                //            row.style.backgroundColor = "aqua";
+            }
+            else {
+                //If not checked change back to original color
+                if (row.rowIndex % 2 == 0) {
+                    //Alternating Row Color
+                    //                row.style.backgroundColor = "#C2D69B";
+                }
+                else {
+                    //                row.style.backgroundColor = "white";
+                }
+            }
+
+            //Get the reference of GridView
+            var GridView = row.parentNode;
+
+            //Get all input elements in Gridview
+            var inputList = GridView.getElementsByTagName("input");
+
+            for (var i = 0; i < inputList.length; i++) {
+                //The First element is the Header Checkbox
+                var headerCheckBox = inputList[0];
+
+                //Based on all or none checkboxes
+                //are checked check/uncheck Header Checkbox
+                var checked = true;
+                if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
+                    if (!inputList[i].checked) {
+                        checked = false;
+                        break;
+                    }
+                }
+            }
+            headerCheckBox.checked = checked;
+
+        }
+    </script>
     <script type="text/javascript">
         function showPayment(paymentId) {
             if (paymentId == "payment1") {
