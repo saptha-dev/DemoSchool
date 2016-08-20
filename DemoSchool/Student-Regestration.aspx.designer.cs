@@ -22,22 +22,13 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Wizard Wizardstudentreg;
         
         /// <summary>
-        /// Wizardrdo control.
+        /// WizardUserType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.WizardStep Wizardrdo;
-        
-        /// <summary>
-        /// lblrd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrd;
+        protected global::System.Web.UI.WebControls.WizardStep WizardUserType;
         
         /// <summary>
         /// rdonewUser control.
@@ -56,6 +47,15 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rdoexisting;
+        
+        /// <summary>
+        /// lblUserTypeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserTypeError;
         
         /// <summary>
         /// lbFname1 control.
@@ -724,6 +724,15 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddladdCategory;
         
         /// <summary>
+        /// RequiredFieldSelectCategeory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldSelectCategeory;
+        
+        /// <summary>
         /// lblSelectCategorySchedule control.
         /// </summary>
         /// <remarks>
@@ -740,15 +749,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlselectcategoryschedule;
-        
-        /// <summary>
-        /// RequiredFieldSelectCategeory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldSelectCategeory;
         
         /// <summary>
         /// RequiredFieldValidatorCategerySchedule control.
@@ -778,24 +778,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.DropDownList ddlGroup;
         
         /// <summary>
-        /// lblselectyearsem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblselectyearsem;
-        
-        /// <summary>
-        /// ddladdsemister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddladdsemister;
-        
-        /// <summary>
         /// RequiredFieldValidatorselectgroup control.
         /// </summary>
         /// <remarks>
@@ -805,13 +787,31 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorselectgroup;
         
         /// <summary>
-        /// RequiredFieldValidatoryearsem control.
+        /// lblGroupSubjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoryearsem;
+        protected global::System.Web.UI.WebControls.Label lblGroupSubjects;
+        
+        /// <summary>
+        /// gvGroupSubjcts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvGroupSubjcts;
+        
+        /// <summary>
+        /// lblProgramErrors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProgramErrors;
         
         /// <summary>
         /// DataPanel control.
@@ -830,6 +830,15 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRegStnds;
+        
+        /// <summary>
+        /// lblDetailsId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetailsId;
         
         /// <summary>
         /// lblRegisteredusers control.

@@ -387,7 +387,7 @@ namespace BAL.BL
             p[3] = new SqlParameter("@Mobile", mobile);
             p[4] = new SqlParameter("@DOB", dob);
             p[5]= new SqlParameter("@Role",role);
-            var student = ConnectionFactory.ExecuteCommandDs("SP_GetUser", CommandType.StoredProcedure, p);
+            var student = ConnectionFactory.ExecuteCommandDS("SP_GetUser", CommandType.StoredProcedure, p);
 
             if (student != null && student.Tables.Count > 0)
                 return student.Tables[0];

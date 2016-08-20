@@ -197,7 +197,7 @@ namespace BAL.BL
             DataSet payment = null;
             try
             {
-                payment = ConnectionFactory.ExecuteCommandDs("SP_GetProgramAmount", CommandType.StoredProcedure, p);
+                payment = ConnectionFactory.ExecuteCommandDS("SP_GetProgramAmount", CommandType.StoredProcedure, p);
             }
             catch (Exception ex)
             {
@@ -208,6 +208,28 @@ namespace BAL.BL
                 else
                     return null;
            
+        }
+
+        public bool AddStudentProgram(int studentId, string userId, int categoryId, int branchId, string companyId, string companyBranch, string scheduleId)
+        {
+            SqlParameter[] p = new SqlParameter[9];
+            p[0] = new SqlParameter("@StudentId", studentId);
+            p[1] = new SqlParameter("@UserId", userId);
+            p[2] = new SqlParameter("@ProgramId", 1);
+            p[3] = new SqlParameter("@CategoryId", categoryId);
+            p[4] = new SqlParameter("@BranchId", branchId);
+            p[5] = new SqlParameter("@CompanyId", companyId);
+            p[6] = new SqlParameter("@Company_Branch", companyBranch);
+            p[7] = new SqlParameter("@ScheduleId", scheduleId);
+            p[8] = new SqlParameter("@ActiveStatus", 1);
+            try
+            {
+               var inserted = ConnectionFactory.ExecuteCommand("sp_ManageStudentProgram", CommandType.StoredProcedure, p);
+            }catch
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

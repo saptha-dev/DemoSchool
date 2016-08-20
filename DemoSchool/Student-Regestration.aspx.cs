@@ -22,7 +22,6 @@ namespace DemoSchool
             Wizardstudentreg.PreRender += new EventHandler(Wizardstudentreg_PreRender);
             if (!IsPostBack)
             {
-                //LoadPograms();
                 LoadCategory();
             }
 
@@ -41,64 +40,30 @@ namespace DemoSchool
             ddladdCategory.Items.Insert(0, new ListItem("--Select--", "0"));
         }
 
-        //public void LoadPograms()
-        //{
-        //    SqlDataReader dr = objReg.GetProgram();
-        //    DataTable dt = new DataTable();
-        //    dt.Load(dr);
-        //    ddladdProgram.DataSource = dt;
-        //    ddladdProgram.DataTextField = "Program_name";
-        //    ddladdProgram.DataValueField = "Program_id";
-        //    ddladdProgram.DataBind();
-        //    // ddlProgram.Items.Insert(0, "--Select--");
-        //    ddladdProgram.Items.Insert(0, new ListItem("--Select--", "0"));
-        //}
-
-        //public void ddladdProgram_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    int programId = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
-        //    if (programId != 0)
-        //    {
-        //        SqlDataReader dr = objBL.GetCategoriesBasedOnProgramsDrpdwn(programId);
-        //        DataTable dt = new DataTable();
-        //        dt.Load(dr);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            ddladdCategory.DataSource = dt;
-        //            ddladdCategory.DataValueField = "Category_Id";
-        //            ddladdCategory.DataTextField = "Category_Name";
-        //            ddladdCategory.DataBind();
-        //            ddladdCategory.Items.Insert(0, new ListItem("--Select--", "0"));
-        //        }
-        //    }
-        //    else
-        //    {
-        //        ddladdCategory.Items.Clear();
-        //        ddlGroup.Items.Clear();
-        //        ddladdsemister.Items.Clear();
-        //    }
-        //}
+        public void ddlselectcategoryschedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+            string catScheduleId = ddlselectcategoryschedule.SelectedItem.Value;
+            LoadGroups(categoryId, catScheduleId);
+        }
 
         public void ddladdCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (ddladdCategory.SelectedValue != "0")
             {
-                LoadGroups();
                 LoadCategorySchdule();
-                //LoadYearOrSemSchdule();
             }
             else
             {
                 ddlGroup.Items.Clear();
                 ddlselectcategoryschedule.Items.Clear();
-                ddladdsemister.Items.Clear();
             }
         }
 
-        private void LoadGroups()
+        private void LoadGroups(int categoryId, string categoryScheduleId)
         {
-            SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddladdCategory.SelectedValue));
+            SqlDataReader dr = objBL.GetGroups(categoryId, categoryScheduleId);
             DataTable dt = new DataTable();
             dt.Load(dr);
             if (dt.Rows.Count > 0)
@@ -109,6 +74,10 @@ namespace DemoSchool
                 ddlGroup.DataTextField = "Group_Year_Sem_Schedule";
                 ddlGroup.DataBind();
                 ddlGroup.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+            else
+            {
+                ddlGroup.Items.Clear();
             }
         }
 
@@ -128,27 +97,28 @@ namespace DemoSchool
             }
         }
 
-        private void LoadYearOrSemSchdule()
-        {
-            SqlDataReader dr = objBL.GetYearOrSemSchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            if (dt.Rows.Count > 0)
-            {
-                ddladdsemister.Items.Clear();
-                ddladdsemister.DataSource = dt;
-                ddladdsemister.DataValueField = "Branch_T_Years";
-                ddladdsemister.DataTextField = "Branch_T_Years";
-                ddladdsemister.DataBind();
-                ddladdsemister.Items.Insert(0, new ListItem("---Select---", "0"));
-            }
-        }
+        //private void LoadYearOrSemSchdule()
+        //{
+        //    SqlDataReader dr = objBL.GetYearOrSemSchdule(Convert.ToInt32(ddladdCategory.SelectedValue));
+        //    DataTable dt = new DataTable();
+        //    dt.Load(dr);
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        ddladdsemister.Items.Clear();
+        //        ddladdsemister.DataSource = dt;
+        //        ddladdsemister.DataValueField = "Branch_T_Years";
+        //        ddladdsemister.DataTextField = "Branch_T_Years";
+        //        ddladdsemister.DataBind();
+        //        ddladdsemister.Items.Insert(0, new ListItem("---Select---", "0"));
+        //    }
+        //}
 
         protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             string categoryScheduleId = ddlselectcategoryschedule.SelectedItem.Value;
             int categoryId = Convert.ToInt32(ddladdCategory.SelectedItem.Value);
-            var dt = objBL.GetCategorySubjectDetails(categoryId, categoryScheduleId);
+            int branchId = Utils.ToInt(ddlGroup.SelectedItem.Value);
+            var dt = objBL.GetCategorySubjectDetails(categoryId, categoryScheduleId, branchId);
             if (dt != null && dt.Rows.Count > 0)
             {
                 DataPanel.Visible = true;
@@ -158,6 +128,20 @@ namespace DemoSchool
             else
                 DataPanel.Visible = false;
 
+            //Get the mandatory subject for the selected group
+            var dtSubjects = objBL.GetMandatoryGroupSubjects(categoryId, categoryScheduleId, branchId);
+            if (dtSubjects != null && dtSubjects.Rows.Count > 0)
+            {
+                lblGroupSubjects.Visible = true;
+                gvGroupSubjcts.Visible = true;
+                gvGroupSubjcts.DataSource = dtSubjects.DefaultView;
+                gvGroupSubjcts.DataBind();
+            }
+            else
+            {
+                gvGroupSubjcts.Visible = false;
+                lblGroupSubjects.Visible = false;
+            }
             
         }
 
@@ -275,7 +259,7 @@ namespace DemoSchool
             newReg1.CategoryID = Utils.ToInt(ddladdCategory.SelectedItem.Value);
             newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
             //newReg1.YearId = DDlYear.SelectedItem.Value;
-            newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
+            //newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
             //newReg1.Subjects = ddlSubjects.SelectedItem.Value;
             //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
             objReg.StudentRegistration(newReg1);
@@ -308,22 +292,16 @@ namespace DemoSchool
             if (rdonewUser.Checked == true)
             {
                 ShowExistingUserControls(false);
-
-
-                //lblrd1.Text = "Your selected item is : " +
-                //    Rdo2.Text;
             }
             else if (rdoexisting.Checked == true)
             {
                 ShowExistingUserControls(true);
-
-                // lblrd1.Text = "Your selected item is : " +
-                //    Rdo2.Text;
             }
         }
 
         private void ShowExistingUserControls(bool visible)
         {
+            lblUserTypeError.Visible = visible;
             lbFname1.Visible = visible;
             studentFname.Visible = visible;
             lbLname1.Visible = visible;
@@ -343,16 +321,16 @@ namespace DemoSchool
                 Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.ActiveStepIndex - 1;
             }
             GetClassForWizardStep(sender);
+            lblProgramErrors.Visible = false;
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
-
                 RegistrationBL objebl1 = new RegistrationBL();
-
-
                 var user = objebl1.GetExistingUser(studentFname.Text, studentLname.Text, studentMobilenumber.Text, studentEmail.Text, studentDate.Value, rolename);
                 if (user != null && user.Rows.Count > 0)
                 {
                     DataRow dr = user.Rows[0];
+                    lblUserTypeError.Text = string.Empty; //Clear the error message
+                    lblDetailsId.Text = dr["DetailsID"].ToString();
                     txtFirstName.Text = dr["FirstName"].ToString();
                     txtLastName.Text = dr["LastName"].ToString();
                     txtmobile.Text = dr["MobileNumber"].ToString();
@@ -387,10 +365,16 @@ namespace DemoSchool
                     // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
 
                 }
+                else
+                {
+                    //User doesn't exists
+                    lblDetailsId.Text = string.Empty;
+                }
+
             }
             else if (Wizardstudentreg.ActiveStepIndex == 3)
             {
-
+                List<int> subjectsList = new List<int>();
                 foreach (GridViewRow row in gvSubjectsSchedule.Rows)
                 {
                     if (row.RowType == DataControlRowType.DataRow)
@@ -399,11 +383,24 @@ namespace DemoSchool
                         CheckBox chkRow = (row.Cells[0].FindControl("chkSubjectId") as CheckBox);
                         if (chkRow.Checked)
                         {
-                            int subjectId = Utils.ToInt(row.Cells[0].Text);
-
+                            int subjectId = Utils.ToInt(row.Cells[1].Text);
+                            subjectsList.Add(subjectId);
                         }
                     }
                 }
+                lblProgramErrors.Text = String.Empty;
+                if (subjectsList.Count == 0)
+                {
+                    lblProgramErrors.Visible = true;
+                    lblProgramErrors.Text = "Please select the subject schedules";
+                    //Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep3);
+                }
+                else if (subjectsList.Count != gvGroupSubjcts.Rows.Count)
+                {
+                    lblProgramErrors.Visible = true;
+                    lblProgramErrors.Text = "Selected subjects are not matching required subjects";
+                }
+
                 lblFirstNameValue.Text = txtFirstName.Text;
                 lblLastNameValue.Text = txtLastName.Text;
                 lblFatherNameValue.Text = txtfathergurdianname.Text;
@@ -417,11 +414,11 @@ namespace DemoSchool
                 lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
                 lblStudentAccessCodeValue.Text = txtStudentAccescode.Text;
 
-                lblCountryValue.Text = ddlcountry.Text;
-                lblStateValue.Text = ddlstate.Text;
-                lblDistrictValue.Text = ddlDistrict.Text;
-                lblManadalTalukValue.Text = ddlMandal.Text;
-                lblVillageTownValue.Text = ddlVillage.Text;
+                lblCountryValue.Text = ddlcountry.SelectedItem.Text;
+                lblStateValue.Text = ddlstate.SelectedItem.Text;
+                lblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
+                lblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
+                lblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
                 lblPinCodeValue.Text = txtpincode.Text;
                 lblStreetNoValue.Text = txtstreetno.Text;
                 lblStreetNameValue.Text = txtstreetname.Text;
@@ -438,7 +435,7 @@ namespace DemoSchool
                 lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
                 //lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
                 //lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
-                lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
+                //lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
 
 
                 //int programId = Utils.ToInt(ddladdProgram.SelectedItem.Value);
@@ -447,7 +444,7 @@ namespace DemoSchool
                 int groupId = Utils.ToInt(ddlGroup.SelectedItem.Value);
                 //int yearId = Utils.ToInt(DDlYear.SelectedItem.Value);
                 //int subjectId = Utils.ToInt(ddlSubjects.SelectedItem.Value);
-                int semScheduleId = Utils.ToInt(ddladdsemister.SelectedItem.Value);
+                //int semScheduleId = Utils.ToInt(ddladdsemister.SelectedItem.Value);
 
                 //var payment = objStudentBL.GetProgramAmount(categoryId, catscheduleId, groupId, semScheduleId);
                 //if (payment != null && payment.Rows.Count > 0)
@@ -465,10 +462,48 @@ namespace DemoSchool
                 paymentCategory.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
                 //paymentYear.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
                 //paymentSubject.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
-                paymentYearSem.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
+                //paymentYearSem.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
                 paymentCategorySchedule.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
+                
+                if (rdoexisting.Checked)
+                {
+                    //Add student program details
+                    int studentId = Utils.ToInt(lblDetailsId.Text);
+                    string userId = lblFirstNameValue.Text;
+                    int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+                    int branchId = Utils.ToInt(ddlGroup.SelectedItem.Value);
+                    string companyId = "company"; //TODO replace with actual value
+                    string companyBranch = "Branch"; //TODO replace with actual value
+                    string catscheduleId = ddlselectcategoryschedule.SelectedItem.Value;
+
+                    objStudentBL.AddStudentProgram(studentId, userId, categoryId, branchId, companyId, companyBranch, catscheduleId);
+                }
 
             }
+        }
+
+        protected void Wizardstudentreg_ActiveStepChanged(object sender, EventArgs e)
+        {
+            if (Wizardstudentreg.ActiveStepIndex == Wizardstudentreg.WizardSteps.IndexOf(this.WizardSummary))
+            {
+                if (!(String.IsNullOrEmpty(lblProgramErrors.Text)))
+                {
+                    Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep3);
+                }
+            }
+            else if (Wizardstudentreg.ActiveStepIndex == Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep1))
+            {
+                if (rdoexisting.Checked &&  lblDetailsId.Text.Trim().Length > 0)
+                {
+                    Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep3);
+                }
+                else if (rdonewUser.Checked == false)
+                {
+                    lblUserTypeError.Text = "Please enter valid details";
+                    Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardUserType);
+                }
+            }
+
         }
     }
 }

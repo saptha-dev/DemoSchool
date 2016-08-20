@@ -107,7 +107,7 @@ namespace DAL
 
         }
 
-        public static DataSet ExecuteCommandDs(string Text, CommandType CmdType, params SqlParameter[] SpParam)
+        public static DataSet ExecuteCommandDS(string Text, CommandType CmdType, params SqlParameter[] SpParam)
         {
             try
             {

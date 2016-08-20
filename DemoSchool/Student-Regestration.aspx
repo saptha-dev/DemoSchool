@@ -458,29 +458,25 @@
   <div class="row">
     <div class="col-lg-12 ">
       <h1>STUDENT REGISTRATION    </h1>
-      
       <div class="form-body registration">
 
     <div class="container">
  <asp:Wizard ID="Wizardstudentreg" runat="server" DisplaySideBar="false" OnFinishButtonClick="Wizardstudentreg_FinishButtonClick" 
       StepNextButtonStyle-CssClass="btn btn-danger btn-lg"  StepPreviousButtonStyle-CssClass="btn btn-danger btn-lg" 
      StartNextButtonStyle-CssClass="btn btn-danger btn-lg"  FinishCompleteButtonStyle-CssClass ="btn btn-danger btn-lg"
-      FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg"  OnNextButtonClick="Wizardstudentreg_NextButtonClick" >
+      FinishPreviousButtonStyle-CssClass="btn btn-danger btn-lg"  OnNextButtonClick="Wizardstudentreg_NextButtonClick" OnActiveStepChanged="Wizardstudentreg_ActiveStepChanged" >
 
                  <WizardSteps>
-                    <asp:WizardStep ID="Wizardrdo" runat="server" Title="Options">
+                    <asp:WizardStep ID="WizardUserType" runat="server" Title="Options">
                         <br>
                             <div>
                                 <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                                          <tr>
-                                            <td><asp:Label ID="lblrd" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Italic="true" Font-Size="X-Large"></asp:Label></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td><asp:RadioButton ID="rdonewUser" runat="server" Text="New User" checked="true" GroupName="Software" AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton></td>
                                             <td></td>
                                             <td><asp:RadioButton ID="rdoexisting" runat="server" Text="Existing User" Checked="false" GroupName="Software"  AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
                                             <td></td>
+                                            <td colspan="4"><asp:Label ID="lblUserTypeError" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Size="Large"></asp:Label></td>
                                          </tr>
                                          <tr>
                                             <td><asp:Label ID="lbFname1" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
@@ -1183,8 +1179,8 @@
                   </div>
                 </asp:WizardStep>
           
-                    <asp:WizardStep ID="WizardStep3" runat="server" Title=" Program">
-                  <div>
+                    <asp:WizardStep ID="WizardStep3" runat="server" Title="Program">
+                    <div style="width:100%">
                       <br>
                         <h3><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</h3>
                         <table id="tblPadding3" class="table-responsive" style="margin: auto; width: 100%; color: Black;">
@@ -1193,117 +1189,77 @@
                                                   <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
-                                            </td>
-                                            <td>
                                               <asp:DropDownList ID="ddladdCategory" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;"
                                                             OnSelectedIndexChanged="ddladdCategory_SelectedIndexChanged">
                                                        <asp:ListItem Text="--Select Category--" Value=""></asp:ListItem>
                                                         </asp:DropDownList>
                                             </td>
                                             <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                             <td>
-                                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                 <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" AppendDataBoundItems="true">
-                                                  </asp:DropDownList>
-                                            </td>
-                                          
-                                 </tr>
-                                 <tr>
-                                         <td>
-                                         </td>
-                                          <td>
-                                          </td>          
-                                          <td>
                                             <asp:RequiredFieldValidator  ID="RequiredFieldSelectCategeory"  ControlToValidate="ddladdCategory" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Category"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
                                             </td>
-                                            <td>
+                                            <td></td>
+                                        </tr>
+                                    <tr>
+                                             <td>
+                                                <asp:Label ID="lblSelectCategorySchedule" runat="server" Text="Select Category-ScheduleId:Startdate-Enddate" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
+                                                 <asp:DropDownList ID="ddlselectcategoryschedule" runat="server" CssClass="form-control" style="width:100%;" 
+                                                     AppendDataBoundItems="true" OnSelectedIndexChanged="ddlselectcategoryschedule_SelectedIndexChanged" AutoPostBack="true">
+                                                  </asp:DropDownList>
                                             </td>
                                           
                                             <td>
                                               <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategerySchedule" ControlToValidate="ddlselectcategoryschedule" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select CategorySchedule"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>
-                                             </td>                                              
-                                </tr>
+                                             </td>
+                                             <td></td>                                       
+                                    </tr>
                                 <tr>
-                                          
                                             <td>
-                                                <asp:Label ID="lblSelectGroup"  runat="server" Text="Select Group" CssClass="control-label col-sm-12 text-left"></asp:Label>
-                                            </td>
-                                            <td>
+                                                <asp:Label ID="lblSelectGroup"  runat="server" Text="Select Group Year/Semester:Schedule" CssClass="control-label col-sm-12 text-left"></asp:Label>
                                             </td>
                                             <td>
                                                 <asp:DropDownList ID="ddlGroup" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
                                                 </asp:DropDownList>
                                             </td>
                                             <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lblselectyearsem" runat="server" Text="Select Year-Sem Schedule" CssClass="control-label col-sm-12 text-left" Visible="false" ></asp:Label>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                               <asp:DropDownList ID="ddladdsemister" runat="server" AutoPostBack="true" CssClass="form-control" style="width:100%;" Visible="false">
-                                                    
-                                                     </asp:DropDownList>
-                                            </td>
-                                            
- 
-                                  </tr>
-                                  <tr>
-
-                                           <td>
-                                           </td>
-                                           <td>
-                                           </td>     
-                                           <td>
                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorselectgroup" ControlToValidate="ddlGroup" InitialValue="0"
                                                    runat="server" ForeColor="Red" ErrorMessage="Please select Group"
                                                    Display="Dynamic"></asp:RequiredFieldValidator>   </td>
                                           
                                             <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                            <td>
-                                            </td>
-                                             <td>
-                                            </td> 
-                                            <td>
-                                                
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidatoryearsem" ControlToValidate="ddladdsemister" InitialValue="0"
-                                                   runat="server" ForeColor="Red" ErrorMessage="Please select Year-Sem Schedule"
-                                                   Display="Dynamic"></asp:RequiredFieldValidator>
-
-                                            </td>
-                                </tr>
-                             
-                          </table>
+                                            <td></td>
+                                    </tr>
+                              </table>
                       <table style="width: 100%; margin: 0 auto;" class="table">
+                          <tr>
+                               <td>
+                                   <asp:Label ID="lblGroupSubjects" Text="Required Subjects for the Group " runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
+                                   <asp:GridView ID="gvGroupSubjcts" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
+                            Style="width: 30%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white">
+                            <Columns>
+                                <asp:BoundField HeaderText="SubjectId" DataField="Subject_Id" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Subject Name " DataField="Subject_Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                            </Columns>
+                        </asp:GridView>
+                               </td>
+                           </tr> 
+                          <tr>
+                               <td>
+                                   <asp:Label ID="lblProgramErrors" runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px; color:red"></asp:Label>
+                               </td>
+                           </tr>
                           <tr>
                             <td>
                                 <asp:Panel ID="DataPanel" runat="server" Visible="false">
                                 <div id="heading">
-                            <asp:Label ID="lblRegStnds" runat="server" Text="Registered Students"></asp:Label>
+                            <asp:Label ID="lblRegStnds" runat="server" Text="Subjects Schedule"></asp:Label>
                         </div>
+                        <asp:Label ID="lblDetailsId" runat="server" Visible="false"></asp:Label>
                         <asp:Label ID="lblRegisteredusers" Text="Subjects Schedule" runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
                         <asp:GridView ID="gvSubjectsSchedule" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
                             Style="width: 98%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white"
@@ -1319,13 +1275,12 @@
                                     <HeaderStyle HorizontalAlign="Left" />
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
+                                <asp:BoundField HeaderText="SubjectId" DataField="SubjectId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" Visible="false" />
                                 <asp:BoundField HeaderText="Subject" DataField="SubjectIdName" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Schedule" DataField="ScheduleId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" Visible="false" />
                                 <asp:BoundField HeaderText="Subject Schedule" DataField="CatSchedule" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="ClassType" DataField="ClassType" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Org Location" DataField="OrgLoc" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Class Date" DataField="ClassDate" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Hours" DataField="Hours" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Class Time" DataField="ClassTime" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                             </Columns>
                         </asp:GridView>
