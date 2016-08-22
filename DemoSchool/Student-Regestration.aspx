@@ -1267,17 +1267,18 @@
                             <Columns>
                                 <asp:TemplateField>
                                     <HeaderTemplate>
-                                       <%-- <asp:CheckBox ID="chkheader" runat="server"  />--%>
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <asp:CheckBox ID="chkSubjectId" runat="server"  />
+                                        <asp:HiddenField ID="SubjectId" runat="server" Value='<%# Eval("SubjectId") %>' />
+                                        <asp:HiddenField ID="CompanyId" runat="server" Value='<%# Eval("CompanyID") %>' />
+                                        <asp:HiddenField ID="Branch" runat="server" Value='<%# Eval("BranchName") %>' />
                                     </ItemTemplate>
                                     <HeaderStyle HorizontalAlign="Left" />
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
-                                <asp:BoundField HeaderText="SubjectId" DataField="SubjectId" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" Visible="false" />
                                 <asp:BoundField HeaderText="Subject" DataField="SubjectIdName" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Subject Schedule" DataField="CatSchedule" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
+                                <asp:BoundField HeaderText="Subject Schedule" DataField="SubjSchedule" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="ClassType" DataField="ClassType" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Org Location" DataField="OrgLoc" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
                                 <asp:BoundField HeaderText="Class Date" DataField="ClassDate" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />

@@ -222,8 +222,15 @@ namespace DemoSchool
 
         protected void Wizardstudentreg_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
-            RegistrationBE newReg1 = new RegistrationBE();
+            if (rdonewUser.Checked)
+            {
+                RegisterNewUser();
+            }
+        }
 
+        private void RegisterNewUser()
+        {
+            RegistrationBE newReg1 = new RegistrationBE();
             newReg1.RoleName = rolename;
             newReg1.FirstName = txtFirstName.Text;
             newReg1.LastName = txtLastName.Text;
@@ -324,67 +331,31 @@ namespace DemoSchool
             lblProgramErrors.Visible = false;
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
-                RegistrationBL objebl1 = new RegistrationBL();
-                var user = objebl1.GetExistingUser(studentFname.Text, studentLname.Text, studentMobilenumber.Text, studentEmail.Text, studentDate.Value, rolename);
-                if (user != null && user.Rows.Count > 0)
-                {
-                    DataRow dr = user.Rows[0];
-                    lblUserTypeError.Text = string.Empty; //Clear the error message
-                    lblDetailsId.Text = dr["DetailsID"].ToString();
-                    txtFirstName.Text = dr["FirstName"].ToString();
-                    txtLastName.Text = dr["LastName"].ToString();
-                    txtmobile.Text = dr["MobileNumber"].ToString();
-                    txtEmail.Text = dr["EmailID"].ToString();
-
-
-                    txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
-                    txtMothername.Text = dr["MotherMaidenName"].ToString();
-                    txtpob.Text = dr["PlaceOfBirth"].ToString();
-
-                    txtFixedLandline.Text = dr["Fixed_LandlineNumber"].ToString();
-                    txtEducation.Text = dr["Qualification"].ToString();
-                    txtaltrEmail.Text = dr["OptionalEmailID"].ToString();
-                    txtTechnicalSkills.Text = dr["TechnicalSkills"].ToString();
-                    txtStudentAccescode.Text = dr["AccessCode"].ToString();
-
-                    txtLocation.Text = dr["Location"].ToString();
-                    txtstreetno.Text = dr["StreetNo"].ToString();
-                    txtstreetname.Text = dr["StreetName"].ToString();
-                    txthouseno.Text = dr["HouseNo"].ToString();
-                    txtFlatno.Text = dr["Flat_UnitNo"].ToString();
-                    txtLandMark.Text = dr["LandMarkName"].ToString();
-                    ddlcountry.Text = dr["CountryID"].ToString();
-                    ddlstate.Text = dr["StateID"].ToString();
-                    ddlDistrict.Text = dr["DistrictID"].ToString();
-                    //  ddlVillage.Text = dr["Village_Town_City"].ToString();
-                    //ddlMandal.Text = dr["SubUrban_Area"].ToString();
-                    ddladdCategory.DataTextField = dr["CategoryID"].ToString();
-                    // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
-                    //ddlselectyear.DataTextField = dr["YearId"].ToString();
-                    // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
-                    // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
-
-                }
-                else
-                {
-                    //User doesn't exists
-                    lblDetailsId.Text = string.Empty;
-                }
+                GetExistingUserDetails();
 
             }
             else if (Wizardstudentreg.ActiveStepIndex == 3)
             {
-                List<int> subjectsList = new List<int>();
+                List<StudentRegProgram> subjectsList = new List<StudentRegProgram>();
                 foreach (GridViewRow row in gvSubjectsSchedule.Rows)
                 {
                     if (row.RowType == DataControlRowType.DataRow)
                     {
-
-                        CheckBox chkRow = (row.Cells[0].FindControl("chkSubjectId") as CheckBox);
+                        CheckBox chkRow = row.Cells[0].FindControl("chkSubjectId") as CheckBox;
                         if (chkRow.Checked)
                         {
-                            int subjectId = Utils.ToInt(row.Cells[1].Text);
-                            subjectsList.Add(subjectId);
+                            HiddenField hdnSubjectId = row.Cells[0].FindControl("SubjectId") as HiddenField;
+                            HiddenField hdnCompanyId = row.Cells[0].FindControl("CompanyId") as HiddenField;
+                            HiddenField hdnBranch = row.Cells[0].FindControl("Branch") as HiddenField;
+
+                            if (hdnBranch != null && hdnCompanyId != null && hdnSubjectId != null)
+                            {
+                                StudentRegProgram program = new StudentRegProgram();
+                                program.SubjectId = Utils.ToInt(hdnSubjectId.Value);
+                                program.CompanyId = hdnCompanyId.Value;
+                                program.CompanyBranch = hdnBranch.Value;
+                                subjectsList.Add(program);
+                            }
                         }
                     }
                 }
@@ -401,58 +372,7 @@ namespace DemoSchool
                     lblProgramErrors.Text = "Selected subjects are not matching required subjects";
                 }
 
-                lblFirstNameValue.Text = txtFirstName.Text;
-                lblLastNameValue.Text = txtLastName.Text;
-                lblFatherNameValue.Text = txtfathergurdianname.Text;
-                lblMotherMaidenNameValue.Text = txtMothername.Text;
-                lblPobValue.Text = txtpob.Text;
-                lblMobileNumberValue.Text = txtmobile.Text;
-                lblLandLineNumberValue.Text = txtFixedLandline.Text;
-                lblEmailIdValue.Text = txtEmail.Text;
-                lblAlterEmailIdValue.Text = txtaltrEmail.Text;
-                lblEductionValue.Text = txtEducation.Text;
-                lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
-                lblStudentAccessCodeValue.Text = txtStudentAccescode.Text;
-
-                lblCountryValue.Text = ddlcountry.SelectedItem.Text;
-                lblStateValue.Text = ddlstate.SelectedItem.Text;
-                lblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
-                lblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
-                lblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
-                lblPinCodeValue.Text = txtpincode.Text;
-                lblStreetNoValue.Text = txtstreetno.Text;
-                lblStreetNameValue.Text = txtstreetname.Text;
-                lblHousePlotNoValue.Text = txthouseno.Text;
-                lblBuildingLandMarkValue.Text = txtLandMark.Text;
-                lblFlatNoValue.Text = txtFlatno.Text;
-                lblLandLineNumberValue.Text = txtLandMark.Text;
-                lblStudentLocationValue.Text = txtLocation.Text;
-
-
-                //lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
-                lblSelectCategoryValue.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
-                lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
-                lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
-                //lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
-                //lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
-                //lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
-
-
-                //int programId = Utils.ToInt(ddladdProgram.SelectedItem.Value);
-                int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
-                string catscheduleId = ddlselectcategoryschedule.SelectedItem.Text;
-                int groupId = Utils.ToInt(ddlGroup.SelectedItem.Value);
-                //int yearId = Utils.ToInt(DDlYear.SelectedItem.Value);
-                //int subjectId = Utils.ToInt(ddlSubjects.SelectedItem.Value);
-                //int semScheduleId = Utils.ToInt(ddladdsemister.SelectedItem.Value);
-
-                //var payment = objStudentBL.GetProgramAmount(categoryId, catscheduleId, groupId, semScheduleId);
-                //if (payment != null && payment.Rows.Count > 0)
-                //{
-                //    DataRow dr = payment.Rows[0];
-                //    lblprogramAmount.Text = dr["Amount"].ToString();
-                //    lblprogAmount.Text = dr["Amount"].ToString();
-                //}
+                DisplaySummary();
             }
 
             if (Wizardstudentreg.ActiveStepIndex == 4)
@@ -482,6 +402,112 @@ namespace DemoSchool
             }
         }
 
+        private void GetExistingUserDetails()
+        {
+            RegistrationBL objebl1 = new RegistrationBL();
+            var user = objebl1.GetExistingUser(studentFname.Text, studentLname.Text, studentMobilenumber.Text, studentEmail.Text, studentDate.Value, rolename);
+            if (user != null && user.Rows.Count > 0)
+            {
+                DataRow dr = user.Rows[0];
+                lblUserTypeError.Text = string.Empty; //Clear the error message
+                lblDetailsId.Text = dr["DetailsID"].ToString();
+                txtFirstName.Text = dr["FirstName"].ToString();
+                txtLastName.Text = dr["LastName"].ToString();
+                txtmobile.Text = dr["MobileNumber"].ToString();
+                txtEmail.Text = dr["EmailID"].ToString();
+
+
+                txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
+                txtMothername.Text = dr["MotherMaidenName"].ToString();
+                txtpob.Text = dr["PlaceOfBirth"].ToString();
+
+                txtFixedLandline.Text = dr["Fixed_LandlineNumber"].ToString();
+                txtEducation.Text = dr["Qualification"].ToString();
+                txtaltrEmail.Text = dr["OptionalEmailID"].ToString();
+                txtTechnicalSkills.Text = dr["TechnicalSkills"].ToString();
+                txtStudentAccescode.Text = dr["AccessCode"].ToString();
+
+                txtLocation.Text = dr["Location"].ToString();
+                txtstreetno.Text = dr["StreetNo"].ToString();
+                txtstreetname.Text = dr["StreetName"].ToString();
+                txthouseno.Text = dr["HouseNo"].ToString();
+                txtFlatno.Text = dr["Flat_UnitNo"].ToString();
+                txtLandMark.Text = dr["LandMarkName"].ToString();
+                ddlcountry.Text = dr["CountryID"].ToString();
+                ddlstate.Text = dr["StateID"].ToString();
+                ddlDistrict.Text = dr["DistrictID"].ToString();
+                //  ddlVillage.Text = dr["Village_Town_City"].ToString();
+                //ddlMandal.Text = dr["SubUrban_Area"].ToString();
+                ddladdCategory.DataTextField = dr["CategoryID"].ToString();
+                // ddlselectgroup.DataTextField = dr["GroupId"].ToString();
+                //ddlselectyear.DataTextField = dr["YearId"].ToString();
+                // ddlselectsubjects.DataTextField = dr["Subjects"].ToString();
+                // ddlselectyearsemschedule.DataTextField = dr["Schedule_ID"].ToString();
+
+            }
+            else
+            {
+                //User doesn't exists
+                lblDetailsId.Text = string.Empty;
+            }
+        }
+
+        private void DisplaySummary()
+        {
+            lblFirstNameValue.Text = txtFirstName.Text;
+            lblLastNameValue.Text = txtLastName.Text;
+            lblFatherNameValue.Text = txtfathergurdianname.Text;
+            lblMotherMaidenNameValue.Text = txtMothername.Text;
+            lblPobValue.Text = txtpob.Text;
+            lblMobileNumberValue.Text = txtmobile.Text;
+            lblLandLineNumberValue.Text = txtFixedLandline.Text;
+            lblEmailIdValue.Text = txtEmail.Text;
+            lblAlterEmailIdValue.Text = txtaltrEmail.Text;
+            lblEductionValue.Text = txtEducation.Text;
+            lblTechnicalSkillValue.Text = txtTechnicalSkills.Text;
+            lblStudentAccessCodeValue.Text = txtStudentAccescode.Text;
+
+            lblCountryValue.Text = ddlcountry.SelectedItem.Text;
+            lblStateValue.Text = ddlstate.SelectedItem.Text;
+            lblDistrictValue.Text = ddlDistrict.SelectedItem.Text;
+            lblManadalTalukValue.Text = ddlMandal.SelectedItem.Text;
+            lblVillageTownValue.Text = ddlVillage.SelectedItem.Text;
+            lblPinCodeValue.Text = txtpincode.Text;
+            lblStreetNoValue.Text = txtstreetno.Text;
+            lblStreetNameValue.Text = txtstreetname.Text;
+            lblHousePlotNoValue.Text = txthouseno.Text;
+            lblBuildingLandMarkValue.Text = txtLandMark.Text;
+            lblFlatNoValue.Text = txtFlatno.Text;
+            lblLandLineNumberValue.Text = txtLandMark.Text;
+            lblStudentLocationValue.Text = txtLocation.Text;
+
+
+            //lblSelectProgramValue.Text = ddladdProgram.SelectedItem != null ? ddladdProgram.SelectedItem.Text : string.Empty;
+            lblSelectCategoryValue.Text = ddladdCategory.SelectedItem != null ? ddladdCategory.SelectedItem.Text : string.Empty; ;
+            lblSelectGroupValue.Text = ddlGroup.SelectedItem != null ? ddlGroup.SelectedItem.Text : string.Empty; ;
+            lblSelectedCategeorySheduleValue.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
+            //lblSelectYearValue.Text = DDlYear.SelectedItem != null ? DDlYear.SelectedItem.Text : string.Empty; ;
+            //lblSelectSubjectsValue.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
+            //lblSelectYearSemSheduleValue.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
+
+
+            //int programId = Utils.ToInt(ddladdProgram.SelectedItem.Value);
+            int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+            string catscheduleId = ddlselectcategoryschedule.SelectedItem.Text;
+            int groupId = Utils.ToInt(ddlGroup.SelectedItem.Value);
+            //int yearId = Utils.ToInt(DDlYear.SelectedItem.Value);
+            //int subjectId = Utils.ToInt(ddlSubjects.SelectedItem.Value);
+            //int semScheduleId = Utils.ToInt(ddladdsemister.SelectedItem.Value);
+
+            //var payment = objStudentBL.GetProgramAmount(categoryId, catscheduleId, groupId, semScheduleId);
+            //if (payment != null && payment.Rows.Count > 0)
+            //{
+            //    DataRow dr = payment.Rows[0];
+            //    lblprogramAmount.Text = dr["Amount"].ToString();
+            //    lblprogAmount.Text = dr["Amount"].ToString();
+            //}
+        }
+
         protected void Wizardstudentreg_ActiveStepChanged(object sender, EventArgs e)
         {
             if (Wizardstudentreg.ActiveStepIndex == Wizardstudentreg.WizardSteps.IndexOf(this.WizardSummary))
@@ -502,6 +528,10 @@ namespace DemoSchool
                     lblUserTypeError.Text = "Please enter valid details";
                     Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardUserType);
                 }
+            }
+            if (rdonewUser.Checked && Wizardstudentreg.ActiveStepIndex == Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep2))
+            {
+                Wizardstudentreg.StepNextButtonText = "Save";
             }
 
         }

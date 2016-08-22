@@ -70,6 +70,7 @@
     <Compile Include="BE\Schedules.cs" />
     <Compile Include="BE\SendSMSBE.cs" />
     <Compile Include="BE\Slot.cs" />
+    <Compile Include="BE\StudentRegProgram.cs" />
     <Compile Include="BL\AddProgramsBL.cs" />
     <Compile Include="BL\CmpBL.cs" />
     <Compile Include="BL\CompanyBL.cs" />

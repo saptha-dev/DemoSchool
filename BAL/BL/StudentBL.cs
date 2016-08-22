@@ -231,5 +231,27 @@ namespace BAL.BL
             }
             return true;
         }
+
+        public bool ManageStudentPayment(int studentId, string prn, int amount, string transferMode, string transactionId, string transactionBank, string payment_status)
+        {
+            SqlParameter[] p = new SqlParameter[8];
+            p[0] = new SqlParameter("@StudentId", studentId);
+            p[1] = new SqlParameter("@PRN", prn);
+            p[2] = new SqlParameter("@Amount", amount);
+            p[3] = new SqlParameter("@Transfer_Mode", transferMode);
+            p[4] = new SqlParameter("@TransactionId", transactionId);
+            p[5] = new SqlParameter("@TransactionBank", transactionBank);
+            p[6] = new SqlParameter("@Payment_Status", payment_status);
+            p[7] = new SqlParameter("@Comment", "Pending");
+            try
+            {
+                var inserted = ConnectionFactory.ExecuteCommand("sp_ManageStudentProgram", CommandType.StoredProcedure, p);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
