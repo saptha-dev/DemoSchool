@@ -49,6 +49,15 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.RadioButton rdoexisting;
         
         /// <summary>
+        /// rdoPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdoPayment;
+        
+        /// <summary>
         /// lblUserTypeError control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUserTypeError;
+        
+        /// <summary>
+        /// PnlExistingUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PnlExistingUser;
         
         /// <summary>
         /// lbFname1 control.
@@ -146,6 +164,33 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl studentDate;
+        
+        /// <summary>
+        /// PnlPaymentInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PnlPaymentInfo;
+        
+        /// <summary>
+        /// lblPrn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrn;
+        
+        /// <summary>
+        /// txtStudentPRN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStudentPRN;
         
         /// <summary>
         /// WizardStep1 control.
@@ -796,15 +841,6 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label lblGroupSubjects;
         
         /// <summary>
-        /// gvGroupSubjcts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvGroupSubjcts;
-        
-        /// <summary>
         /// lblProgramErrors control.
         /// </summary>
         /// <remarks>
@@ -1136,15 +1172,6 @@ namespace DemoSchool {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSelectGroupValue;
-        
-        /// <summary>
-        /// lblSelectYearSemSheduleValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelectYearSemSheduleValue;
         
         /// <summary>
         /// WizardPayment control.

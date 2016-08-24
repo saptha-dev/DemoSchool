@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using DAL;
 using System.Data;
+using BAL.BE;
 
 namespace BAL.BL
 {
@@ -210,23 +211,35 @@ namespace BAL.BL
            
         }
 
-        public bool AddStudentProgram(int studentId, string userId, int categoryId, int branchId, string companyId, string companyBranch, string scheduleId)
+        public bool AddStudentProgram(StudentRegProgram program)
         {
-            SqlParameter[] p = new SqlParameter[9];
-            p[0] = new SqlParameter("@StudentId", studentId);
-            p[1] = new SqlParameter("@UserId", userId);
+            SqlParameter[] p = new SqlParameter[19];
+            p[0] = new SqlParameter("@StudentId", program.StudentId);
+            p[1] = new SqlParameter("@UserId", program.UserId);
             p[2] = new SqlParameter("@ProgramId", 1);
-            p[3] = new SqlParameter("@CategoryId", categoryId);
-            p[4] = new SqlParameter("@BranchId", branchId);
-            p[5] = new SqlParameter("@CompanyId", companyId);
-            p[6] = new SqlParameter("@Company_Branch", companyBranch);
-            p[7] = new SqlParameter("@ScheduleId", scheduleId);
-            p[8] = new SqlParameter("@ActiveStatus", 1);
+            p[3] = new SqlParameter("@CategoryId", program.CategoryId);
+            p[4] = new SqlParameter("@BranchId", program.BranchId);
+            p[5] = new SqlParameter("@SubjectId", program.SubjectId);
+            p[6] = new SqlParameter("@SubjectName", program.SubjectName);
+            p[7] = new SqlParameter("@ScheduleId", program.ScheduleId);
+            p[8] = new SqlParameter("@Subject_ScheduleId", program.Subject_ScheduleId);
+            p[9] = new SqlParameter("@Subject_StartDate", program.SubjectStartDate);
+            p[10] = new SqlParameter("@Subject_EndDate", program.SubjctEndDate);
+            p[11] = new SqlParameter("@CompanyId", program.CompanyId);
+            p[12] = new SqlParameter("@Company_Branch", program.CompanyBranch);
+            p[13] = new SqlParameter("@BranchLocation", program.BranchLocation);
+            p[14] = new SqlParameter("@Class_StartDate", program.ClassStartDate);
+            p[15] = new SqlParameter("@Class_EndDate", program.ClassEndDate);
+            p[16] = new SqlParameter("@ClassTime", program.ClassTime);
+            p[17] = new SqlParameter("@ActiveStatus", 1);
+            p[18] = new SqlParameter("@RegDate", DateTime.Now);
             try
             {
-               var inserted = ConnectionFactory.ExecuteCommand("sp_ManageStudentProgram", CommandType.StoredProcedure, p);
-            }catch
+                var inserted = ConnectionFactory.ExecuteCommand("sp_ManageStudentProgram", CommandType.StoredProcedure, p);
+            }
+            catch(Exception ex)
             {
+                string msg = ex.ToString();
                 return false;
             }
             return true;

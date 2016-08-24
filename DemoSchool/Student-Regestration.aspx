@@ -472,21 +472,27 @@
                             <div>
                                 <table id="tblPadding" style="margin: auto; width: 100%; color: Black;">
                                          <tr>
-                                            <td><asp:RadioButton ID="rdonewUser" runat="server" Text="New User" checked="true" GroupName="Software" AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton></td>
+                                            <td><asp:RadioButton ID="rdonewUser" runat="server" Text="New User" checked="true" GroupName="Users" AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton></td>
                                             <td></td>
-                                            <td><asp:RadioButton ID="rdoexisting" runat="server" Text="Existing User" Checked="false" GroupName="Software"  AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
+                                            <td><asp:RadioButton ID="rdoexisting" runat="server" Text="Existing User" Checked="false" GroupName="Users"  AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
                                             <td></td>
-                                            <td colspan="4"><asp:Label ID="lblUserTypeError" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Size="Large"></asp:Label></td>
+                                             <td><asp:RadioButton ID="rdoPayment" runat="server" Text="Payment Info" Checked="false" GroupName="Users"  AutoPostBack="true" OnCheckedChanged="RadioButton_CheckedChanged" Font-Bold="true" Font-Names="Courier New" Font-Size="XX-Large" ForeColor="Navy"></asp:RadioButton>
+                                            <td></td>
+                                            <td colspan="2"><asp:Label ID="lblUserTypeError" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ForeColor="Crimson" Font-Size="Large"></asp:Label></td>
                                          </tr>
+                                </table>
+
+                                <asp:Panel ID="PnlExistingUser" Visible ="false" runat="server">
+                                <table id="tblExistingUser" style="margin: auto; width: 100%; color: Black;">
                                          <tr>
-                                            <td><asp:Label ID="lbFname1" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lbFname1" runat="server" Text="First Name" CssClass="control-label col-sm-12 text-left" ></asp:Label></td>
                                             <td></td>
-                                            <td><asp:TextBox ID="studentFname" CssClass="form-control" runat="server" Visible="false"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="studentFname" CssClass="form-control" runat="server" ></asp:TextBox></td>
                                             <td></td>
                                             <td></td>
-                                            <td><asp:Label ID="lbLname1" runat="server" Text="Last Name" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lbLname1" runat="server" Text="Last Name" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                             <td></td>
-                                            <td><asp:TextBox ID="studentLname" CssClass="form-control" runat="server" Visible="false"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="studentLname" CssClass="form-control" runat="server" ></asp:TextBox></td>
                                          </tr>
                                          <tr>
                                             <td></td>
@@ -500,14 +506,14 @@
                                          </tr>
 
                                         <tr>
-                                            <td><asp:Label ID="lblMobileNumber1" runat="server" Text="Mobile Number" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lblMobileNumber1" runat="server" Text="Mobile Number" CssClass="control-label col-sm-12 text-left" ></asp:Label></td>
                                             <td></td>
-                                            <td><asp:TextBox ID="studentMobilenumber" CssClass="form-control" runat="server" MaxLength="10" Visible="false"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="studentMobilenumber" CssClass="form-control" runat="server" MaxLength="10" ></asp:TextBox></td>
                                             <td></td>
                                             <td></td>
-                                            <td><asp:Label ID="lblEmail1" runat="server" Text="Email Id" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lblEmail1" runat="server" Text="Email Id" CssClass="control-label col-sm-12 text-left" ></asp:Label></td>
                                             <td></td>
-                                            <td><asp:TextBox ID="studentEmail" CssClass="form-control" runat="server" Visible="false"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="studentEmail" CssClass="form-control" runat="server" ></asp:TextBox></td>
                                         </tr>
 
                                          <tr>
@@ -527,11 +533,26 @@
                                         </tr>
                      
                                          <tr>
-                                            <td><asp:Label ID="lblsdob" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left" Visible="false"></asp:Label></td>
+                                            <td><asp:Label ID="lblsdob" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left" ></asp:Label></td>
                                             <td></td>
-                                            <td><input id="studentDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" visible="false"/></td>
+                                            <td><input id="studentDate" runat="server" class="form-control" type="date" value="yyyy-mm-dd" /></td>
                                         </tr> 
                                 </table>
+                                </asp:Panel>
+                                <asp:Panel ID="PnlPaymentInfo" runat="server" Visible="false">
+                                    <table id="tblPayment" class="Resopnsive">
+                                            <tr>
+                                            <td>
+                                                <asp:Label ID="lblPrn" runat="server" Text="PRN" CssClass="control-label col-sm-12 text-left"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txtStudentPRN" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                </asp:Panel>
                           </div>
                           </asp:WizardStep>
                    
@@ -1238,14 +1259,7 @@
                       <table style="width: 100%; margin: 0 auto;" class="table">
                           <tr>
                                <td>
-                                   <asp:Label ID="lblGroupSubjects" Text="Required Subjects for the Group " runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
-                                   <asp:GridView ID="gvGroupSubjcts" CssClass="GridviewConfirm" runat="server" AutoGenerateColumns="False"
-                            Style="width: 30%" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white">
-                            <Columns>
-                                <asp:BoundField HeaderText="SubjectId" DataField="Subject_Id" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
-                                <asp:BoundField HeaderText="Subject Name " DataField="Subject_Name" HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="style" />
-                            </Columns>
-                        </asp:GridView>
+                                   <asp:Label ID="lblGroupSubjects" Text="" runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
                                </td>
                            </tr> 
                           <tr>
@@ -1257,7 +1271,7 @@
                             <td>
                                 <asp:Panel ID="DataPanel" runat="server" Visible="false">
                                 <div id="heading">
-                            <asp:Label ID="lblRegStnds" runat="server" Text="Subjects Schedule"></asp:Label>
+                            <asp:Label ID="lblRegStnds" runat="server" Text="Subjects Schedule" Style="font-weight: bold; font-size: 18px;"></asp:Label>
                         </div>
                         <asp:Label ID="lblDetailsId" runat="server" Visible="false"></asp:Label>
                         <asp:Label ID="lblRegisteredusers" Text="Subjects Schedule" runat="server" Visible="false"  Style="font-weight: bold; font-size: 18px;"></asp:Label>
@@ -1463,7 +1477,7 @@
                                         <div class="panel-heading"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Student Program Details</div>
                                                 <div class="panel-body">
                                                 <div class="row">
-                                                    <div class="col-md-6 pull-left">
+                                                    <div class="col-md-12 pull-left">
                                                         <div class="row">
                                                               <div class="form-group">
                                                                 <label class="control-label col-sm-5" for="cmpState">Category : </label>
@@ -1472,18 +1486,14 @@
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
                                                                   <label class="control-label col-sm-5"  for="cmpCity">Categeory Schedule : </label>
-                                                                   <asp:label id="lblSelectedCategeorySheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                   <asp:label id="lblSelectedCategeorySheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                                               </div>
                                                                 <div class="clearfix"></div>
                                                               <div class="form-group">
-                                                                  <label class="control-label col-sm-5" for="mandal">Group : </label>
-                                                                    <asp:label id="lblSelectGroupValue"  Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+                                                                  <label class="control-label col-sm-5" for="mandal">Group:Year:SemSchedule </label>
+                                                                    <asp:label id="lblSelectGroupValue"  Font-Bold="true" ClientIDMode="Static" CssClass="control-label col-sm-12-left" runat="server"></asp:label>
                                                               </div>
-                                                             <div class="clearfix"></div>
-                                                            <div class="form-group">
-                                                                  <label class="control-label col-sm-5"  for="pinCode">Year-Sem Schedule : </label>
-                                                                   <asp:label id="lblSelectYearSemSheduleValue" Font-Bold="true" ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
-                                                              </div>
+                                                            
                                                           </div>
                                                     </div>
                                                    

@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -133,13 +135,16 @@ namespace DemoSchool
             if (dtSubjects != null && dtSubjects.Rows.Count > 0)
             {
                 lblGroupSubjects.Visible = true;
-                gvGroupSubjcts.Visible = true;
-                gvGroupSubjcts.DataSource = dtSubjects.DefaultView;
-                gvGroupSubjcts.DataBind();
+                StringBuilder sbSubjects = new StringBuilder();
+                
+                foreach(DataRow dr in dtSubjects.Rows)
+                {
+                    sbSubjects.AppendFormat("{0},", dr["Subject_Name"].ToString());
+                }
+                lblGroupSubjects.Text = string.Format("Please select {0} from the subjects schedule", sbSubjects.ToString().TrimEnd(','));
             }
             else
             {
-                gvGroupSubjcts.Visible = false;
                 lblGroupSubjects.Visible = false;
             }
             
@@ -224,52 +229,58 @@ namespace DemoSchool
         {
             if (rdonewUser.Checked)
             {
-                RegisterNewUser();
+               
             }
         }
 
         private void RegisterNewUser()
         {
             RegistrationBE newReg1 = new RegistrationBE();
-            newReg1.RoleName = rolename;
-            newReg1.FirstName = txtFirstName.Text;
-            newReg1.LastName = txtLastName.Text;
-            newReg1.Father_GaurdainName = txtfathergurdianname.Text;
-            newReg1.MotherMaidenName = txtMothername.Text;
-            newReg1.DateOfBirth = Convert.ToDateTime(txtdob.Value);
-            newReg1.PlaceOfBirth = txtpob.Text;
-            newReg1.MobileNumber = txtmobile.Text;
-            newReg1.Fixed_LandlineNumber = txtFixedLandline.Text;
-            newReg1.EmailID = txtEmail.Text;
-            newReg1.OptionalEmailID = txtaltrEmail.Text;
-            newReg1.Qualification = txtEducation.Text;
-            newReg1.TechnicalSkills = txtTechnicalSkills.Text;
-            newReg1.AccessCode = txtStudentAccescode.Text;
-            newReg1.ImageName = "image";
-            newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-            newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
-            newReg1.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
-            newReg1.Village_Town_City = ddlVillage.SelectedItem.Value;
-            newReg1.SubUrban_Area = ddlMandal.SelectedItem.Value;
-            newReg1.PostalCode = 8686;
-            newReg1.StreetNO = txtstreetno.Text;
-            newReg1.StreetName = txtstreetname.Text;
-            newReg1.HouseNO = txthouseno.Text;
-            newReg1.Flat_UnitNo = txtFlatno.Text;
-            newReg1.LandMark_Name = txtLandMark.Text;
-            newReg1.Location = txtLocation.Text;
-            // newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
-            newReg1.ProgramID = 111;
-            newReg1.BranchID = 8686;
-            newReg1.LocationID = 88;
+            try
+            {
+                newReg1.RoleName = rolename;
+                newReg1.FirstName = txtFirstName.Text;
+                newReg1.LastName = txtLastName.Text;
+                newReg1.Father_GaurdainName = txtfathergurdianname.Text;
+                newReg1.MotherMaidenName = txtMothername.Text;
+                newReg1.DateOfBirth = Convert.ToDateTime(txtdob.Value);
+                newReg1.PlaceOfBirth = txtpob.Text;
+                newReg1.MobileNumber = txtmobile.Text;
+                newReg1.Fixed_LandlineNumber = txtFixedLandline.Text;
+                newReg1.EmailID = txtEmail.Text;
+                newReg1.OptionalEmailID = txtaltrEmail.Text;
+                newReg1.Qualification = txtEducation.Text;
+                newReg1.TechnicalSkills = txtTechnicalSkills.Text;
+                newReg1.AccessCode = txtStudentAccescode.Text;
+                newReg1.ImageName = "image";
+                newReg1.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
+                newReg1.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
+                newReg1.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
+                newReg1.Village_Town_City = ddlVillage.SelectedItem.Value;
+                newReg1.SubUrban_Area = ddlMandal.SelectedItem.Value;
+                newReg1.PostalCode = 8686;
+                newReg1.StreetNO = txtstreetno.Text;
+                newReg1.StreetName = txtstreetname.Text;
+                newReg1.HouseNO = txthouseno.Text;
+                newReg1.Flat_UnitNo = txtFlatno.Text;
+                newReg1.LandMark_Name = txtLandMark.Text;
+                newReg1.Location = txtLocation.Text;
+                // newReg1.ProgramID = Convert.ToInt32(ddladdProgram.SelectedItem.Value);
+                newReg1.ProgramID = 111;
+                newReg1.BranchID = 8686;
+                newReg1.LocationID = 88;
 
-            newReg1.CategoryID = Utils.ToInt(ddladdCategory.SelectedItem.Value);
-            newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
-            //newReg1.YearId = DDlYear.SelectedItem.Value;
-            //newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
-            //newReg1.Subjects = ddlSubjects.SelectedItem.Value;
-            //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
-            objReg.StudentRegistration(newReg1);
+                newReg1.CategoryID = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+                newReg1.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
+                //newReg1.YearId = DDlYear.SelectedItem.Value;
+                //newReg1.Schedule_ID = ddladdsemister.SelectedItem.Value;
+                //newReg1.Subjects = ddlSubjects.SelectedItem.Value;
+                //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
+                objReg.StudentRegistration(newReg1);
+            }catch(Exception ex)
+            {
+                string msg = ex.ToString();
+            }
         }
 
         protected void PaymentOption_Changed(object sender, System.EventArgs e)
@@ -298,27 +309,38 @@ namespace DemoSchool
         {
             if (rdonewUser.Checked == true)
             {
-                ShowExistingUserControls(false);
+                PnlExistingUser.Visible = false;
+                PnlPaymentInfo.Visible = false;
+                //ShowExistingUserControls(false);
             }
             else if (rdoexisting.Checked == true)
             {
-                ShowExistingUserControls(true);
+                PnlExistingUser.Visible = true;
+                PnlPaymentInfo.Visible = false;
+                //ShowExistingUserControls(true);
+            }
+            else if (rdoPayment.Checked == true)
+            {
+                PnlPaymentInfo.Visible = true;
+                PnlExistingUser.Visible = false;
             }
         }
 
         private void ShowExistingUserControls(bool visible)
         {
             lblUserTypeError.Visible = visible;
-            lbFname1.Visible = visible;
-            studentFname.Visible = visible;
-            lbLname1.Visible = visible;
-            studentLname.Visible = visible;
-            lblMobileNumber1.Visible = visible;
-            studentMobilenumber.Visible = visible;
-            lblEmail1.Visible = visible;
-            studentEmail.Visible = visible;
-            lblsdob.Visible = visible;
-            studentDate.Visible = visible;
+            
+            //lbFname1.Visible = visible;
+            //studentFname.Visible = visible;
+            //lbLname1.Visible = visible;
+            //studentLname.Visible = visible;
+            //lblMobileNumber1.Visible = visible;
+            //studentMobilenumber.Visible = visible;
+            //lblEmail1.Visible = visible;
+            //studentEmail.Visible = visible;
+            //lblsdob.Visible = visible;
+            //studentDate.Visible = visible;
+
         }
 
         protected void Wizardstudentreg_NextButtonClick(object sender, WizardNavigationEventArgs e)
@@ -328,49 +350,29 @@ namespace DemoSchool
                 Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.ActiveStepIndex - 1;
             }
             GetClassForWizardStep(sender);
+            List<StudentRegProgram> subjectsList = new List<StudentRegProgram>();
             lblProgramErrors.Visible = false;
             if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
             {
                 GetExistingUserDetails();
 
             }
+            else if(rdonewUser.Checked && Wizardstudentreg.ActiveStepIndex == 2)
+            {
+                //save the student details
+                RegisterNewUser();
+                GetExistingUserDetails();
+            }
             else if (Wizardstudentreg.ActiveStepIndex == 3)
             {
-                List<StudentRegProgram> subjectsList = new List<StudentRegProgram>();
-                foreach (GridViewRow row in gvSubjectsSchedule.Rows)
-                {
-                    if (row.RowType == DataControlRowType.DataRow)
-                    {
-                        CheckBox chkRow = row.Cells[0].FindControl("chkSubjectId") as CheckBox;
-                        if (chkRow.Checked)
-                        {
-                            HiddenField hdnSubjectId = row.Cells[0].FindControl("SubjectId") as HiddenField;
-                            HiddenField hdnCompanyId = row.Cells[0].FindControl("CompanyId") as HiddenField;
-                            HiddenField hdnBranch = row.Cells[0].FindControl("Branch") as HiddenField;
-
-                            if (hdnBranch != null && hdnCompanyId != null && hdnSubjectId != null)
-                            {
-                                StudentRegProgram program = new StudentRegProgram();
-                                program.SubjectId = Utils.ToInt(hdnSubjectId.Value);
-                                program.CompanyId = hdnCompanyId.Value;
-                                program.CompanyBranch = hdnBranch.Value;
-                                subjectsList.Add(program);
-                            }
-                        }
-                    }
-                }
+                SaveSubjectSchdeules(subjectsList);
                 lblProgramErrors.Text = String.Empty;
-                if (subjectsList.Count == 0)
-                {
-                    lblProgramErrors.Visible = true;
-                    lblProgramErrors.Text = "Please select the subject schedules";
-                    //Wizardstudentreg.ActiveStepIndex = Wizardstudentreg.WizardSteps.IndexOf(this.WizardStep3);
-                }
-                else if (subjectsList.Count != gvGroupSubjcts.Rows.Count)
-                {
-                    lblProgramErrors.Visible = true;
-                    lblProgramErrors.Text = "Selected subjects are not matching required subjects";
-                }
+                
+                //else if (subjectsList.Count != gvGroupSubjcts.Rows.Count)
+                //{
+                //    lblProgramErrors.Visible = true;
+                //    lblProgramErrors.Text = "Selected subjects are not matching required subjects";
+                //}
 
                 DisplaySummary();
             }
@@ -384,21 +386,80 @@ namespace DemoSchool
                 //paymentSubject.Text = ddlSubjects.SelectedItem != null ? ddlSubjects.SelectedItem.Text : string.Empty;
                 //paymentYearSem.Text = ddladdsemister.SelectedItem != null ? ddladdsemister.SelectedItem.Text : string.Empty; ;
                 paymentCategorySchedule.Text = ddlselectcategoryschedule.SelectedItem != null ? ddlselectcategoryschedule.SelectedItem.Text : string.Empty;
-                
-                if (rdoexisting.Checked)
+            }
+        }
+
+        private void SaveSubjectSchdeules(List<StudentRegProgram> subjectsList)
+        {
+            foreach (GridViewRow row in gvSubjectsSchedule.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
                 {
-                    //Add student program details
-                    int studentId = Utils.ToInt(lblDetailsId.Text);
-                    string userId = lblFirstNameValue.Text;
-                    int categoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
-                    int branchId = Utils.ToInt(ddlGroup.SelectedItem.Value);
-                    string companyId = "company"; //TODO replace with actual value
-                    string companyBranch = "Branch"; //TODO replace with actual value
-                    string catscheduleId = ddlselectcategoryschedule.SelectedItem.Value;
+                    CheckBox chkRow = row.Cells[0].FindControl("chkSubjectId") as CheckBox;
+                    if (chkRow.Checked)
+                    {
+                        StudentRegProgram program = new StudentRegProgram();
+                        //HiddenField hdnSubjectId = row.Cells[0].FindControl("SubjectId") as HiddenField;
+                        HiddenField hdnCompanyId = row.Cells[0].FindControl("CompanyId") as HiddenField;
+                        HiddenField hdnBranch = row.Cells[0].FindControl("Branch") as HiddenField;
+                        if (hdnBranch != null && hdnCompanyId != null)
+                        {
+                            
+                            program.CompanyId = hdnCompanyId.Value;
+                            program.CompanyBranch = hdnBranch.Value;
+                        }
+                        program.CategoryId = Utils.ToInt(ddladdCategory.SelectedItem.Value);
+                        program.ScheduleId = ddlselectcategoryschedule.SelectedItem.Value;
+                        var subSchedule = row.Cells[2].Text;
+                        if (!String.IsNullOrEmpty(subSchedule))
+                        {
+                            // SUB30: (01-05-2016:29-07-2016) format
+                            var temp = subSchedule.Split(':');
+                            program.Subject_ScheduleId = temp[0];
+                            string dateFormatType = "dd-MM-yyyy";
+                            program.SubjectStartDate = DateTime.ParseExact(temp[1].Trim().TrimStart('('), dateFormatType, CultureInfo.InvariantCulture);
+                            program.SubjctEndDate = DateTime.ParseExact(temp[2].Trim().TrimEnd(')'), dateFormatType, CultureInfo.InvariantCulture);
+                        }
+                        var orgLocation = row.Cells[4].Text;
+                        {
+                            if (!String.IsNullOrEmpty(orgLocation))
+                            {
+                                //SMT-M:Madapur
+                                var temp = orgLocation.Split(':');
+                                program.BranchLocation = temp[1];
 
-                    objStudentBL.AddStudentProgram(studentId, userId, categoryId, branchId, companyId, companyBranch, catscheduleId);
+                            }
+                        }
+                        var classDate = row.Cells[5].Text;
+                        if (!String.IsNullOrEmpty(classDate))
+                        {
+                            var temp = classDate.Split(':');
+                            program.ClassStartDate = DateTime.ParseExact(temp[0].Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            program.ClassEndDate = DateTime.ParseExact(temp[1].Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        }
+                        var subject = row.Cells[1].Text;
+                        if (!String.IsNullOrEmpty(subject))
+                        {
+                            var temp = subject.Split(':');
+                            program.SubjectId = Utils.ToInt(temp[0].Trim());
+                            program.SubjectName = temp[1].Trim();
+                        }
+                        program.ClassTime = row.Cells[6].Text;
+                        subjectsList.Add(program);
+                    }
                 }
-
+            }
+            if (subjectsList.Count == 0)
+            {
+                lblProgramErrors.Visible = true;
+                lblProgramErrors.Text = "Please select the subject schedules";
+            }
+            //Add student program details
+            foreach (var subject in subjectsList)
+            {
+                subject.StudentId = Utils.ToInt(lblDetailsId.Text);
+                subject.UserId = lblFirstNameValue.Text;
+                objStudentBL.AddStudentProgram(subject);
             }
         }
 
