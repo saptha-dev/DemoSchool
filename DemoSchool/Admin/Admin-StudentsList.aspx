@@ -41,7 +41,7 @@
         }
         .style
         {
-            text-align: center;
+            text-align: left;
             padding: 6px;
         }
         #heading
@@ -192,11 +192,66 @@
         </tr>
         <tr>
             <td class="style">
-                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category"></asp:Label>
+                <asp:Label ID="lblSelectCategory" runat="server" Text="Select Category - Id Name"></asp:Label>
             </td>
             <td>
                 <asp:DropDownList ID="ddlCategoriesForExcercises" runat="server" AutoPostBack="true"
                     Width="200" class="textusername" OnSelectedIndexChanged="ddlCategoriesForExcercises_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style">
+                <asp:Label ID="lblSelectCategoryDate" runat="server" Text="SELECT CATEGORY-SCH-ID:DATE"></asp:Label>
+            </td>
+            <td align="left">
+                <asp:DropDownList ID="ddlCategoriesForExcercisesDate" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged="ddlCategoriesForExcercisesDate_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="style">
+                <asp:Label ID="lblSelectGroup" runat="server" Text="SELECT GROUP"></asp:Label>
+            </td>
+            <td>
+                <asp:DropDownList ID="ddlSelectGroup" runat="server" AutoPostBack="true"
+                    Width="200" class="textusername" OnSelectedIndexChanged="ddlSelectGroup_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="style" align="left" ><asp:Label ID="lblYearSem" runat="server" Text="Select Year-Sem"></asp:Label></td>
+            <td>
+                <asp:DropDownList ID="ddlYearSem" runat="server" AutoPostBack="true"
+                    Width="200" class="textusername" OnSelectedIndexChanged="ddlYearSem_SelectedIndexChanged">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblYearSemSchedule" runat="server" Text="Select Year-Sem Sched Date"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlYearSemSchedule" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" onselectedindexchanged="ddlYearSemSchedule_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblSubject" runat="server" Text="Select Subject-ID-Name"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlSubject" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged ="ddlSubjectId_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td class="style" align="left"><asp:Label ID="lblSubSchdDate" runat="server" Text="Select SUB-SCHID-DATE"></asp:Label></td>
+            <td align="left">
+                <asp:DropDownList ID="ddlSubSchdDate" runat="server" AutoPostBack="true" class="textusername"
+                    Width="200" OnSelectedIndexChanged ="ddlSubSchdIdDate_SelectedIndexChanged" >
+                     <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -238,6 +293,17 @@
     <table style="width: 72%; margin: 0 auto;" class="table">
         <tr>
             <td>
+                <br />
+            <div class="row" style="padding-left: 230px;">
+                
+                <asp:Button runat="server" Text="Search" OnClick="search_Click" CssClass="btn btn-primary" />
+                <div class="col-md-4 pull-left">
+                    <asp:TextBox runat="server" cssClass="form-control" ID="searchText" ClientIDMode="Static"></asp:TextBox>
+                </div>
+            </div>
+                <div class="clearfix"></div>
+            
+        
                 <div style="margin-top: 14px; margin-bottom: 200px;">
                     <asp:Panel ID="NodataPanel" runat="server" Visible="false">
                         <div id="headingConfirmed">

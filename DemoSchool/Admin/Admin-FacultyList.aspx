@@ -185,8 +185,6 @@
             </td>
         </tr>
     </table>
-
-
     <table style="width: 40%; margin: auto; margin-top: 20px; vertical-align:central"  >
         <tr style="width: 100%">
             <td  class="style" align="left"><asp:Label ID="lblProgram" runat="server" Text="Select Program"></asp:Label></td>

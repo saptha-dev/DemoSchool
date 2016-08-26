@@ -64,6 +64,155 @@ namespace PresentationLayer.Admin
            
         }
 
+        protected void ddlCategoriesForExcercisesDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedCategorySchedId.Text = ddlCategoriesForExcercisesDate.SelectedItem.Text;
+        }
+
+        protected void ddlCategoriesForExcercises_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (ddlCategoriesForExcercises.SelectedValue != "0")
+            {
+                selectedCategoryId.Text = ddlCategoriesForExcercises.SelectedItem.Text;
+                LoadGroups();
+                LoadCategorySchdule();
+                LoadYearOrSemSchdule();
+            }
+            else
+            {
+                ddlSelectGroup.Items.Clear();
+                ddlCategoriesForExcercisesDate.Items.Clear();
+                ddlYearSemSchedule.Items.Clear();
+            }
+
+            ddlType.SelectedIndex = -1;
+            NodataPanel.Visible = false;
+        }
+
+        private void LoadGroups()
+        {
+            SqlDataReader dr = objBL.GetGroupBasedOnCategoriesDrpdwn(Convert.ToInt32(ddlCategoriesForExcercises.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSelectGroup.Items.Clear();
+                ddlSelectGroup.DataSource = dt;
+                ddlSelectGroup.DataValueField = "Branch_Id";
+                ddlSelectGroup.DataTextField = "Branch_Name";
+                ddlSelectGroup.DataBind();
+                ddlSelectGroup.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadCategorySchdule()
+        {
+            SqlDataReader dr = objBL.GetCategorySchdule(Convert.ToInt32(ddlCategoriesForExcercises.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlCategoriesForExcercisesDate.Items.Clear();
+                ddlCategoriesForExcercisesDate.DataSource = dt;
+                ddlCategoriesForExcercisesDate.DataValueField = "Schedule_Id";
+                ddlCategoriesForExcercisesDate.DataTextField = "Schedule_Id_Date";
+                ddlCategoriesForExcercisesDate.DataBind();
+                ddlCategoriesForExcercisesDate.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        private void LoadYearOrSemSchdule()
+        {
+            SqlDataReader dr = objBL.GetYearOrSemSchdule(Convert.ToInt32(ddlCategoriesForExcercises.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlYearSemSchedule.Items.Clear();
+                ddlYearSemSchedule.DataSource = dt;
+                ddlYearSemSchedule.DataValueField = "Branch_T_Years";
+                ddlYearSemSchedule.DataTextField = "Year_Sem_Date";
+                ddlYearSemSchedule.DataBind();
+                ddlYearSemSchedule.Items.Insert(0, new ListItem("---Select---", "0"));
+            }
+        }
+
+        protected void ddlSelectGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedGroupId.Text = ddlSelectGroup.SelectedItem.Text;
+            SqlDataReader dr = objBL.GetYearBasedOnGroupDrpdwn(Convert.ToInt32(ddlSelectGroup.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                selectedGroupId.Text = ddlSelectGroup.SelectedItem.Text;
+                ddlYearSem.DataSource = dt;
+                ddlYearSem.DataValueField = "Year_Id";
+                ddlYearSem.DataTextField = "Branch_Year_No";
+                ddlYearSem.DataBind();
+                ddlYearSem.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+
+        }
+        protected void ddlYearSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedYearSem.Text = ddlYearSem.SelectedItem.Text;
+            LoadSubjects();
+            LoadSubjectsSchedule();
+        }
+
+        private void LoadSubjects()
+        {
+            int programId = Convert.ToInt32(ddlClassPrograms.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlSelectGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddlCategoriesForExcercises.SelectedItem.Value);
+
+            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubject.DataSource = dt;
+                ddlSubject.DataValueField = "Subject_Id";
+                ddlSubject.DataTextField = "Subject_Id_Name";
+                ddlSubject.DataBind();
+                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        private void LoadSubjectsSchedule()
+        {
+            int programId = Convert.ToInt32(ddlClassPrograms.SelectedItem.Value);
+            int branchId = Convert.ToInt32(ddlSelectGroup.SelectedItem.Value);
+            int categoryId = Convert.ToInt32(ddlCategoriesForExcercises.SelectedItem.Value);
+
+            SqlDataReader dr = objBL.GetSubjectBasedOnCategoriesDrpdwn(categoryId);
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            if (dt.Rows.Count > 0)
+            {
+                ddlSubject.DataSource = dt;
+                ddlSubject.DataValueField = "Subject_Id";
+                ddlSubject.DataTextField = "Subject_Id_Name";
+                ddlSubject.DataBind();
+                ddlSubject.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        protected void ddlYearSemSchedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedYearSchedId.Text = ddlYearSemSchedule.SelectedItem.Text;
+        }
+        protected void ddlSubjectId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedSubjectId.Text = ddlSubject.SelectedItem.Text;
+        }
+        protected void ddlSubSchdIdDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedSubSchedId.Text = ddlSubSchdDate.SelectedItem.Text;
+        }
+
         public void LoadNewProgamsDrpdown()
         {
 
@@ -333,6 +482,19 @@ namespace PresentationLayer.Admin
             return new string(TranId);
         }
 
+        protected void search_Click(object sender, EventArgs e)
+        {
+            string searchtext = searchText.Text;
+            if (string.IsNullOrEmpty(searchtext))
+            {
+                return;
+            }
+            else
+            {
+
+            }
+        }
+
         public void ActivateUsersMail(DataTable dtActivate)
         {
             if (dtActivate.Rows.Count > 0)
@@ -537,12 +699,6 @@ namespace PresentationLayer.Admin
             GvNodata.EditIndex = e.NewPageIndex;
             GvNodata.DataSource = (DataTable)ViewState["GvNodata"];
             GvNodata.DataBind();
-        }
-
-        protected void ddlCategoriesForExcercises_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ddlType.SelectedIndex = -1;
-            NodataPanel.Visible = false;
         }
 
         private void GetRegisteredUsersForCategory()
