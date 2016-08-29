@@ -133,7 +133,8 @@ namespace DemoSchool
                 newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.SelectedItem.Value);
                 newRegistration.SubUrban_Area = ddlMandal.Text;
                 newRegistration.Village_Town_City = ddlVillage.Text;
-                newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);
+                newRegistration.PostalCode = 1234; //TODO remove hardcode
+               // newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);
                 newRegistration.StreetNO = txtCmpStreetNo.Text;
                 newRegistration.StreetName = txtCmpStreetName.Text;
                 newRegistration.HouseNO = txtCmpHouseNo.Text;
@@ -141,10 +142,14 @@ namespace DemoSchool
                 newRegistration.LandMark_Name = txtCmpLandMark.Text;
                 newRegistration.Location = txtStudentLocation.Text;
 
+                newRegistration.ImageName = ""; //TODO remove hard code
+                newRegistration.AccessCode = "";
 
                 //newDetails.StreetNO
                 RegistrationBL objBL = new RegistrationBL();
                 objBL.AdminRegistration(newRegistration);
+
+                lblResult.Text 
             }
             catch (Exception ex)
             {
