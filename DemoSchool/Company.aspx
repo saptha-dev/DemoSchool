@@ -838,7 +838,7 @@
                 </ul>
             </HeaderTemplate>
         </asp:Wizard>
-          <asp:label id="lblResult" Font-Bold="true"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+          <asp:label id="lblResult" Font-Bold="true" ForeColor="Red"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
           </div>
 
           <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--%>

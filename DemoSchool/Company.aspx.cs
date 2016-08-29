@@ -148,12 +148,13 @@ namespace DemoSchool
                 //newDetails.StreetNO
                 RegistrationBL objBL = new RegistrationBL();
                 objBL.AdminRegistration(newRegistration);
-
-                lblResult.Text 
+                lblResult.Text = "Compnay data saved sucessfully";
+                 
             }
             catch (Exception ex)
             {
                 string msg = ex.ToString();
+                lblResult.Text = "Error occured while saving the data";
             }
 
         }
