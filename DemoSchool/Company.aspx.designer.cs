@@ -499,6 +499,15 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label Label24;
         
         /// <summary>
+        /// txtDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDob;
+        
+        /// <summary>
         /// Label25 control.
         /// </summary>
         /// <remarks>

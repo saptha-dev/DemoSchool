@@ -591,7 +591,7 @@
                             
                                 <tr>
                                     <td><asp:Label ID="Label24" runat="server" Text="Date of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
-                                    <td><input id="txtDob" class="form-control"  type="date" value="2016-07-23"/></td>
+                                    <td><input id="txtDob" class="form-control"  runat="server" type="date" value="2016-07-23"/></td>
                                     <td><asp:Label ID="Label25" runat="server" Text="Place of Birth" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td><asp:TextBox ID="txtPlaceOfBirth" CssClass="form-control" runat="server"></asp:TextBox></td>
                                 </tr>

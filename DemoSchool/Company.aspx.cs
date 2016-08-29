@@ -126,7 +126,7 @@ namespace DemoSchool
                 newRegistration.Fixed_LandlineNumber = txtFixedLineNumber.Text;
                 newRegistration.EmailID = txtEmail.Text;
                 newRegistration.OptionalEmailID = txtAlternateEmail.Text;
-                newRegistration.DateOfBirth = Convert.ToDateTime(date.Text);
+                newRegistration.DateOfBirth = Convert.ToDateTime(txtDob.Value);
 
                 newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.SelectedItem.Value);
                 newRegistration.StateID = Convert.ToInt16(txtCmpState.SelectedItem.Value);
