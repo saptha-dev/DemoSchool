@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Company.aspx.cs" Inherits="DemoSchool.Company" %>
-<script runat="server">
+<%--<script runat="server">
     Dictionary<string, string> result = new Dictionary<string, string>();
     void OnActiveStepChanged(object sender, WizardNavigationEventArgs e)
     {
         //WizardStep stepp = wizardStep as WizardStep;
         if (e.NextStepIndex == 3 || e.NextStepIndex == 4)
          {
-            result.Add("txtName",txtAssocCmpName.Text);
+        result.Add("txtName",txtAssocCmpName.Text);
         result.Add("txtName",txtAssocCmpName.Text);
         result.Add("txtName",txtAssocCmpName.Text);
         result.Add("txtName",txtAssocCmpName.Text);
@@ -35,9 +35,9 @@
         //Button btn = GetButtonFromWizardControl();
         //btn.Text = "Test";
         }
-    }
+    }--%>
 
-</script>
+<%--</script>--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <meta charset="utf-8">
@@ -337,9 +337,9 @@
           <div class="container">
           
               <asp:Wizard ID="Wizard1" runat="server" DisplaySideBar="False" 
-             onFinishButtonClientClick="previewClick()" StepNextButtonStyle-CssClass="btn btn-primary margin5" 
+             StepNextButtonStyle-CssClass="btn btn-primary margin5" 
               StepPreviousButtonStyle-CssClass="btn btn-danger margin5" StartNextButtonStyle-CssClass="btn btn-primary margin5"  OnNextButtonClick="Wizard1_NextButtonClick"
-              FinishCompleteButtonStyle-CssClass="btn btn-primary margin5" FinishPreviousButtonStyle-CssClass="btn btn-danger margin5" FinishCompleteButtonText="Submit" ActiveStepIndex="0">
+              FinishCompleteButtonStyle-CssClass="btn btn-primary margin5" FinishPreviousButtonStyle-CssClass="btn btn-danger margin5" OnFinishButtonClick="Wizard1_FinishButtonClick" ActiveStepIndex="0">
 
                 <StartNextButtonStyle CssClass="btn btn-primary margin5"></StartNextButtonStyle>
 
@@ -361,24 +361,17 @@
                                     <td><asp:Label ID="Label2" runat="server" Text="ROC Registration Number" CssClass="control-label col-sm-12 text-left"></asp:Label></td>
                                     <td><asp:TextBox ID="txtRegNumber" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox></td>
                                 </tr>
-                                <tr>
-                                    <%--<td>
-                                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCompany" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Company Name" ForeColor="Red" ControlToValidate="txtcompanyName"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    <%-- <td>
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorRegNumber" runat="server" ValidationGroup="Required"
-                                            ErrorMessage=" Enter Registration Number" ForeColor="Red" ControlToValidate="txtRegNumber"
-                                            Display="Dynamic" Font-Size="11px" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                                    </td>--%>
-                                    </tr>
+                               <tr>
+                                    <td></td>
+                                    <td><asp:RequiredFieldValidator id="RequiredFieldValidatorcmpnyname" runat="server" ForeColor="Red" ErrorMessage ="please Enter Company Name" ControlToValidate="txtAssocCmpName" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
                                <tr>
                                     <td>
                                         <asp:Label ID="Label3" runat="server" CssClass="control-label col-sm-12 text-left" Text="ROC Registration Date"></asp:Label>
                                         </td>
                                     <td>
-                                        <input class="form-control" id="txtregDate"  type="date" value="2016-07-23"/>
+                                        <input class="form-control" id="txtregDate"  runat="server" type="date" value="2016-07-23"/>
                                     </td>
                                     <td>
                                         <asp:Label ID="Label4" runat="server" CssClass="control-label col-sm-12 text-left" Text="Office Phone"></asp:Label>

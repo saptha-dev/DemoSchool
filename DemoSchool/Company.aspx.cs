@@ -12,6 +12,7 @@ namespace DemoSchool
 {
     public partial class Company : System.Web.UI.Page
     {
+        string rolename = "Company";
         protected void Page_Load(object sender, EventArgs e)
         {
             Wizard1.PreRender += new EventHandler(Wizard1_PreRender);
@@ -71,52 +72,18 @@ namespace DemoSchool
 
         protected void Wizard1_NextButtonClick(object sender, WizardNavigationEventArgs e)
         {
-            //if (rdoexisting.Checked && Wizardstudentreg.ActiveStepIndex == 0)
-            //{
-
-            //    RegistrationBL objebl1 = new RegistrationBL();
-
-
-            //    var user = objebl1.GetExistingUser("", "", "", "");
-            //    if (user != null && user.Rows.Count > 0)
-            //    {
-            //        DataRow dr = user.Rows[0];
-            //        txtFirstName.Text = dr["FirstName"].ToString();
-            //        txtFirstName.Text = dr["LastName"].ToString();
-            //        txtmobile.Text = dr["MobileNumber"].ToString();
-            //        txtEmail.Text = dr["EmailID"].ToString();
-
-            //        txtfathergurdianname.Text = dr["Father_GaurdainName"].ToString();
-            //        txtMothername.Text = dr["MotherMaidenName"].ToString();
-            //        txtpob.Text = dr["PlaceOfBirth"].ToString();
-
-            //        txtFixedLandline.Text = dr["Fixed_LandlineNumber"].ToString();
-            //        txtEducation.Text = dr["Qualification"].ToString();
-            //        txtaltrEmail.Text = dr["OptionalEmailID"].ToString();
-            //        txtTechnicalSkills.Text = dr["TechnicalSkills"].ToString();
-            //        txtStudentAccescode.Text = dr["AccessCode"].ToString();
-
-            //        txtLocation.Text = dr["Location"].ToString();
-            //        txtstreetno.Text = dr["StreetNo"].ToString();
-            //        txtstreetname.Text = dr["StreetName"].ToString();
-            //        txthouseno.Text = dr["HouseNo"].ToString();
-            //        txtFlatno.Text = dr["Flat_UnitNo"].ToString();
-            //        txtLandMark.Text = dr["LandMark_Name"].ToString();
-            //        ddlcountry.Text = dr["CountryID"].ToString();
-            //        ddlstate.Text = dr["StateID"].ToString();
-            //        ddlDistrict.Text = dr["DistrictID"].ToString();
-            //        txtcity.Text = dr["Village_Town_City"].ToString();
-            //        txtarea.Text = dr["SubUrban_Area"].ToString();
-            //        ddlselectcategory.Text = dr["CategoryID"].ToString();
-            //        ddlselectgroup.Text = dr["GroupId"].ToString();
-            //        ddlselectyear.Text = dr["YearId"].ToString();
-            //        ddlselectsubjects.Text = dr["Subjects"].ToString();
-            //        ddlselectyearsemschedule.Text = dr["Schedule_ID"].ToString();
-
-            //    }
-            //}
+            GetClassForWizardStep(sender);
             if (Wizard1.ActiveStepIndex == 2)
             {
+
+                assocCmpName.Text = txtAssocCmpName.Text;
+                regNumber.Text = txtRegNumber.Text;
+                regDate.Text = txtregDate.Value;
+                officePhone.Text = txtOfficePhone.Text;
+                cmpEmail.Text=txtEmail.Text;
+                assocCmpAccCode.Text = txtAssocCmpAccCode.Text;
+                branchesNo.Text = txtBranchesNo.Text;
+                
                 firstName.Text = txtFirstName.Text;
                 lastName.Text = txtLastName.Text;
                 fatherName.Text = txtFatherName.Text;
@@ -147,58 +114,42 @@ namespace DemoSchool
         {
             RegistrationBE newRegistration = new RegistrationBE();
 
-            newRegistration.FirstName = txtFirstName.Text;
-            newRegistration.LastName = txtLastName.Text;
-            newRegistration.Father_GaurdainName = txtFatherName.Text;
-            newRegistration.MotherMaidenName = txtMotherMaidenName.Text;
-            newRegistration.PlaceOfBirth = txtPlaceOfBirth.Text;
-            newRegistration.MobileNumber = txtMobileNumber.Text;
-            newRegistration.Fixed_LandlineNumber = txtFixedLineNumber.Text;
-            newRegistration.EmailID = txtEmail.Text;
-            newRegistration.OptionalEmailID = txtAlternateEmail.Text;
-            newRegistration.DateOfBirth = Convert.ToDateTime(date.Text);
+            try
+            {
+                newRegistration.RoleName = rolename;
+                newRegistration.FirstName = txtFirstName.Text;
+                newRegistration.LastName = txtLastName.Text;
+                newRegistration.Father_GaurdainName = txtFatherName.Text;
+                newRegistration.MotherMaidenName = txtMotherMaidenName.Text;
+                newRegistration.PlaceOfBirth = txtPlaceOfBirth.Text;
+                newRegistration.MobileNumber = txtMobileNumber.Text;
+                newRegistration.Fixed_LandlineNumber = txtFixedLineNumber.Text;
+                newRegistration.EmailID = txtEmail.Text;
+                newRegistration.OptionalEmailID = txtAlternateEmail.Text;
+                newRegistration.DateOfBirth = Convert.ToDateTime(date.Text);
 
-            newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.SelectedItem.Value);
-            newRegistration.StateID = Convert.ToInt16(txtCmpState.SelectedItem.Value);
-            newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.SelectedItem.Value);
-            newRegistration.SubUrban_Area = ddlMandal.Text;
-            newRegistration.Village_Town_City = ddlVillage.Text;
-            newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);
-            newRegistration.StreetNO = txtCmpStreetNo.Text;
-            newRegistration.StreetName = txtCmpStreetName.Text;
-            newRegistration.HouseNO = txtCmpHouseNo.Text;
-            newRegistration.Flat_UnitNo = txtCmpFlatNo.Text;
-           newRegistration.LandMark_Name = txtCmpLandMark.Text;
-            newRegistration.Location = txtStudentLocation.Text;
-            //newRegistration.RoleName = "Management";
-            //newRegistration.FirstName = txtFirstName.Text;
-            //newRegistration.LastName = txtLastName.Text;
-            //newRegistration.Father_GaurdainName = txtfathergurdianname.Text;
-            //newRegistration.MotherMaidenName = txtMothername.Text;
-            // = Convert.ToDateTime(txtdob.Value);
-            //newRegistration.PlaceOfBirth = txtpob.Text;
-            //newRegistration.MobileNumber = txtmobile.Text;
-            //newRegistration.Fixed_LandlineNumber = txtFixedLandline.Text;
-            //newRegistration.EmailID = txtEmail.Text;
-            //newRegistration.OptionalEmailID = txtaltrEmail.Text;
-            //newRegistration.AccessCode = txtAdminAccescode.Text;
-            //newRegistration.ImageName = "image 1";
-            //newRegistration.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-            //newRegistration.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
-            //newRegistration.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
-            //newRegistration.SubUrban_Area = ddlMandal.SelectedItem.Value;
-            //newRegistration.Village_Town_City = ddlVillage.SelectedItem.Value;
-            //newRegistration.StreetNO = txtstreetno.Text;
-            //newRegistration.StreetName = txtstreetname.Text;
-            //newRegistration.HouseNO = txthouseno.Text;
-            //newRegistration.Flat_UnitNo = txtFlatno.Text;
-            //newRegistration.LandMark_Name = txtLandMark.Text;
-            //newRegistration.Location = txtLocation.Text;
-            //newRegistration.PostalCode = 123456;
+                newRegistration.CountryID = Convert.ToInt16(txtCmpCountry.SelectedItem.Value);
+                newRegistration.StateID = Convert.ToInt16(txtCmpState.SelectedItem.Value);
+                newRegistration.DistrictID = Convert.ToInt16(txtCmpCity.SelectedItem.Value);
+                newRegistration.SubUrban_Area = ddlMandal.Text;
+                newRegistration.Village_Town_City = ddlVillage.Text;
+                newRegistration.PostalCode = Convert.ToInt16(txtPinCode.Text);
+                newRegistration.StreetNO = txtCmpStreetNo.Text;
+                newRegistration.StreetName = txtCmpStreetName.Text;
+                newRegistration.HouseNO = txtCmpHouseNo.Text;
+                newRegistration.Flat_UnitNo = txtCmpFlatNo.Text;
+                newRegistration.LandMark_Name = txtCmpLandMark.Text;
+                newRegistration.Location = txtStudentLocation.Text;
 
-            //newDetails.StreetNO
-            RegistrationBL objBL = new RegistrationBL();
-            objBL.AdminRegistration(newRegistration);
+
+                //newDetails.StreetNO
+                RegistrationBL objBL = new RegistrationBL();
+                objBL.AdminRegistration(newRegistration);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
 
         }
     }
