@@ -239,50 +239,60 @@ namespace DemoSchool
 
         protected void Wizardfaculty_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
+            
             RegistrationBE newReg = new RegistrationBE();
-            newReg.ProgramID = 124;
-            newReg.RoleName = rolename;
-            newReg.FirstName = txtFirstName.Text;
-            newReg.LastName = txtLastName.Text;
-            newReg.Father_GaurdainName = txtfathergurdianname.Text;
-            newReg.MotherMaidenName = txtMothername.Text;
-            newReg.DateOfBirth = Convert.ToDateTime(txtdob.Value);
-            newReg.PlaceOfBirth = txtpob.Text;
-            newReg.MobileNumber = txtmobile.Text;
-            newReg.Fixed_LandlineNumber = txtFixedLandline.Text;
-            newReg.EmailID= txtEmail.Text;
-            newReg.OptionalEmailID = txtaltrEmail.Text;
-            newReg.Qualification = txtEducation.Text;
-            newReg.TechnicalSkills = txtTechnicalSkills.Text;
-            newReg.AccessCode = txtFacultyAccessCode.Text;
-            newReg.ImageName = "image";
-            newReg.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-            newReg.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
-            newReg.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
-            newReg.SubUrban_Area = ddlMandal.SelectedItem.Value;
-            newReg.Village_Town_City = ddlVillage.SelectedItem.Value;
-            newReg.PostalCode = 8686;
-            newReg.StreetNO = txtstreetno.Text;
-            newReg.StreetName = txtstreetname.Text;
-            newReg.HouseNO = txthouseno.Text;
-            newReg.Flat_UnitNo = txtFlatno.Text;
-            newReg.LandMark_Name = txtLandMark.Text;
-            newReg.Location = txtLocation.Text;
-            //newReg.workExperience = Convert.ToInt32(txtworkExp.Text);
-            newReg.workExperience = 1;
-            newReg.Employer_Name = txtEmployerName.Text;
-            newReg.Employer_Address = txtEMpAddress.Text;
-            newReg.Employer_Phone = txtEmpPhone.Text;
-            newReg.Employer_Mail = txtEmpEmail.Text;
-            newReg.YearId =ddlyearsem.SelectedItem.Value;
-            newReg.CategoryID = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
-            newReg.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
-            //newReg.YearId = ddlselectyear.SelectedItem.Value;
-            newReg.Schedule_ID = ddlselectyearsemschedule.SelectedItem.Value;
-            newReg.Subjects = ddlselectsubjects.SelectedItem.Value;
-            newReg.GroupId = Convert.ToInt32(ddlselectgroup.SelectedItem.Value);
-            RegistrationBL objebl = new RegistrationBL();
-            objebl.FacultyRegistration(newReg);
+            try
+            {
+                newReg.ProgramID = 124;
+                newReg.RoleName = rolename;
+                newReg.FirstName = txtFirstName.Text;
+                newReg.LastName = txtLastName.Text;
+                newReg.Father_GaurdainName = txtfathergurdianname.Text;
+                newReg.MotherMaidenName = txtMothername.Text;
+                newReg.DateOfBirth = Convert.ToDateTime(txtdob.Value);
+                newReg.PlaceOfBirth = txtpob.Text;
+                newReg.MobileNumber = txtmobile.Text;
+                newReg.Fixed_LandlineNumber = txtFixedLandline.Text;
+                newReg.EmailID = txtEmail.Text;
+                newReg.OptionalEmailID = txtaltrEmail.Text;
+                newReg.Qualification = txtEducation.Text;
+                newReg.TechnicalSkills = txtTechnicalSkills.Text;
+                newReg.AccessCode = txtFacultyAccessCode.Text;
+                newReg.ImageName = "image";
+                newReg.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
+                newReg.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
+                newReg.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
+                newReg.SubUrban_Area = ddlMandal.SelectedItem.Value;
+                newReg.Village_Town_City = ddlVillage.SelectedItem.Value;
+                newReg.PostalCode = 8686;
+                newReg.StreetNO = txtstreetno.Text;
+                newReg.StreetName = txtstreetname.Text;
+                newReg.HouseNO = txthouseno.Text;
+                newReg.Flat_UnitNo = txtFlatno.Text;
+                newReg.LandMark_Name = txtLandMark.Text;
+                newReg.Location = txtLocation.Text;
+                //newReg.workExperience = Convert.ToInt32(txtworkExp.Text);
+                newReg.workExperience = 1;
+                newReg.Employer_Name = txtEmployerName.Text;
+                newReg.Employer_Address = txtEMpAddress.Text;
+                newReg.Employer_Phone = txtEmpPhone.Text;
+                newReg.Employer_Mail = txtEmpEmail.Text;
+                newReg.YearId = ddlyearsem.SelectedItem.Value;
+                newReg.CategoryID = Convert.ToInt32(ddlselectcategory.SelectedItem.Value);
+                newReg.Schedule_ID = ddlselectcategoryschedule.SelectedItem.Value;
+                //newReg.YearId = ddlselectyear.SelectedItem.Value;
+                newReg.Schedule_ID = ddlselectyearsemschedule.SelectedItem.Value;
+                newReg.Subjects = ddlselectsubjects.SelectedItem.Value;
+                newReg.GroupId = Convert.ToInt32(ddlselectgroup.SelectedItem.Value);
+                RegistrationBL objebl = new RegistrationBL();
+                objebl.FacultyRegistration(newReg);
+                lblResultFaculty.Text = "Faculty Data Saved Successfully";
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+                lblResultFaculty.Text = "Error Occured While Saving the Faculty Data";        
+            }
         }
 
         protected void RadioButton_CheckedChanged(object sender, System.EventArgs e)

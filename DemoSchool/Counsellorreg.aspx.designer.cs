@@ -931,6 +931,15 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.Label consempphonevalue;
         
         /// <summary>
+        /// lblResultCounsellor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultCounsellor;
+        
+        /// <summary>
         /// btn control.
         /// </summary>
         /// <remarks>

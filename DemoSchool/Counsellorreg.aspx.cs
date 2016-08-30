@@ -11,6 +11,7 @@ namespace DemoSchool
 {
     public partial class Counsellorreg : System.Web.UI.Page
     {
+        string rolename = "Counsellor";
         protected void Page_Load(object sender, EventArgs e)
         {
             WizardCounsellor.PreRender += new EventHandler(Wizard1_PreRender);
@@ -49,44 +50,49 @@ namespace DemoSchool
 
         protected void WizardCounsellor_FinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
-            RegistrationBE connewRegistration = new RegistrationBE();
-            connewRegistration.RoleName = "Counsellor";
-            connewRegistration.FirstName = txtFirstName.Text;
-            connewRegistration.LastName = txtLastName.Text;
-            connewRegistration.Father_GaurdainName = txtfathergurdianname.Text;
-            connewRegistration.MotherMaidenName = txtMothername.Text;
-           connewRegistration.DateOfBirth = Convert.ToDateTime(txtdob.Value);
-            connewRegistration.PlaceOfBirth = txtpob.Text;
-            connewRegistration.MobileNumber = txtmobile.Text;
-            connewRegistration.Fixed_LandlineNumber = txtFixedLandline.Text;
-            connewRegistration.EmailID = txtEmail.Text;
-            connewRegistration.OptionalEmailID = txtaltrEmail.Text;
-            connewRegistration.AccessCode = txtAccessCode.Text;
-            connewRegistration.ImageName = "image 1";
-            connewRegistration.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
-            connewRegistration.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
-            connewRegistration.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
-            connewRegistration.SubUrban_Area = ddlMandal.SelectedItem.Value;
-            connewRegistration.Village_Town_City = ddlVillage.SelectedItem.Value;
-            connewRegistration.StreetNO = txtstreetno.Text;
-            connewRegistration.StreetName = txtstreetname.Text;
-            connewRegistration.HouseNO = txthouseno.Text;
-            connewRegistration.Flat_UnitNo = txtFlatno.Text;
-            connewRegistration.LandMark_Name = txtLandMark.Text;
-            connewRegistration.Location = txtLocation.Text;
-            connewRegistration.PostalCode = 123456;
-            connewRegistration.Employer_Name = txtEmployerName.Text;
-            connewRegistration.workExperience = Convert.ToInt32(txtworkExp.Text);
-                     connewRegistration.Employer_Address = txtEMpAddress.Text;
-            connewRegistration.Employer_Mail = txtEmpEmail.Text;
-            connewRegistration.Employer_Phone = txtEmpPhone.Text;
-            
-
-
-            //newDetails.StreetNO
-            RegistrationBL obj = new RegistrationBL();
-            obj.AdminRegistration(connewRegistration);
-
+            try
+            {
+                RegistrationBE connewRegistration = new RegistrationBE();
+                connewRegistration.RoleName = rolename;
+                connewRegistration.FirstName = txtFirstName.Text;
+                connewRegistration.LastName = txtLastName.Text;
+                connewRegistration.Father_GaurdainName = txtfathergurdianname.Text;
+                connewRegistration.MotherMaidenName = txtMothername.Text;
+                connewRegistration.DateOfBirth = Convert.ToDateTime(txtdob.Value);
+                connewRegistration.PlaceOfBirth = txtpob.Text;
+                connewRegistration.MobileNumber = txtmobile.Text;
+                connewRegistration.Fixed_LandlineNumber = txtFixedLandline.Text;
+                connewRegistration.EmailID = txtEmail.Text;
+                connewRegistration.OptionalEmailID = txtaltrEmail.Text;
+                connewRegistration.AccessCode = txtAccessCode.Text;
+                connewRegistration.ImageName = "image 1";
+                connewRegistration.CountryID = Convert.ToInt32(ddlcountry.SelectedItem.Value);
+                connewRegistration.StateID = Convert.ToInt32(ddlstate.SelectedItem.Value);
+                connewRegistration.DistrictID = Convert.ToInt32(ddlDistrict.SelectedItem.Value);
+                connewRegistration.SubUrban_Area = ddlMandal.SelectedItem.Value;
+                connewRegistration.Village_Town_City = ddlVillage.SelectedItem.Value;
+                connewRegistration.StreetNO = txtstreetno.Text;
+                connewRegistration.StreetName = txtstreetname.Text;
+                connewRegistration.HouseNO = txthouseno.Text;
+                connewRegistration.Flat_UnitNo = txtFlatno.Text;
+                connewRegistration.LandMark_Name = txtLandMark.Text;
+                connewRegistration.Location = txtLocation.Text;
+                connewRegistration.PostalCode = 123456;
+                connewRegistration.Employer_Name = txtEmployerName.Text;
+                connewRegistration.workExperience = Convert.ToInt32(txtworkExp.Text);
+                connewRegistration.Employer_Address = txtEMpAddress.Text;
+                connewRegistration.Employer_Mail = txtEmpEmail.Text;
+                connewRegistration.Employer_Phone = txtEmpPhone.Text;
+                //newDetails.StreetNO
+                RegistrationBL obj = new RegistrationBL();
+                obj.AdminRegistration(connewRegistration);
+                lblResultCounsellor.Text = "Counsellor Data Saved Successfully";
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+                lblResultCounsellor.Text = "Error Occourd While Saving Counsellor Data";
+            }
         }
 
         protected void WizardCounsellor_NextButtonClick(object sender, WizardNavigationEventArgs e)

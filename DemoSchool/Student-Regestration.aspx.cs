@@ -277,9 +277,12 @@ namespace DemoSchool
                 //newReg1.Subjects = ddlSubjects.SelectedItem.Value;
                 //newReg1.GroupId = Convert.ToInt32(ddlGroup.SelectedItem.Value);
                 objReg.StudentRegistration(newReg1);
-            }catch(Exception ex)
+                lblResultstud.Text = "Student data saved sucessfully";
+            }
+            catch(Exception ex)
             {
                 string msg = ex.ToString();
+                lblResultstud.Text = "Error Occured While saving the Student Data";
             }
         }
 

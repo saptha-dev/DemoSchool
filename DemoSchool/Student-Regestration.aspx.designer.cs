@@ -1327,6 +1327,15 @@ namespace DemoSchool {
         protected global::System.Web.UI.WebControls.TextBox accNumber;
         
         /// <summary>
+        /// lblResultstud control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultstud;
+        
+        /// <summary>
         /// btn control.
         /// </summary>
         /// <remarks>

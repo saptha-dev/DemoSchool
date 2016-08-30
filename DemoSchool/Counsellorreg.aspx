@@ -1203,7 +1203,7 @@
                 </ul>
             </HeaderTemplate>
         </asp:Wizard>
-
+            <asp:label id="lblResultCounsellor" Font-Bold="true" ForeColor="Red"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
  
       
     <div class="formbuttons"><asp:Button ID="btn"  CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <button type="submit" class="btn btn-danger btn-lg"">Cancel</button></div>

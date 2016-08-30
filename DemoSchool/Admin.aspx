@@ -1000,7 +1000,8 @@
                 </ul>
             </HeaderTemplate>
         </asp:Wizard>
-
+         <asp:label id="lblResultAdmin" Font-Bold="true" ForeColor="Green"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
+          <asp:label id="lblResultError" Font-Bold="true" ForeColor="Red"  ClientIDMode="Static" CssClass="form-control-static col-sm-7" runat="server"></asp:label>
     </div>
     <div class="formbuttons"><asp:Button ID="btn" CssClass="btn btn-danger btn-lg" runat="server" Text="Reset" OnClientClick="this.form.reset();return false;"/> <asp:Button id="btncan" runat="server" CssClass="btn btn-danger btn-lg" Text="Cancel"/></div>
       </div>
